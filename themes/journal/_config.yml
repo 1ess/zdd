@@ -1,0 +1,12 @@
+sidebar_title: "A Sort Of A Blog"
+sidebar_subtitle: "旧游无处不堪寻，无寻处，惟有少年心"
+
+truncate_len: 80
+
+rss: atom.xml
+archives: true
+
+# Choose the comment service according to your need.
+# Please do not use the two services at the same time.
+livere: # [data-uid] for livere.com
+disqus: # [short_name] for disqus.com
