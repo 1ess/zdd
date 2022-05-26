@@ -1,6 +1,6 @@
 ---
 title: 数据结构 From Zero To Hero(七)
-featured_image: https://cdn.0xfee1dead.cn/blogImg/Blog185.jpg
+featured_image: https://cdn-fawn.vercel.app/blogImg/Blog185.jpg
 date: 2021/03/01
 ---
 
@@ -9,7 +9,7 @@ date: 2021/03/01
 ### 二叉树(Binary Tree)
 类似于真实世界，计算机科学中的树也有不同种类，我们首先学习最简单的树 —— 二叉树。一旦我们学会二叉树之后我们就可以快速学习其他类型的树了。
 
-![](https://cdn.0xfee1dead.cn/contentImg/tree/btree.png)
+![](https://cdn-fawn.vercel.app/contentImg/tree/btree.png)
 
 树的应用非常多，例如: 
 1. 展示层级结构(File 和 Folder)
@@ -20,7 +20,7 @@ date: 2021/03/01
 
 有一类特殊的二叉树称为二叉搜索树，他的特点是: 左子树的所有值小于该节点，右子树的所有值都大于该节点。
 
-![](https://cdn.0xfee1dead.cn/contentImg/tree/bstree.png)
+![](https://cdn-fawn.vercel.app/contentImg/tree/bstree.png)
 
 ### Building a BinarySearchTree
 ``` csharp
@@ -115,7 +115,7 @@ public class BinarySearchTree<T> where T : IComparable
 
 > “In order to understand recursion, one must first understand recursion.”
 
-<img src="https://cdn.0xfee1dead.cn/contentImg/tree/recursion.svg" alt="recursion">
+<img src="https://cdn-fawn.vercel.app/contentImg/tree/recursion.svg" alt="recursion">
 
 ``` csharp
 public int Factorial(int n) 

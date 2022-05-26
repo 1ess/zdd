@@ -1,6 +1,6 @@
 ---
 title: CSS(五)
-featured_image: https://cdn.0xfee1dead.cn/blogImg/Blog21.jpg
+featured_image: https://cdn-fawn.vercel.app/blogImg/Blog21.jpg
 date: 2018/07/02
 ---
 
@@ -18,7 +18,7 @@ date: 2018/07/02
 - 块级元素从上流到下
 - 行内元素从左上流到右下
 
-![](https://cdn.0xfee1dead.cn/contentImg/float/vertical-vs-horizontal-stacking-064f76.png)
+![](https://cdn-fawn.vercel.app/contentImg/float/vertical-vs-horizontal-stacking-064f76.png)
 浮动允许您将块级元素并排放置而不是彼此叠加。它允许我们构建各种布局，包括侧边栏，多列页面，网格和杂志样式的文章，文本在图像周围流动等。
 在现代网站中，浮动技术已经被 Flexbox 布局所取代，但并不意味我们不需要清楚这一知识，之前的十多年来，浮动一直是建站的基础，所以很可能会在不经意间遇见它。
 
@@ -26,11 +26,11 @@ date: 2018/07/02
 浮动会改变默认文档流。也就是说，不会再按照默认文档流来布局元素了。浮动的元素会从正常文档流中取出来(即浮动元素的父容器不再包含该浮动元素)，然后始终与其父容器的左侧或右侧对齐。也会尽可能的在父容器内向上浮动。而浮动元素之后的第一个非浮动元素则会黏在浮动元素之前的最后一个非浮动元素之下。
 
 块级元素可以使用 float: left; 或 float: right; 来左右对齐，使用 auto-margins 中间对齐。而行内元素使用 text-align 属性来对齐。
-![](https://cdn.0xfee1dead.cn/contentImg/float/floats-and-auto-margin-for-alignment-536a81.png)
+![](https://cdn-fawn.vercel.app/contentImg/float/floats-and-auto-margin-for-alignment-536a81.png)
 
 ### 多个浮动元素的情况
 如果都是左浮动，则按照在文档流中的先后顺序，从左向右水平排列。如果都是右浮动，则按照在文档流中的先后顺序，从右向左水平排列。
-![](https://cdn.0xfee1dead.cn/contentImg/float/float-layout-combinations-e52716.png)
+![](https://cdn-fawn.vercel.app/contentImg/float/float-layout-combinations-e52716.png)
 
 ## 清除浮动
 ***  
@@ -40,7 +40,7 @@ date: 2018/07/02
 - both: 在两侧都不能出现浮动元素，处于两侧所有浮动元素的最下方
 - none: 不清除浮动
 
-![](https://cdn.0xfee1dead.cn/contentImg/float/methods-for-clearing-floats-1.png)
+![](https://cdn-fawn.vercel.app/contentImg/float/methods-for-clearing-floats-1.png)
 
 ## 容纳浮动元素
 ***  
@@ -48,7 +48,7 @@ date: 2018/07/02
 
 1. 设置父容器的 overflow: hidden 属性，可以使父容器仍然容纳浮动元素，如下图所示。
 
-![](https://cdn.0xfee1dead.cn/contentImg/float/methods-for-clearing-floats-2.png)
+![](https://cdn-fawn.vercel.app/contentImg/float/methods-for-clearing-floats-2.png)
 2. 让父元素也浮动。(这种做法需要额外设置父容器宽度)
 3. 使用::after 在所有浮动元素之后添加一个空的元素 content: "";，并设置 clear: both; 和 display: block; 常规做法是添加一个名为 clearfix 类，使得需要让父容器仍然容纳浮动元素时，给该元素添加类即可。
 
@@ -98,7 +98,7 @@ overflow: hidden 最常使用的地方有三处:
 ## 定位
 ***  
 虽然之后我们会谈论 Flexbox 和 Grid，但我们仍需要讨论下 position 属性。他是古老布局的基础。
-![](https://cdn.0xfee1dead.cn/contentImg/position/css-positioning-schemes-790d5b.png)
+![](https://cdn-fawn.vercel.app/contentImg/position/css-positioning-schemes-790d5b.png)
 position 属性有四个可用值: 
 - static
 - relative
@@ -109,7 +109,7 @@ position 属性有四个可用值:
 
 ### static
 static 是默认值。任意 position: static; 的元素不会被特殊的定位。一个 static 元素表示它不会被 "positioned"，一个 position 属性被设置为其他值的元素表示它会被 "positioned"。
-![static](https://cdn.0xfee1dead.cn/contentImg/position/positioned-elements-terminology-861fca.png)
+![static](https://cdn-fawn.vercel.app/contentImg/position/positioned-elements-terminology-861fca.png)
 
 ``` CSS
 .static {
@@ -120,7 +120,7 @@ static 是默认值。任意 position: static; 的元素不会被特殊的定位
 ### relative
 relative 表现的和 static 一样，除非你添加了一些额外的属性。
 在一个相对定位(position属性的值为relative)的元素上设置 top 、 right 、 bottom 和 left 属性会使其偏离其正常位置。其他的元素的位置则不会受该元素的影响发生位置改变。
-![](https://cdn.0xfee1dead.cn/contentImg/position/relative-positioning-offsets-494268.png)
+![](https://cdn-fawn.vercel.app/contentImg/position/relative-positioning-offsets-494268.png)
 
 ``` CSS
 .relative1 {
@@ -138,7 +138,7 @@ relative 表现的和 static 一样，除非你添加了一些额外的属性。
 ### fixed
 一个固定定位(position 属性的值为 fixed)元素会相对于视窗来定位，这意味着即便页面滚动，它还是会停留在相同的位置。和 relative 一样， top 、 right 、 bottom 和 left 属性都可用。
 一个固定定位元素会脱离正常文档流。
-![](https://cdn.0xfee1dead.cn/contentImg/position/css-fixed-positioning-342eff.png)
+![](https://cdn-fawn.vercel.app/contentImg/position/css-fixed-positioning-342eff.png)
 
 ``` CSS
 .fixed {
@@ -152,8 +152,8 @@ relative 表现的和 static 一样，除非你添加了一些额外的属性。
 
 ### absolute
 absolute 与 fixed 的表现类似，但是它不是相对于视窗而是相对于最近的 "positioned" 祖先元素。如果绝对定位(position 属性的值为 absolute)的元素没有 "positioned" 祖先元素，那么它是相对于文档的 body 元素，并且它会随着页面滚动而移动。记住一个 "positioned" 元素是指 position 值不是 static 的元素。
-![](https://cdn.0xfee1dead.cn/contentImg/position/css-absolute-positioning-228ce0.png)
-![](https://cdn.0xfee1dead.cn/contentImg/position/css-relatively-absolute-positioning-1ba963.png)
+![](https://cdn-fawn.vercel.app/contentImg/position/css-absolute-positioning-228ce0.png)
+![](https://cdn-fawn.vercel.app/contentImg/position/css-relatively-absolute-positioning-1ba963.png)
 
 ``` CSS
 .relative {
@@ -172,4 +172,4 @@ absolute 与 fixed 的表现类似，但是它不是相对于视窗而是相对�
 
 ### z-index
 z-index 属性允许我们控制页面上元素的深度。
-![](https://cdn.0xfee1dead.cn/contentImg/position/css-z-index-c87ef0.png)
+![](https://cdn-fawn.vercel.app/contentImg/position/css-z-index-c87ef0.png)

@@ -1,6 +1,6 @@
 ---
 title: JavaScript(十三)
-featured_image: https://cdn.0xfee1dead.cn/blogImg/Blog40.jpg
+featured_image: https://cdn-fawn.vercel.app/blogImg/Blog40.jpg
 date: 2018/09/19
 ---
 

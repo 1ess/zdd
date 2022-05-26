@@ -1,11 +1,11 @@
 ---
 title: Python(十六)
-featured_image: https://cdn.0xfee1dead.cn/blogImg/Blog116.jpg
+featured_image: https://cdn-fawn.vercel.app/blogImg/Blog116.jpg
 date: 2019/05/17
 ---
 
 接下来的几篇，我们将介绍一下最流行的爬虫框架 Scrapy。本篇，我们会介绍一下 Scrapy 的基本使用。
-![](https://cdn.0xfee1dead.cn/contentImg/scrapy/scrapy_architecture_02.png)
+![](https://cdn-fawn.vercel.app/contentImg/scrapy/scrapy_architecture_02.png)
 
 ## 基本命令
 ***  

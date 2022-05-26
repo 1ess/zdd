@@ -1,6 +1,6 @@
 ---
 title: C Sharp(二)
-featured_image: https://cdn.0xfee1dead.cn/blogImg/Blog48.jpg
+featured_image: https://cdn-fawn.vercel.app/blogImg/Blog48.jpg
 date: 2018/10/16
 ---
 

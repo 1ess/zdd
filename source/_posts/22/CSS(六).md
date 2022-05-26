@@ -1,6 +1,6 @@
 ---
 title: CSS(六)
-featured_image: https://cdn.0xfee1dead.cn/blogImg/Blog22.jpg
+featured_image: https://cdn-fawn.vercel.app/blogImg/Blog22.jpg
 date: 2018/07/04
 ---
 
@@ -13,11 +13,11 @@ Flexbox 布局旨在提供一种更有效简便的布局解决方案，可以很
 ## 概述
 ***  
 Flexbox 是一个完整的模块而不是单个属性，其中一些是在容器上设置的(父元素，称为 "Flex 容器")，而其他的则设置在子元素上(称为 "Flex items")。
-<img src="https://cdn.0xfee1dead.cn/contentImg/flexbox/flex-container.svg" width="300px" alt="flex-container"><img src="https://cdn.0xfee1dead.cn/contentImg/flexbox/flex-items.svg" width="300px" alt="flex-items">
+<img src="https://cdn-fawn.vercel.app/contentImg/flexbox/flex-container.svg" width="300px" alt="flex-container"><img src="https://cdn-fawn.vercel.app/contentImg/flexbox/flex-items.svg" width="300px" alt="flex-items">
 
 ## 基本概念
 ***  
-![](https://cdn.0xfee1dead.cn/contentImg/flexbox/flexbox.jpg)
+![](https://cdn-fawn.vercel.app/contentImg/flexbox/flexbox.jpg)
 在 flex 容器中默认存在两条轴，水平主轴(main axis)和垂直的交叉轴(cross axis)，这是默认的设置，当然你可以通过修改使垂直方向变为主轴，水平方向变为交叉轴，这个我们后面再说。
 
 在容器中的每个单元块被称之为 flex item，每个项目占据的主轴空间为(main size)，占据的交叉轴的空间为(cross size)。
@@ -47,7 +47,7 @@ display: flex; 定义了一个 flex 容器(内联或块级取决于给定的值)
 注意: 设为 Flex 布局以后，子元素的 float、clear 和 vertical-align 属性将失效。
 
 ### flex-direction
-<img src="https://cdn.0xfee1dead.cn/contentImg/flexbox/flex-direction2.svg" width="600px" alt="flex-direction">
+<img src="https://cdn-fawn.vercel.app/contentImg/flexbox/flex-direction2.svg" width="600px" alt="flex-direction">
 
 flex-direction 属性定义了主轴方向，即定义了 flex items 放置在 flex container 的方向。 Flexbox 是一维布局概念。可以将 flex items 视为主要布置在水平行或垂直列中。
 有四个取值: 
@@ -63,7 +63,7 @@ flex-direction 属性定义了主轴方向，即定义了 flex items 放置在 f
 ```
 
 ### flex-wrap
-<img src="https://cdn.0xfee1dead.cn/contentImg/flexbox/flex-wrap.svg" width="600px" alt="flex-wrap">
+<img src="https://cdn-fawn.vercel.app/contentImg/flexbox/flex-wrap.svg" width="600px" alt="flex-wrap">
 
 默认情况下，flex items 会尽量布局在一行。我们可以更改 flex-wrap 属性允许 flex items 根据需要进行换行。
 有三个取值: 
@@ -87,7 +87,7 @@ flex-flow 属性是 flex-direction 属性和 flex-wrap 属性的简写形式，�
 ```
 
 ### justify-content
-<img src="https://cdn.0xfee1dead.cn/contentImg/flexbox/justify-content-2.svg" width="400px" alt="justify-content">
+<img src="https://cdn-fawn.vercel.app/contentImg/flexbox/justify-content-2.svg" width="400px" alt="justify-content">
 
 justify-content 属性定义了沿主轴方向的对齐方式。
 有六个取值: 
@@ -105,7 +105,7 @@ justify-content 属性定义了沿主轴方向的对齐方式。
 ```
 
 ### align-items
-<img src="https://cdn.0xfee1dead.cn/contentImg/flexbox/align-items.svg" width="400px" alt="align-items">
+<img src="https://cdn-fawn.vercel.app/contentImg/flexbox/align-items.svg" width="400px" alt="align-items">
 
 align-items 属性定义了沿交叉轴方向的对齐方式。
 有五个取值: 
@@ -122,7 +122,7 @@ align-items 属性定义了沿交叉轴方向的对齐方式。
 ```
 
 ### align-content
-<img src="https://cdn.0xfee1dead.cn/contentImg/flexbox/align-content.svg" width="400px" alt="align-content">
+<img src="https://cdn-fawn.vercel.app/contentImg/flexbox/align-content.svg" width="400px" alt="align-content">
 
 align-content 属性定义了多根主轴线的对齐方式。
 注意: 当只有一行 flex items 时，此属性无效。
@@ -151,7 +151,7 @@ align-content 属性定义了多根主轴线的对齐方式。
 - align-self
 
 ### order
-<img src="https://cdn.0xfee1dead.cn/contentImg/flexbox/order-2.svg" width="400px" alt="order">
+<img src="https://cdn-fawn.vercel.app/contentImg/flexbox/order-2.svg" width="400px" alt="order">
 
 默认情况下，Flex 项目按文档加载顺序排列。但是，order 属性控制 items 在 Flex 容器中的显示顺序。数值越小，排列越靠前，默认为 0。
 
@@ -162,7 +162,7 @@ align-content 属性定义了多根主轴线的对齐方式。
 ```
 
 ### flex-grow
-<img src="https://cdn.0xfee1dead.cn/contentImg/flexbox/flex-grow.svg" width="600px" alt="flex-grow">
+<img src="https://cdn-fawn.vercel.app/contentImg/flexbox/flex-grow.svg" width="600px" alt="flex-grow">
 
 flex-grow 属性定义了 flex items 在必要时放大比例，默认为 0，即如果存在剩余空间，也不放大。如果所有 items 的 flex-grow 都设置为 1，则容器中的剩余空间将平均分配给所有 item。如果其中一个 item 的值为 2，则剩余空间将占用其他空间的两倍。
 
@@ -208,7 +208,7 @@ flex 属性是 flex-grow，flex-shrink 和 flex-basis 的简写，默认值为 0
 建议优先使用这个属性，而不是单独写三个分离的属性，因为浏览器会推算相关值。
 
 ### align-self
-<img src="https://cdn.0xfee1dead.cn/contentImg/flexbox/align-self.svg" width="600px" alt="align-self">
+<img src="https://cdn-fawn.vercel.app/contentImg/flexbox/align-self.svg" width="600px" alt="align-self">
 
 align-self 属性允许单个 item 有与其他 item 不一样的对齐方式，可覆盖 align-items 属性。默认值为 auto，表示继承父元素的 align-items 属性，如果没有父元素，则等同于 stretch。
 

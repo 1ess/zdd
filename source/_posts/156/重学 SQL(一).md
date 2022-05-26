@@ -1,6 +1,6 @@
 ---
 title: 重学 SQL(一)
-featured_image: https://cdn.0xfee1dead.cn/blogImg/Blog156.jpg
+featured_image: https://cdn-fawn.vercel.app/blogImg/Blog156.jpg
 date: 2020/08/04
 ---
 
@@ -29,7 +29,7 @@ date: 2020/08/04
 
 关于 NoSQL，和关系型数据库有很大的不同，完全是另外一个话题，等以后有机会，我们会详细介绍，但它不是本系列教程的内容。
 
-点击下载创建本课程数据库的[脚本](https://cdn.0xfee1dead.cn/contentImg/sql/create-databases.sql)。
+点击下载创建本课程数据库的[脚本](https://cdn-fawn.vercel.app/contentImg/sql/create-databases.sql)。
 
 ## 查询
 ***  

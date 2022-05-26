@@ -1,6 +1,6 @@
 ---
 title: 数据结构 From Zero To Hero(一)
-featured_image: https://cdn.0xfee1dead.cn/blogImg/Blog179.jpg
+featured_image: https://cdn-fawn.vercel.app/blogImg/Blog179.jpg
 date: 2021/02/07
 ---
 
@@ -66,4 +66,4 @@ int Find(int[] array, int n, int x) {
 ### 平均时间复杂度
 为了更好的表示平均情况下的复杂度，我们引入平均时间复杂度。上面的示例中平均时间复杂度计算过程是: (1+2+3+..n+n)/(n+1) = n(n+3)/2(n+1)。忽略系数、低阶和常量，简化后表示为 O(n)。
 
-![](https://cdn.0xfee1dead.cn/contentImg/bigO/BigO.png)
+![](https://cdn-fawn.vercel.app/contentImg/bigO/BigO.png)

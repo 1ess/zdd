@@ -1,6 +1,6 @@
 ---
 title: React(三)
-featured_image: https://cdn.0xfee1dead.cn/blogImg/Blog45.jpg
+featured_image: https://cdn-fawn.vercel.app/blogImg/Blog45.jpg
 date: 2018/10/09
 ---
 

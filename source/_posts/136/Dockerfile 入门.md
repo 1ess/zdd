@@ -1,6 +1,6 @@
 ---
 title: Dockerfile 入门
-featured_image: https://cdn.0xfee1dead.cn/blogImg/Blog136.jpg
+featured_image: https://cdn-fawn.vercel.app/blogImg/Blog136.jpg
 date: 2020/01/12
 ---
 

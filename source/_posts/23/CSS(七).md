@@ -1,6 +1,6 @@
 ---
 title: CSS(七)
-featured_image: https://cdn.0xfee1dead.cn/blogImg/Blog23.jpg
+featured_image: https://cdn-fawn.vercel.app/blogImg/Blog23.jpg
 date: 2018/07/06
 ---
 
@@ -21,19 +21,19 @@ grid container 的**直接**子元素。
 
 ### Grid Line
 构成网格结构的分界线。
-![](https://cdn.0xfee1dead.cn/contentImg/grid/grid-line.png)
+![](https://cdn-fawn.vercel.app/contentImg/grid/grid-line.png)
 
 ### Grid Track
 两个相邻网格线之间的空间。可以将它们视为网格的列或行。
-![](https://cdn.0xfee1dead.cn/contentImg/grid/grid-track.png)
+![](https://cdn-fawn.vercel.app/contentImg/grid/grid-track.png)
 
 ### Grid Cell
 两个相邻行和两个相邻列网格线之间的空间。它是网格的单个"单元"。
-![](https://cdn.0xfee1dead.cn/contentImg/grid/grid-cell.png)
+![](https://cdn-fawn.vercel.app/contentImg/grid/grid-cell.png)
 
 ### Grid Area
 四个网格线包围的总空间。网格区域可以包括任意数量的网格单元。
-![](https://cdn.0xfee1dead.cn/contentImg/grid/grid-area.png)
+![](https://cdn-fawn.vercel.app/contentImg/grid/grid-area.png)
 
 ## Grid container 上的属性
 ***  
@@ -76,7 +76,7 @@ display: grid; 定义了一个 grid 容器，为直接子元素提供一个网�
 }
 ```
 
-![](https://cdn.0xfee1dead.cn/contentImg/grid/grid-numbers.png)
+![](https://cdn-fawn.vercel.app/contentImg/grid/grid-numbers.png)
 
 - 我们也可以明确命名行列名称
 
@@ -87,7 +87,7 @@ display: grid; 定义了一个 grid 容器，为直接子元素提供一个网�
 }
 ```
 
-![](https://cdn.0xfee1dead.cn/contentImg/grid/grid-names.png)
+![](https://cdn-fawn.vercel.app/contentImg/grid/grid-names.png)
 
 - 一行也可以有多个名称
 
@@ -164,7 +164,7 @@ display: grid; 定义了一个 grid 容器，为直接子元素提供一个网�
 
 注意: 当我们通过这种方式给我们网格区域时，会自动给相应的网格线命名，比如下图中 main 区域，其行线及列线的起始线就会被自动设置为 main-start，行线及列线的结束线就命为 main-end。
 
-![](https://cdn.0xfee1dead.cn/contentImg/grid/grid-template-areas.png)
+![](https://cdn-fawn.vercel.app/contentImg/grid/grid-template-areas.png)
 
 ### grid-template
 grid-template 属性是 grid-template-rows，grid-template-columns 和 grid-template-areas 的简写形式。
@@ -202,7 +202,7 @@ grid-template 属性是 grid-template-rows，grid-template-columns 和 grid-temp
 }
 ```
 
-![](https://cdn.0xfee1dead.cn/contentImg/grid/grid-column-row-gap.png)
+![](https://cdn-fawn.vercel.app/contentImg/grid/grid-column-row-gap.png)
 
 注意: 仅表示在行与行或者列和列之间的宽度，而不是行或列与边界的宽度。
 注意: Chrome 68+，Safari 11.2 Release 50+ 和 Opera 54+ 已经不使用 grid 前缀了。
@@ -231,25 +231,25 @@ grid-gap 属性是 grid-row-gap 和 grid-column-gap 的简写。
   justify-items: start;
 }
 ```
-![](https://cdn.0xfee1dead.cn/contentImg/grid/grid-justify-items-start.png)
+![](https://cdn-fawn.vercel.app/contentImg/grid/grid-justify-items-start.png)
 ``` CSS
 .container {
   justify-items: end;
 }
 ```
-![](https://cdn.0xfee1dead.cn/contentImg/grid/grid-justify-items-end.png)
+![](https://cdn-fawn.vercel.app/contentImg/grid/grid-justify-items-end.png)
 ``` CSS
 .container {
   justify-items: center;
 }
 ```
-![](https://cdn.0xfee1dead.cn/contentImg/grid/grid-justify-items-center.png)
+![](https://cdn-fawn.vercel.app/contentImg/grid/grid-justify-items-center.png)
 ``` CSS
 .container {
   justify-items: stretch;
 }
 ```
-![](https://cdn.0xfee1dead.cn/contentImg/grid/grid-justify-items-stretch.png)
+![](https://cdn-fawn.vercel.app/contentImg/grid/grid-justify-items-stretch.png)
 
 ### align-items
 在 column 轴对齐 grid items。
@@ -264,25 +264,25 @@ grid-gap 属性是 grid-row-gap 和 grid-column-gap 的简写。
  align-items: start;
 }
 ```
-![](https://cdn.0xfee1dead.cn/contentImg/grid/grid-align-items-start.png)
+![](https://cdn-fawn.vercel.app/contentImg/grid/grid-align-items-start.png)
 ``` CSS
 .container {
  align-items: end;
 }
 ```
-![](https://cdn.0xfee1dead.cn/contentImg/grid/grid-align-items-end.png)
+![](https://cdn-fawn.vercel.app/contentImg/grid/grid-align-items-end.png)
 ``` CSS
 .container {
  align-items: center;
 }
 ```
-![](https://cdn.0xfee1dead.cn/contentImg/grid/grid-align-items-center.png)
+![](https://cdn-fawn.vercel.app/contentImg/grid/grid-align-items-center.png)
 ``` CSS
 .container {
  align-items: stretch;
 }
 ```
-![](https://cdn.0xfee1dead.cn/contentImg/grid/grid-align-items-stretch.png)
+![](https://cdn-fawn.vercel.app/contentImg/grid/grid-align-items-stretch.png)
 
 ### place-items
 place-items 是 align-items 和 justify-items 的简写。
@@ -309,43 +309,43 @@ place-items 是 align-items 和 justify-items 的简写。
   justify-content: start;	
 }
 ```
-![](https://cdn.0xfee1dead.cn/contentImg/grid/grid-justify-content-start.png)
+![](https://cdn-fawn.vercel.app/contentImg/grid/grid-justify-content-start.png)
 ``` CSS
 .container {
   justify-content: end;	
 }
 ```
-![](https://cdn.0xfee1dead.cn/contentImg/grid/grid-justify-content-end.png)
+![](https://cdn-fawn.vercel.app/contentImg/grid/grid-justify-content-end.png)
 ``` CSS
 .container {
   justify-content: center;	
 }
 ```
-![](https://cdn.0xfee1dead.cn/contentImg/grid/grid-justify-content-center.png)
+![](https://cdn-fawn.vercel.app/contentImg/grid/grid-justify-content-center.png)
 ``` CSS
 .container {
   justify-content: stretch;	
 }
 ```
-![](https://cdn.0xfee1dead.cn/contentImg/grid/grid-justify-content-stretch.png)
+![](https://cdn-fawn.vercel.app/contentImg/grid/grid-justify-content-stretch.png)
 ``` CSS
 .container {
   justify-content: space-around;	
 }
 ```
-![](https://cdn.0xfee1dead.cn/contentImg/grid/grid-justify-content-space-around.png)
+![](https://cdn-fawn.vercel.app/contentImg/grid/grid-justify-content-space-around.png)
 ``` CSS
 .container {
   justify-content: space-between;	
 }
 ```
-![](https://cdn.0xfee1dead.cn/contentImg/grid/grid-justify-content-space-between.png)
+![](https://cdn-fawn.vercel.app/contentImg/grid/grid-justify-content-space-between.png)
 ``` CSS
 .container {
   justify-content: space-evenly;	
 }
 ```
-![](https://cdn.0xfee1dead.cn/contentImg/grid/grid-justify-content-space-evenly.png)
+![](https://cdn-fawn.vercel.app/contentImg/grid/grid-justify-content-space-evenly.png)
 
 ### align-content
 在 column 轴对齐 grid。
@@ -363,43 +363,43 @@ place-items 是 align-items 和 justify-items 的简写。
   align-content: start;	
 }
 ```
-![](https://cdn.0xfee1dead.cn/contentImg/grid/grid-align-content-start.png)
+![](https://cdn-fawn.vercel.app/contentImg/grid/grid-align-content-start.png)
 ``` CSS
 .container {
   align-content: end;	
 }
 ```
-![](https://cdn.0xfee1dead.cn/contentImg/grid/grid-align-content-end.png)
+![](https://cdn-fawn.vercel.app/contentImg/grid/grid-align-content-end.png)
 ``` CSS
 .container {
   align-content: center;	
 }
 ```
-![](https://cdn.0xfee1dead.cn/contentImg/grid/grid-align-content-center.png)
+![](https://cdn-fawn.vercel.app/contentImg/grid/grid-align-content-center.png)
 ``` CSS
 .container {
   align-content: stretch;	
 }
 ```
-![](https://cdn.0xfee1dead.cn/contentImg/grid/grid-align-content-stretch.png)
+![](https://cdn-fawn.vercel.app/contentImg/grid/grid-align-content-stretch.png)
 ``` CSS
 .container {
   align-content: space-around;	
 }
 ```
-![](https://cdn.0xfee1dead.cn/contentImg/grid/grid-align-content-space-around.png)
+![](https://cdn-fawn.vercel.app/contentImg/grid/grid-align-content-space-around.png)
 ``` CSS
 .container {
   align-content: space-between;	
 }
 ```
-![](https://cdn.0xfee1dead.cn/contentImg/grid/grid-align-content-space-between.png)
+![](https://cdn-fawn.vercel.app/contentImg/grid/grid-align-content-space-between.png)
 ``` CSS
 .container {
   align-content: space-evenly;	
 }
 ```
-![](https://cdn.0xfee1dead.cn/contentImg/grid/grid-align-content-space-evenly.png)
+![](https://cdn-fawn.vercel.app/contentImg/grid/grid-align-content-space-evenly.png)
 
 ### place-content
 place-content 属性是 align-content 和 justify-content 的简写。
@@ -428,7 +428,7 @@ place-content 属性是 align-content 和 justify-content 的简写。
   grid-auto-columns: 60px;
 }
 ```
-![](https://cdn.0xfee1dead.cn/contentImg/grid/implicit-tracks-with-widths.png)
+![](https://cdn-fawn.vercel.app/contentImg/grid/implicit-tracks-with-widths.png)
 
 ### grid-auto-flow
 grid-auto-flow 属性用于控制自动布局算法的工作方式。
@@ -459,7 +459,7 @@ grid-auto-flow 属性用于控制自动布局算法的工作方式。
   grid-auto-flow: column;
 }
 ```
-![](https://cdn.0xfee1dead.cn/contentImg/grid/grid-auto-flow-row.png)
+![](https://cdn-fawn.vercel.app/contentImg/grid/grid-auto-flow-row.png)
 ``` CSS
 .item-a {
   grid-column: 1;
@@ -476,7 +476,7 @@ grid-auto-flow 属性用于控制自动布局算法的工作方式。
   grid-auto-flow: column;
 }
 ```
-![](https://cdn.0xfee1dead.cn/contentImg/grid/grid-auto-flow-column.png)
+![](https://cdn-fawn.vercel.app/contentImg/grid/grid-auto-flow-column.png)
 
 ### grid
 grid 属性是 grid-template-rows，grid-template-columns，grid-template-areas，grid-auto-rows，grid-auto-columns 和 grid-auto-flow 的简写。
@@ -514,7 +514,7 @@ Grid items上的属性
 }
 ```
 
-![](https://cdn.0xfee1dead.cn/contentImg/grid/grid-start-end-a.png)
+![](https://cdn-fawn.vercel.app/contentImg/grid/grid-start-end-a.png)
 注意: 如果没有声明 grid-column-end / grid-row-end，默认情况下，该网格项将跨越 1 个轨道。
 
 ### grid-column 和 grid-row
@@ -527,7 +527,7 @@ grid-column-start + grid-column-end 以及 and grid-row-start + grid-row-end 的
 }
 ```
 
-![](https://cdn.0xfee1dead.cn/contentImg/grid/grid-start-end-c.png)
+![](https://cdn-fawn.vercel.app/contentImg/grid/grid-start-end-c.png)
 
 ### grid-area
 给 grid item 进行命名以便于使用 grid-template-areas 属性创建模板时来进行引用。另外也可以做为 grid-row-start + grid-column-start + grid-row-end + grid-column-end 的简写形式。
@@ -543,7 +543,7 @@ grid-column-start + grid-column-end 以及 and grid-row-start + grid-row-end 的
   grid-area: 1 / col4-start / last-line / 6
 }
 ```
-![](https://cdn.0xfee1dead.cn/contentImg/grid/grid-start-end-d.png)
+![](https://cdn-fawn.vercel.app/contentImg/grid/grid-start-end-d.png)
 
 ### justify-self
 沿着行轴对齐 grid item 里的内容。
@@ -558,25 +558,25 @@ grid-column-start + grid-column-end 以及 and grid-row-start + grid-row-end 的
   justify-self: start;
 }
 ```
-![](https://cdn.0xfee1dead.cn/contentImg/grid/grid-justify-self-start.png)
+![](https://cdn-fawn.vercel.app/contentImg/grid/grid-justify-self-start.png)
 ``` CSS
 .item-a {
   justify-self: end;
 }
 ```
-![](https://cdn.0xfee1dead.cn/contentImg/grid/grid-justify-self-end.png)
+![](https://cdn-fawn.vercel.app/contentImg/grid/grid-justify-self-end.png)
 ``` CSS
 .item-a {
   justify-self: center;
 }
 ```
-![](https://cdn.0xfee1dead.cn/contentImg/grid/grid-justify-self-center.png)
+![](https://cdn-fawn.vercel.app/contentImg/grid/grid-justify-self-center.png)
 ``` CSS
 .item-a {
   justify-self: stretch;
 }
 ```
-![](https://cdn.0xfee1dead.cn/contentImg/grid/grid-justify-self-stretch.png)
+![](https://cdn-fawn.vercel.app/contentImg/grid/grid-justify-self-stretch.png)
 
 ### align-self
 沿着列轴对齐 grid item 里的内容。
@@ -590,28 +590,28 @@ grid-column-start + grid-column-end 以及 and grid-row-start + grid-row-end 的
   align-self: start;
 }
 ```
-![](https://cdn.0xfee1dead.cn/contentImg/grid/grid-align-self-start.png)
+![](https://cdn-fawn.vercel.app/contentImg/grid/grid-align-self-start.png)
 
 ``` CSS
 .item-a {
   align-self: end;
 }
 ```
-![](https://cdn.0xfee1dead.cn/contentImg/grid/grid-align-self-end.png)
+![](https://cdn-fawn.vercel.app/contentImg/grid/grid-align-self-end.png)
 
 ``` CSS
 .item-a {
   align-self: center;
 }
 ```
-![](https://cdn.0xfee1dead.cn/contentImg/grid/grid-align-self-center.png)
+![](https://cdn-fawn.vercel.app/contentImg/grid/grid-align-self-center.png)
 
 ``` CSS
 .item-a {
   align-self: stretch;
 }
 ```
-![](https://cdn.0xfee1dead.cn/contentImg/grid/grid-align-self-stretch.png)
+![](https://cdn-fawn.vercel.app/contentImg/grid/grid-align-self-stretch.png)
 
 ### place-self
 place-self 是 align-self 和 justify-self 的简写。
@@ -622,7 +622,7 @@ place-self 是 align-self 和 justify-self 的简写。
 }
 ``` 
 
-![](https://cdn.0xfee1dead.cn/contentImg/grid/grid-align-self-center.png) 
+![](https://cdn-fawn.vercel.app/contentImg/grid/grid-align-self-center.png) 
 
 ## 参考
 ***  

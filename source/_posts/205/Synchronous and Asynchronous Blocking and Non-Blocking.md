@@ -1,6 +1,6 @@
 ---
 title: Synchronous and Asynchronous Blocking and Non-Blocking
-featured_image: https://cdn.0xfee1dead.cn/blogImg/Blog205.jpg
+featured_image: https://cdn-fawn.vercel.app/blogImg/Blog205.jpg
 date: 2022-02-12
 ---
 
@@ -13,7 +13,7 @@ date: 2022-02-12
 ## IO 模型
 ***  
 下面是五种 Linux 中 Socket IO 模型:
-![](https://cdn.0xfee1dead.cn/contentImg/io/fig1-1.gif)
+![](https://cdn-fawn.vercel.app/contentImg/io/fig1-1.gif)
 
 其中: 
 1. Blocking IO 全阶段是同步阻塞 IO

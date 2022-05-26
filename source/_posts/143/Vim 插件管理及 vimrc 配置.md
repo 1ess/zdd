@@ -1,6 +1,6 @@
 ---
 title: Vim 插件管理及 vimrc 配置
-featured_image: https://cdn.0xfee1dead.cn/blogImg/Blog143.jpg
+featured_image: https://cdn-fawn.vercel.app/blogImg/Blog143.jpg
 date: 2020/03/04
 ---
 

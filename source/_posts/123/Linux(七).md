@@ -1,6 +1,6 @@
 ---
 title: Linux(七)
-featured_image: https://cdn.0xfee1dead.cn/blogImg/Blog123.jpg
+featured_image: https://cdn-fawn.vercel.app/blogImg/Blog123.jpg
 date: 2019/07/19
 ---
 

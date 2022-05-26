@@ -1,6 +1,6 @@
 ---
 title: JavaScript(五)
-featured_image: https://cdn.0xfee1dead.cn/blogImg/Blog32.jpg
+featured_image: https://cdn-fawn.vercel.app/blogImg/Blog32.jpg
 date: 2018/08/10
 ---
 

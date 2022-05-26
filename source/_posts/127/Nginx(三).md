@@ -1,6 +1,6 @@
 ---
 title: Nginx(三)
-featured_image: https://cdn.0xfee1dead.cn/blogImg/Blog127.jpg
+featured_image: https://cdn-fawn.vercel.app/blogImg/Blog127.jpg
 date: 2019/09/19
 ---
 

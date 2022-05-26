@@ -1,6 +1,6 @@
 ---
 title: Shell(三)
-featured_image: https://cdn.0xfee1dead.cn/blogImg/Blog139.jpg
+featured_image: https://cdn-fawn.vercel.app/blogImg/Blog139.jpg
 date: 2020/02/05
 ---
 

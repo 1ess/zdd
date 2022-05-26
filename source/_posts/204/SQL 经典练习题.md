@@ -1,6 +1,6 @@
 ---
 title: SQL 经典练习题
-featured_image: https://cdn.0xfee1dead.cn/blogImg/Blog204.jpg
+featured_image: https://cdn-fawn.vercel.app/blogImg/Blog204.jpg
 date: 2022-02-10
 ---
 

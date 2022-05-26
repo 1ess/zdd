@@ -1,6 +1,6 @@
 ---
 title: Docker Network
-featured_image: https://cdn.0xfee1dead.cn/blogImg/Blog147.jpg
+featured_image: https://cdn-fawn.vercel.app/blogImg/Blog147.jpg
 date: 2020/05/25
 ---
 
@@ -58,22 +58,22 @@ PING 172.17.0.2 (172.17.0.2): 56 data bytes
 ? (172.17.0.1) at 02:42:df:95:ed:82 [ether]  on eth0
 ```
 
-<img src="https://cdn.0xfee1dead.cn/contentImg/docker/container2container.png" width="400px" alt="">
+<img src="https://cdn-fawn.vercel.app/contentImg/docker/container2container.png" width="400px" alt="">
 
 #### 容器与外部网络通讯
 了解了容器间的通讯，容器与主机间的通讯就容易理解了，如果在容器 box2 ping 与宿主机同一局域网的另一台主机 10.168.0.3，它发出去的数据包经过 docker0 网桥流向宿主机 eth0，eth0 在将数据包转发给与之相通的 10.168.0.3，于是 box2 就能和该主机节点进行通讯了。如果这个地址是公网地址，只要宿主机 eth0 能到达，容器 box2 都能与之通讯。
 
-<img src="https://cdn.0xfee1dead.cn/contentImg/docker/container2Internet.png" width="400px" alt="">
+<img src="https://cdn-fawn.vercel.app/contentImg/docker/container2Internet.png" width="400px" alt="">
 
 #### 宿主机与容器通讯
 当宿主机访问容器时，数据包从 docker0 流入到与容器对应的 veth 设备，通过容器的 eth0 到达到容器内。
 
-<img src="https://cdn.0xfee1dead.cn/contentImg/docker/host2container.png" width="400px" alt="">
+<img src="https://cdn-fawn.vercel.app/contentImg/docker/host2container.png" width="400px" alt="">
 
 #### 外部访问容器
 默认情况，其他外部网络(宿主机以外)无法访问到容器内的端口，通常的做法是使用 -p 选项来暴露容器端口到宿主机上，外部网络通过访问宿主机的端口从而访问到容器端口。本质上来说，该方式是使用 iptables 的 DNAT 功能，通过 iptables 规则转发实现的。
 
-<img src="https://cdn.0xfee1dead.cn/contentImg/docker/internet2container.png" width="400px" alt="">
+<img src="https://cdn-fawn.vercel.app/contentImg/docker/internet2container.png" width="400px" alt="">
 
 ### 自定义 bridge
 除了使用默认 docker0 作网桥以为还可以使用 docker network 相关命令自定义网桥: 

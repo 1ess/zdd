@@ -1,6 +1,6 @@
 ---
 title: 重学 SQL(二)
-featured_image: https://cdn.0xfee1dead.cn/blogImg/Blog157.jpg
+featured_image: https://cdn-fawn.vercel.app/blogImg/Blog157.jpg
 date: 2020/08/08
 ---
 
@@ -151,4 +151,4 @@ WHERE order_date < '2019-01-01'
 注意: 列名是基于第一段查询。
 
 ### 可视化 SQL JOIN
-![](https://cdn.0xfee1dead.cn/contentImg/sql/Visual_SQL_JOINS_orig.jpg)
+![](https://cdn-fawn.vercel.app/contentImg/sql/Visual_SQL_JOINS_orig.jpg)

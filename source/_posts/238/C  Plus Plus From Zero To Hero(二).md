@@ -1,6 +1,6 @@
 ---
 title: C Plus Plus From Zero To Hero(二)
-featured_image: https://cdn.0xfee1dead.cn/blogImg/Blog238.jpg
+featured_image: https://cdn-fawn.vercel.app/blogImg/Blog238.jpg
 date: 2022-05-26
 ---
 
@@ -100,7 +100,7 @@ void B::func()
 ## 指针和引用
 ***  
 ### 指针 Pointer
-![](https://cdn.0xfee1dead.cn/contentImg/cpp/MemoryAddressContent.png)
+![](https://cdn-fawn.vercel.app/contentImg/cpp/MemoryAddressContent.png)
 
 指针变量(或简称指针 Pointer)与其他变量基本相同，可以存储一条数据。与存储值的普通变量 int、 double 不同的是，指针存储的是内存地址。
 
@@ -135,7 +135,7 @@ pNumber = &number;  // 赋值
 int * pAnother = &number;  // 声明并初始化
 ```
 
-![](https://cdn.0xfee1dead.cn/contentImg/cpp/PointerDeclaration.png)
+![](https://cdn-fawn.vercel.app/contentImg/cpp/PointerDeclaration.png)
 
 #### 解引用运算符 *
 解引用运算符对指针进行操作，返回存储在指针变量中保存的地址指向的值。
@@ -233,7 +233,7 @@ cout << refNumber << endl; // 55
 
 引用的命名约定: 包括一个 r 作为前缀，例如 rNumber。
 
-![](https://cdn.0xfee1dead.cn/contentImg/cpp/PointerReferencing.png)
+![](https://cdn-fawn.vercel.app/contentImg/cpp/PointerReferencing.png)
 
 **引用可以被视为一个 const 指针**。
 

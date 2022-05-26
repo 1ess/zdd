@@ -1,6 +1,6 @@
 ---
 title: HTML(四)
-featured_image: https://cdn.0xfee1dead.cn/blogImg/Blog16.jpg
+featured_image: https://cdn-fawn.vercel.app/blogImg/Blog16.jpg
 date: 2018/06/20
 ---
 
@@ -38,7 +38,7 @@ address 标记一般用于联系方式的描述，如住址，邮件信息等。
 ## time 元素(Time)
 ***  
 time 标记用于定义时间。
-![](https://cdn.0xfee1dead.cn/contentImg/html4/datetime-format-d0c825.png)
+![](https://cdn-fawn.vercel.app/contentImg/html4/datetime-format-d0c825.png)
 ``` HTML
 The game starts at <time datetime="2018-07-12T10:00">10:00</time>.
 ```
@@ -191,7 +191,7 @@ input 元素的 list 属性要与 datalist 的 id 属性相同。
 重要属性: 
 - for: 要与关联的表单子控件的 id 属性值相同，点击 label，则关联控件获取焦点
 
-![](https://cdn.0xfee1dead.cn/contentImg/html4/label-element-for-attribute-313489.png)
+![](https://cdn-fawn.vercel.app/contentImg/html4/label-element-for-attribute-313489.png)
 ``` HTML
 <label for="first_name">First name</label>
 <br>
@@ -201,7 +201,7 @@ input 元素的 list 属性要与 datalist 的 id 属性相同。
 ## input 元素(Input)
 ***  
 定义一组与表单可交互的控件。
-![](https://cdn.0xfee1dead.cn/contentImg/html4/html-form-elements-939709.png)
+![](https://cdn-fawn.vercel.app/contentImg/html4/html-form-elements-939709.png)
 重要属性: 
 - required: 布尔属性，是否必须填写
 - name: 定义input唯一标识符
@@ -222,7 +222,7 @@ input 元素的 list 属性要与 datalist 的 id 属性相同。
 ``` HTML
 <input type="text" name="first_name" placeholder="e.g. Alex">
 ```
-![](https://cdn.0xfee1dead.cn/contentImg/html4/sending-input-variable-to-server-653369.png)  
+![](https://cdn-fawn.vercel.app/contentImg/html4/sending-input-variable-to-server-653369.png)  
 
 ## option 元素(Option)
 ***  
@@ -231,7 +231,7 @@ option 标记定义下拉框的一个选项。
 - value: 提交到服务器的值
 - selected: 默认选中的选项
 
-![](https://cdn.0xfee1dead.cn/contentImg/html4/select-dropdown-in-iphone-a9968d.png)
+![](https://cdn-fawn.vercel.app/contentImg/html4/select-dropdown-in-iphone-a9968d.png)
 ``` HTML
 <select name="country">
     <option value="Argentina">Argentina</option>
@@ -274,4 +274,4 @@ optgroup 标记定义选项分组。
 
 ## 所有 HTML 元素集合
 ***  
-![](https://cdn.0xfee1dead.cn/contentImg/html4/HTML-CHEAT-SHEET-768x8555.png)
+![](https://cdn-fawn.vercel.app/contentImg/html4/HTML-CHEAT-SHEET-768x8555.png)

@@ -1,6 +1,6 @@
 ---
 title: HTML(二)
-featured_image: https://cdn.0xfee1dead.cn/blogImg/Blog14.jpg
+featured_image: https://cdn-fawn.vercel.app/blogImg/Blog14.jpg
 date: 2018/06/16
 ---
 

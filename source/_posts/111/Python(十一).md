@@ -1,6 +1,6 @@
 ---
 title: Python(十一)
-featured_image: https://cdn.0xfee1dead.cn/blogImg/Blog111.jpg
+featured_image: https://cdn-fawn.vercel.app/blogImg/Blog111.jpg
 date: 2019/04/21
 ---
 

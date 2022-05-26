@@ -1,11 +1,11 @@
 ---
 title: 重学 SQL(九)
-featured_image: https://cdn.0xfee1dead.cn/blogImg/Blog164.jpg
+featured_image: https://cdn-fawn.vercel.app/blogImg/Blog164.jpg
 date: 2020/08/24
 ---
 
 本篇，我们介绍一个对于大型或高并发数据库影响非常有大的知识 —— 索引。了解它是如何工作的以及它为何能提升性能。
-点击下载创建本章所用数据库[脚本](https://cdn.0xfee1dead.cn/contentImg/sql/index-simple.zip)。
+点击下载创建本章所用数据库[脚本](https://cdn-fawn.vercel.app/contentImg/sql/index-simple.zip)。
 
 ## Index
 ***  

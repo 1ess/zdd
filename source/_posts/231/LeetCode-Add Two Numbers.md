@@ -1,6 +1,6 @@
 ---
 title: LeetCode-Add Two Numbers
-featured_image: https://cdn.0xfee1dead.cn/blogImg/Blog231.png
+featured_image: https://cdn-fawn.vercel.app/blogImg/Blog231.png
 date: 2022-03-10
 ---
 

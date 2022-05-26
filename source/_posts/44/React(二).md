@@ -1,6 +1,6 @@
 ---
 title: React(二)
-featured_image: https://cdn.0xfee1dead.cn/blogImg/Blog44.jpg
+featured_image: https://cdn-fawn.vercel.app/blogImg/Blog44.jpg
 date: 2018/10/07
 ---
 

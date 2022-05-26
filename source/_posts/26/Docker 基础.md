@@ -1,6 +1,6 @@
 ---
 title: Docker 基础
-featured_image: https://cdn.0xfee1dead.cn/blogImg/Blog26.jpg
+featured_image: https://cdn-fawn.vercel.app/blogImg/Blog26.jpg
 date: 2018/07/12
 ---
 
@@ -16,8 +16,8 @@ date: 2018/07/12
 - 启动慢
 
 由于虚拟机存在这些缺点，Linux 发展出了另一种虚拟化技术: Linux 容器(Linux Containers，缩写为 LXC)。Linux 容器不是模拟一个完整的操作系统，而是对进程进行隔离。对于容器里面的进程来说，它接触到的各种资源都是虚拟的，从而实现与底层系统的隔离。由于容器是进程级别的，就没有虚拟机的那些缺点了。
-![](https://cdn.0xfee1dead.cn/contentImg/docker/virtualization.png)
-![](https://cdn.0xfee1dead.cn/contentImg/docker/docker.png)
+![](https://cdn-fawn.vercel.app/contentImg/docker/virtualization.png)
+![](https://cdn-fawn.vercel.app/contentImg/docker/docker.png)
 
 ## Docker 概述
 ***  
@@ -25,7 +25,7 @@ Docker 就是 Linux 容器的一种封装，提供简易的使用接口。最初
 
 ### Docker 架构
 Docker 使用客户端-服务器架构。Docker 客户端与守护进程交互，是操作容器的主要部件。Docker 客户端与守护进程可以运行在同一台机器上，你也可以通过客户端连接到远程的 Docker 守护进程。
-![](https://cdn.0xfee1dead.cn/contentImg/docker/arc.png)
+![](https://cdn-fawn.vercel.app/contentImg/docker/arc.png)
 Docker 守护进程管理 Docker 的对象，包括: 
 - images(镜像)
 - containers(容器)

@@ -1,6 +1,6 @@
 ---
 title: CSS(四)
-featured_image: https://cdn.0xfee1dead.cn/blogImg/Blog20.jpg
+featured_image: https://cdn-fawn.vercel.app/blogImg/Blog20.jpg
 date: 2018/06/30
 ---
 

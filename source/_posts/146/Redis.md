@@ -1,6 +1,6 @@
 ---
 title: Redis
-featured_image: https://cdn.0xfee1dead.cn/blogImg/Blog146.jpg
+featured_image: https://cdn-fawn.vercel.app/blogImg/Blog146.jpg
 date: 2020/05/23
 ---
 

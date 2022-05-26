@@ -1,6 +1,6 @@
 ---
 title: HCIP(二)
-featured_image: https://cdn.0xfee1dead.cn/blogImg/Blog171.jpg
+featured_image: https://cdn-fawn.vercel.app/blogImg/Blog171.jpg
 date: 2020/12/18
 ---
 
@@ -16,7 +16,7 @@ date: 2020/12/18
 ### 静态路由配置
 我们使用一个例子来进行静态路由配置的讲解。
 路由拓扑关系如下: 
-<img src="https://cdn.0xfee1dead.cn/contentImg/hcip/hcip1.svg" width="400px" alt="">
+<img src="https://cdn-fawn.vercel.app/contentImg/hcip/hcip1.svg" width="400px" alt="">
 
 ### 配置命令
 ``` sh
@@ -42,7 +42,7 @@ ip route-static 192.168.0.0 NULL0
 静态路由 AD 值小的优先加表，AD 值大的不加表，作为备份。当主用链路出现故障，主用路由下一跳不可达，主路由失效，从路由表中删除，此时备用路由加表。
 我们使用一个例子来进行静态浮动路由配置的讲解。
 路由拓扑关系如下: 
-<img src="https://cdn.0xfee1dead.cn/contentImg/hcip/hcip2.svg" width="400px" alt="">
+<img src="https://cdn-fawn.vercel.app/contentImg/hcip/hcip2.svg" width="400px" alt="">
 
 例如上图拓扑结构，我们希望 R1 可以与 R3 的 loopback0 通信，则可以直接配置静态路由为: 
 ``` sh

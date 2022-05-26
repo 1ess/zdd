@@ -1,6 +1,6 @@
 ---
 title: 数据结构 From Zero To Hero(四)
-featured_image: https://cdn.0xfee1dead.cn/blogImg/Blog182.jpg
+featured_image: https://cdn-fawn.vercel.app/blogImg/Blog182.jpg
 date: 2021/02/19
 ---
 

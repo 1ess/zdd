@@ -1,6 +1,6 @@
 ---
 title: Oracle 数据库拾遗(四)
-featured_image: https://cdn.0xfee1dead.cn/blogImg/Blog176.jpg
+featured_image: https://cdn-fawn.vercel.app/blogImg/Blog176.jpg
 date: 2021/01/21
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: CSS(二)
-featured_image: https://cdn.0xfee1dead.cn/blogImg/Blog18.jpg
+featured_image: https://cdn-fawn.vercel.app/blogImg/Blog18.jpg
 date: 2018/06/24
 ---
 
@@ -26,7 +26,7 @@ date: 2018/06/24
 - vertical-align
 - line-height
 
-![](https://cdn.0xfee1dead.cn/contentImg/other-font-image/web-typography-terminology-e06b82.png)
+![](https://cdn-fawn.vercel.app/contentImg/other-font-image/web-typography-terminology-e06b82.png)
 ## font-family
 ***  
 font-family 定义了页面所使用的字体。
@@ -37,7 +37,7 @@ font-family: "Source Sans Pro", "Arial", sans-serif;
 浏览器将在用户的计算机或者任何 @font-face 资源中查找每个字体。
 所使用的字体优先级按**从左到右**的排序: 如果可用，它将使用第一个值，否则跳到下一个值，直到最后。默认字体系列由浏览器首选项定义。
 在上面的示例中，浏览器将首先尝试使用 Source Sans Pro。如果不可用，它会尝试使用 Arial。如果也不可用，它将使用浏览器的 sans-serif 字体族中的可用字体。
-![](https://cdn.0xfee1dead.cn/contentImg/other-font-image/bulletproof-font-face-d18a22.png)
+![](https://cdn-fawn.vercel.app/contentImg/other-font-image/bulletproof-font-face-d18a22.png)
 
 ### 5 种字体族
 - serif: 有衬线字体族
@@ -45,31 +45,31 @@ font-family: "Source Sans Pro", "Arial", sans-serif;
 ``` CSS
 font-family: serif;
 ```
-![](https://cdn.0xfee1dead.cn/contentImg/font-family/serif-font.png)
+![](https://cdn-fawn.vercel.app/contentImg/font-family/serif-font.png)
 - sans-serif: 无衬线字体族
 
 ``` CSS
 font-family: sans-serif;
 ```
-![](https://cdn.0xfee1dead.cn/contentImg/font-family/sans-serif-font.png)
+![](https://cdn-fawn.vercel.app/contentImg/font-family/sans-serif-font.png)
 - monospace: 等宽字体族
 
 ``` CSS
 font-family: monospace;
 ```
-![](https://cdn.0xfee1dead.cn/contentImg/font-family/monospace-font.png)
+![](https://cdn-fawn.vercel.app/contentImg/font-family/monospace-font.png)
 - cursive: 草书或手写体字体族
 
 ``` CSS
 font-family: cursive;
 ```
-![](https://cdn.0xfee1dead.cn/contentImg/font-family/cursive-font.png)
+![](https://cdn-fawn.vercel.app/contentImg/font-family/cursive-font.png)
 - fantasy: 奇幻字体族
 
 ``` CSS
 font-family: fantasy;
 ```
-![](https://cdn.0xfee1dead.cn/contentImg/font-family/fantasy-font.png)
+![](https://cdn-fawn.vercel.app/contentImg/font-family/fantasy-font.png)
 
 ## font-size
 ***  
@@ -81,26 +81,26 @@ font-size 定义了页面字体尺寸，浏览器默认使用字体尺寸为 med
 ``` CSS
 font-size: 20px;
 ```
-![](https://cdn.0xfee1dead.cn/contentImg/font-size/pixel-value.png)
+![](https://cdn-fawn.vercel.app/contentImg/font-size/pixel-value.png)
 - em: 相对于父元素的 font-size
 
 ``` CSS
 font-size: 1.2em;
 ```
-![](https://cdn.0xfee1dead.cn/contentImg/font-size/em-value.png)
+![](https://cdn-fawn.vercel.app/contentImg/font-size/em-value.png)
 - rem: 相对于根元素的 font-size(即 html 元素)
 
 ``` CSS
 font-size: 1.2rem;
 ```
-![](https://cdn.0xfee1dead.cn/contentImg/font-size/rem-value.png)
+![](https://cdn-fawn.vercel.app/contentImg/font-size/rem-value.png)
 
 - 百分数(percentage): 相对于父元素的 font-size
 
 ``` CSS
 font-size: 90%;
 ```
-![](https://cdn.0xfee1dead.cn/contentImg/font-size/percentage-value.png)
+![](https://cdn-fawn.vercel.app/contentImg/font-size/percentage-value.png)
 
 - 相对关键字(relative-keywords): 相对于父元素的 font-size
 可用关键字: 
@@ -110,7 +110,7 @@ font-size: 90%;
 ``` CSS
 font-size: smaller;
 ```
-![](https://cdn.0xfee1dead.cn/contentImg/font-size/rel-keywords-value.png)
+![](https://cdn-fawn.vercel.app/contentImg/font-size/rel-keywords-value.png)
 
 - 绝对关键字(absolute-keywords): 相对于根元素的 font-size(即 html 元素)
 可用关键字: 
@@ -125,7 +125,7 @@ font-size: smaller;
 ``` CSS
 font-size: x-large;
 ```
-![](https://cdn.0xfee1dead.cn/contentImg/font-size/abs-keywords-value.png)
+![](https://cdn-fawn.vercel.app/contentImg/font-size/abs-keywords-value.png)
 
 ## font-style
 ***  
@@ -268,19 +268,19 @@ letter-spacing 属性定义字符间距，normal 为浏览器默认取值。
 ``` CSS
 letter-spacing: normal;
 ```
-![](https://cdn.0xfee1dead.cn/contentImg/letter-spacing/normal-spacing.png)
+![](https://cdn-fawn.vercel.app/contentImg/letter-spacing/normal-spacing.png)
 - 像素(pixel)
 
 ``` CSS
 letter-spacing: 2px;
 ```
-![](https://cdn.0xfee1dead.cn/contentImg/letter-spacing/pixel-spacing.png)
+![](https://cdn-fawn.vercel.app/contentImg/letter-spacing/pixel-spacing.png)
 - em
 
 ``` CSS
 letter-spacing: 0.1em;
 ```
-![](https://cdn.0xfee1dead.cn/contentImg/letter-spacing/em-spacing.png)
+![](https://cdn-fawn.vercel.app/contentImg/letter-spacing/em-spacing.png)
 
 ## word-spacing
 ***  
@@ -292,19 +292,19 @@ word-spacing 属性定义单词间距，0px 为浏览器默认取值。
 ``` CSS
 word-spacing: normal;
 ```
-![](https://cdn.0xfee1dead.cn/contentImg/word-spacing/normal-spacing.png)
+![](https://cdn-fawn.vercel.app/contentImg/word-spacing/normal-spacing.png)
 - 像素(pixel)
 
 ``` CSS
 word-spacing: 5px;
 ```
-![](https://cdn.0xfee1dead.cn/contentImg/word-spacing/pixel-spacing.png)
+![](https://cdn-fawn.vercel.app/contentImg/word-spacing/pixel-spacing.png)
 - em
 
 ``` CSS
 word-spacing: 2em;
 ```
-![](https://cdn.0xfee1dead.cn/contentImg/word-spacing/em-spacing.png)
+![](https://cdn-fawn.vercel.app/contentImg/word-spacing/em-spacing.png)
 
 ## line-height
 ***  
@@ -421,7 +421,7 @@ text-align 属性作用于块级元素，控制其内部行内内容(如文本�
 ``` CSS
 text-align: left;
 ```
-![](https://cdn.0xfee1dead.cn/contentImg/other-font-image/left-text-alignment-26dbc5.png)
+![](https://cdn-fawn.vercel.app/contentImg/other-font-image/left-text-alignment-26dbc5.png)
 - right: 右对齐
 
 ``` CSS
@@ -432,13 +432,13 @@ text-align: right;
 ``` CSS
 text-align: center;
 ```
-![](https://cdn.0xfee1dead.cn/contentImg/other-font-image/center-text-alignment-29e1d3.png)
+![](https://cdn-fawn.vercel.app/contentImg/other-font-image/center-text-alignment-29e1d3.png)
 - justify: 两端对齐
 
 ``` CSS
 text-align: justify;
 ```
-![](https://cdn.0xfee1dead.cn/contentImg/other-font-image/good-vs-bad-hyphenation-engine-ba40e3.png)
+![](https://cdn-fawn.vercel.app/contentImg/other-font-image/good-vs-bad-hyphenation-engine-ba40e3.png)
 **justify 只对多行文本有效，且多行文本的最后一行无效。要想对最后一行有效需要使用 text-align-last: justify; 或使用伪元素::after 把最后一行变为非最后一行**
 
 ## vertical-align

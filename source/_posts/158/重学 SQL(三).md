@@ -1,6 +1,6 @@
 ---
 title: 重学 SQL(三)
-featured_image: https://cdn.0xfee1dead.cn/blogImg/Blog158.jpg
+featured_image: https://cdn-fawn.vercel.app/blogImg/Blog158.jpg
 date: 2020/08/12
 ---
 

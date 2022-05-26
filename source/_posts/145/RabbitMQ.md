@@ -1,6 +1,6 @@
 ---
 title: RabbitMQ
-featured_image: https://cdn.0xfee1dead.cn/blogImg/Blog145.jpg
+featured_image: https://cdn-fawn.vercel.app/blogImg/Blog145.jpg
 date: 2020/05/14
 ---
 
@@ -34,12 +34,12 @@ date: 2020/05/14
 ***  
 RabbitMQ 是开源的面向消息的中间件，它实现了高级消息排队协议(AMQP)。
 
-![](https://cdn.0xfee1dead.cn/contentImg/mq/workflow-rabbitmq.png)
+![](https://cdn-fawn.vercel.app/contentImg/mq/workflow-rabbitmq.png)
 
 ### 交换器(exchange)
 消息不会直接发布到队列，通常生产者向交换器发送消息。交换器负责在 bindings 和 routing keys 的帮助下将消息路由到不同的队列。bindings 是队列和交换器之间的链接。
 
-![](https://cdn.0xfee1dead.cn/contentImg/mq/exchanges-bindings-routing-keys.png)
+![](https://cdn-fawn.vercel.app/contentImg/mq/exchanges-bindings-routing-keys.png)
 
 ### 消息流
 RabbitMQ 中的消息流: 
@@ -54,7 +54,7 @@ RabbitMQ 中的消息流:
 2. Fanout: 交换器将消息路由到绑定到它的所有队列
 3. Topic: Topic 交换在路由键和绑定中指定的路由模式之间进行通配符匹配
 
-![](https://cdn.0xfee1dead.cn/contentImg/mq/exchanges-topic-fanout-direct.png)
+![](https://cdn-fawn.vercel.app/contentImg/mq/exchanges-topic-fanout-direct.png)
 
 ### RabbitMQ 中的重要概念
 1. 生产者(Producer): 发送消息的应用程序
