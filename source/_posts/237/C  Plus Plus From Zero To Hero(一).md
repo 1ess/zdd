@@ -90,7 +90,7 @@ imag(const complex& x)
 ```
 
 ### 内联函数
-默认在类内定义的函数，自动变为内联函数(只是可能，最终还是由编译器决定是否真正变为内联)，若为类外定义的函数，需使用 inline 关键字。
+默认在类内定义的函数，自动变为内联函数(内联只是一个建议，编译器可能不支持或忽略该建议)，若为类外定义的函数，需使用 inline 关键字，同样也只是建议。
 
 ### 成员函数和全局函数
 我们可以在类声明和类定义中声明和定义成员函数，在类声明中声明时，它所带的函数参数可以只指出其类型，而省略参数名。而在类定义中定义成员函数时必须在函数名之前加上类名前缀，并且在函数名和类名之间加上作用域区分符::，作用域区分符::指明一个成员函数或数据成员所在的类。若作用域区分符::前不加类名，则称该函数为全局数据或全局函数。
@@ -159,6 +159,25 @@ int main()
 多数情况下，我们都会选择 pass by reference，这样可以节省内存，并且可以起到改变实参的目的。不过有的时候我们并不希望在函数内部改变实参的值，就要加上 const 关键字修饰形参。
 
 #### const 修饰成员函数
+在成员函数末尾使用关键字 const 标识的成员函数中不能修改此对象的任何数据成员: 
+``` cpp
+class Circle {
+private:
+    double m_radius; 
+    ......
+public:
+    void setRadius(double radius) {
+        m_radius = radius;  
+    }
+    double getRadius() const {  // const member function
+        radius = 0; // error: assignment of data-member 'Circle::radius' in read-only structure
+        return radius;
+    }
+    ......
+}
+```
+
+以下程序会报错，原因是任何成员函数的参数都是隐式包含 this 指针。上述例子中 a 是一个 const 对象，当调用 get_data 方法，该函数签名是 get_data(a){}，而 a 又是一个 const 对象，默认的 this 指针并不是 const 类型，所以参数类型不匹配，导致编译无法通过。
 ``` cpp
 #include<iostream>
 
@@ -184,8 +203,6 @@ int main()
     return 0;
 }
 ```
-
-以上程序会报错，原因是任何成员函数的参数都是隐式包含 this 指针。上述例子中 a 是一个 const 对象，当调用 get_data 方法，该函数签名是 get_data(a){}，而 a 又是一个 const 对象，默认的 this 指针并不是 const 类型，所以参数类型不匹配，导致编译无法通过。
 
 深刻理解: **const 对象只能调用 const 成员函数，non-const 对象只能调用 non-const 成员函数**。
 
