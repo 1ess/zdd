@@ -204,7 +204,7 @@ int main()
 }
 ```
 
-深刻理解: **const 对象只能调用 const 成员函数，non-const 对象只能调用 non-const 成员函数**。
+在 C++ 中，const 对象只能调用 const 成员函数，不能调用非 const 成员函数。另一方面，非 const 对象可以同时调用 const 、非 const 成员函数。
 
 ### 参数传递
 参数传递可分为两类: 
