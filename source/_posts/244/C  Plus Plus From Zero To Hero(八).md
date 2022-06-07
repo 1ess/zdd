@@ -27,6 +27,7 @@ shared_ptr<list<int>> p2;
 智能指针使用方式与普通指针类似，解引用一个智能指针返回指向的对象。
 
 shared_ptr 与 unique_ptr 都支持的操作如下: 
+
 | 操作 | 说明 |
 | -- | -- |
 | shared_ptr<T> sp | 空指针，可以指向类型为 T 的对象 |
@@ -39,6 +40,7 @@ shared_ptr 与 unique_ptr 都支持的操作如下:
 | p.swap(q) | 交换 p 和 q 的指针 |
 
 shared_ptr 独有的操作如下: 
+
 | 操作 | 说明 |
 | -- | -- |
 | make_shared<T>(args) | 使用 args 初始化类型为 T 的对象，并返回 shared_ptr 指针 |
@@ -67,6 +69,7 @@ auto p6 = make_shared<vector<string>>();
 一个 unique_ptr 拥有它所指向的对象。当 unique_ptr 被销毁时，它所指向的对象也被销毁。
 
 unique_ptr 独有的操作如下: 
+
 | 操作 | 说明 |
 | -- | -- |
 | unique_ptr<T> u1 | 空 unique_ptr，指向类型为 T 的对象 |
