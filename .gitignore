@@ -6,3 +6,4 @@ tmp
 db.json
 /public/*
 !/public/CNAME
+.obsidian
