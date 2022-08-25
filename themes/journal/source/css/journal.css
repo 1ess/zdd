@@ -74,7 +74,7 @@ blockquote {
     color: #5E81AC; }
 
 a {
-  color: #9f563a; }
+  color: #BF616A; }
   a:hover {
     color: #5E81AC;
     text-underline-position: under; }
@@ -225,7 +225,7 @@ a {
             transition: all 0.2s linear;
             color: black; }
             .single-column-drawer-container .drawer-content .drawer-menu .drawer-menu-item.active {
-              border-right: 2px solid #9f563a;
+              border-right: 2px solid #BF616A;
               background: rgba(159, 86, 58, 0.1);
               color: #2f1911; } }
 
@@ -280,7 +280,7 @@ a {
       background: rgba(159, 86, 58, 0.02);
       color: #2f1911; }
     .side-container .nav-head.active {
-      border-right: 2px solid #9f563a;
+      border-right: 2px solid #BF616A;
       background: rgba(159, 86, 58, 0.03);
       color: #542e1f; }
   .side-container .nav-link-list {
@@ -299,7 +299,7 @@ a {
         background: rgba(159, 86, 58, 0.02);
         color: #2f1911; }
       .side-container .nav-link-list .nav-link-item.active {
-        border-right: 2px solid #9f563a;
+        border-right: 2px solid #BF616A;
         background: rgba(159, 86, 58, 0.03);
         color: #542e1f; }
   .side-container .nav-footer {
@@ -501,7 +501,7 @@ a {
         .stream-container .post-list-container .post-item-wrapper:not(.post-item-wrapper-no-hover):hover .post-item-title,
         .stream-container .post-list-container > * .post-item-wrapper:not(.post-item-wrapper-no-hover):hover .post-item-title {
           text-decoration: underline;
-          text-decoration-style: 2px solid #9f563a;
+          text-decoration-style: 2px solid #BF616A;
           text-underline-position: under; }
         .stream-container .post-list-container .post-item-wrapper:not(.post-item-wrapper-no-hover):hover *,
         .stream-container .post-list-container > * .post-item-wrapper:not(.post-item-wrapper-no-hover):hover * {
