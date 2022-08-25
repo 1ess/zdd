@@ -45,7 +45,7 @@ button {
   cursor: pointer; }
 
 code {
-  color: #7a422c;
+  color: #5E81AC;
   background: #2E3440; /* rgba(159, 86, 58, 0.07) !important; */
   padding: 2px 5px;
   border-radius: 3px;
@@ -53,7 +53,7 @@ code {
 
 pre {
   background:  #2E3440; /* rgba(159, 86, 58, 0.07) !important; */
-  color: #7a422c;
+  color: #5E81AC;
   padding: 12px 15px;
   border-radius: 5px;
   font-family: "Fira Mono", "Cousine", Monaco, Menlo, "Source Code Pro", monospace; }
@@ -66,17 +66,17 @@ pre {
 blockquote {
   padding: 10px 20px;
   border-left: 3px solid rgba(159, 86, 58, 0.7);
-  color: #7a422c;
+  color: #5E81AC;
   background: rgba(159, 86, 58, 0.05); }
   blockquote p {
     margin-bottom: 0; }
   blockquote * {
-    color: #7a422c; }
+    color: #5E81AC; }
 
 a {
   color: #9f563a; }
   a:hover {
-    color: #7a422c;
+    color: #5E81AC;
     text-underline-position: under; }
   @media screen and (max-width: 1020px) {
     a:hover {
@@ -358,7 +358,7 @@ a {
       .extra-container .pagination .pagination-action:hover {
         text-decoration: none; }
         .extra-container .pagination .pagination-action:hover * {
-          color: #7a422c; }
+          color: #5E81AC; }
   @media screen and (max-width: 1020px) {
     .extra-container {
       display: none; } }
@@ -505,7 +505,7 @@ a {
           text-underline-position: under; }
         .stream-container .post-list-container .post-item-wrapper:not(.post-item-wrapper-no-hover):hover *,
         .stream-container .post-list-container > * .post-item-wrapper:not(.post-item-wrapper-no-hover):hover * {
-          color: #7a422c; }
+          color: #5E81AC; }
         @media screen and (max-width: 1020px) {
           .stream-container .post-list-container .post-item-wrapper:not(.post-item-wrapper-no-hover):hover .post-item-title,
           .stream-container .post-list-container > * .post-item-wrapper:not(.post-item-wrapper-no-hover):hover .post-item-title {
@@ -698,7 +698,7 @@ a {
           .stream-container .pagination .pagination-action:hover {
             text-decoration: none; }
             .stream-container .pagination .pagination-action:hover * {
-              color: #7a422c; } }
+              color: #5E81AC; } }
   .stream-container .single-column-footer {
     display: none; }
     @media screen and (max-width: 1020px) {
