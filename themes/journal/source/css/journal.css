@@ -708,38 +708,3 @@ a {
         font-size: 13px;
         font-family: "Montserrat", "Roboto", "Source Sans Pro", "Helvetica", "Arial", "Lora", "source-han-serif-tc", serif;
         padding: 40px 20px 40px 20px; } }
-        table {
-          -moz-box-sizing: border-box;
-          box-sizing: border-box;
-          margin: 1em 0;
-          width: 100%;
-          max-width: 100%;
-          border-width: 1px;
-          border-style: solid;
-          background-color: transparent; }
-
-          table, table tr, table tr td, table tr th {
-            border-color: #e5e5e5; }
-
-            table th {
-              color: #666666;
-              background-color: #fdfdfd; }
-
-              tr th {
-                border-bottom-width: 1px;
-                border-bottom-style: solid;
-                text-align: left; }
-
-                tr th, tr td {
-                  padding: 5px 20px;
-                  border-right: 1px solid;
-                  font-size: 1rem; }
-
-                  tr th:last-child, tr td:last-child {
-                    border-right: 0px; }
-
-                    table th {
-                      font-weight: bold; }
-
-                      table tbody > tr:nth-child(odd) > td, table tbody > tr:nth-child(odd) > th {
-                        background-color: #f9f9f9; }
