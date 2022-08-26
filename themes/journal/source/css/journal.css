@@ -761,6 +761,7 @@ figure.highlight tr th {
   text-align: left; }
     
 figure.highlight tr th, tr td {
+  padding: 0px 0px;
   border-right: 1px solid;
   font-size: 1rem; }
   
