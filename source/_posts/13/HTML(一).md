@@ -191,11 +191,11 @@ http-equiv 属性的可选值如下:
 ### style 元素
 ``` HTML
 <style type="text/css">
-	a{
-	    background-color: grey;
-		color: white;
-		padding: 0.5em;
-	}
+  a {
+     background-color: grey;
+  	 color: white;
+  	 padding: 0.5em;
+  }
 </style>
 ```
 
@@ -225,7 +225,7 @@ http-equiv 属性的可选值如下:
 #### 定义文档内嵌脚本
 ``` HTML
 <script>
-	document.write("This is from the script");
+  document.write("This is from the script");
 </script>
 ```
 
@@ -247,8 +247,8 @@ http-equiv 属性的可选值如下:
 noscript 元素用来向禁用了 JavaScript 或浏览器不支持 JavaScript 的用户显示一些内容。
 ``` HTML
 <noscript>
-	<h1>JavaScript is required!</h1>
-	<p>You cannot use this page without JavaScript</p>
+  <h1>JavaScript is required!</h1>
+  <p>You cannot use this page without JavaScript</p>
 </noscript>
 ```
 
