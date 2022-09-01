@@ -783,6 +783,6 @@ figure.highlight .hljs-operator {
   color: #D8DEE9 !important;
 }
 
-.javascript, .css {
+.javascript, .css, .xml {
   color: #D8DEE9 !important;
 }
