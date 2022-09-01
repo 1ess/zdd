@@ -773,3 +773,7 @@ figure.highlight table th {
     
 figure.highlight table tbody > tr:nth-child(odd) > td, figure.highlight table tbody > tr:nth-child(odd) > th {
   background-color: transparent; }
+
+figure.highlight .hljs-operator {
+  background: none !important;
+}
