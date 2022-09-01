@@ -164,10 +164,10 @@ if(document.forms[0].checkValidity()) {
 为了指定点击某个提交按钮不必验证表单，可以在相应的按钮上添加 formnovalidate 属性: 
 ``` HTML
 <form method="post" action="foo.php">
-    <!--这里插入表单元素--> 
-    <input type="submit" value="Regular Submit">
-    <input type="submit" formnovalidate name="btnNoValidate"
-        value="Non-validating Submit">
+  <!--这里插入表单元素--> 
+  <input type="submit" value="Regular Submit">
+  <input type="submit" formnovalidate name="btnNoValidate"
+      value="Non-validating Submit">
 </form>
 ```
 
