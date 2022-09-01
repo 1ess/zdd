@@ -784,6 +784,6 @@ figure.highlight .hljs-operator {
   color: #D8DEE9 !important;
 }
 
-.javascript, .css, .xml {
+.javascript, .css, .xml, .bash {
   color: #D8DEE9 !important;
 }
