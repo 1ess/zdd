@@ -765,10 +765,10 @@ figure.highlight tr th, tr td {
   border-right: 1px solid;
   font-size: 1rem; }
 
-  figure.highlight tr th, tr td.code {
-    padding: 0px 0px;
-    border-right: 1px solid;
-    font-size: 1rem; }
+figure.highlight tr th, tr td.code {
+  padding: 0px 0px;
+  border-right: 1px solid;
+  font-size: 1rem; }
   
 figure.highlight tr th:last-child, tr td:last-child {
   border-right: 0px; }
@@ -780,5 +780,9 @@ figure.highlight table tbody > tr:nth-child(odd) > td, figure.highlight table tb
   background-color: transparent; }
 
 figure.highlight .hljs-operator {
+  color: #D8DEE9 !important;
+}
+
+.javascript, .css {
   color: #D8DEE9 !important;
 }
