@@ -761,9 +761,14 @@ figure.highlight tr th {
   text-align: left; }
     
 figure.highlight tr th, tr td {
-  padding: 0px 0px;
+  padding: 0px 5px;
   border-right: 1px solid;
   font-size: 1rem; }
+
+  figure.highlight tr th, tr td.code {
+    padding: 0px 0px;
+    border-right: 1px solid;
+    font-size: 1rem; }
   
 figure.highlight tr th:last-child, tr td:last-child {
   border-right: 0px; }
