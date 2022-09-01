@@ -12,7 +12,7 @@ figure 标记用来表示图片，图表，插图等内容。
 
 ``` HTML
 <figure>
-    <img src="a.jpg" alt="a">
+  <img src="a.jpg" alt="a">
 </figure>
 ```
 
@@ -21,8 +21,8 @@ figure 标记用来表示图片，图表，插图等内容。
 figcaption 标记是为图片增加标题或者说明，是 figure 标记的子标记。
 ``` HTML
 <figure>
-    <img src="a.jpg" alt="a">
-    <figcaption>a</figcaption>
+  <img src="a.jpg" alt="a">
+  <figcaption>a</figcaption>
 </figure>
 ```
 
@@ -31,7 +31,7 @@ figcaption 标记是为图片增加标题或者说明，是 figure 标记的子�
 address 标记一般用于联系方式的描述，如住址，邮件信息等。
 ``` HTML
 <address>
-    如果你有问题，请跟我联系(<a href="mailto:abc@abc.com">给我发邮件</a>)。
+  如果你有问题，请跟我联系(<a href="mailto:abc@abc.com">给我发邮件</a>)。
 </address>
 ```
 
@@ -87,8 +87,8 @@ picture 标记为网页嵌入图片资源，内部有0到多个 source 子元素
 浏览器选择 source 元素中最佳匹配来展示，如果都无法展示，则最终显示 img 元素。
 ``` HTML
 <picture>
-    <source srcset="foo.png" media="(min-width: 1000px)">
-    <img src="bar.png">
+  <source srcset="foo.png" media="(min-width: 1000px)">
+  <img src="bar.png">
 </picture>
 ```
 
@@ -103,10 +103,10 @@ picture 标记为网页嵌入图片资源，内部有0到多个 source 子元素
 
 ``` HTML
 <video controls>
-    <source src="foo.webm" type="video/webm">
-    <source src="foo.ogg" type="video/ogg"> 
-    <source src="foo.mov" type="video/quicktime">
-    I'm sorry; your browser doesn't support HTML5 video.
+  <source src="foo.webm" type="video/webm">
+  <source src="foo.ogg" type="video/ogg"> 
+  <source src="foo.mov" type="video/quicktime">
+  I'm sorry; your browser doesn't support HTML5 video.
 </video>
 ```
 
@@ -118,8 +118,8 @@ picture 标记为网页嵌入图片资源，内部有0到多个 source 子元素
 
 ``` HTML
 <details open>
-    <summary>Read more</summary>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec viverra nec nulla vitae mollis.</p>
+  <summary>Read more</summary>
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec viverra nec nulla vitae mollis.</p>
 </details>
 ```
 
@@ -170,18 +170,18 @@ input 元素的 list 属性要与 datalist 的 id 属性相同。
 <input list="countries" placeholder="Type a country">
 
 <datalist id="countries">
-    <option value="Argentina">
-    <option value="Bolivia">
-    <option value="Brazil">
-    <option value="Chile">
-    <option value="Colombia">
-    <option value="Ecuador">
-    <option value="Guyana">
-    <option value="Paraguay">
-    <option value="Peru">
-    <option value="Suriname">
-    <option value="Uruguay">
-    <option value="Venezuela">
+  <option value="Argentina">
+  <option value="Bolivia">
+  <option value="Brazil">
+  <option value="Chile">
+  <option value="Colombia">
+  <option value="Ecuador">
+  <option value="Guyana">
+  <option value="Paraguay">
+  <option value="Peru">
+  <option value="Suriname">
+  <option value="Uruguay">
+  <option value="Venezuela">
 </datalist>
 ```
 
@@ -234,18 +234,18 @@ option 标记定义下拉框的一个选项。
 ![](https://cdn-fawn.vercel.app/contentImg/html4/select-dropdown-in-iphone-a9968d.png)
 ``` HTML
 <select name="country">
-    <option value="Argentina">Argentina</option>
-    <option value="Bolivia">Bolivia</option>
-    <option value="Brazil">Brazil</option>
-    <option value="Chile">Chile</option>
-    <option value="Colombia">Colombia</option>
-    <option value="Ecuador">Ecuador</option>
-    <option value="Guyana">Guyana</option>
-    <option value="Paraguay">Paraguay</option>
-    <option value="Peru">Peru</option>
-    <option value="Suriname">Suriname</option>
-    <option value="Uruguay">Uruguay</option>
-    <option value="Venezuela">Venezuela</option>
+  <option value="Argentina">Argentina</option>
+  <option value="Bolivia">Bolivia</option>
+  <option value="Brazil">Brazil</option>
+  <option value="Chile">Chile</option>
+  <option value="Colombia">Colombia</option>
+  <option value="Ecuador">Ecuador</option>
+  <option value="Guyana">Guyana</option>
+  <option value="Paraguay">Paraguay</option>
+  <option value="Peru">Peru</option>
+  <option value="Suriname">Suriname</option>
+  <option value="Uruguay">Uruguay</option>
+  <option value="Venezuela">Venezuela</option>
 </select>
 ```
 
@@ -257,18 +257,18 @@ optgroup 标记定义选项分组。
 
 ``` HTML
 <select>
-    <optgroup label="South America">
-        <option>Uruguay</option>
-        <option>Brazil</option>
-        <option>Argentina</option>
-    </optgroup>
-    <optgroup label="Europe">
-        <option>Italy</option>
-        <option>Germany</option>
-        <option>England</option>
-        <option>France</option>
-        <option>Spain</option>
-    </optgroup>
+  <optgroup label="South America">
+    <option>Uruguay</option>
+    <option>Brazil</option>
+    <option>Argentina</option>
+  </optgroup>
+  <optgroup label="Europe">
+    <option>Italy</option>
+    <option>Germany</option>
+    <option>England</option>
+    <option>France</option>
+    <option>Spain</option>
+  </optgroup>
 </select>
 ```
 
