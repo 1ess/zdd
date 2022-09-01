@@ -746,8 +746,8 @@ table tbody > tr:nth-child(odd) > td, table tbody > tr:nth-child(odd) > th {
   background-color: #f9f9f9; }
 
 figure.highlight table {
-  background-color: transparent;
-  max-width: 100%; }
+  background-color: transparent; 
+  table-layout: fixed;}
   
 figure.highlight table, figure.highlight table tr, figure.highlight table tr td, figure.highlight table tr th {
   border-color: transparent; }
