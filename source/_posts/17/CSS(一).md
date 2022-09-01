@@ -22,11 +22,11 @@ date: 2018/06/22
 
 ``` HTML
 <head>
-    <style>
-    .content {
-        background: red;
-    }
-    </style>
+  <style>
+  .content {
+    background: red;
+  }
+  </style>
 </head>
 ```
 
@@ -35,7 +35,7 @@ date: 2018/06/22
 
 ``` HTML
 <head>
-    <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 ```
 **我们应尽量使用 link 标签导入外部 CSS 文件，避免或者少用使用其他方式。**
@@ -69,21 +69,21 @@ CSS 忽略字符使用下面方式
 #### Type 选择器(元素选择器)
 ``` CSS
 body {
-    color: red;
+  color: red;
 }
 ```
 
 #### Class 选择器
 ``` CSS
 .container {
-    color: red;
+  color: red;
 }
 ```
 
 #### ID 选择器
 ``` CSS
 #info {
-    color: red;
+  color: red;
 }
 ```
 
@@ -92,7 +92,7 @@ body {
 选取有 foo 属性的所有 E 元素。
 ``` CSS
 input[disabled] {
-    cursor: not-allowed;
+  cursor: not-allowed;
 }
 ```
 
@@ -100,7 +100,7 @@ input[disabled] {
 选取 foo 属性为 bar 的所有 E 元素。
 ``` CSS
 p[class="info"] {
-    cursor: not-allowed;
+  cursor: not-allowed;
 }
 ```
 
@@ -108,7 +108,7 @@ p[class="info"] {
 选取 foo 属性含有 bar 的所有 E 元素。
 ``` CSS
 p[class~="info"] {
-    cursor: not-allowed;
+  cursor: not-allowed;
 }
 ```
 
@@ -116,7 +116,7 @@ p[class~="info"] {
 选取 foo 属性以 bar 字符串子串开头的所有 E 元素。
 ``` CSS
 p[class^="inf"] {
-    cursor: not-allowed;
+  cursor: not-allowed;
 }
 ```
 
@@ -124,7 +124,7 @@ p[class^="inf"] {
 选取 foo 属性以 bar 字符串子串结尾的所有 E 元素。
 ``` CSS
 p[class$="nfo"] {
-    cursor: not-allowed;
+  cursor: not-allowed;
 }
 ```
 
@@ -132,7 +132,7 @@ p[class$="nfo"] {
 选取 foo 属性含有 bar 字符串子串的所有 E 元素。
 ``` CSS
 p[class*="nf"] {
-    cursor: not-allowed;
+  cursor: not-allowed;
 }
 ```
 
@@ -140,7 +140,7 @@ p[class*="nf"] {
 选取 foo 属性为 bar 或以 bar- 字符串子串开头的所有 E 元素。
 ``` CSS
 a[hreflang|="en"] {
-    cursor: not-allowed;
+  cursor: not-allowed;
 }
 ```
 
@@ -149,7 +149,7 @@ a[hreflang|="en"] {
 选取所有 E1 元素的所有后代元素为 E2 的全部元素。
 ``` CSS
 body p {
-    color: red;
+  color: red;
 }
 ```
 
@@ -157,7 +157,7 @@ body p {
 选取所有 E1 元素的所有直接后代元素为 E2 的全部 E2 元素。
 ``` CSS
 body>p {
-    color: red;
+  color: red;
 }
 ```
 
@@ -165,7 +165,7 @@ body>p {
 选取所有 E1 元素的所有后续兄弟元素为 E2 的所有 E2 元素。
 ``` CSS
 p~a {
-    color: red;
+  color: red;
 }
 ```
 
@@ -173,7 +173,7 @@ p~a {
 选取所有 E1 元素的紧邻兄弟元素为 E2 的所有 E2 元素。
 ``` CSS
 p+a {
-    color: red;
+  color: red;
 }
 ```
 
@@ -181,7 +181,7 @@ p+a {
 选取所有元素
 ``` CSS
 * {
-    color: red;
+  color: red;
 }
 ```
 
@@ -190,7 +190,7 @@ p+a {
 选取 E 元素集合中第一个 E 元素。
 ``` CSS
 li:first-child {
-    background-color: red;
+  background-color: red;
 }
 ```
 
@@ -198,7 +198,7 @@ li:first-child {
 选取 E 元素集合中最后一个 E 元素。
 ``` CSS
 ul:last-child {
-    background-color: red;
+  background-color: red;
 }
 ```
 
@@ -208,7 +208,7 @@ ul:last-child {
 偶数行: 2n 或者 even
 ``` CSS
 li:nth-child(2) {
-    background-color: red;
+  background-color: red;
 }
 ```
 
@@ -216,7 +216,7 @@ li:nth-child(2) {
 E 元素是已经访问过目标的超链接的源锚点。
 ``` CSS
 a:visited {
-    background-color: red;
+  background-color: red;
 }
 ```
 
@@ -224,7 +224,7 @@ a:visited {
 E 元素是尚未访问目标的超链接的源锚点。
 ``` CSS
 a:link {
-    background-color: yellow;
+  background-color: yellow;
 }
 ```
 
@@ -232,7 +232,7 @@ a:link {
 选取处于悬停状态的 E 元素。
 ``` CSS
 a:hover {
-    background-color: green;
+  background-color: green;
 }
 ```
 
@@ -240,7 +240,7 @@ a:hover {
 选取处于焦点状态的 E 元素。
 ``` CSS
 a:focus {
-    border-color: blue;
+  border-color: blue;
 }
 ```
 
@@ -248,7 +248,7 @@ a:focus {
 选取处于选中状态的 E 元素。
 ``` CSS
 input:checked {
-    background-color: red;
+  background-color: red;
 }
 ```
 
@@ -256,7 +256,7 @@ input:checked {
 选取处于激活状态的 E 元素。(按钮按下未抬起时的状态)
 ``` CSS
 a:active {
-    background-color: red;
+  background-color: red;
 }
 ```
 
@@ -264,7 +264,7 @@ a:active {
 当 E 元素是通过文档内导航跳转过来时选取该元素。
 ``` CSS
 h2:target {
-    background-color: red;
+  background-color: red;
 }
 ```
 ### 伪元素选择器
@@ -272,7 +272,7 @@ h2:target {
 选取 E 元素中的首字符。
 ``` CSS
 p::first-letter {
-    background-color: red;
+  background-color: red;
 }
 ```
 
@@ -280,7 +280,7 @@ p::first-letter {
 选取 E 元素中的首行文本。
 ``` CSS
 p::first-line {
-    background-color: red;
+  background-color: red;
 }
 ```
 
@@ -288,7 +288,7 @@ p::first-line {
 选取所有 E 元素，并在之前添加内容。
 ``` CSS
 p::before {
-    content: " ";
+  content: " ";
 }
 ```
 
@@ -296,7 +296,7 @@ p::before {
 选取所有 E 元素，并在之后添加内容。
 ``` CSS
 p::after {
-    content: " ";
+  content: " ";
 }
 ```
 
