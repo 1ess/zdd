@@ -82,7 +82,7 @@ flex-flow 属性是 flex-direction 属性和 flex-wrap 属性的简写形式，�
 
 ``` CSS
 .container{
-    flex-flow: <'flex-direction'> || <'flex-wrap'>
+  flex-flow: <'flex-direction'> || <'flex-wrap'>
 }
 ```
 
