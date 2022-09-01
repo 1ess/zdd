@@ -775,5 +775,5 @@ figure.highlight table tbody > tr:nth-child(odd) > td, figure.highlight table tb
   background-color: transparent; }
 
 figure.highlight .hljs-operator {
-  background: none !important;
+  background: #f9f9f9 !important;
 }
