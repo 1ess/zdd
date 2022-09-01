@@ -54,9 +54,9 @@ date: 2018/07/02
 
 ``` CSS
 .clearfix::after {
-    content: "";
-    clear: both;
-    display: block;
+  content: "";
+  clear: both;
+  display: block;
 }
 ```
 实际使用过程中，使父容器仍然容纳浮动元素最常用第三种方式，前两种方式的原理是触发 BFC(Block Formatting Context)布局规则。
