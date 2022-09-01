@@ -55,8 +55,8 @@ li 元素(List item)可以嵌套在 ol 或 ul 元素内部。
 ### 无序列表 ul(Unordered list)
 ``` HTML
 <ul>
-    <li>Item 1</li>
-    <li>Item 2</li>
+  <li>Item 1</li>
+  <li>Item 2</li>
 </ul>
 ```
 
@@ -68,8 +68,8 @@ li 元素(List item)可以嵌套在 ol 或 ul 元素内部。
 
 ``` HTML
 <ol start="3" type="a">
-    <li>Item 1</li>
-    <li>Item 2</li>
+  <li>Item 1</li>
+  <li>Item 2</li>
 </ol>
 ```
 
@@ -84,12 +84,12 @@ li 元素(List item)可以嵌套在 ol 或 ul 元素内部。
 
 ``` HTML
 <dl>
-    <dt>html</dt>
-    <dd>网页文档根要素</dd>
-    <dt>head</dt>
-    <dd>网页头部信息描述区域</dd>
-    <dt>body</dt>
-    <dd>网页具体内容部分</dd>
+  <dt>html</dt>
+  <dd>网页文档根要素</dd>
+  <dt>head</dt>
+  <dd>网页头部信息描述区域</dd>
+  <dt>body</dt>
+  <dd>网页具体内容部分</dd>
 </dl>
 ```
 
@@ -108,35 +108,35 @@ table 元素用来表示二维数据结构。
 
 ``` HTML
 <table>
-    <caption>成绩</caption>
-    <thead>
-        <tr>
-            <th>姓名</th>
-            <th>语文</th>
-            <th>数学</th>
-            <th>英语</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>张三</td>
-            <td>100</td>
-            <td>99</td>
-            <td>98</td>
-        </tr>
-        <tr>
-            <td>李四</td>
-            <td>100</td>
-            <td>99</td>
-            <td>98</td>
-        </tr>
-        <tr>
-            <td>王五</td>
-            <td>100</td>
-            <td>99</td>
-            <td>98</td>
-        </tr>
-    </tbody>
+  <caption>成绩</caption>
+  <thead>
+    <tr>
+      <th>姓名</th>
+      <th>语文</th>
+      <th>数学</th>
+      <th>英语</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>张三</td>
+      <td>100</td>
+      <td>99</td>
+      <td>98</td>
+    </tr>
+    <tr>
+      <td>李四</td>
+      <td>100</td>
+      <td>99</td>
+      <td>98</td>
+    </tr>
+    <tr>
+      <td>王五</td>
+      <td>100</td>
+      <td>99</td>
+      <td>98</td>
+    </tr>
+  </tbody>
 </table>
 ```
 
@@ -145,7 +145,7 @@ table 元素用来表示二维数据结构。
 ### div 元素(Block container)
 ``` HTML
 <div lang="ja" class="japanese-part">
-    無限大な夢のあとの 何もない世の中じゃ
+  無限大な夢のあとの 何もない世の中じゃ
 </div>
 ```
 
@@ -166,25 +166,25 @@ form 元素为用户输入创建表单，用于向服务器提交数据。
 ![](https://cdn-fawn.vercel.app/contentImg/html3/form-action-attribute-68258a.png)
 ``` HTML
 <form action="/index.do" method="POST" enctype="multipart/form-data">
-    <label for="name">name: <input type="text" id="name" name="user"></label><br>
-    <label for="password">password: <input type="password" id="password" name="password"></label><br>
+  <label for="name">name: <input type="text" id="name" name="user"></label><br>
+  <label for="password">password: <input type="password" id="password" name="password"></label><br>
 
-    <label for="bike">Bike <input type="checkbox" id="bike" name="bike"></label>
-    <label for="car">Car <input type="checkbox" id="car" name="car"></label><br>
+  <label for="bike">Bike <input type="checkbox" id="bike" name="bike"></label>
+  <label for="car">Car <input type="checkbox" id="car" name="car"></label><br>
 
-    <label for="male">Male <input type="radio" name="Sex" id="male" checked></label>
-    <label for="female">Female <input type="radio" name="Sex" id="female"></label><br>
+  <label for="male">Male <input type="radio" name="Sex" id="male" checked></label>
+  <label for="female">Female <input type="radio" name="Sex" id="female"></label><br>
 
-    <select name="cars" id="cars">
-        <option value="volvo">Volvo</option>
-        <option value="fiat">Fiat</option>
-        <option value="audi">Audi</option>
-    </select><br>
+  <select name="cars" id="cars">
+    <option value="volvo">Volvo</option>
+    <option value="fiat">Fiat</option>
+    <option value="audi">Audi</option>
+  </select><br>
 
-    <textarea name="cat" id="cat" cols="30" rows="10">The cat was playing in the garden.</textarea><br>
+  <textarea name="cat" id="cat" cols="30" rows="10">The cat was playing in the garden.</textarea><br>
     
-    <input type="button" value="Hello world!"><br>
-    <input type="submit" value="Hello world!"><br>
+  <input type="button" value="Hello world!"><br>
+  <input type="submit" value="Hello world!"><br>
 
 </form>
 ```
@@ -207,10 +207,10 @@ main 标记描述文章的主要内容。
 ``` HTML
 <body>
 <main role="main">
-    <article>
-        <h1>文章标题</h1>
-        <p>文章内容</p>
-    </article>
+  <article>
+    <h1>文章标题</h1>
+    <p>文章内容</p>
+  </article>
 </main>
 </body>
 ```
@@ -220,18 +220,18 @@ article 元素表示网页独立内容区域。
 ![](https://cdn-fawn.vercel.app/contentImg/html3/html-article-element-82490e.png)
 ``` HTML
 <article>
-    <h1>First Post</h1>
-    <p>Some content</p>
+  <h1>First Post</h1>
+  <p>Some content</p>
 </article>
 <article>
-    <h1>Second Post</h1>
-    <p>Some more content</p>
-    <h2>Subsection</h2>
-    <p>Some details</p>
+  <h1>Second Post</h1>
+  <p>Some more content</p>
+  <h2>Subsection</h2>
+  <p>Some details</p>
 </article>
 <article>
-    <h1>Last Post</h1>
-    <p>Final bit of content</p>
+  <h1>Last Post</h1>
+  <p>Final bit of content</p>
 </article>
 ```
 
@@ -240,23 +240,23 @@ section 元素表示文章段落部分。与 article 元素配合使用。
 ![](https://cdn-fawn.vercel.app/contentImg/html3/html-section-element-92a4d1.png)
 ``` HTML
 <section>
-    <h2>The Document Outline</h2>
-    <p>HTML5 includes several "sectioning content" elements that affect the document outline.</p>
+  <h2>The Document Outline</h2>
+  <p>HTML5 includes several "sectioning content" elements that affect the document outline.</p>
 
-    <h3>Headers</h3>
-    <p>The
-        <code>&lt;header&gt;</code> element is one such sectioning element.
-    </p>
-
-    <h3>Footers</h3>
-    <p>And so is the
-        <code>&lt;footer&gt;</code> element.</p>
+  <h3>Headers</h3>
+  <p>The
+    <code>&lt;header&gt;</code> element is one such sectioning element.
+  </p>
+  
+  <h3>Footers</h3>
+  <p>And so is the
+    <code>&lt;footer&gt;</code> element.</p>
 </section>
 
 <section>
-    <h2>Inline Semantic HTML</h2>
-    <p>The
-        <code>&lt;time&gt;</code> element is semantic, but it's not sectioning content.</p>
+  <h2>Inline Semantic HTML</h2>
+  <p>The
+    <code>&lt;time&gt;</code> element is semantic, but it's not sectioning content.</p>
 </section>
 ```
 
@@ -266,12 +266,12 @@ section 元素表示文章段落部分。与 article 元素配合使用。
 ``` HTML
 <h1>Interneting Is Easy!</h1>
 <nav>
-    <ul>
-        <li><a href='#'>Home</a></li>
-        <li><a href='#'>About</a></li>
-        <li><a href='#'>Blog</a></li>
-        <li><a href='#'>Sign Up</a></li>
-    </ul>
+  <ul>
+    <li><a href='#'>Home</a></li>
+    <li><a href='#'>About</a></li>
+    <li><a href='#'>Blog</a></li>
+    <li><a href='#'>Sign Up</a></li>
+  </ul>
 </nav>
 ```
 
@@ -280,8 +280,8 @@ section 元素表示文章段落部分。与 article 元素配合使用。
 ![](https://cdn-fawn.vercel.app/contentImg/html3/html-aside-element-ce120b.png)
 ``` HTML
 <aside>
-    <h3>解释</h3>
-    <p>解释文字</p>
+  <h3>解释</h3>
+  <p>解释文字</p>
 </aside>
 ```
 
@@ -292,11 +292,11 @@ header 标记用于文章或区块头部。
 #### 文章头部
 ``` HTML
 <article>
-    <header>
-        <h1>Semantic HTML</h1>
-        <p>By Troy McClure. Published January 3rd</p>
-    </header>
-    <p>This is an example web page explaining HTML5 semantic markup.</p>
+  <header>
+    <h1>Semantic HTML</h1>
+    <p>By Troy McClure. Published January 3rd</p>
+  </header>
+  <p>This is an example web page explaining HTML5 semantic markup.</p>
 </article>
 ```
 
@@ -304,15 +304,15 @@ header 标记用于文章或区块头部。
 ``` HTML
 <body>
 <header>
-    <h1>Interneting Is Easy!</h1>
-    <nav>
-        <ul>
-            <li><a href='#'>Home</a></li>
-            <li><a href='#'>About</a></li>
-            <li><a href='#'>Blog</a></li>
-            <li><a href='#'>Sign Up</a></li>
-        </ul>
-    </nav>
+  <h1>Interneting Is Easy!</h1>
+  <nav>
+    <ul>
+      <li><a href='#'>Home</a></li>
+      <li><a href='#'>About</a></li>
+      <li><a href='#'>Blog</a></li>
+      <li><a href='#'>Sign Up</a></li>
+    </ul>
+  </nav>
 </header>
 </body>
 ```
@@ -324,16 +324,16 @@ footer 标记用于文章或区块脚部。如作者信息，文章出处等。
 #### 文章脚部
 ``` HTML
 <article>
-    <header>
-        <h1>Semantic HTML</h1>
-        <p>By Troy McClure. Published January 3rd</p>
-    </header>
-    <p>This is an example web page explaining HTML5 semantic markup.</p>
-    <footer>
-        <p>This fake article was written by somebody at InternetingIsHard.com, which is a pretty decent place to learn how
+  <header>
+    <h1>Semantic HTML</h1>
+    <p>By Troy McClure. Published January 3rd</p>
+  </header>
+  <p>This is an example web page explaining HTML5 semantic markup.</p>
+  <footer>
+    <p>This fake article was written by somebody at InternetingIsHard.com, which is a pretty decent place to learn how
             to become a web developer. This footer is only for the containing
-            <code>&lt;article&gt;</code> element.</p>
-    </footer>
+      <code>&lt;article&gt;</code> element.</p>
+  </footer>
 
 </article>
 ```
