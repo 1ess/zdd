@@ -186,10 +186,10 @@ const title = (<h1 className="main">React Learning</h1>);
 JSX 的标签也可以像 HTML 一样相互嵌套，一般有嵌套结构的 JSX 元素外面，我们习惯于为它加上一个小括号: 
 ``` javascript
 const title = (
-    <div>
-        <h1 className="main">React Learning!</h1>
-        <p>Let`s learn React</p>
-    </div>
+  <div>
+    <h1 className="main">React Learning!</h1>
+    <p>Let`s learn React</p>
+  </div>
 );
 ```
 
@@ -197,8 +197,8 @@ const title = (
 ``` javascript
 // 错误！
 const title = (
-    <h1 className="main">React Learning!</h1>
-    <p>Let`s learn React</p>
+  <h1 className="main">React Learning!</h1>
+  <p>Let`s learn React</p>
 );
 ```
 
@@ -217,8 +217,8 @@ const title = (
 ``` javascript
 let name = "1ess";
 const title = (
-    <div>
-        <p>Let`s learn React now, {name}.</p>
-    </div>
+  <div>
+    <p>Let`s learn React now, {name}.</p>
+  </div>
 );
 ```
