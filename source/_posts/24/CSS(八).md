@@ -27,9 +27,9 @@ date: 2018/07/08
 ``` html
 <div class='illustration'>
   <img src='illustration-small.png'
-       srcset='images/illustration-small.png 1x,
-               images/illustration-big.png 2x'
-       style='max-width: 500px'/>
+    srcset='images/illustration-small.png 1x,
+            images/illustration-big.png 2x'
+    style='max-width: 500px'/>
 </div>
 
 ```
@@ -39,10 +39,10 @@ srcset 属性指向备用图像文件列表，以及定义浏览器何时应使�
 <div class='section header'>
   <div class='photo'>
     <img src='images/photo-small.jpg'
-         srcset='images/photo-big.jpg 2000w,
-                 images/photo-small.jpg 1000w'
-         sizes='(min-width: 960px) 960px,
-                100vw'/>
+      srcset='images/photo-big.jpg 2000w,
+              images/photo-small.jpg 1000w'
+      sizes='(min-width: 960px) 960px,
+             100vw'/>
   </div>
 </div>
 ```
