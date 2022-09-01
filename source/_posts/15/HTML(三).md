@@ -332,7 +332,7 @@ footer 标记用于文章或区块脚部。如作者信息，文章出处等。
   <footer>
     <p>This fake article was written by somebody at InternetingIsHard.com, which is a pretty decent place to learn how
             to become a web developer. This footer is only for the containing
-      <code>&lt;article&gt;</code> element.</p>
+    <code>&lt;article&gt;</code> element.</p>
   </footer>
 
 </article>
