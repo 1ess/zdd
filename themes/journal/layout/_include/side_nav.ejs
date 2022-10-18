@@ -27,6 +27,11 @@
             <%= __('RSS') %>
         </a>
         <% } %>
+        <% if (theme.about) { %>
+        <a class="a-block no-tint nav-link-item <%= is_current('about') && 'active' %>" href="<%= config.root + "about" %>">
+            <%= __('About') %>
+        </a>
+        <% } %>
     </div>
 
     <% // Please keep the section below and do not make modifications. //  %>
