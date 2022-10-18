@@ -1,29 +1,32 @@
 <div class="single-column-drawer-container" ref="drawer"
-     v-bind:class="{ 'single-column-drawer-container-active': isDrawerOpen }">
+    v-bind:class="{ 'single-column-drawer-container-active': isDrawerOpen }">
     <div class="drawer-content">
         <div class="drawer-menu">
             <a class="a-block drawer-menu-item <%= is_home() && 'active' %>" href="<%= config.url %>">
                 <%= __('Home') %>
             </a>
             <% if (theme.archives) { %>
-            <a class="a-block drawer-menu-item <%= is_current('archives') && 'active' %>" href="<%= config.root + "archives" %>">
+            <a class="a-block drawer-menu-item <%= is_current('archives') && 'active' %>"
+                href="<%= config.root + "archives" %>">
                 <%= __('Archive') %>
             </a>
             <% } %>
 
             <% if(site.pages){ %>
             <% site.pages.each(function (page){ %>
-            <a class="a-block drawer-menu-item <%= is_current(page.path) && 'active' %>" href="<%= config.root + page.path %>">
+            <a class="a-block drawer-menu-item <%= is_current(page.path) && 'active' %>"
+                href="<%= config.root + page.path %>">
                 <%= page.title %>
             </a>
             <% });} %>
 
             <% if (theme.about) { %>
-                <a class="a-block no-tint nav-link-item <%= is_current('about') && 'active' %>" href="<%= config.root + "about" %>">
-                    <%= __('About') %>
-                </a>
-                <% } %>
-                
+            <a class="a-block drawer-menu-item <%= is_current('about') && 'active' %>"
+                href="<%= config.root + "about" %>">
+                <%= __('About') %>
+            </a>
+            <% } %>
+
             <% if (theme.rss) { %>
             <a class="a-block drawer-menu-item" href="<%= config.root + theme.rss %>">
                 <%= __('RSS') %>
@@ -49,7 +52,7 @@
     </div>
 </nav>
 <div class="single-column-header-container" ref="pageHead"
-     v-bind:style="{ transform: 'translateZ(0px) translateY('+.3*scrollY+'px)', opacity: 1-navOpacity }">
+    v-bind:style="{ transform: 'translateZ(0px) translateY('+.3*scrollY+'px)', opacity: 1-navOpacity }">
     <a href="<%= config.root %>">
         <div class="single-column-header-title"><%= config.title %></div>
         <div class="single-column-header-subtitle"><%= config.description %></div>

@@ -10,7 +10,8 @@
 
     <div class="nav-link-list">
         <% if (theme.archives) { %>
-        <a class="a-block no-tint nav-link-item <%= is_current('archives') && 'active' %>" href="<%= config.root + "archives" %>">
+        <a class="a-block no-tint nav-link-item <%= is_current('archives') && 'active' %>"
+            href="<%= config.root + "archives" %>">
             <%= __('Archive') %>
         </a>
         <% } %>
@@ -23,11 +24,12 @@
         <% });} %>
 
         <% if (theme.about) { %>
-            <a class="a-block no-tint nav-link-item <%= is_current('about') && 'active' %>" href="<%= config.root + "about" %>">
-                <%= __('About') %>
-            </a>
-            <% } %>
-            
+        <a class="a-block no-tint nav-link-item <%= is_current('about') && 'active' %>"
+            href="<%= config.root + "about" %>">
+            <%= __('About') %>
+        </a>
+        <% } %>
+
         <% if (theme.rss) { %>
         <a class="a-block no-tint nav-link-item" href="<%= config.root + theme.rss %>">
             <%= __('RSS') %>
