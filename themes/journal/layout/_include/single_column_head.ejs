@@ -18,6 +18,12 @@
             </a>
             <% });} %>
 
+            <% if (theme.about) { %>
+                <a class="a-block no-tint nav-link-item <%= is_current('about') && 'active' %>" href="<%= config.root + "about" %>">
+                    <%= __('About') %>
+                </a>
+                <% } %>
+                
             <% if (theme.rss) { %>
             <a class="a-block drawer-menu-item" href="<%= config.root + theme.rss %>">
                 <%= __('RSS') %>
