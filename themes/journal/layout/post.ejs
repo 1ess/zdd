@@ -34,7 +34,7 @@ function getFeaturedImage() {
                         </time>&nbsp;
                         <% if (page.categories && page.categories.length){ %>
                         <% count = page.categories.length %>
-                        <i class="material-icons" style="">folder</i>
+                        <i class="material-icons" >folder</i>
                         <% page.categories.forEach(function(category, index) { %>
                         <a href='<%= config.root + category.path %>'><%= category.name %></a><%= (count !== index + 1) ? ', ' : '' %>
                         <% }); %>
@@ -42,7 +42,7 @@ function getFeaturedImage() {
     
                         <% if (page.tags && page.tags.length){ %>
                         <% count = page.tags.length %>
-                        <i class="material-icons" style="">label</i>
+                        <i class="material-icons" >label</i>
                         <% page.tags.forEach(function(tag, index) { %>
                         <a href='<%= config.root + tag.path %>'><%= tag.name %></a><%= (count !== index + 1) ? ', ' : '' %>
                         <% }); %>
