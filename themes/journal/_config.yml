@@ -5,7 +5,7 @@ truncate_len: 80
 
 rss: atom.xml
 archives: true
-
+about: true
 # Choose the comment service according to your need.
 # Please do not use the two services at the same time.
 livere: # [data-uid] for livere.com
