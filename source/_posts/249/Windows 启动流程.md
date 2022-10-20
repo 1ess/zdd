@@ -1,0 +1,23 @@
+---
+title: Windows 启动流程
+featured_image: https://cdn-fawn.vercel.app/blogImg/Blog249.jpg
+date: 2022/10/20
+---
+
+计算机启动是一种复杂而有序的过程，而使用 UEFI 和 BIOS 启动 Windows 操作系统又是两种不同的过程。
+
+## BIOS 启动
+***  
+1. 按下计算机开机键，此时 BIOS 进行加电自检(POST)，自检通过之后，选择从 BIOS 中已设置的第一启动设备启动，然后读取存储于硬盘第一个扇区中的 MBR 并把计算机控制权交于 MBR
+2. MBR 会搜索存储于自身中的硬盘分区表，并找到其中唯一已标注为“活动”的主分区，然后在该分区根目录下搜索并读取 bootmgr(启动管理器)至内存，并将计算机控制权交于 bootmgr
+3. bootmgr 搜索位于活动分区 Boot 目录下的 BCD(启动配置数据)，BCD 中存储有启动配置选项，如果有多个操作系统启动选项，则 bootmgr 会显示所有启动选项，并由用户选择。如果只有一个启动选项，bootmgr 会默认启动
+4. 默认启动 Windows 操作系统之后，bootmgr 搜索并读取 Windows 分区 Windows\System32 目录下的 winload.exe 程序，然后将计算机控制器交给 winload.exe，并由其完成内核读取与初始化以及后续启动过程
+
+## UEFI 启动
+***  
+1. 按下计算机开机键，UEFI 读取位于 ESP 分区 EFI/Microsoft/Boot/ 目录下的 bootmgfw.efi 文件并将计算机控制权交于 bootmgfw 程序
+2. 由 bootmgfw 搜索并读取存储于 EFI/Microsoft/Boot/ 目录下的 BCD 文件。如果有多个操作系统启动选项，则 bootmgfw 会显示所有启动选项，并由用户选择。如果只有一个启动选项，bootmgfw会默认启动
+3. 默认启动 Windows 操作系统之后，bootmgrfw 搜索并读取 Windows 分区 Windows\System32 
+ 目录下的 winload.efi 程序，然后将计算机控制器交给 winload.efi，并由其完成内核读取与初始化以及后续启动过程
+
+> bootmgr 与 bootmgfw 是功能相同，适用于不同固件的程序。
