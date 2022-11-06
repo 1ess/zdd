@@ -1,5 +1,5 @@
 ---
-title: 杂(一)
+title: Dot Net 常见问题解析
 featured_image: https://cdn-fawn.vercel.app/blogImg/Blog46.jpg
 date: 2018/10/11
 ---
