@@ -305,5 +305,71 @@ len('中文'.encode('utf-8'))
 ### 变量
 变量在程序中就是用一个变量名表示了，变量名必须是大小写英文、数字和 _ 的组合，且不能用数字开头。
 
-### 常量
-所谓常量就是不能变的变量，比如常用的数学常数π就是一个常量。在 Python 中，通常用全部大写的变量名表示常量。
+#### 交换变量
+可以在一行语句里同时操作多个变量，比如调换两个变量所指向的值: 
+``` python
+foo, bar = "foo", "bar"
+foo, bar = bar, foo
+foo
+# bar
+```
+
+#### 变量解包
+变量解包(unpacking)是 Python 里的一种特殊赋值操作，允许我们把一个可迭代对象的所有成员，一次性赋值给多个变量: 
+``` python
+username = ["Stephen", "Chang"]
+first, last = username
+first
+# Stephen
+```
+
+假如在赋值语句左侧添加小括号(...)，甚至可以一次展开多层嵌套数据: 
+``` python
+attrs = [1, ["foo", 22]]
+user_id, (name, age) = attrs
+age
+# 22
+```
+
+除了上述普通解包外，Python 还支持贪婪解包，只要用星号表达式作为变量名，它便会贪婪地捕获多个值对象，并将捕获到的内容作为列表赋值给: 
+``` python
+data = ["stephen", "apple", "orange", 20]
+name, *fruits, age = data
+age
+# 20
+fruits
+# ["apple", "orange"]
+```
+
+和常规的切片赋值语句比起来，动态解包语法要直观许多: 
+``` python
+# 贪婪解包
+name, *fruits, age = data
+
+# 切片赋值
+name, *fruits, age = data[0], data[1:-1], data[-1]
+```
+
+#### 单下划线变量名_
+单下划线_是比较特殊的一个。它常作为一个无意义的占位符出现在赋值语句中。
+``` python
+# 忽略展开的第二个变量
+name, _ = data
+```
+
+#### 类型注解
+在 Python 3.5 版本以后，可以用类型注解功能来直接注明变量类型。
+``` python
+from typing import List
+
+def remove_invalid(items: List[int]):
+	pass
+```
+
+#### 命名规范
+- 对于普通变量，使用蛇形命名法，比如 max_value
+- 对于常量，采用全大写字母，使用下划线连接，比如 MAX_VALUE
+- 如果变量标记为“仅内部使用”，为其增加下划线前缀，比如 \_local_var
+- 当名字与 Python 关键字冲突时，在变量末尾追加下划线，比如 class_
+- 类名应该使用驼峰风格 FooClass
+- 函数应该使用蛇形风格 bar_function
