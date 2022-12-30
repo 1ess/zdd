@@ -1,7 +1,7 @@
 ---
 title: JavaScript(十)
 featured_image: https://cdn-fawn.vercel.app/blogImg/Blog37.jpg
-date: 2018/09/10
+date: 2018/08/10
 ---
 
 DOM(文档对象模型)是针对 HTML 和 XML 文档的一个 API。DOM 描绘了一个层次化的节点树，允许开发人员添加、移除和修改页面的某一部分。

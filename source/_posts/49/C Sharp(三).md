@@ -1,7 +1,7 @@
 ---
 title: C Sharp(三)
 featured_image: https://cdn-fawn.vercel.app/blogImg/Blog49.jpg
-date: 2018/10/19
+date: 2018/09/06
 ---
 
 这一篇，我们深入理解一下 C# 中的类。

@@ -1,7 +1,7 @@
 ---
 title: C Sharp(十二)
 featured_image: https://cdn-fawn.vercel.app/blogImg/Blog58.jpg
-date: 2018/11/14
+date: 2018/09/22
 ---
 
 > 理想有两种: 一种，我实现了我的理想；另一种: 理想通过我而实现。

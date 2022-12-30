@@ -1,7 +1,7 @@
 ---
 title: JavaScript(十三)
 featured_image: https://cdn-fawn.vercel.app/blogImg/Blog40.jpg
-date: 2018/09/19
+date: 2018/08/19
 ---
 
 这一篇，我们说说表单。

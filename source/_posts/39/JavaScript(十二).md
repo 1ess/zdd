@@ -1,7 +1,7 @@
 ---
 title: JavaScript(十二)
 featured_image: https://cdn-fawn.vercel.app/blogImg/Blog39.jpg
-date: 2018/09/17
+date: 2018/08/17
 ---
 
 这一篇，我们讲讲 JavaScript 中非常重要的概念 —— 事件。

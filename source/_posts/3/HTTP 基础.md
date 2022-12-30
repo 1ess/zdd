@@ -1,7 +1,7 @@
 ---
 title: HTTP 基础
 featured_image: https://cdn-fawn.vercel.app/blogImg/Blog3.jpg
-date: 2018/04/14
+date: 2018/06/16
 ---
 
 对于应用开发工程师，我们无时无刻不在接触 HTTP 协议。为了更好的完成我们的应用开发任务，对于 HTTP 的透彻理解就显得必不可少了。

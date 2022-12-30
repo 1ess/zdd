@@ -1,7 +1,7 @@
 ---
 title: CSS(四)
 featured_image: https://cdn-fawn.vercel.app/blogImg/Blog20.jpg
-date: 2018/06/30
+date: 2018/07/13
 ---
 
 上一篇我们介绍了，使用 display: block; 和 display: inline; 来改变默认的盒模型。这一篇，我们详细介绍 4 种常用的 display 属性值，以及与背景相关的属性。

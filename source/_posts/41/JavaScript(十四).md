@@ -1,7 +1,7 @@
 ---
 title: JavaScript(十四)
 featured_image: https://cdn-fawn.vercel.app/blogImg/Blog41.jpg
-date: 2018/09/22
+date: 2018/08/21
 ---
 
 这一篇，我们讲讲 ES6 的新特性。

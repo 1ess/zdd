@@ -1,7 +1,7 @@
 ---
 title: ASP.Net API(三)
 featured_image: https://cdn-fawn.vercel.app/blogImg/Blog79.jpg
-date: 2019/01/24
+date: 2018/11/24
 ---
 
 了解了 Web API 如何将 HTTP 请求路由到 Controller 和 Action 方法。我们将再看看 Web API 如何将 HTTP 请求数据绑定到操作方法的参数。

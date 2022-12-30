@@ -1,7 +1,7 @@
 ---
 title: ASP.Net MVC(四)
 featured_image: https://cdn-fawn.vercel.app/blogImg/Blog70.jpg
-date: 2018/12/27
+date: 2018/10/27
 ---
 
 这一篇，我们来详细说说 ASP.Net MVC 中特别重要的 Model Binding。

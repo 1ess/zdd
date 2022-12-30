@@ -1,7 +1,7 @@
 ---
 title: MySQL(七)
 featured_image: https://cdn-fawn.vercel.app/blogImg/Blog98.jpg
-date: 2019/03/29
+date: 2019/01/19
 ---
 
 本篇是 MySQL 的最后一篇，我们最后讲讲变量、函数、存储过程和触发器。

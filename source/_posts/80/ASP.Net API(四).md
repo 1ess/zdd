@@ -1,7 +1,7 @@
 ---
 title: ASP.Net API(四)
 featured_image: https://cdn-fawn.vercel.app/blogImg/Blog80.jpg
-date: 2019/01/27
+date: 2018/11/27
 ---
 
 本篇，我们讲讲 Web API 如何处理不同格式的请求和响应数据。

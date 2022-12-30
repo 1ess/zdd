@@ -1,7 +1,7 @@
 ---
 title: React(一)
 featured_image: https://cdn-fawn.vercel.app/blogImg/Blog43.jpg
-date: 2018/10/03
+date: 2018/08/25
 ---
 
 最近一周工作太忙了，用 C# 写了 API、建了数据库、部署了服务器(从 Docker 迁移回了 IIS，API 在 Docker 中的访问速度不稳定，出现随机访问超时问题，应该是 Windows 下，Docker 性能有问题或 SELinux 的问题？)、写了一个钉钉的 E 应用接入公司的系统。由于一直写前台，这一段时间确实认识到了对后台的了解不够深入，但路还是得一步一步走。

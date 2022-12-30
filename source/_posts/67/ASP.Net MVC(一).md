@@ -1,7 +1,7 @@
 ---
 title: ASP.Net MVC(一)
 featured_image: https://cdn-fawn.vercel.app/blogImg/Blog67.jpg
-date: 2018/12/23
+date: 2018/10/23
 ---
 
 从这篇开始，我们来谈谈 ASP.Net MVC，我们将会介绍 ASP.Net MVC 的方方面面(包括基础以及高级特性)。

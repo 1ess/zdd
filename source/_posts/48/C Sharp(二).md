@@ -1,7 +1,7 @@
 ---
 title: C Sharp(二)
 featured_image: https://cdn-fawn.vercel.app/blogImg/Blog48.jpg
-date: 2018/10/16
+date: 2018/09/05
 ---
 
 这一篇，我们看看 C# 中的类有哪些特殊的概念。

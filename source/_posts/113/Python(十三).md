@@ -1,7 +1,7 @@
 ---
 title: Python(十三)
 featured_image: https://cdn-fawn.vercel.app/blogImg/Blog113.jpg
-date: 2019/04/27
+date: 2019/04/03
 ---
 
 上篇，我们介绍了 Python 基础 HTTP 库 urllib 的基本使用，在使用上还是比较麻烦的，本篇，我们来看一下第三方 HTTP 库 Requests 是如何简化我们的操作的。

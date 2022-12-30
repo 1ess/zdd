@@ -1,7 +1,7 @@
 ---
 title: Life is short, you need Python
 featured_image: https://cdn-fawn.vercel.app/blogImg/Blog100.jpg
-date: 2019/04/01
+date: 2019/01/29
 ---
 
 ![](https://cdn-fawn.vercel.app/contentImg/python/python1.jpg)

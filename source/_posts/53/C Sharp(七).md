@@ -1,7 +1,7 @@
 ---
 title: C Sharp(七)
 featured_image: https://cdn-fawn.vercel.app/blogImg/Blog53.jpg
-date: 2018/10/28
+date: 2018/09/13
 ---
 
 这一篇，我们讲讲 C# 中的数组对象及其协变概念。

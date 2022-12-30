@@ -1,7 +1,7 @@
 ---
 title: C Sharp(十六)
 featured_image: https://cdn-fawn.vercel.app/blogImg/Blog62.jpg
-date: 2018/12/01
+date: 2018/10/01
 ---
 
 这一篇，我们讲讲 C# 中的异常处理 —— try、catch、finially。

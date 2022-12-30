@@ -1,7 +1,7 @@
 ---
 title: HTTP 缓存
 featured_image: https://cdn-fawn.vercel.app/blogImg/Blog4.jpg
-date: 2018/04/26
+date: 2018/06/20
 ---
 
 > 计算机科学只有两大难题: 命名和缓存失效。

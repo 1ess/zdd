@@ -1,7 +1,7 @@
 ---
 title: JavaScript(二)
 featured_image: https://cdn-fawn.vercel.app/blogImg/Blog29.jpg
-date: 2018/07/26
+date: 2018/07/22
 ---
 
 这一篇，我们来学习一下 JavaScript 基本概念中的基本语法以及数据类型。

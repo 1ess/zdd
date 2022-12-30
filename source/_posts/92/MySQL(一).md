@@ -1,7 +1,7 @@
 ---
 title: MySQL(一)
 featured_image: https://cdn-fawn.vercel.app/blogImg/Blog92.jpg
-date: 2019/03/14
+date: 2019/01/04
 ---
 
 从本篇开始，我们来说说最流行的数据库 —— 关于 MySQL 的那些事儿。

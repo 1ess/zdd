@@ -1,7 +1,7 @@
 ---
 title: C Sharp(十八)
 featured_image: https://cdn-fawn.vercel.app/blogImg/Blog64.jpg
-date: 2018/12/10
+date: 2018/10/10
 ---
 
 这一篇，我们讲讲 C# 中非常重要的概念 —— 反射和特性。

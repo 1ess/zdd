@@ -1,7 +1,7 @@
 ---
 title: ASP.Net MVC(五)
 featured_image: https://cdn-fawn.vercel.app/blogImg/Blog71.jpg
-date: 2018/12/28
+date: 2018/10/28
 ---
 
 本篇，我们再来详细说说 ASP.Net MVC 中的 Razor 语法。

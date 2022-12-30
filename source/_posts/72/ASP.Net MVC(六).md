@@ -1,7 +1,7 @@
 ---
 title: ASP.Net MVC(六)
 featured_image: https://cdn-fawn.vercel.app/blogImg/Blog72.jpg
-date: 2018/12/29
+date: 2018/10/29
 ---
 
 这一篇，我们详细讲讲 .Net MVC 中的 HTML Helper。

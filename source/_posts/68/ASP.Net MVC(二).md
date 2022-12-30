@@ -1,7 +1,7 @@
 ---
 title: ASP.Net MVC(二)
 featured_image: https://cdn-fawn.vercel.app/blogImg/Blog68.jpg
-date: 2018/12/24
+date: 2018/10/24
 ---
 
 这一篇，我们来详细讲讲关于 ASP.Net MVC 中的路由。

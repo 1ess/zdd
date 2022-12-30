@@ -1,7 +1,7 @@
 ---
 title: CSS(二)
 featured_image: https://cdn-fawn.vercel.app/blogImg/Blog18.jpg
-date: 2018/06/24
+date: 2018/07/11
 ---
 
 这一篇讲解在 CSS 中与字体和文本相关的属性。

@@ -1,7 +1,7 @@
 ---
 title: Python(十四)
 featured_image: https://cdn-fawn.vercel.app/blogImg/Blog114.jpg
-date: 2019/04/28
+date: 2019/04/08
 ---
 
 正则表达式(Regular Expression)是对字符串操作的一种逻辑公式。之前的章节我们已经提到过正则表达式，本篇我们就对正则表达式做一个详细的介绍。

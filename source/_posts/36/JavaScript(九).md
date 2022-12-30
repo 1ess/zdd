@@ -1,7 +1,7 @@
 ---
 title: JavaScript(九)
 featured_image: https://cdn-fawn.vercel.app/blogImg/Blog36.jpg
-date: 2018/09/07
+date: 2018/08/07
 ---
 
 这一篇，我们讲讲 BOM。ECMAScript 是 JavaScript 的核心，但如果要在 Web 中使用 JavaScript，那么 BOM(浏览器对象模型)则无疑才是真正的核心。

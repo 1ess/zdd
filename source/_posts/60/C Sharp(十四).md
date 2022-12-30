@@ -1,7 +1,7 @@
 ---
 title: C Sharp(十四)
 featured_image: https://cdn-fawn.vercel.app/blogImg/Blog60.jpg
-date: 2018/11/20
+date: 2018/09/27
 ---
 
 这一篇，讲讲 LINQ。

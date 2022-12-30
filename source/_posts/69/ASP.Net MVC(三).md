@@ -1,7 +1,7 @@
 ---
 title: ASP.Net MVC(三)
 featured_image: https://cdn-fawn.vercel.app/blogImg/Blog69.jpg
-date: 2018/12/25
+date: 2018/10/25
 ---
 
 这一篇，我们具体说说 Controller、Model 和 View。

@@ -1,7 +1,7 @@
 ---
 title: ASP.Net MVC(九)
 featured_image: https://cdn-fawn.vercel.app/blogImg/Blog75.jpg
-date: 2019/01/05
+date: 2018/11/05
 ---
 
 这一篇，我们详细讲讲 .Net MVC 中的 Bundling 和 Minification。

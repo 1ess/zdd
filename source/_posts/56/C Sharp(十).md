@@ -1,7 +1,7 @@
 ---
 title: C Sharp(十)
 featured_image: https://cdn-fawn.vercel.app/blogImg/Blog56.jpg
-date: 2018/11/10
+date: 2018/09/20
 ---
 
 这一篇，我们再回来说说最后一种类型: 接口(interface)。

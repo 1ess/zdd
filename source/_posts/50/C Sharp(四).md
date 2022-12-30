@@ -1,7 +1,7 @@
 ---
 title: C Sharp(四)
 featured_image: https://cdn-fawn.vercel.app/blogImg/Blog50.jpg
-date: 2018/10/22
+date: 2018/09/08
 ---
 
 这一篇，我们讲讲 C# 中关于继承的相关知识。

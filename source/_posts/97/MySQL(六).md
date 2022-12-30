@@ -1,7 +1,7 @@
 ---
 title: MySQL(六)
 featured_image: https://cdn-fawn.vercel.app/blogImg/Blog97.jpg
-date: 2019/03/28
+date: 2019/01/18
 ---
 
 本篇，我们说说 MySQL 中的外键、视图以及事务安全等问题。

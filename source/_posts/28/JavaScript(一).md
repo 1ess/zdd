@@ -1,7 +1,7 @@
 ---
 title: JavaScript(一)
 featured_image: https://cdn-fawn.vercel.app/blogImg/Blog28.jpg
-date: 2018/07/20
+date: 2018/07/21
 ---
 
 之前的几篇，我们介绍了 HTML 和 CSS 基础知识，对于网页结构和样式，都有了一定的了解。从这篇之后，我们将介绍网页中另一个重要知识 - JavaScript。我们将参考《JavaScript 高级程序设计》，对每章的重要知识进行详细的讲解。

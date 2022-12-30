@@ -1,7 +1,7 @@
 ---
 title: ASP.Net MVC(七)
 featured_image: https://cdn-fawn.vercel.app/blogImg/Blog73.jpg
-date: 2018/12/31
+date: 2018/11/01
 ---
 
 这一篇，我们讲讲数据验证、布局试图以及 Controller 向 View 传递少量数据的方式。

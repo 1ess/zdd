@@ -1,7 +1,7 @@
 ---
 title: MySQL(三)
 featured_image: https://cdn-fawn.vercel.app/blogImg/Blog94.jpg
-date: 2019/03/18
+date: 2019/01/08
 ---
 
 本篇，我们再来说说 MySQL 中的列类型和列属性以及表间关系。

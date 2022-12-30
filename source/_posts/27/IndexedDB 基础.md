@@ -1,7 +1,7 @@
 ---
 title: IndexedDB 基础
 featured_image: https://cdn-fawn.vercel.app/blogImg/Blog27.jpg
-date: 2018/07/15
+date: 2018/07/20
 ---
 
 这一篇，由于在自己项目中采用的前端存储 —— IndexedDB，所以这一篇就介绍一些关于 IndexedDB 的知识。

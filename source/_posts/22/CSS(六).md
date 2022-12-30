@@ -1,7 +1,7 @@
 ---
 title: CSS(六)
 featured_image: https://cdn-fawn.vercel.app/blogImg/Blog22.jpg
-date: 2018/07/04
+date: 2018/07/15
 ---
 
 这一篇，我们将来介绍高级布局方式 - Flexbox 布局。

@@ -1,7 +1,7 @@
 ---
 title: ASP.Net API(二)
 featured_image: https://cdn-fawn.vercel.app/blogImg/Blog78.jpg
-date: 2019/01/22
+date: 2018/11/22
 ---
 
 之前我们说过 Web MVC 中的路由，本篇，我们看看如何配置 Web API 路由。

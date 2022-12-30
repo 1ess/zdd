@@ -1,7 +1,7 @@
 ---
 title: Python(一)
 featured_image: https://cdn-fawn.vercel.app/blogImg/Blog101.jpg
-date: 2019/04/02
+date: 2019/02/02
 ---
 
 从本篇开始，我们将要学习关于 Python 的基础知识以及高阶知识，尽量涉及到有关 Python 的方方面面。

@@ -1,7 +1,7 @@
 ---
 title: MySQL(二)
 featured_image: https://cdn-fawn.vercel.app/blogImg/Blog93.jpg
-date: 2019/03/17
+date: 2019/01/07
 ---
 
 本篇，我们来说说 SQL 的基本操作 —— 库操作、表操作以及数据操作。

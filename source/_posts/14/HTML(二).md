@@ -1,7 +1,7 @@
 ---
 title: HTML(二)
 featured_image: https://cdn-fawn.vercel.app/blogImg/Blog14.jpg
-date: 2018/06/16
+date: 2018/07/07
 ---
 
 上一篇讲了 HTML 中 head 部分重要的子元素，本篇将要讲解 body 元素中所有重要的子元素。

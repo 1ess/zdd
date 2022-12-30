@@ -1,7 +1,7 @@
 ---
 title: React(二)
 featured_image: https://cdn-fawn.vercel.app/blogImg/Blog44.jpg
-date: 2018/10/07
+date: 2018/08/27
 ---
 
 这一篇，我们将介绍 React 中最重要的概念之一 —— 组件。

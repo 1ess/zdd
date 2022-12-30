@@ -1,7 +1,7 @@
 ---
 title: Python(十)
 featured_image: https://cdn-fawn.vercel.app/blogImg/Blog110.jpg
-date: 2019/04/20
+date: 2019/03/10
 ---
 
 Python 既支持多进程，又支持多线程，本篇，我们看看如何编写这两种多任务程序。

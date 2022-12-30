@@ -1,7 +1,7 @@
 ---
 title: Python(二)
 featured_image: https://cdn-fawn.vercel.app/blogImg/Blog102.jpg
-date: 2019/04/04
+date: 2019/02/04
 ---
 
 上篇我们说了 Python 中的一些基本数据类型，本篇我们来说说 Python 内置数据结构。

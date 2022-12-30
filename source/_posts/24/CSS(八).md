@@ -1,7 +1,7 @@
 ---
 title: CSS(八)
 featured_image: https://cdn-fawn.vercel.app/blogImg/Blog24.jpg
-date: 2018/07/08
+date: 2018/07/17
 ---
 
 这一篇，我们来介绍一下响应式设计及其三大关键技术 - 流式布局，弹性媒体和媒体查询。并会介绍移动优先的响应式设计。

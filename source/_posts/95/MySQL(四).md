@@ -1,7 +1,7 @@
 ---
 title: MySQL(四)
 featured_image: https://cdn-fawn.vercel.app/blogImg/Blog95.jpg
-date: 2019/03/21
+date: 2019/01/11
 ---
 
 本篇，我们说说 MySQL 对于数据的增删改查操作以及运算符。

@@ -1,7 +1,7 @@
 ---
 title: ASP.Net API(一)
 featured_image: https://cdn-fawn.vercel.app/blogImg/Blog77.jpg
-date: 2019/01/15
+date: 2018/11/15
 ---
 
 ASP.Net Web MVC 的知识我们也复习了大概，基础内容已经覆盖了大部分，从本篇开始，我们来认识一下 ASP.Net Web API。

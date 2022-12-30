@@ -1,7 +1,7 @@
 ---
 title: Dot Net 常见问题解析
 featured_image: https://cdn-fawn.vercel.app/blogImg/Blog46.jpg
-date: 2018/10/11
+date: 2018/09/01
 ---
 
 这一篇，记录关于 .Net 和 .Net Core 的一些零碎的知识点，随时更新。

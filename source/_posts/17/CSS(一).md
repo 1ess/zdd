@@ -1,7 +1,7 @@
 ---
 title: CSS(一)
 featured_image: https://cdn-fawn.vercel.app/blogImg/Blog17.jpg
-date: 2018/06/22
+date: 2018/07/10
 ---
 
 前面四篇主要讲解了关于 HTML 的基础知识，从这篇开始，将要介绍关于 CSS 的知识。CSS(Cascading Style Sheets)，它是一种可以完全独立于 HTML 的语言，来确定字体大小，边距和颜色等内容。

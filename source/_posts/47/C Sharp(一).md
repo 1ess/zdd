@@ -1,7 +1,7 @@
 ---
 title: C Sharp(一)
 featured_image: https://cdn-fawn.vercel.app/blogImg/Blog47.jpg
-date: 2018/10/15
+date: 2018/09/02
 ---
 
 之前本来想学习一下 NodeJS，考虑到最近一直在使用 C#(主要使用 .Net Core 的 MVC 和 API)，并且之前也仔细地研究过一段时间的 C#，.Net 平台的发展也有上升趋势，最近微软收购 Github，打算整合自己的平台，还有 Visual Studio 这一个宇宙第一 IDE 加持，所以就打算把后台技术栈先放在 .Net 上。
