@@ -11,11 +11,18 @@ Python 中有四种内置的数据结构 —— 列表(List)、元组(Tuple)、�
 ## 列表(List)
 ***  
 列表 是一种用于保存一系列有序项目的集合。使用方括号将数据元素包裹表示，我们可以添加或删除项目，所以说列表是一种可变的(Mutable)数据类型。
-Python 中的 list 里面的元素的数据类型也可以不同
+需要注意: Python 中的 list 里面的元素的数据类型也可以不同。
+
 ### 初始化
+常用的列表创建方式有两种: 字面量语法与 list() 内置函数。内置函数 list(iterable) 可以把任何一个可迭代对象转换为列表。
 ``` python
+# 字面量语法
 shoplist = ['apple', 'mango', 'carrot', 'banana']
 # ['apple', 'mango', 'carrot', 'banana']
+
+# list 函数
+list('foo')
+# ['f', 'o', 'o']
 ```
 
 ### len() 函数
@@ -207,6 +214,20 @@ print('Last animal brought from old zoo is', new_zoo[2][2])
 # Last animal brought from old zoo is penguin
 ```
 
+### 元组推导式(No)
+列表有自己的列表推导式。而元组和列表那么像，是不是也有自己的推导式呢? 
+``` python
+results = (n * 100 for n in range(10) if n % 2 == 0) >>> results <generator object 
+# <genexpr> at 0x10e94e2e0>
+```
+
+上面的表达式并没有生成元组，而是返回了一个生成器（generator）对象。因此它是生成器推导式，而非元组推导式。
+虽然无法通过推导式直接拿到元组，但生成器仍然是一种可迭代类型，所以我们还是可以对它调用tuple()函数，获得元组: 
+``` python
+results = tuple((n * 100 for n in range(10) if n % 2 == 0)) 
+# results (0, 200, 400, 600, 800)
+```
+
 ## 字典(Dictionary)
 ***  
 字典在其他语言中也称为 map，使用键-值(key-value)存储。
@@ -270,6 +291,20 @@ ab.pop('Spammer')
 ``` python
 s = del ab['Spammer']
 # spammer@hotmail.com
+```
+
+###  遍历
+当我们直接遍历一个字典对象时，会逐个拿到字典所有的 key。如果你想在遍历字典时同时获取 key 和 value，需要使用字典的 items() 方法: 
+``` python
+# 遍历获取字典所有的 key 
+for key in movie: 
+	... 
+	print(key, movie[key]) 
+
+# 一次获取字典的所有 key: value 键值对 
+for key, value in movie.items(): 
+	... 
+	print(key, value)
 ```
 
 ### 字典推导式
