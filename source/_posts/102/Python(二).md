@@ -298,13 +298,13 @@ s = del ab['Spammer']
 ``` python
 # 遍历获取字典所有的 key 
 for key in movie: 
-	... 
-	print(key, movie[key]) 
+    ... 
+    print(key, movie[key]) 
 
 # 一次获取字典的所有 key: value 键值对 
 for key, value in movie.items(): 
-	... 
-	print(key, value)
+    ... 
+    print(key, value)
 ```
 
 ### 字典推导式
