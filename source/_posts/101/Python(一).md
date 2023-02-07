@@ -306,8 +306,9 @@ len('中文'.encode('utf-8'))
 enum 是 Python 3.4 引入的专门用于表示枚举类型的内置模块。
 ``` python
 from enum import Enum 
-# 在定义枚举类型时，如果同时继承一些基础类型，比如int、str， 
-# 枚举类型就能同时充当该基础类型使用。比如在这里，UserType 就可以当作 int 使用 
+# 在定义枚举类型时，如果同时继承一些基础类型，比如 int、str
+# 枚举类型就能同时充当该基础类型使用。
+# 比如在这里，UserType 就可以当作 int 使用 
 class UserType(int, Enum): 
 	# VIP 用户 
 	VIP = 3 
