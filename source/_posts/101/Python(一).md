@@ -302,6 +302,19 @@ len('中文'.encode('utf-8'))
 ### 空值
 与其他语言一样，Python 里也有空值，用 None 表示。
 
+### 枚举
+enum 是 Python 3.4 引入的专门用于表示枚举类型的内置模块。
+``` python
+from enum import Enum 
+# 在定义枚举类型时，如果同时继承一些基础类型，比如int、str， 
+# 枚举类型就能同时充当该基础类型使用。比如在这里，UserType 就可以当作 int 使用 
+class UserType(int, Enum): 
+	# VIP 用户 
+	VIP = 3 
+	# 小黑屋用户 
+	BANNED = 13
+```
+
 ### 变量
 变量在程序中就是用一个变量名表示了，变量名必须是大小写英文、数字和 _ 的组合，且不能用数字开头。
 
