@@ -95,6 +95,13 @@ Python 中不存在 switch 语句。你可以通过使用 if..elif..else 语句�
 
 注意: 只要条件是非零数值、非空字符串、非空 list 等，就判断为 True，否则为 False。
 
+### 三元表达式
+除了标准分支外，Python 还为我们提供了一种浓缩版的条件分支**三元表达式**: 
+``` python
+# 语法 true_value if <expression> else false_value 
+language = "python" if you.favor("dynamic") else "golang"
+```
+
 ### while 语句
 while 语句能够让你在条件为真的前提下重复执行某块语句。 while 语句是 循环(Looping) 语句的一种。while 语句同样可以拥有 else 子句作为可选选项。
 ``` python
@@ -135,7 +142,7 @@ else:
 
 ### break 语句
 break 语句用以中断(Break)循环语句，也就是中止循环语句的执行，即使循环条件没有变更为 False，或队列中的项目尚未完全迭代依旧如此。
-有一点需要尤其注意，如果你 中断 了一个 for 或 while 循环，任何相应循环中的 else 块都将不会被执行。
+有一点需要尤其注意，如果你**中断** 了一个 for 或 while 循环，任何相应循环中的 else 块都将不会被执行。
 ``` python
 while True:
     s = input('Enter something : ')
