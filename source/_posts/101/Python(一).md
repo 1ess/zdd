@@ -310,10 +310,10 @@ from enum import Enum
 # 枚举类型就能同时充当该基础类型使用。
 # 比如在这里，UserType 就可以当作 int 使用 
 class UserType(int, Enum): 
-	# VIP 用户 
-	VIP = 3 
-	# 小黑屋用户 
-	BANNED = 13
+    # VIP 用户 
+    VIP = 3 
+    # 小黑屋用户 
+    BANNED = 13
 ```
 
 ### 变量
@@ -377,7 +377,7 @@ name, _ = data
 from typing import List
 
 def remove_invalid(items: List[int]):
-	pass
+    pass
 ```
 
 #### 命名规范
