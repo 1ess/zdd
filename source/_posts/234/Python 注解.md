@@ -1,7 +1,7 @@
 ---
 title: Python 注解
-featured_image: https://cdn-fawn.vercel.app/blogImg/Blog253.jpg
-date: 2023/02/10
+featured_image: https://cdn-fawn.vercel.app/blogImg/Blog234.jpg
+date: 2022/03/20
 ---
 
 从 Python 3.6 开始，我们可以使用 typing 的模块对变量进行类型注解。可以选择在代码中特定位置包含类型信息。

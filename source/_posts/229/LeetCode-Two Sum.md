@@ -1,6 +1,6 @@
 ---
 title: LeetCode-Two Sum
-featured_image: https://cdn-fawn.vercel.app/blogImg/Blog230.png
+featured_image: https://cdn-fawn.vercel.app/blogImg/Blog229.png
 date: 2022-03-09
 ---
 

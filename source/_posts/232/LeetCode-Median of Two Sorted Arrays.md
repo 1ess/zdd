@@ -1,6 +1,6 @@
 ---
 title: LeetCode-Median of Two Sorted Arrays
-featured_image: https://cdn-fawn.vercel.app/blogImg/Blog233.png
+featured_image: https://cdn-fawn.vercel.app/blogImg/Blog232.png
 date: 2022-03-12
 ---
 

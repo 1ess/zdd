@@ -1,6 +1,6 @@
 ---
 title: LeetCode-Longest Substring Without Repeating Characters
-featured_image: https://cdn-fawn.vercel.app/blogImg/Blog232.png
+featured_image: https://cdn-fawn.vercel.app/blogImg/Blog231.png
 date: 2022-03-11
 ---
 
