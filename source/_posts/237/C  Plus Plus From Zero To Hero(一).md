@@ -161,7 +161,8 @@ int main()
 #### const 修饰成员函数
 在成员函数末尾使用关键字 const 标识的成员函数中不能修改此对象的任何数据成员: 
 ``` cpp
-class Circle {
+class Circle 
+{
 private:
     double m_radius; 
     ......
@@ -221,7 +222,7 @@ int main()
 例如上述示例的获取实部方法使用 return by value，运算符重载中使用 return by value。
 
 ### 引用
-合时使用 pass by reference 和 return by reference？一句话就是我们在尽可能使用引用的地方都是用引用。
+何时使用 pass by reference 和 return by reference？一句话就是我们在尽可能使用引用的地方都是用引用。
 
 有一个场景无法使用 return by reference，即返回的对象在函数内定义。因为在离开函数作用域时该对象已经被销毁。
 
