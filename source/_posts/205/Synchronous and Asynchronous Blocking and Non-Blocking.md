@@ -16,8 +16,9 @@ date: 2022-02-12
 ![](https://cdn-fawn.vercel.app/contentImg/io/fig1-1.gif)
 
 其中: 
-1. Blocking IO 全阶段是同步阻塞 IO
-2. Non-Blocking IO 第一阶段是同步非阻塞 IO，第二阶段是同步阻塞 IO
-3. IO 多路复用第一阶段是异步阻塞 IO，第二阶段是同步阻塞 IO
-4. 信号驱动 IO 第一阶段是异步非阻塞 IO，第二阶段为同步阻塞 IO
-5. 异步 IO 全阶段为异步非阻塞 IO
+1. Blocking IO 全阶段是同步阻塞状态
+2. Non-Blocking IO 第一阶段是同步非阻塞，通过轮训系统调用获取数据接收状态，第二阶段是同步阻塞
+3. IO 多路复用(select、poll、epoll)第一阶段是异步阻塞，多路复用是指同时监听多个文件描述符，复用系统调用，第二阶段是同步阻塞
+4. 信号驱动 IO 第一阶段是异步非阻塞，第二阶段为同步阻塞
+5. 异步 IO 全阶段为异步非阻塞
+
