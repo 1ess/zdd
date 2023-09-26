@@ -59,6 +59,10 @@ git add .
 git commit -m "Initial Commit."
 ```
 
+``` sh
+git commit -m "commit title" -m "subject"
+```
+
 ### Committing Best Practices
 **As you reach a state you want to record, THEN make a commit.**
 例如，当你正在进行 Bug fix，突然发现一个 Typo，不应一次提交所有更改，应该是有两次单独提交。并且每次的提交消息要明确，因为他会显示在提交历史中。
@@ -118,6 +122,9 @@ git restore --staged file1.txt
 
 # 恢复工作区文件，即取消本次未添加到暂存区的工作区的修改
 git restore file2.txt
+
+# 同时恢复暂存区和工作区
+git restore --staged --worktree .
 ```
 
 restore 命令依据的是下一个环境进行恢复，暂存区的下一个环境为上一次提交，工作区的下一个环境为暂存区。
