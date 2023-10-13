@@ -123,3 +123,17 @@ if 表达式的一般形式是:
 (define (>= x y) 
 	(not (< x y)))
 ```
+
+### lambda
+lambda 与 define 类似，一般定义如下: 
+``` scheme
+(lambda (⟨formal parameters⟩) 
+  ⟨body⟩)
+```
+
+例如: 
+``` scheme
+(define (plus4 x) (+ x 4))
+# 等价于
+(define plus4 (lambda (x) (+ x 4)))
+```
