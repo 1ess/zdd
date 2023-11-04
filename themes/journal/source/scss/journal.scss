@@ -59,6 +59,11 @@ $h-diff: 3px;
   background: rgba($color-accent, 0.07);
 }
 
+@font-face{
+  font-family: "mcdonalds";
+  src: url("https://cdn-fawn.vercel.app/font/McDonald_s_Fries_Font.ttf");
+}
+
 body {
   background: $back-container-background;
   padding: 0;
@@ -394,6 +399,7 @@ a {
     .nav-title {
       font-size: $nav-title-size;
       line-height: $nav-title-size * 1.4;
+      font-family: "mcdonalds", "Montserrat", "Roboto", "Source Sans Pro", "Helvetica", "Arial", "Lora", "source-han-serif-tc", serif;
     }
     border-right: 2px solid transparent;
     .nav-subtitle {
