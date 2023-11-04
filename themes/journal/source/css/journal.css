@@ -247,6 +247,11 @@ a {
   left: 0;
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.2); }
 
+@font-face{
+    font-family: "mcdonalds";
+    src: url("https://cdn-fawn.vercel.app/font/McDonald_s_Fries_Font.ttf");
+  }
+  
 .side-container {
   position: fixed;
   top: 0;
@@ -271,7 +276,8 @@ a {
     border-right: 2px solid transparent; }
     .side-container .nav-head .nav-title {
       font-size: 30px;
-      line-height: 42px; }
+      line-height: 42px; 
+      font-family: "mcdonalds", "Montserrat", "Roboto", "Source Sans Pro", "Helvetica", "Arial", "Lora", "source-han-serif-tc", serif;}
     .side-container .nav-head .nav-subtitle {
       margin-top: 8px;
       font-size: 18px; }
