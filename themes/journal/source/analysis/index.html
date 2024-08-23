@@ -82,6 +82,20 @@
         integrity="sha256-FtWfRI+thWlNz2sB3SJbwKx5PgMyKIVgwHCTwa3biXc=" crossorigin="anonymous"></script>
     <script src="https://lf9-cdn-tos.bytecdntp.com/cdn/expire-1-M/smooth-scroll/14.2.1/smooth-scroll.polyfills.min.js"
         integrity="sha256-CI4Gq5E0io1Pv0xM3qPM+NUIOhbIBvC3GiN1Y4KhXpw=" crossorigin="anonymous"></script>
+    <script>
+        var iframe = document.getElementsByName("iframe");
+        iframe.height=document.documentElement.clientHeight;
+        iframe.width=document.documentElement.clientWidth;
+        if (iframe.attachEvent) {
+            iframe.attachEvent("onload", function() {
+                console.log("Local iframe is now loaded.");
+            });
+        } else {
+            iframe.onload = function() {
+                console.log("Local iframe is now loaded."); // "Local iframe is now loaded."
+            };
+        }
+    </script>
 </body>
 
 </html>
