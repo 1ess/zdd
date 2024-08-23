@@ -79,13 +79,13 @@
                 iframe.attachEvent("onload", function() {
                     headers = document.getElementsByTagName('header')
                     if (headers) {
-                        print(headers)
+                        console.log(headers)
                         iframe_header = headers[0]
                         iframe_header.style.display = 'none'
                     }
                     footers = document.getElementsByTagName('footer')
                     if (footers) {
-                        print(footers)
+                        console.log(footers)
                         iframe_footer = footers[0]
                         iframe_footer.style.display = 'none'
                     }
