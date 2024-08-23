@@ -1,6 +1,6 @@
 ---
 title: HTTP 基础
-featured_image: https://cdn-fawn.vercel.app/blogImg/Blog3.jpg
+featured_image: https://cdn.zhangdd.tech/blogImg/Blog3.jpg
 date: 2018/06/16
 ---
 
@@ -158,7 +158,7 @@ eg: HTTP/1.1  200  OK
 - 401 表示我不知道你是谁，请认证身份
 - 403 表示我知道你是谁，但是你无权获取请求内容
 
-![](https://cdn-fawn.vercel.app/contentImg/http/4xx.jpg)
+![](https://cdn.zhangdd.tech/contentImg/http/4xx.jpg)
 
 ### 5XX(Server Error 服务器错误状态码) 
 5XX 的响应结果表明服务器本身发生错误。  

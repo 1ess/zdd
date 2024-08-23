@@ -1,6 +1,6 @@
 ---
 title: 重学 SQL(十一)
-featured_image: https://cdn-fawn.vercel.app/blogImg/Blog166.jpg
+featured_image: https://cdn.zhangdd.tech/blogImg/Blog166.jpg
 date: 2020/08/30
 ---
 

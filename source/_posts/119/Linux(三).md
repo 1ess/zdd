@@ -1,6 +1,6 @@
 ---
 title: Linux(三)
-featured_image: https://cdn-fawn.vercel.app/blogImg/Blog119.jpg
+featured_image: https://cdn.zhangdd.tech/blogImg/Blog119.jpg
 date: 2019/06/09
 ---
 

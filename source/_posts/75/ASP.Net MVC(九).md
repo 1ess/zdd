@@ -1,6 +1,6 @@
 ---
 title: ASP.Net MVC(九)
-featured_image: https://cdn-fawn.vercel.app/blogImg/Blog75.jpg
+featured_image: https://cdn.zhangdd.tech/blogImg/Blog75.jpg
 date: 2018/11/05
 ---
 

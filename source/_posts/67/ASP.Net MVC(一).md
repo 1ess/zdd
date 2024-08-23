@@ -1,6 +1,6 @@
 ---
 title: ASP.Net MVC(一)
-featured_image: https://cdn-fawn.vercel.app/blogImg/Blog67.jpg
+featured_image: https://cdn.zhangdd.tech/blogImg/Blog67.jpg
 date: 2018/10/23
 ---
 
@@ -11,7 +11,7 @@ date: 2018/10/23
 MVC 架构以及在软件工程出现很长时间了，几乎所有语言都有 MVC 以及变种形式。
 
 ### iOS 中的 MVC
-![](https://cdn-fawn.vercel.app/contentImg/MVC/1/iOSMVC.jpg)
+![](https://cdn.zhangdd.tech/contentImg/MVC/1/iOSMVC.jpg)
 
 图中绿色箭头表示直接引用，只有 Controller 直接持有 Model 和 View 的引用，
 View 向 Controller 的通信有三种形式: 
@@ -68,7 +68,7 @@ MVC 中:
 
 ## ASP.Net MVC 项目文件夹结构
 ***  
-![](https://cdn-fawn.vercel.app/contentImg/MVC/1/FolderStructure.png)
+![](https://cdn.zhangdd.tech/contentImg/MVC/1/FolderStructure.png)
 
 ### App_Data
 App_Data 文件夹可以容纳 localDB，XML，日志文件等应用数据文件。

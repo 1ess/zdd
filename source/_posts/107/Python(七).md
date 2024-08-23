@@ -1,6 +1,6 @@
 ---
 title: Python(七)
-featured_image: https://cdn-fawn.vercel.app/blogImg/Blog107.jpg
+featured_image: https://cdn.zhangdd.tech/blogImg/Blog107.jpg
 date: 2019/02/23
 ---
 

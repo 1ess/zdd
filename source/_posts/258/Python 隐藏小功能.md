@@ -1,6 +1,6 @@
 ---
 title: Python 隐藏小功能
-featured_image: https://cdn-fawn.vercel.app/blogImg/Blog258.jpg
+featured_image: https://cdn.zhangdd.tech/blogImg/Blog258.jpg
 date: 2023/07/22
 ---
 

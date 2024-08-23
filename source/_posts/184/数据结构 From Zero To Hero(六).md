@@ -1,6 +1,6 @@
 ---
 title: 数据结构 From Zero To Hero(六)
-featured_image: https://cdn-fawn.vercel.app/blogImg/Blog184.jpg
+featured_image: https://cdn.zhangdd.tech/blogImg/Blog184.jpg
 date: 2021/02/27
 ---
 
@@ -34,7 +34,7 @@ private static char FirstNonRepeatedCharacter(string input)
 ### Hash Collision
 哈希函数会使用哈希算法根据输入计算出哈希表的 Value 实际存储的索引，可能发生不同输入计算出同一索引值的情况，这种我们就称之为哈希碰撞。
 
-<img src="https://cdn-fawn.vercel.app/contentImg/hashtable/hash_collision.png" width="400px" alt="">
+<img src="https://cdn.zhangdd.tech/contentImg/hashtable/hash_collision.png" width="400px" alt="">
 
 比较常用的有两种方式解决哈希碰撞: 
 1. Chaining

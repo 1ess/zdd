@@ -1,6 +1,6 @@
 ---
 title: Python 注解
-featured_image: https://cdn-fawn.vercel.app/blogImg/Blog234.jpg
+featured_image: https://cdn.zhangdd.tech/blogImg/Blog234.jpg
 date: 2022/03/20
 ---
 

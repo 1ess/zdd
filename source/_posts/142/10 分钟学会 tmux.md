@@ -1,6 +1,6 @@
 ---
 title: 10 分钟学会 tmux
-featured_image: https://cdn-fawn.vercel.app/blogImg/Blog142.jpg
+featured_image: https://cdn.zhangdd.tech/blogImg/Blog142.jpg
 date: 2020/02/22
 ---
 
@@ -24,7 +24,7 @@ $ brew install tmux
 tmux 中所有快捷键都要通过前缀键唤起。默认的前缀键是 Ctrl-b，即先按下 Ctrl-b，快捷键才会生效。
 
 ### session、window 及 pane 的关系
-<img src="https://cdn-fawn.vercel.app/contentImg/tmux/tmux.svg" alt="tmux">
+<img src="https://cdn.zhangdd.tech/contentImg/tmux/tmux.svg" alt="tmux">
 
 ### session 管理
 #### 新建会话

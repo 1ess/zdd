@@ -1,6 +1,6 @@
 ---
 title: CSS(八)
-featured_image: https://cdn-fawn.vercel.app/blogImg/Blog24.jpg
+featured_image: https://cdn.zhangdd.tech/blogImg/Blog24.jpg
 date: 2018/07/17
 ---
 
@@ -9,13 +9,13 @@ date: 2018/07/17
 ## 概述 
 ***  
 响应式设计指的是网站可以在不论是宽屏显示器还是移动设备都能表现得同样出色。这是一种网页设计和开发方法，它消除了网站的移动版本与桌面版本之间的区别。
-![](https://cdn-fawn.vercel.app/contentImg/responsive-design/how-responsive-websites-work-5f0a33.png)
+![](https://cdn.zhangdd.tech/contentImg/responsive-design/how-responsive-websites-work-5f0a33.png)
 
 响应式设计是通过**媒体查询**完成的。
 
 ## 流式布局
 ***  
-![](https://cdn-fawn.vercel.app/contentImg/responsive-design/fixed-width-vs-fluid-layouts-258df9.png)
+![](https://cdn.zhangdd.tech/contentImg/responsive-design/fixed-width-vs-fluid-layouts-258df9.png)
 
 流式布局是一种拉伸和缩小以填充屏幕宽度的布局，如之前我们介绍过的 Flexbox 布局一样。
 
@@ -53,7 +53,7 @@ w 字符，它是一个特殊的单位。
 
 ## 媒体查询
 ***  
-![](https://cdn-fawn.vercel.app/contentImg/responsive-design/media-query-terms-137d06.png)
+![](https://cdn.zhangdd.tech/contentImg/responsive-design/media-query-terms-137d06.png)
 
 媒体查询分为两部分
 - 媒体类型(Media Type)

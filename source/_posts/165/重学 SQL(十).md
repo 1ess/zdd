@@ -1,6 +1,6 @@
 ---
 title: 重学 SQL(十)
-featured_image: https://cdn-fawn.vercel.app/blogImg/Blog165.jpg
+featured_image: https://cdn.zhangdd.tech/blogImg/Blog165.jpg
 date: 2020/08/27
 ---
 
@@ -133,7 +133,7 @@ ORDER BY b;
 
 我们如果看明白下图，本节内容也就明白了。注意我是把 BTREE 转化为列表方便理解记忆。
 
-![](https://cdn-fawn.vercel.app/contentImg/sql/165-1.png)
+![](https://cdn.zhangdd.tech/contentImg/sql/165-1.png)
 
 ### 覆盖索引
 如果我们的查询只使用索引，而不用触碰表就可以完成，就称为覆盖索引。
@@ -144,7 +144,7 @@ ORDER BY b;
 索引可以显著提升查询效率，但是有优点就会有缺点，我们需要注意处理无用和重复索引。
 MySQL 不会阻止我们生成重复索引，所以我们在新建索引之前要检查是否已经存在该索引。
 
-![](https://cdn-fawn.vercel.app/contentImg/sql/165-2.png)
+![](https://cdn.zhangdd.tech/contentImg/sql/165-2.png)
 
 要注意: 如果有 (a,b) 索引，(b,a) 和 b 索引都不是无用索引。
 必须注意: 我们在新建索引之前，一定要检查，是不是可以扩展现有索引。

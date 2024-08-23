@@ -1,6 +1,6 @@
 ---
 title: HTML(三)
-featured_image: https://cdn-fawn.vercel.app/blogImg/Blog15.jpg
+featured_image: https://cdn.zhangdd.tech/blogImg/Blog15.jpg
 date: 2018/07/08
 ---
 
@@ -163,7 +163,7 @@ form 元素为用户输入创建表单，用于向服务器提交数据。
 - method: 提交的 HTTP 请求方法
 - enctype: 编码方式 content-type
 
-![](https://cdn-fawn.vercel.app/contentImg/html3/form-action-attribute-68258a.png)
+![](https://cdn.zhangdd.tech/contentImg/html3/form-action-attribute-68258a.png)
 ``` HTML
 <form action="/index.do" method="POST" enctype="multipart/form-data">
   <label for="name">name: <input type="text" id="name" name="user"></label><br>
@@ -191,7 +191,7 @@ form 元素为用户输入创建表单，用于向服务器提交数据。
 
 ## 语义化元素
 ***  
-![](https://cdn-fawn.vercel.app/contentImg/html3/html-sectioning-elements-00c3fd.png)
+![](https://cdn.zhangdd.tech/contentImg/html3/html-sectioning-elements-00c3fd.png)
 语义化的作用，简单说来就是让机器可以读懂内容。
 包括: 
 - main 元素
@@ -217,7 +217,7 @@ main 标记描述文章的主要内容。
 
 ### article 元素(Article)
 article 元素表示网页独立内容区域。
-![](https://cdn-fawn.vercel.app/contentImg/html3/html-article-element-82490e.png)
+![](https://cdn.zhangdd.tech/contentImg/html3/html-article-element-82490e.png)
 ``` HTML
 <article>
   <h1>First Post</h1>
@@ -237,7 +237,7 @@ article 元素表示网页独立内容区域。
 
 ### section 元素(Section)
 section 元素表示文章段落部分。与 article 元素配合使用。
-![](https://cdn-fawn.vercel.app/contentImg/html3/html-section-element-92a4d1.png)
+![](https://cdn.zhangdd.tech/contentImg/html3/html-section-element-92a4d1.png)
 ``` HTML
 <section>
   <h2>The Document Outline</h2>
@@ -262,7 +262,7 @@ section 元素表示文章段落部分。与 article 元素配合使用。
 
 ### nav 元素(Navigation)
 用于页面导航，如页面导航条。
-![](https://cdn-fawn.vercel.app/contentImg/html3/html-nav-element-d1e716.png)
+![](https://cdn.zhangdd.tech/contentImg/html3/html-nav-element-d1e716.png)
 ``` HTML
 <h1>Interneting Is Easy!</h1>
 <nav>
@@ -277,7 +277,7 @@ section 元素表示文章段落部分。与 article 元素配合使用。
 
 ### aside 元素(Aside)
 用于页面附加性内容。
-![](https://cdn-fawn.vercel.app/contentImg/html3/html-aside-element-ce120b.png)
+![](https://cdn.zhangdd.tech/contentImg/html3/html-aside-element-ce120b.png)
 ``` HTML
 <aside>
   <h3>解释</h3>
@@ -287,7 +287,7 @@ section 元素表示文章段落部分。与 article 元素配合使用。
 
 ### header 元素(Header)
 header 标记用于文章或区块头部。
-![](https://cdn-fawn.vercel.app/contentImg/html3/html-header-element-7b4e01.png)
+![](https://cdn.zhangdd.tech/contentImg/html3/html-header-element-7b4e01.png)
 
 #### 文章头部
 ``` HTML
@@ -319,7 +319,7 @@ header 标记用于文章或区块头部。
 
 ### footer 元素(Footer)
 footer 标记用于文章或区块脚部。如作者信息，文章出处等。
-![](https://cdn-fawn.vercel.app/contentImg/html3/html-footer-element-0c927a.png)
+![](https://cdn.zhangdd.tech/contentImg/html3/html-footer-element-0c927a.png)
 
 #### 文章脚部
 ``` HTML

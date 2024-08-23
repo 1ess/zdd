@@ -1,6 +1,6 @@
 ---
 title: CSS(三)
-featured_image: https://cdn-fawn.vercel.app/blogImg/Blog19.jpg
+featured_image: https://cdn.zhangdd.tech/blogImg/Blog19.jpg
 date: 2018/07/12
 ---
 
@@ -10,7 +10,7 @@ date: 2018/07/12
 
 ## Block 元素和 Inline 元素
 ***  
-![](https://cdn-fawn.vercel.app/contentImg/box-model/inline-vs-block-boxes-f3e662.png)
+![](https://cdn.zhangdd.tech/contentImg/box-model/inline-vs-block-boxes-f3e662.png)
 屏幕上呈现的每个 HTML 元素都是一个框，它们有两种形式: Block boxes 和 Inline boxes。
  
 ### Block boxes 和 Inline boxes 的行为
@@ -31,7 +31,7 @@ em, strong {
 
 ## Content、Padding、Border and Margin
 ***  
-![](https://cdn-fawn.vercel.app/contentImg/box-model/css-box-model-73a525.png)
+![](https://cdn.zhangdd.tech/contentImg/box-model/css-box-model-73a525.png)
 盒模型是一组规则，用于确定网页中每个元素的尺寸。它为每个 Box 提供了四个属性: 
 - Content: 一个元素的文本，图片或其他媒体内容
 - Padding: box 的内容和边框之间的距离
@@ -49,14 +49,14 @@ h1 {
 
 #### 速记格式
 两值速记
-![](https://cdn-fawn.vercel.app/contentImg/box-model/padding-shortform-two-values-a7ed4c.png)
+![](https://cdn.zhangdd.tech/contentImg/box-model/padding-shortform-two-values-a7ed4c.png)
 四值速记
-![](https://cdn-fawn.vercel.app/contentImg/box-model/padding-shortform-four-values-93c021.png)
+![](https://cdn.zhangdd.tech/contentImg/box-model/padding-shortform-four-values-93c021.png)
 注意: 是否想要使用速记表格主要取决于个人偏好和团队惯例。一些开发人员喜欢速记形式更加浓缩的事实，而另一些开发人员认为长形式一目了然(因此更容易维护)。
 
 ### Border
 Border 就是围绕内容和填充绘制的线，注意边框如何在填充旁边碰撞，两者之间没有空隙。
-![](https://cdn-fawn.vercel.app/contentImg/box-model/css-border-syntax-d8ba17.png)
+![](https://cdn.zhangdd.tech/contentImg/box-model/css-border-syntax-d8ba17.png)
 ``` CSS
 h1 {
   border: 1px solid #5D6063;
@@ -84,15 +84,15 @@ strong {
   margin: 50px;
 }
 ```
-![](https://cdn-fawn.vercel.app/contentImg/box-model/margins-on-inline-elements-4c569c.png)
+![](https://cdn.zhangdd.tech/contentImg/box-model/margins-on-inline-elements-4c569c.png)
 
 如果我们将边距更改为填充，它会显示背景。但是，它不会影响周围盒子的垂直布局。
-![](https://cdn-fawn.vercel.app/contentImg/box-model/paddings-on-inline-elements-fb52d0.png)
+![](https://cdn.zhangdd.tech/contentImg/box-model/paddings-on-inline-elements-fb52d0.png)
 
 ## 垂直边距折叠
 ***  
 盒子模型的另一个怪癖是"垂直边距折叠"。当你有两个垂直边距彼此相邻的盒子时，它们会折叠。不是将边距加到一起，而是仅显示最大的边距。
-![](https://cdn-fawn.vercel.app/contentImg/box-model/vertical-margin-collapse-bba78e.png)
+![](https://cdn.zhangdd.tech/contentImg/box-model/vertical-margin-collapse-bba78e.png)
 垂直外边距折叠最可能发生的两种简单情况: 
 - 两个紧邻的兄弟元素的外边距发生折叠
 - 父子元素的外边距发生折叠
@@ -101,14 +101,14 @@ strong {
 
 ### 预防边距折叠
 有时我们确实希望防止边距折叠。做法就是在它们之间放置另一个不可见的元素。
-![](https://cdn-fawn.vercel.app/contentImg/box-model/preventing-margin-collapse-4b96ca.png)
+![](https://cdn.zhangdd.tech/contentImg/box-model/preventing-margin-collapse-4b96ca.png)
 一定要记住，填充不会折叠。
 
 ## Content Boxes and Border Boxes
 ***  
 ### Content Boxes
 我们定义的 width 属性仅表示内容的宽度。
-![](https://cdn-fawn.vercel.app/contentImg/box-model/box-sizing-content-box-09f48a.png)
+![](https://cdn.zhangdd.tech/contentImg/box-model/box-sizing-content-box-09f48a.png)
 我们可以通过修改 box-sizing 属性，使其变为不同的 Boxes。
 ``` CSS
 box-sizing: border-box;
@@ -116,6 +116,6 @@ box-sizing: border-box;
 
 ### Border Boxes
 Border Boxes 的 width 属性表示包括内容 + 填充 + 边框的总宽度。
-![](https://cdn-fawn.vercel.app/contentImg/box-model/box-sizing-border-box-ace2be.png)
+![](https://cdn.zhangdd.tech/contentImg/box-model/box-sizing-border-box-ace2be.png)
 
 注意: 只有 Block 元素修改 width 属性才生效，Inline 元素修改 width 属性无效。height 属性同理。

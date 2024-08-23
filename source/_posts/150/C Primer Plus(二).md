@@ -1,6 +1,6 @@
 ---
 title: C Primer Plus(二)
-featured_image: https://cdn-fawn.vercel.app/blogImg/Blog150.jpg
+featured_image: https://cdn.zhangdd.tech/blogImg/Blog150.jpg
 date: 2020/06/08
 ---
 

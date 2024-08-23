@@ -1,6 +1,6 @@
 ---
 title: Python(一)
-featured_image: https://cdn-fawn.vercel.app/blogImg/Blog101.jpg
+featured_image: https://cdn.zhangdd.tech/blogImg/Blog101.jpg
 date: 2019/02/02
 ---
 

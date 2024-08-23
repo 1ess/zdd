@@ -1,6 +1,6 @@
 ---
 title: C Plus Plus From Zero To Hero(六)
-featured_image: https://cdn-fawn.vercel.app/blogImg/Blog242.jpg
+featured_image: https://cdn.zhangdd.tech/blogImg/Blog242.jpg
 date: 2022-06-04
 ---
 
@@ -76,7 +76,7 @@ int main() {
 ```
 
 ### 异常及其子类
-![](https://cdn-fawn.vercel.app/contentImg/cpp/ExceptionClasses.png)
+![](https://cdn.zhangdd.tech/contentImg/cpp/ExceptionClasses.png)
 
 ## 类型转换运算符
 ***  

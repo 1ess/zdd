@@ -1,6 +1,6 @@
 ---
 title: MySQL(四)
-featured_image: https://cdn-fawn.vercel.app/blogImg/Blog95.jpg
+featured_image: https://cdn.zhangdd.tech/blogImg/Blog95.jpg
 date: 2019/01/11
 ---
 

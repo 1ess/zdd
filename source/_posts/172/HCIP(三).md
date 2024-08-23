@@ -1,6 +1,6 @@
 ---
 title: HCIP(三)
-featured_image: https://cdn-fawn.vercel.app/blogImg/Blog172.jpg
+featured_image: https://cdn.zhangdd.tech/blogImg/Blog172.jpg
 date: 2020/12/21
 ---
 

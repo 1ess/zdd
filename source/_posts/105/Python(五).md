@@ -1,6 +1,6 @@
 ---
 title: Python(五)
-featured_image: https://cdn-fawn.vercel.app/blogImg/Blog105.jpg
+featured_image: https://cdn.zhangdd.tech/blogImg/Blog105.jpg
 date: 2019/02/19
 ---
 

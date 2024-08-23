@@ -1,6 +1,6 @@
 ---
 title: Shell(五)
-featured_image: https://cdn-fawn.vercel.app/blogImg/Blog141.jpg
+featured_image: https://cdn.zhangdd.tech/blogImg/Blog141.jpg
 date: 2020/02/16
 ---
 

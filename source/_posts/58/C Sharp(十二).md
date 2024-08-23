@@ -1,6 +1,6 @@
 ---
 title: C Sharp(十二)
-featured_image: https://cdn-fawn.vercel.app/blogImg/Blog58.jpg
+featured_image: https://cdn.zhangdd.tech/blogImg/Blog58.jpg
 date: 2018/09/22
 ---
 

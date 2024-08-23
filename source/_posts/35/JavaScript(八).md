@@ -1,6 +1,6 @@
 ---
 title: JavaScript(八)
-featured_image: https://cdn-fawn.vercel.app/blogImg/Blog35.jpg
+featured_image: https://cdn.zhangdd.tech/blogImg/Blog35.jpg
 date: 2018/08/04
 ---
 

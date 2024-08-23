@@ -1,6 +1,6 @@
 ---
 title: IndexedDB 基础
-featured_image: https://cdn-fawn.vercel.app/blogImg/Blog27.jpg
+featured_image: https://cdn.zhangdd.tech/blogImg/Blog27.jpg
 date: 2018/07/20
 ---
 

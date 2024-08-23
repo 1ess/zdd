@@ -1,6 +1,6 @@
 ---
 title: CSS(一)
-featured_image: https://cdn-fawn.vercel.app/blogImg/Blog17.jpg
+featured_image: https://cdn.zhangdd.tech/blogImg/Blog17.jpg
 date: 2018/07/10
 ---
 
@@ -53,7 +53,7 @@ CSS 忽略字符使用下面方式
 
 ## CSS 规则基本语法
 ***  
-![](https://cdn-fawn.vercel.app/contentImg/css1/css-rule-terminology-1a7961.png)
+![](https://cdn.zhangdd.tech/contentImg/css1/css-rule-terminology-1a7961.png)
 一个 选择器加上声明块 组合在一起称为一个**规则(Rule)**。一个 属性名:属性值; 组合在一起称为一个**声明(declaration)**。
 
 需要注意: 

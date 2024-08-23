@@ -1,6 +1,6 @@
 ---
 title: Docker Compose
-featured_image: https://cdn-fawn.vercel.app/blogImg/Blog148.jpg
+featured_image: https://cdn.zhangdd.tech/blogImg/Blog148.jpg
 date: 2020/05/27
 ---
 
@@ -8,7 +8,7 @@ date: 2020/05/27
 
 ## 介绍
 ***  
-<img src="https://cdn-fawn.vercel.app/contentImg/docker/compose.png" width="300px" alt="">
+<img src="https://cdn.zhangdd.tech/contentImg/docker/compose.png" width="300px" alt="">
 
 之前，我们必须使用大量 docker cli 命令才能在本地运行我们的应用程序。如果要运行一个包含十几个服务的微服务应用程序工作量已经是不可想象。为了使我们对本地容器基础结构的管理更轻松、可靠，我们需要一个可以让我们描述所需的环境，然后根据我们的描述进行创建容器的工具。
 

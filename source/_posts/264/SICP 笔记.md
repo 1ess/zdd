@@ -1,6 +1,6 @@
 ---
 title: SICP 笔记
-featured_image: https://cdn-fawn.vercel.app/blogImg/Blog264.jpg
+featured_image: https://cdn.zhangdd.tech/blogImg/Blog264.jpg
 date: 2023/10/09
 ---
 > SICP 的核心内容是什么呢？众说纷云，有人说是一本有关 Lisp／Scheme 的书主要讲函数式编程的思想，有的说是一本有关解释器构造的入门书籍，和我们学过的龙书挂钩。但就我个人而言，SICP 作为一本入门书更多的不是担负起介绍某一方面具体的知识的重任，而是从多个角度去教一个初学者从程序抽象、理解工程架构、学习 DSL 的构建方法等等，不单纯介绍一方面的知识而是完备的形成一个闭环的去像你介绍什么是 Computer Science。

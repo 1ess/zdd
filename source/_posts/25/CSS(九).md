@@ -1,6 +1,6 @@
 ---
 title: CSS(九)
-featured_image: https://cdn-fawn.vercel.app/blogImg/Blog25.jpg
+featured_image: https://cdn.zhangdd.tech/blogImg/Blog25.jpg
 date: 2018/07/18
 ---
 

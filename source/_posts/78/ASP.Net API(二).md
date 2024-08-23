@@ -1,6 +1,6 @@
 ---
 title: ASP.Net API(二)
-featured_image: https://cdn-fawn.vercel.app/blogImg/Blog78.jpg
+featured_image: https://cdn.zhangdd.tech/blogImg/Blog78.jpg
 date: 2018/11/22
 ---
 

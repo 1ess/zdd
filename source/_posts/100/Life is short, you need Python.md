@@ -1,10 +1,10 @@
 ---
 title: Life is short, you need Python
-featured_image: https://cdn-fawn.vercel.app/blogImg/Blog100.jpg
+featured_image: https://cdn.zhangdd.tech/blogImg/Blog100.jpg
 date: 2019/01/29
 ---
 
-![](https://cdn-fawn.vercel.app/contentImg/python/python1.jpg)
+![](https://cdn.zhangdd.tech/contentImg/python/python1.jpg)
 
 之前一直在写 Objective-C 以及 C# 这种强类型、静态类型的语言，也写过 Javascript 这种弱类型、动态类型的语言，今天开始，来学习一门不一样的强类型、动态类型的语言 —— Python。
 

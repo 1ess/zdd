@@ -1,6 +1,6 @@
 ---
 title: HTML(一)
-featured_image: https://cdn-fawn.vercel.app/blogImg/Blog13.jpg
+featured_image: https://cdn.zhangdd.tech/blogImg/Blog13.jpg
 date: 2018/07/05
 ---
 
@@ -8,15 +8,15 @@ date: 2018/07/05
 
 ## HTML 基本结构
 ***  
-![](https://cdn-fawn.vercel.app/contentImg/html1/basic-web-pages-f786d5.png)
+![](https://cdn.zhangdd.tech/contentImg/html1/basic-web-pages-f786d5.png)
 
 ## HTML 元素
 ***  
 普通元素
-![](https://cdn-fawn.vercel.app/contentImg/html1/Basic-Anatomy-of-HTML-Elements1.png)
+![](https://cdn.zhangdd.tech/contentImg/html1/Basic-Anatomy-of-HTML-Elements1.png)
 
 自闭合元素
-![](https://cdn-fawn.vercel.app/contentImg/html1/Basic-Anatomy-of-HTML-Elements2.png)
+![](https://cdn.zhangdd.tech/contentImg/html1/Basic-Anatomy-of-HTML-Elements2.png)
 
 **注意: 在 HTML5 中，自闭合元素 opening tag 末尾的 '/' 可以省略。**
 

@@ -1,6 +1,6 @@
 ---
 title: LinQ 查询表达式
-featured_image: https://cdn-fawn.vercel.app/blogImg/Blog84.jpg
+featured_image: https://cdn.zhangdd.tech/blogImg/Blog84.jpg
 date: 2018/12/10
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: Shell(二)
-featured_image: https://cdn-fawn.vercel.app/blogImg/Blog138.jpg
+featured_image: https://cdn.zhangdd.tech/blogImg/Blog138.jpg
 date: 2020/01/22
 ---
 

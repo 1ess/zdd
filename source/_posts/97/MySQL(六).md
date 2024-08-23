@@ -1,6 +1,6 @@
 ---
 title: MySQL(六)
-featured_image: https://cdn-fawn.vercel.app/blogImg/Blog97.jpg
+featured_image: https://cdn.zhangdd.tech/blogImg/Blog97.jpg
 date: 2019/01/18
 ---
 
@@ -140,7 +140,7 @@ rollback sp1;
 3. 隔离性(Isolation): 一个事务所做的修改在最终提交以前，对其它事务是不可见的
 4. 持久性(Durability): 一旦事务提交，则其所做的修改将会永远保存到数据库中。即使系统发生崩溃，事务执行的结果也不能丢失
 
-![](https://cdn-fawn.vercel.app/contentImg/mysql/mysql1.jpg)
+![](https://cdn.zhangdd.tech/contentImg/mysql/mysql1.jpg)
 
 事务的 ACID 特性概念简单，但不是很好理解，主要是因为这几个特性不是一种平级关系: 
 - 只有满足一致性，事务的执行结果才是正确的
