@@ -73,7 +73,7 @@
     </div>
     <script>
         var iframe = document.getElementById("iframe_umami");
-        console.log("iframe: " + iframe)
+        
         if (iframe) {
             if (iframe.attachEvent) {
                 iframe.attachEvent("onload", function() {
@@ -94,6 +94,7 @@
                 });
             } else {
                 iframe.onload = function() {
+                    console.log(iframe.contentDocument)
                     headers = document.getElementsByTagName('header')
                     if (headers) {
                         console.log(headers)
