@@ -793,3 +793,7 @@ figure.highlight .hljs-operator {
 .javascript, .css, .xml, .bash {
   color: #D8DEE9 !important;
 }
+
+.iframe-container {
+  height: 100vh !important;
+}
