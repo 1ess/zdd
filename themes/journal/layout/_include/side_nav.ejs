@@ -29,14 +29,7 @@
             <%= __('About') %>
         </a>
         <% } %>
-
-        <% if (theme.about) { %>
-        <a class="a-block no-tint nav-link-item <%= is_current('analysis') && 'active' %>"
-            href="<%= config.root + "analysis" %>">
-            <%= __('Analysis') %>
-        </a>
-        <% } %>
-
+        
         <% if (theme.rss) { %>
         <a class="a-block no-tint nav-link-item" href="<%= config.root + theme.rss %>">
             <%= __('RSS') %>
