@@ -77,17 +77,30 @@
         if (iframe) {
             if (iframe.attachEvent) {
                 iframe.attachEvent("onload", function() {
-                    // let iframe_head =
-                    //     iframe?.contentDocument.getElementsByClassName('iframe_head')?.[0]
-                    // let iframe_footer =
-                    //     iframe?.contentDocument.getElementsByClassName('iframe_footer')?.[0]
-                    
-                    // iframe_head.style.display = 'none'
-                    // iframe_footer.style.display = 'none'
+                    headers = document.getElementsByTagName('header')
+                    if (headers) {
+                        iframe_header = headers[0]
+                        iframe_header.style.display = 'none'
+                    }
+                    footers = document.getElementsByTagName('footer')
+                    if (footers) {
+                        iframe_footer = footers[0]
+                        iframe_footer.style.display = 'none'
+                    }
                     console.log("Local iframe is now loaded.");
                 });
             } else {
                 iframe.onload = function() {
+                    headers = document.getElementsByTagName('header')
+                    if (headers) {
+                        iframe_header = headers[0]
+                        iframe_header.style.display = 'none'
+                    }
+                    footers = document.getElementsByTagName('footer')
+                    if (footers) {
+                        iframe_footer = footers[0]
+                        iframe_footer.style.display = 'none'
+                    }
                     console.log("Local iframe is now loaded."); // "Local iframe is now loaded."
                 };
             }
