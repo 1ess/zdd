@@ -24,6 +24,27 @@
     <link rel="stylesheet" href="/css/journal.css?11560401">
 
     <script src="/js/loadCSS.js"></script>
+    <script>
+        var iframe = document.getElementById("iframe_umami");
+        console.log("iframe: " + iframe)
+        if (iframe.attachEvent) {
+            iframe.attachEvent("onload", function() {
+                // let iframe_head =
+                //     iframe?.contentDocument.getElementsByClassName('iframe_head')?.[0]
+                // let iframe_footer =
+                //     iframe?.contentDocument.getElementsByClassName('iframe_footer')?.[0]
+                
+                // iframe_head.style.display = 'none'
+                // iframe_footer.style.display = 'none'
+
+                console.log("Local iframe is now loaded.");
+            });
+        } else {
+            iframe.onload = function() {
+                console.log("Local iframe is now loaded."); // "Local iframe is now loaded."
+            };
+        }
+    </script>
     <script defer src="https://umami.zhangdd.tech/script.js" data-website-id="98b412b6-4cac-4b18-89d7-0559c5828831"></script>
     <script>
         loadCSS("https://fonts.googleapis.com/css?family=Lora|Montserrat|Fira+Mono|Material+Icons");
@@ -82,29 +103,6 @@
         integrity="sha256-FtWfRI+thWlNz2sB3SJbwKx5PgMyKIVgwHCTwa3biXc=" crossorigin="anonymous"></script>
     <script src="https://lf9-cdn-tos.bytecdntp.com/cdn/expire-1-M/smooth-scroll/14.2.1/smooth-scroll.polyfills.min.js"
         integrity="sha256-CI4Gq5E0io1Pv0xM3qPM+NUIOhbIBvC3GiN1Y4KhXpw=" crossorigin="anonymous"></script>
-    <script>
-        // var iframe = document.getElementById("iframe_umami");
-        // // console.log("iframe: " + iframe)
-        // iframe.height=document.documentElement.clientHeight;
-        // iframe.width=document.documentElement.clientWidth;
-        // if (iframe.attachEvent) {
-        //     iframe.attachEvent("onload", function() {
-        //         // let iframe_head =
-        //         //     iframe?.contentDocument.getElementsByClassName('iframe_head')?.[0]
-        //         // let iframe_footer =
-        //         //     iframe?.contentDocument.getElementsByClassName('iframe_footer')?.[0]
-                
-        //         // iframe_head.style.display = 'none'
-        //         // iframe_footer.style.display = 'none'
-
-        //         console.log("Local iframe is now loaded.");
-        //     });
-        // } else {
-        //     iframe.onload = function() {
-        //         console.log("Local iframe is now loaded."); // "Local iframe is now loaded."
-        //     };
-        // }
-    </script>
 </body>
 
 </html>
