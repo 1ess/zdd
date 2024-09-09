@@ -117,14 +117,20 @@ git show {commitId}
 
 ### Unstaging Files
 ``` sh
-# 恢复暂存区的文件
+# 利用本地仓库，恢复暂存区的文件
 git restore --staged file1.txt
 
-# 恢复工作区文件，即取消本次未添加到暂存区的工作区的修改
+# 利用暂存区，恢复工作区文件，即取消本次未添加到暂存区的工作区的修改
 git restore file2.txt
 
 # 同时恢复暂存区和工作区
 git restore --staged --worktree .
+
+# 放弃当前修改
+git restore --source HEAD .
+
+# 回到某个 commit
+git restore --source {commitId} .
 ```
 
 restore 命令依据的是下一个环境进行恢复，暂存区的下一个环境为上一次提交，工作区的下一个环境为暂存区。
