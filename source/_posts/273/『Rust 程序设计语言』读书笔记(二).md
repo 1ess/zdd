@@ -66,13 +66,13 @@ let s2 = s1;
 ```
 
 类似其他语言的浅拷贝，上述代码在内存中表现为: 
-<img src="https://cdn.zhangdd.tech/contentImg/273/trpl04-01.svg" alt="">
+![](https://cdn.zhangdd.tech/contentImg/273/trpl04-01.png)
 
-<img src="https://cdn.zhangdd.tech/contentImg/273/trpl04-02.svg" alt="">
+![](https://cdn.zhangdd.tech/contentImg/273/trpl04-02.png)
 
 与其他语言不同，之前我们提到过当变量离开作用域后，Rust 自动调用 drop 函数并清理变量的堆内存，这就有了一个问题：当 s2 和 s1 离开作用域，它们都会尝试释放相同的内存。这是一个叫做 **二次释放**(double free)的错误。
-为了确保内存安全，在 let s2 = s1; 之后，Rust 认为 s1 不再有效: 
-<img src="https://cdn.zhangdd.tech/contentImg/273/trpl04-03.svg" alt="">
+为了确保内存安全，在 let s2 = s1; 之后，Rust 认为 s1 不再有效，内存中实际表现为: 
+![](https://cdn.zhangdd.tech/contentImg/273/trpl04-03.png)
 
 ``` rust
 let s1 = String::from("hello");
@@ -94,7 +94,7 @@ fn main() {
 ```
 注意，当你为现有变量分配一个全新的值时，Rust 将调用 drop 并立即释放原始值的内存。
 
-<img src="https://cdn.zhangdd.tech/contentImg/273/trpl04-05.svg" alt="">
+![](https://cdn.zhangdd.tech/contentImg/273/trpl04-05.png)
 
 ### 变量与数据交互的方式: 克隆
 也是类似其他编程语言，如果我们**确实**需要深度复制 String 中堆上的数据，而不仅仅是栈上的数据，可以使用一个叫做 clone 的通用函数。
@@ -105,7 +105,7 @@ let s2 = s1.clone();
 println!("s1 = {s1}, s2 = {s2}");
 ```
 
-<img src="https://cdn.zhangdd.tech/contentImg/273/trpl04-04.svg" alt="">
+![](https://cdn.zhangdd.tech/contentImg/273/trpl04-04.png)
 
 需要注意: Rust 有一个特殊的注释，称为 Copy 特征，类似整数类型，如果某个类型实现了 Copy 特征，则使用它的变量不会移动，而是会被简单地复制，从而使它们在分配给另一个变量后仍然有效。
 ``` rust
