@@ -81,7 +81,20 @@ let s2 = s1;
 println!("{s1}, world!");
 ```
 
+与其他语言的浅拷贝不同，Rust 同时使第一个变量无效，这在 Rust 中称为**移动**(Move)。
+
+``` rust
+fn main() {
+    let mut s = String::from("hello");
+    s = String::from("ahoy");
+
+    println!("{s}, world!");
+    // ANCHOR_END: here
+}
+```
 注意，当你为现有变量分配一个全新的值时，Rust 将调用 drop 并立即释放原始值的内存。
+
+<img src="https://cdn.zhangdd.tech/contentImg/273/trpl04-05.svg" alt="">
 
 ### 变量与数据交互的方式: 克隆
 也是类似其他编程语言，如果我们**确实**需要深度复制 String 中堆上的数据，而不仅仅是栈上的数据，可以使用一个叫做 clone 的通用函数。
@@ -91,6 +104,8 @@ let s2 = s1.clone();
 
 println!("s1 = {s1}, s2 = {s2}");
 ```
+
+<img src="https://cdn.zhangdd.tech/contentImg/273/trpl04-04.svg" alt="">
 
 需要注意: Rust 有一个特殊的注释，称为 Copy 特征，类似整数类型，如果某个类型实现了 Copy 特征，则使用它的变量不会移动，而是会被简单地复制，从而使它们在分配给另一个变量后仍然有效。
 ``` rust
@@ -120,13 +135,11 @@ fn main() {
                                     // 但 i32 是 Copy 的，
                                     // 所以在后面可继续使用 x
 
-} // 这里，x 先移出了作用域，然后是 s。但因为 s 的值已被移走，
-  // 没有特殊之处
+} // 这里，x 先移出了作用域，然后是 s。但因为 s 的值已被移走，没有特殊之处
 
 fn takes_ownership(some_string: String) { // some_string 进入作用域
     println!("{}", some_string);
-} // 这里，some_string 移出作用域并调用 `drop` 方法。
-  // 占用的内存被释放
+} // 这里，some_string 移出作用域并调用 `drop` 方法。占用的内存被释放
 
 fn makes_copy(some_integer: i32) { // some_integer 进入作用域
     println!("{}", some_integer);
@@ -139,24 +152,18 @@ fn makes_copy(some_integer: i32) { // some_integer 进入作用域
 返回值也可以转移所有权。
 ``` rust
 fn main() {
-    let s1 = gives_ownership();         // gives_ownership 将返回值
-                                        // 转移给 s1
+    let s1 = gives_ownership();         // gives_ownership 将返回值转移给 s1
 
     let s2 = String::from("hello");     // s2 进入作用域
 
-    let s3 = takes_and_gives_back(s2);  // s2 被移动到
-                                        // takes_and_gives_back 中，
-                                        // 它也将返回值移给 s3
-} // 这里，s1、s3 移出作用域并被丢弃。s2 也移出作用域，但已被移走，所以什么也不会发生。
+    let s3 = takes_and_gives_back(s2);  // s2 被移动到 takes_and_gives_back 中，它也将返回值移给 s3
+} // 这里，s1、s3 移出作用域并被丢弃。s2 也移出作用域，但已被移走，所以什么也不会发生
 
-fn gives_ownership() -> String {             // gives_ownership 会将
-                                             // 返回值移动给
-                                             // 调用它的函数
+fn gives_ownership() -> String {             // gives_ownership 会将返回值移动给调用它的函数
 
     let some_string = String::from("yours"); // some_string 进入作用域。
 
-    some_string                              // 返回 some_string 
-                                             // 并移出给调用的函数
+    some_string                              // 返回 some_string 并移出给调用的函数
 }
 
 // takes_and_gives_back 将传入字符串并返回该值
