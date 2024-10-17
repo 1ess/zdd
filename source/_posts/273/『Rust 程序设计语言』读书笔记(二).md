@@ -1,6 +1,6 @@
 ---
 title: 『Rust 程序设计语言』读书笔记(二)
-featured_image: https://cdn.zhangdd.tech/blogImg/Blog273.png
+featured_image: https://cdn.zhangdd.tech/blogImg/Blog273.jpg
 date: 2024/10/14
 ---
 本章介绍 Rust 与其他编程语言相比最特殊的一个概念: 所有权(ownership)，它使得 Rust 在不需要垃圾回收机制的情况保持内存安全。之后我们会介绍与所有权相关的几个概念: borrowing、slice 以及 Rust 的内存布局。

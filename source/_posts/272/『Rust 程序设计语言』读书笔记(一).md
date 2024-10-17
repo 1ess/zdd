@@ -1,6 +1,6 @@
 ---
 title: 『Rust 程序设计语言』读书笔记(一)
-featured_image: https://cdn.zhangdd.tech/blogImg/Blog272.png
+featured_image: https://cdn.zhangdd.tech/blogImg/Blog272.jpg
 date: 2024/10/12
 ---
 本章介绍一些几乎所有编程语言都有的通用概念，以及它们在 Rust 中是如何工作的。主要包括变量、基本类型、函数、注释和控制流。
