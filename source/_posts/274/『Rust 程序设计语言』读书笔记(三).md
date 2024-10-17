@@ -40,6 +40,8 @@ fn calculate_length(s: &String) -> usize {
 
 注意我们传递 &s1 给 calculate_length 函数，& 符号就是**引用**，它们允许你使用值但不获取其所有权。
 
+特别注意: 对于函数和方法的传参，Rust 提供了一个极其有用的隐式转换: Deref 转换。若一个类型实现了 Deref 特征，那它的引用在传给函数或方法时，会根据参数签名来决定是否进行隐式的 Deref 转换。我们会在之后详细介绍。
+
 ``` rust
 fn calculate_length(s: &String) -> usize { // s 是 String 的引用
     s.len()
