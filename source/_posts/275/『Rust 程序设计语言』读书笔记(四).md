@@ -47,13 +47,13 @@ fn main(){
 其次，Rust 为了保证字符串总是有效的 Unicode 字符，它不允许用户直接修改字符串中的字符，所以也无法通过切片引用来修改源字符串，除非那是 ASCII 字符。事实上，Rust 只为 &str 提供了两个转换 ASCII 大小写的方法来修改源字符串，除此之外，没有为字符串切片类型提供任何其他原地修改字符串的方法。
 ``` rust
 fn main(){
-  let mut s = String::from("HELLO");
-  let ss = &mut s[..];
+  let mut hello = String::from("HELLO");
+  let hello_slice = &mut hello[..];
 
   // make_ascii_lowercase()
   // make_ascii_uppercase()
-  ss.make_ascii_lowercase();
-  println!("{}", s); // hello
+  hello_slice.make_ascii_lowercase();
+  println!("{}", hello); // hello
 }
 ```
 
