@@ -219,3 +219,7 @@ fn main() {
     pair.destroy();
 }
 ```
+
+需要注意: 有时我们会看到 &self 或者 &mut self 作为第一个参数，其实他们是 self: &Self 与 self: &mut Self 的简写，第一个参数名还是 self。什么时候选择什么参数与前面我们提到的你希望使用 move 语义还是 borrowing 语义有关。
+
+还需要注意: Rust 中没有类似 C/C++ 中的 -> 操作符，Rust 有一个称为**自动引用和解引用**的功能。调用方法是 Rust 中具有这种行为的少数几个地方之一。他的原理是，当您使用 object.something() 调用方法时，Rust 会自动添加 &、&mut 或 * ，以便 object 与方法的签名匹配。因为方法有一个明确的 self 参数的类型。Rust 可以明确地知道方法是仅仅读取(使用 &self)，做出修改(使用 &mut self)或者是获取所有权(使用 self)。
