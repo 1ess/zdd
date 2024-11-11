@@ -1,7 +1,7 @@
 ---
 title: 『Rust 程序设计语言』读书笔记(七)
 featured_image: https://cdn.zhangdd.tech/blogImg/Blog278.jpg
-date: 2024/11/11
+date: 2024/11/12
 ---
 Rust 具有许多管理代码组织的功能，包括公开哪些信息、哪些信息是私有的，以及程序中每个范围内的名称。这些功能统称为**模块系统**。包括: 
 - Package: 允许构建、测试和分享 crate
