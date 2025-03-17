@@ -99,6 +99,41 @@ git config --global ff no
 
 来禁用仓库的 Fast-forwarding merges。
 
+### Rebase
+变基有两种方式: 
+1. Standard Rebase 标准变基
+2. Interactive Rebase 交互式变基
+
+一般情况下，我们在变基时会使用 -i 参数进行交互式变基，以便修改提交历史。
+``` shell
+# 合并前三条 commit
+git rebase -i HEAD~3
+```
+
+命令执行后，会打开一个交互式编辑器，内容类似于: 
+``` shell
+# 默认情况，显示 pick 所有提交
+pick a1b2c3d 修复了某个 bug
+pick d4e5f6g 添加了新功能
+pick h7i8j9k 更新了文档
+
+# 将 pick 修改为 squash，即只保留第一个 commit 的 pick，如下: 
+pick a1b2c3d 修复了某个 bug
+squash d4e5f6g 添加了新功能
+squash h7i8j9k 更新了文档
+```
+
+编辑合并后的 commit 信息: 
+``` shell
+# 退出后，需要编辑合并后的提交信息，默认情况下，它会列出所有被合并的 commit 信息:
+修复了某个 bug
+添加了新功能
+更新了文档
+
+# 可以修改为一个简洁的提交信息，例如: 
+优化代码，修复 bug 并新增功能
+```
+
 ### View the Merged Branch
 ``` sh
 # 查看已合并到当前分支的所有分支
