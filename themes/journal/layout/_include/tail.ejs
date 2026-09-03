@@ -1,2 +1,45 @@
+<script>
+  (function () {
+    function reveal(image) {
+      image.classList.add('is-loaded');
+    }
+
+    document.querySelectorAll('img.progressive-image').forEach(function (image) {
+      if (image.complete) {
+        window.requestAnimationFrame(function () { reveal(image); });
+      } else {
+        image.addEventListener('load', function () { reveal(image); }, { once: true });
+        image.addEventListener('error', function () { image.classList.add('is-error'); }, { once: true });
+      }
+    });
+
+    function loadCover(cover) {
+      if (cover.dataset.loaded) return;
+      cover.dataset.loaded = 'true';
+      var source = cover.dataset.imageSrc;
+      var image = new Image();
+      image.onload = function () {
+        cover.style.backgroundImage = 'url("' + source.replace(/"/g, '%22') + '")';
+        window.requestAnimationFrame(function () { cover.classList.add('is-loaded'); });
+      };
+      image.onerror = function () { cover.classList.add('is-error'); };
+      image.src = source;
+    }
+
+    var covers = document.querySelectorAll('.progressive-cover[data-image-src]');
+    if ('IntersectionObserver' in window) {
+      var observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (!entry.isIntersecting) return;
+          loadCover(entry.target);
+          observer.unobserve(entry.target);
+        });
+      }, { rootMargin: '250px 0px' });
+      covers.forEach(function (cover) { observer.observe(cover); });
+    } else {
+      covers.forEach(loadCover);
+    }
+  }());
+</script>
 </body>
 </html>

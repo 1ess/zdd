@@ -876,6 +876,35 @@ figure.highlight .hljs-operator {
   font-size: 14px;
 }
 
+.stream-container .post .post-body-wrapper .post-body img.progressive-image {
+  background: linear-gradient(135deg, #edf3f5, #dbe7eb);
+  opacity: 0;
+  transition: opacity .35s ease;
+}
+
+.stream-container .post .post-body-wrapper .post-body img.progressive-image.is-loaded,
+.stream-container .post .post-body-wrapper .post-body img.progressive-image.is-error {
+  opacity: 1;
+}
+
+.stream-container .post-list-container .post-item-image.progressive-cover {
+  position: relative;
+  background-color: #edf3f5;
+}
+
+.stream-container .post-list-container .post-item-image.progressive-cover::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, #edf3f5, #dbe7eb);
+  transition: opacity .35s ease;
+}
+
+.stream-container .post-list-container .post-item-image.progressive-cover.is-loaded::after,
+.stream-container .post-list-container .post-item-image.progressive-cover.is-error::after {
+  opacity: 0;
+}
+
 @media (max-width: 600px) {
   #footprints-map {
     height: 55vh;

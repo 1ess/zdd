@@ -39,8 +39,8 @@ function getFeaturedImage(item) {
                     </div>
                     <% if(item.featured_image){ %>
                     <div class="post-item-image-wrapper">
-                        <div class="post-item-image"
-                             style="background-image: url('<%= getFeaturedImage(item) %>')"></div>
+                        <div class="post-item-image progressive-cover"
+                             data-image-src="<%= getFeaturedImage(item) %>"></div>
                     </div>
                     <% } %>
                 </div>
