@@ -1,7 +1,7 @@
 ---
 title: 机器学习常用库 CheatSheet
 featured_image: https://cdn.zhangdd.tech/blogImg/Blog251.jpg
-date: 2022/11/21
+date: 2022-11-21
 ---
 
 ## Numpy

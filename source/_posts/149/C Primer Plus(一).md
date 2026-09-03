@@ -1,7 +1,7 @@
 ---
 title: C Primer Plus(一)
 featured_image: https://cdn.zhangdd.tech/blogImg/Blog149.jpg
-date: 2020/06/04
+date: 2020-06-04
 ---
 
 从本篇开始，我们就要重新学习 C 语言了，参考书籍为《C Primer Plus》，是个硬骨头，加油吧💪。

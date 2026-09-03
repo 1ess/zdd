@@ -1,7 +1,7 @@
 ---
 title: C Primer Plus(二)
 featured_image: https://cdn.zhangdd.tech/blogImg/Blog150.jpg
-date: 2020/06/08
+date: 2020-06-08
 ---
 
 本篇，我们看一下 C 语言中的两个输入输出函数: printf() 和 scanf()。

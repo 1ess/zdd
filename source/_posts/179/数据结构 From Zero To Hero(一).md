@@ -1,7 +1,7 @@
 ---
 title: 数据结构 From Zero To Hero(一)
 featured_image: https://cdn.zhangdd.tech/blogImg/Blog179.jpg
-date: 2021/02/07
+date: 2021-02-07
 ---
 
 本篇开始，我们重新学习一下数据结构。这次，不仅仅是概念上的学习，而且会使用代码来实现每个数据结构以及对应的常用操作。

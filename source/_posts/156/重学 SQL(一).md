@@ -1,7 +1,7 @@
 ---
 title: 重学 SQL(一)
 featured_image: https://cdn.zhangdd.tech/blogImg/Blog156.jpg
-date: 2020/08/04
+date: 2020-08-04
 ---
 
 从这篇开始，我们通过几章的内容，重新学习 SQL 从基础到进阶的方方面面，塑造良好的 SQL 编写思维和逻辑能力。

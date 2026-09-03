@@ -1,7 +1,7 @@
 ---
 title: Linux(七)
 featured_image: https://cdn.zhangdd.tech/blogImg/Blog123.jpg
-date: 2019/07/19
+date: 2019-07-19
 ---
 
 > 破帽遮颜过闹市，漏船载酒泛中流，躲进小楼成一统，管他冬夏与春秋。 

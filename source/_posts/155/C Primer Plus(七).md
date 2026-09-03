@@ -1,7 +1,7 @@
 ---
 title: C Primer Plus(七)
 featured_image: https://cdn.zhangdd.tech/blogImg/Blog155.jpg
-date: 2020/07/17
+date: 2020-07-17
 ---
 
 本篇，我们主要讨论字符串的性质、如何声明并初始化字符串、如何在程序中输入和输出字符串，以及如何操控字符串。

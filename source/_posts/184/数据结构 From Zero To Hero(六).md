@@ -1,7 +1,7 @@
 ---
 title: 数据结构 From Zero To Hero(六)
 featured_image: https://cdn.zhangdd.tech/blogImg/Blog184.jpg
-date: 2021/02/27
+date: 2021-02-27
 ---
 
 本篇，我们介绍一种用于超快检索的数据结构 —— 哈希表(Hash Tables)或者称为字典(Dictionary)。

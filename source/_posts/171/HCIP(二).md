@@ -1,7 +1,7 @@
 ---
 title: HCIP(二)
 featured_image: https://cdn.zhangdd.tech/blogImg/Blog171.jpg
-date: 2020/12/18
+date: 2020-12-18
 ---
 
 本篇，我们来介绍一下静态路由以及如何在华为设备配置静态路由。

@@ -1,7 +1,7 @@
 ---
 title: C Primer Plus(四)
 featured_image: https://cdn.zhangdd.tech/blogImg/Blog152.jpg
-date: 2020/06/17
+date: 2020-06-17
 ---
 
 C 的设计思想是，把函数用作构件块来组织程序。前面我们用过了 C 标准库的函数，如 printf()、scanf()、getchar()、putchar() 和 strlen()。本篇我们进一步学习函数。

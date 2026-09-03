@@ -1,7 +1,7 @@
 ---
 title: 重学 SQL(九)
 featured_image: https://cdn.zhangdd.tech/blogImg/Blog164.jpg
-date: 2020/08/24
+date: 2020-08-24
 ---
 
 本篇，我们介绍一个对于大型或高并发数据库影响非常有大的知识 —— 索引。了解它是如何工作的以及它为何能提升性能。

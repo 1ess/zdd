@@ -11,7 +11,9 @@
     "validate:footprints": "node tools/validate-footprints.js",
     "check:site": "node tools/check-site.js",
     "check:links": "node tools/check-links.js",
-    "report:media": "node tools/media-report.js"
+    "report:media": "node tools/media-report.js",
+    "check:media:remote": "node tools/check-remote-media.js",
+    "report:content": "node tools/content-report.js"
   },
   "hexo": {
     "version": "5.4.2"

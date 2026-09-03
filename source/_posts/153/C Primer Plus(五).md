@@ -1,7 +1,7 @@
 ---
 title: C Primer Plus(五)
 featured_image: https://cdn.zhangdd.tech/blogImg/Blog153.jpg
-date: 2020/07/01
+date: 2020-07-01
 ---
 
 作为程序员，不可避免地要处理大量相关数据。通常，数组能高效便捷地处理这种数据。本篇，我们就来说说 C 语言中数组的知识。

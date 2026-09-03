@@ -1,7 +1,7 @@
 ---
 title: 10 分钟学会 tmux
 featured_image: https://cdn.zhangdd.tech/blogImg/Blog142.jpg
-date: 2020/02/22
+date: 2020-02-22
 ---
 
 Tmux 是一个终端复用器(terminal multiplexer)，用户可以通过 tmux 在一个终端内管理多个分离的 session、window 及 pane，对于同时使用多个命令行，或多个任务时非常方便。

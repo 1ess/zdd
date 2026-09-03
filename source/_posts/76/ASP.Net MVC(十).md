@@ -1,7 +1,7 @@
 ---
 title: ASP.Net MVC(十)
 featured_image: https://cdn.zhangdd.tech/blogImg/Blog76.jpg
-date: 2018/11/09
+date: 2018-11-09
 ---
 
 这一篇，我们详细讲讲 ASP.Net MVC 中的 Area。

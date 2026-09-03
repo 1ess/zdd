@@ -1,7 +1,7 @@
 ---
 title: Linux(五)
 featured_image: https://cdn.zhangdd.tech/blogImg/Blog121.jpg
-date: 2019/06/22
+date: 2019-06-22
 ---
 
 本篇，我们在来说一下在 Linux 下，有关网络、服务的相关知识。

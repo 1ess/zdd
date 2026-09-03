@@ -1,7 +1,7 @@
 ---
 title: Oracle 数据库拾遗(四)
 featured_image: https://cdn.zhangdd.tech/blogImg/Blog176.jpg
-date: 2021/01/21
+date: 2021-01-21
 ---
 
 前面介绍的 SELECT 查询语句都是只有一个 SELECT-FROM-WHERE 形式的语句块，本篇再来看看子查询。

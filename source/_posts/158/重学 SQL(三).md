@@ -1,7 +1,7 @@
 ---
 title: 重学 SQL(三)
 featured_image: https://cdn.zhangdd.tech/blogImg/Blog158.jpg
-date: 2020/08/12
+date: 2020-08-12
 ---
 
 前两篇，我们都是在进行查询操作，本篇，我们来详细介绍 SQL 中的插入、更新和删除操作。

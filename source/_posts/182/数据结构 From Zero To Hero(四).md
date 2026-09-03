@@ -1,7 +1,7 @@
 ---
 title: 数据结构 From Zero To Hero(四)
 featured_image: https://cdn.zhangdd.tech/blogImg/Blog182.jpg
-date: 2021/02/19
+date: 2021-02-19
 ---
 
 本篇，我们介绍一种利用线性表创建的一种数据结构 —— 栈(Stacks)。

@@ -1,7 +1,7 @@
 ---
 title: 重学 SQL(六)
 featured_image: https://cdn.zhangdd.tech/blogImg/Blog161.jpg
-date: 2020/08/20
+date: 2020-08-20
 ---
 
 本篇，我们来介绍一下 MySQL 中的基本内置函数 —— 数值函数、字符串函数和日期函数等。

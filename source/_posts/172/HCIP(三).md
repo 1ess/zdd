@@ -1,7 +1,7 @@
 ---
 title: HCIP(三)
 featured_image: https://cdn.zhangdd.tech/blogImg/Blog172.jpg
-date: 2020/12/21
+date: 2020-12-21
 ---
 
 上篇，我们介绍了一下如何在华为路由器配置静态路由。本篇，我们介绍一下现实生活中最常用的动态路由 —— OSPF。

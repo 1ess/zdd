@@ -1,7 +1,7 @@
 ---
 title: JavaScript(六)
 featured_image: https://cdn.zhangdd.tech/blogImg/Blog33.jpg
-date: 2018/07/26
+date: 2018-07-26
 ---
 
 本篇，我们讲一讲 JavaScript 中的重要对象以及常用方法。

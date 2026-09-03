@@ -1,7 +1,7 @@
 ---
 title: 数据结构 From Zero To Hero(三)
 featured_image: https://cdn.zhangdd.tech/blogImg/Blog181.jpg
-date: 2021/02/15
+date: 2021-02-15
 ---
 
 本篇，我们来介绍除了数组之外另一种线性结构 —— 链表(LinkedList)。

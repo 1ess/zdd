@@ -1,7 +1,7 @@
 ---
 title: MySQL(五)
 featured_image: https://cdn.zhangdd.tech/blogImg/Blog96.jpg
-date: 2019/01/17
+date: 2019-01-17
 ---
 
 本篇，我们说说 MySQL 中的联合查询、连接查询以及子查询。

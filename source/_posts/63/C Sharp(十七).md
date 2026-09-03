@@ -1,7 +1,7 @@
 ---
 title: C Sharp(十七)
 featured_image: https://cdn.zhangdd.tech/blogImg/Blog63.jpg
-date: 2018/10/04
+date: 2018-10-04
 ---
 
 这一篇，介绍一些 C# 中的比较常见的预处理指令。

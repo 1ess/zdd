@@ -1,7 +1,7 @@
 ---
 title: Linux(六)
 featured_image: https://cdn.zhangdd.tech/blogImg/Blog122.jpg
-date: 2019/07/12
+date: 2019-07-12
 ---
 
 本篇，我们在来说一下在 Linux 下，有关软件管理的相关知识。

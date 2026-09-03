@@ -1,7 +1,7 @@
 ---
 title: 数据结构 From Zero To Hero(七)
 featured_image: https://cdn.zhangdd.tech/blogImg/Blog185.jpg
-date: 2021/03/01
+date: 2021-03-01
 ---
 
 之前几篇，我们介绍的都是线性存储结构，从本篇开始，我们要来介绍计算机科学中两个非常重要的非线性存储结构，其中之一就是本篇的重点 —— 树(Tree)。

@@ -1,7 +1,7 @@
 ---
 title: 『Rust 程序设计语言』读书笔记(六)
 featured_image: https://cdn.zhangdd.tech/blogImg/Blog277.jpg
-date: 2024/11/11
+date: 2024-11-11
 ---
 本章我们介绍枚举(enums)，枚举是一个很多语言都有的功能，不过不同语言中其功能各不相同。Rust 的枚举与一些函数式语言例如 F# 的含义最为相似。
 

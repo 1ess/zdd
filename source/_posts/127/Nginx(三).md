@@ -1,7 +1,7 @@
 ---
 title: Nginx(三)
 featured_image: https://cdn.zhangdd.tech/blogImg/Blog127.jpg
-date: 2019/09/19
+date: 2019-09-19
 ---
 
 本篇，我们来介绍一下 nginx.conf 的全局块以及 events 块中的一些常见基本配置。

@@ -1,7 +1,7 @@
 ---
 title: 重学 SQL(二)
 featured_image: https://cdn.zhangdd.tech/blogImg/Blog157.jpg
-date: 2020/08/08
+date: 2020-08-08
 ---
 
 上一篇，我们只介绍了一个表中数据的查询操作，本篇，我们将详细介绍如何进行多表查询以及多表查询的类型。

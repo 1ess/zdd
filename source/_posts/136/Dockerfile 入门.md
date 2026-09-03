@@ -1,7 +1,7 @@
 ---
 title: Dockerfile 入门
 featured_image: https://cdn.zhangdd.tech/blogImg/Blog136.jpg
-date: 2020/01/12
+date: 2020-01-12
 ---
 
 之前我们有一篇文章已经说过 Docker，本篇我们来再详细说说 Dockerfile 的用法。

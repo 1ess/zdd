@@ -1,7 +1,7 @@
 ---
 title: Oracle 数据库拾遗(一)
 featured_image: https://cdn.zhangdd.tech/blogImg/Blog173.jpg
-date: 2021/01/09
+date: 2021-01-09
 ---
 
 由于目前工作需要使用 Oracle 数据库，准备来看一下 PL/SQL 对标准 SQL 进行了那些补充。

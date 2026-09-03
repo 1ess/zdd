@@ -1,7 +1,7 @@
 ---
 title: C Sharp(五)
 featured_image: https://cdn.zhangdd.tech/blogImg/Blog51.jpg
-date: 2018/09/10
+date: 2018-09-10
 ---
 
 这一篇，我们讲讲 C# 中的表达式和运算符。

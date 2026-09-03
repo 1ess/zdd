@@ -1,7 +1,7 @@
 ---
 title: Nginx(五)
 featured_image: https://cdn.zhangdd.tech/blogImg/Blog129.jpg
-date: 2019/09/25
+date: 2019-09-25
 ---
 
 本篇，我们来介绍一下 nginx.conf 中的压缩配置 —— gzip。

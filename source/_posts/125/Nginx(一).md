@@ -1,7 +1,7 @@
 ---
 title: Nginx(一)
 featured_image: https://cdn.zhangdd.tech/blogImg/Blog125.jpg
-date: 2019/09/10
+date: 2019-09-10
 ---
 
 Nginx 现在已经是在 Web 开发中必不可少的技能了，我们通过几篇文章，来总结一下有关 Nginx 的知识。

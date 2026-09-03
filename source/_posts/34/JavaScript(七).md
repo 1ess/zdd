@@ -1,7 +1,7 @@
 ---
 title: JavaScript(七)
 featured_image: https://cdn.zhangdd.tech/blogImg/Blog34.jpg
-date: 2018/08/02
+date: 2018-08-02
 ---
 
 这一篇，我们说说 ES 中的面向对象。

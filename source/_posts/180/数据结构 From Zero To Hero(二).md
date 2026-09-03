@@ -1,7 +1,7 @@
 ---
 title: 数据结构 From Zero To Hero(二)
 featured_image: https://cdn.zhangdd.tech/blogImg/Blog180.jpg
-date: 2021/02/12
+date: 2021-02-12
 ---
 
 本篇，我们来介绍最基础、最简单的一种线性结构 —— 数组(Array)。

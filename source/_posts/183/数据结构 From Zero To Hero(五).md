@@ -1,7 +1,7 @@
 ---
 title: 数据结构 From Zero To Hero(五)
 featured_image: https://cdn.zhangdd.tech/blogImg/Blog183.jpg
-date: 2021/02/22
+date: 2021-02-22
 ---
 
 本篇，我们介绍另一种利用线性表创建的一种数据结构 —— 队列(Queues)。

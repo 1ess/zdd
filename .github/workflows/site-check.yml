@@ -23,3 +23,5 @@ jobs:
         run: npm run build
       - name: Report media quality
         run: npm run report:media
+      - name: Report content quality
+        run: npm run report:content

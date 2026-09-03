@@ -1,7 +1,7 @@
 ---
 title: Oracle 数据库拾遗(二)
 featured_image: https://cdn.zhangdd.tech/blogImg/Blog174.jpg
-date: 2021/01/12
+date: 2021-01-12
 ---
 
 前面一章介绍的是表结构的操作，本章开始讲解表数据的操作。之前我们已经说过很多有关 SQL 查询的知识。本篇主要讲一下 Oracle 与其他数据库不一样的地方。

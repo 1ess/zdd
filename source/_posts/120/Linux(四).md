@@ -1,7 +1,7 @@
 ---
 title: Linux(四)
 featured_image: https://cdn.zhangdd.tech/blogImg/Blog120.jpg
-date: 2019/06/18
+date: 2019-06-18
 ---
 
 > 滚滚长江东逝水，浪花淘尽英雄，是非成败转头空，青山依旧在，几度夕阳红。

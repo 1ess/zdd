@@ -7,4 +7,6 @@ db.json
 /public/*
 !/public/CNAME
 /public/media-report.json
+/public/remote-media-report.json
+/reports/content-quality.json
 .obsidian

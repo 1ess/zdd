@@ -1,7 +1,7 @@
 ---
 title: Python(五)
 featured_image: https://cdn.zhangdd.tech/blogImg/Blog105.jpg
-date: 2019/02/19
+date: 2019-02-19
 ---
 
 本篇，我们说说 Python 中的面向对象编程的基本概念。

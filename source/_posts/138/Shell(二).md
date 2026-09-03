@@ -1,7 +1,7 @@
 ---
 title: Shell(二)
 featured_image: https://cdn.zhangdd.tech/blogImg/Blog138.jpg
-date: 2020/01/22
+date: 2020-01-22
 ---
 
 本篇，我们说一下 Shell 中的与数组相关的知识，包括基本数组和关联数组。

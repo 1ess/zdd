@@ -1,7 +1,7 @@
 ---
 title: Linux(二)
 featured_image: https://cdn.zhangdd.tech/blogImg/Blog118.jpg
-date: 2019/06/06
+date: 2019-06-06
 ---
 
 上一篇中，我们说了一些 Linux 的历史，讲解了一些 shell 的基本命令。本篇，我们在来说一下在 Linux 下，如何根据条件查找文件以及打包压缩指令。

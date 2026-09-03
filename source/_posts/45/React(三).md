@@ -1,7 +1,7 @@
 ---
 title: React(三)
 featured_image: https://cdn.zhangdd.tech/blogImg/Blog45.jpg
-date: 2018/08/29
+date: 2018-08-29
 ---
 
 这一篇，我们看看组件对于数据的处理以及组件的生命周期。

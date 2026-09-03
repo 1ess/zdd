@@ -1,7 +1,7 @@
 ---
 title: C Primer Plus(三)
 featured_image: https://cdn.zhangdd.tech/blogImg/Blog151.jpg
-date: 2020/06/13
+date: 2020-06-13
 ---
 
 本篇主要介绍一下输入、输出以及缓冲输入和无缓冲输入相关知识。

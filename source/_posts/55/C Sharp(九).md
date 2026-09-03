@@ -1,7 +1,7 @@
 ---
 title: C Sharp(九)
 featured_image: https://cdn.zhangdd.tech/blogImg/Blog55.jpg
-date: 2018/09/16
+date: 2018-09-16
 ---
 
 前几篇，我们都在讲类型，这一篇，我们来说说事件成员。

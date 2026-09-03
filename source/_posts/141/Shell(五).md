@@ -1,7 +1,7 @@
 ---
 title: Shell(五)
 featured_image: https://cdn.zhangdd.tech/blogImg/Blog141.jpg
-date: 2020/02/16
+date: 2020-02-16
 ---
 
 本篇，我们来看一下 Shell 中的函数并且复习一下之前说过的正则表达式。

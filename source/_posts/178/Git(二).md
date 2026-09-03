@@ -1,7 +1,7 @@
 ---
 title: Git(二)
 featured_image: https://cdn.zhangdd.tech/blogImg/Blog178.jpg
-date: 2021/01/29
+date: 2021-01-29
 ---
 
 本篇，我们来介绍一下 Git 的历史记录的浏览查看以及分支的基本操作。

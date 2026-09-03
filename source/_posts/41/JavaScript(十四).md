@@ -1,7 +1,7 @@
 ---
 title: JavaScript(十四)
 featured_image: https://cdn.zhangdd.tech/blogImg/Blog41.jpg
-date: 2018/08/21
+date: 2018-08-21
 ---
 
 这一篇，我们讲讲 ES6 的新特性。

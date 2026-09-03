@@ -1,7 +1,7 @@
 ---
 title: Nginx(六)
 featured_image: https://cdn.zhangdd.tech/blogImg/Blog130.jpg
-date: 2019/10/09
+date: 2019-10-09
 ---
 
 本篇，我们来介绍一下 nginx.conf 中的 rewrite 配置。

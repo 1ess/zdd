@@ -1,7 +1,7 @@
 ---
 title: Python(八)
 featured_image: https://cdn.zhangdd.tech/blogImg/Blog108.jpg
-date: 2019/02/25
+date: 2019-02-25
 ---
 
 本篇，我们说说 Python 中的错误处理机制(Error Handler)。

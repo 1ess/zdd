@@ -1,7 +1,7 @@
 ---
 title: Linux(一)
 featured_image: https://cdn.zhangdd.tech/blogImg/Blog117.jpg
-date: 2019/06/02
+date: 2019-06-02
 ---
 
 从本篇开始，我们分几篇来专门说一下有关 Linux 的那些事儿。

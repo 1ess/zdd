@@ -1,7 +1,7 @@
 ---
 title: Shell(三)
 featured_image: https://cdn.zhangdd.tech/blogImg/Blog139.jpg
-date: 2020/02/05
+date: 2020-02-05
 ---
 
 本篇，我们来讲讲 Shell 中的五大运算，为接下来要讲解的流程语句和函数做准备。

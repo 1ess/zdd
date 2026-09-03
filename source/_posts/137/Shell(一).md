@@ -1,7 +1,7 @@
 ---
 title: Shell(一)
 featured_image: https://cdn.zhangdd.tech/blogImg/Blog137.jpg
-date: 2020/01/18
+date: 2020-01-18
 ---
 
 Shell 通常指的是命令行界面的解析器，一般来说，这个词是指操作系统中提供访问内核所提供之服务的程序。

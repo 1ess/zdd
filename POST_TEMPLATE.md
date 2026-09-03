@@ -27,4 +27,4 @@ travel:
 - `featured_image_width`、`featured_image_height` 用于后续为题图预留稳定的显示空间。
 - `travel` 是游记的结构化信息。当前仍需按 [FOOTPRINTS.md](FOOTPRINTS.md) 将地点加入 GeoJSON；后续可据此自动生成候选足迹数据。
 - 文章中的普通图片已自动使用浏览器原生懒加载。首屏关键图可在 HTML 图片标签加上 `no-lazy` 类来跳过懒加载。
-- 视频保持原生 `src`；建议手工提供 `poster` 封面和 `preload="metadata"`，不要用脚本延迟替换视频地址。
+- 视频保持原生 `src`；未提供封面的视频会自动使用站内默认封面。重要视频建议手工提供真实 `poster` 封面；不要用脚本延迟替换视频地址。

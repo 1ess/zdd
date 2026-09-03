@@ -1,7 +1,7 @@
 ---
 title: 数据结构 From Zero To Hero(八)
 featured_image: https://cdn.zhangdd.tech/blogImg/Blog186.jpg
-date: 2021/03/03
+date: 2021-03-03
 ---
 
 本篇，我们要来介绍计算机科学中第二个非常重要的非线性存储结构 —— 图(Graph)。

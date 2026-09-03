@@ -1,7 +1,7 @@
 ---
 title: Docker Compose
 featured_image: https://cdn.zhangdd.tech/blogImg/Blog148.jpg
-date: 2020/05/27
+date: 2020-05-27
 ---
 
 之前几篇，我们讲过关于 Docker 的一些基础知识，包括如何运行一个容器、如何使用 Dockerfile 构建容器以及 Docker 网络相关内容。但是之前的内容都是如何操作一个容器，本篇要讲的 Docker Compose 则是如何管理一组容器使之配合使用。

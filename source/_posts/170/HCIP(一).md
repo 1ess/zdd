@@ -1,7 +1,7 @@
 ---
 title: HCIP(一)
 featured_image: https://cdn.zhangdd.tech/blogImg/Blog170.jpg
-date: 2020/12/14
+date: 2020-12-14
 ---
 
 最近打算深入研究一下网络设备，比较了一下思科和华为的认证考试，最后选择华为 HCIP，之后几篇进行一下考试准备。

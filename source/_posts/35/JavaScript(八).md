@@ -1,7 +1,7 @@
 ---
 title: JavaScript(八)
 featured_image: https://cdn.zhangdd.tech/blogImg/Blog35.jpg
-date: 2018/08/04
+date: 2018-08-04
 ---
 
 这一篇，我们介绍一下函数表达式。

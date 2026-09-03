@@ -1,7 +1,7 @@
 ---
 title: C Sharp(十一)
 featured_image: https://cdn.zhangdd.tech/blogImg/Blog57.jpg
-date: 2018/09/21
+date: 2018-09-21
 ---
 
 这一篇，我们再来看看 C# 中的显式转换以及隐式转换。

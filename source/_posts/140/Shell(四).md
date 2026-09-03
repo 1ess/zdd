@@ -1,7 +1,7 @@
 ---
 title: Shell(四)
 featured_image: https://cdn.zhangdd.tech/blogImg/Blog140.jpg
-date: 2020/02/09
+date: 2020-02-09
 ---
 
 本篇，我们来讲讲 Shell 中的几个比较重要的流程控制语句 —— if 语句、for 语句、while 语句和 case 语句。

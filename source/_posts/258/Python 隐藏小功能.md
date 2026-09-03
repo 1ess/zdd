@@ -1,7 +1,7 @@
 ---
 title: Python 隐藏小功能
 featured_image: https://cdn.zhangdd.tech/blogImg/Blog258.jpg
-date: 2023/07/22
+date: 2023-07-22
 ---
 
 Python 提供了一些隐藏起来的不为人知的非常实用的小功能，下面我们依次介绍一下。

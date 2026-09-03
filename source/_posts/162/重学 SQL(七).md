@@ -1,7 +1,7 @@
 ---
 title: 重学 SQL(七)
 featured_image: https://cdn.zhangdd.tech/blogImg/Blog162.jpg
-date: 2020/08/21
+date: 2020-08-21
 ---
 
 本篇，我们来介绍一下 SQL 中比较重要的知识 —— 事务、事务隔离级别以及不同隔离级别所解决的问题。

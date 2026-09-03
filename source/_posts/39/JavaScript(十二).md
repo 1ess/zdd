@@ -1,7 +1,7 @@
 ---
 title: JavaScript(十二)
 featured_image: https://cdn.zhangdd.tech/blogImg/Blog39.jpg
-date: 2018/08/17
+date: 2018-08-17
 ---
 
 这一篇，我们讲讲 JavaScript 中非常重要的概念 —— 事件。

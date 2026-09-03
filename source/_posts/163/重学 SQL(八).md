@@ -1,7 +1,7 @@
 ---
 title: 重学 SQL(八)
 featured_image: https://cdn.zhangdd.tech/blogImg/Blog163.jpg
-date: 2020/08/23
+date: 2020-08-23
 ---
 
 本篇，我们来介绍一下 MySQL 支持的数据类型，了解这些类型，以及确定何时使用哪种类型是非常重要的。

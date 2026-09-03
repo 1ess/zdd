@@ -1,7 +1,7 @@
 ---
 title: Python(九)
 featured_image: https://cdn.zhangdd.tech/blogImg/Blog109.jpg
-date: 2019/03/08
+date: 2019-03-08
 ---
 
 本篇，我们说说 Python 中的 IO 编程 —— 文件读写、StringIO 和 BytesIO 以及序列化。

@@ -1,7 +1,7 @@
 ---
 title: Nginx(二)
 featured_image: https://cdn.zhangdd.tech/blogImg/Blog126.jpg
-date: 2019/09/17
+date: 2019-09-17
 ---
 
 本篇，我们来介绍一下 Nginx 中最重要的一个配置文件 —— nginx.conf 的基本配置。

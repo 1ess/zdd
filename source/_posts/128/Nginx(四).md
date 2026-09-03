@@ -1,7 +1,7 @@
 ---
 title: Nginx(四)
 featured_image: https://cdn.zhangdd.tech/blogImg/Blog128.jpg
-date: 2019/09/22
+date: 2019-09-22
 ---
 
 本篇，我们来介绍一下 nginx.conf 的 http 块、server 块以及 location 块中的一些常见基本配置。

@@ -1,7 +1,7 @@
 ---
 title: Oracle 数据库拾遗(三)
 featured_image: https://cdn.zhangdd.tech/blogImg/Blog175.jpg
-date: 2021/01/17
+date: 2021-01-17
 ---
 
 前面的实例介绍了 SELECT 语句的简单应用，即简单查询。在实际应用中，对一个基本表或视图做简单查询是比较少的，大多情况下都要求对数据表进行筛选、分组或排序，这就需要用到高级查询。

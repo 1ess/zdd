@@ -1,7 +1,7 @@
 ---
 title: Python(六)
 featured_image: https://cdn.zhangdd.tech/blogImg/Blog106.jpg
-date: 2019/02/22
+date: 2019-02-22
 ---
 
 本篇，我们说说 Python 中的面向对象高级编程的基本概念。

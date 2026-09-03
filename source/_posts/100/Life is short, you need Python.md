@@ -1,7 +1,7 @@
 ---
 title: Life is short, you need Python
 featured_image: https://cdn.zhangdd.tech/blogImg/Blog100.jpg
-date: 2019/01/29
+date: 2019-01-29
 ---
 
 ![](https://cdn.zhangdd.tech/contentImg/python/python1.jpg)

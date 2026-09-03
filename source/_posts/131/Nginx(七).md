@@ -1,7 +1,7 @@
 ---
 title: Nginx(七)
 featured_image: https://cdn.zhangdd.tech/blogImg/Blog131.jpg
-date: 2019/10/11
+date: 2019-10-11
 ---
 
 本篇，我们来介绍一下 nginx.conf 中的与反向代理以及负载均衡相关的配置。

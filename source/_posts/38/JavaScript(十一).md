@@ -1,7 +1,7 @@
 ---
 title: JavaScript(十一)
 featured_image: https://cdn.zhangdd.tech/blogImg/Blog38.jpg
-date: 2018/08/15
+date: 2018-08-15
 ---
 
 这一篇，我们讲讲 DOM 扩展。

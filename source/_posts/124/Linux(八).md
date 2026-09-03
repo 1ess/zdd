@@ -1,7 +1,7 @@
 ---
 title: Linux(八)
 featured_image: https://cdn.zhangdd.tech/blogImg/Blog124.jpg
-date: 2019/08/14
+date: 2019-08-14
 ---
 
 本篇，我们在来说一下在 Linux 下，有关正则和文本处理的相关知识。

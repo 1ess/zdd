@@ -1,7 +1,7 @@
 ---
 title: C Sharp(八)
 featured_image: https://cdn.zhangdd.tech/blogImg/Blog54.jpg
-date: 2018/09/14
+date: 2018-09-14
 ---
 
 这一篇，我们讲讲 C# 中特殊的委托(delegate)。

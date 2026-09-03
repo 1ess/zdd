@@ -1,7 +1,7 @@
 ---
 title: Redis
 featured_image: https://cdn.zhangdd.tech/blogImg/Blog146.jpg
-date: 2020/05/23
+date: 2020-05-23
 ---
 
 公司内部准备搭建缓存系统，经过调研，决定使用 Redis 来构建这一系统，本篇，我们就说说 Redis 的那些事。

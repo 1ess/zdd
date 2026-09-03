@@ -1,7 +1,7 @@
 ---
 title: Python(十五)
 featured_image: https://cdn.zhangdd.tech/blogImg/Blog115.jpg
-date: 2019/05/12
+date: 2019-05-12
 ---
 
 本篇，我们来介绍一下 BeautifulSoup，使用它可以灵活又方便的进行网页解析，支持多种解析器，即使不编写正则表达式也可以进行网页信息的提取。

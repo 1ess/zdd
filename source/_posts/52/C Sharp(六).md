@@ -1,7 +1,7 @@
 ---
 title: C Sharp(六)
 featured_image: https://cdn.zhangdd.tech/blogImg/Blog52.jpg
-date: 2018/09/12
+date: 2018-09-12
 ---
 
 这一篇，讲讲 C# 中的结构体类型和枚举类型。

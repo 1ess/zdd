@@ -1,7 +1,7 @@
 ---
 title: Git(一)
 featured_image: https://cdn.zhangdd.tech/blogImg/Blog177.jpg
-date: 2021/01/25
+date: 2021-01-25
 ---
 
 版本控制是软件开发中必不可少的工具，本篇，我们来介绍目前最流行的版本控制系统 —— Git。

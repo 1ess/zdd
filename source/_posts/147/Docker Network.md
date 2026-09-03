@@ -1,7 +1,7 @@
 ---
 title: Docker Network
 featured_image: https://cdn.zhangdd.tech/blogImg/Blog147.jpg
-date: 2020/05/25
+date: 2020-05-25
 ---
 
 docker 的网络驱动有很多种方式，docker 官网给出的网络解决方案有 6 种，分别是：bridge、host、overlay、macvlan、none、Network plugins。每个网络都有自己的特点，应用场景各不相同，例如当有多台主机上的 docker 容器需要容器间进行跨宿主机通讯时，overlay 和 macvlan 可提供解决方案，而默认 docker 采用的是 bridge 模式，此模式下不能与其他主机上的 docker 容器通讯。本篇主要关注 docker 单机通讯方式的几种通讯模式：bridge、host、none 和 container。

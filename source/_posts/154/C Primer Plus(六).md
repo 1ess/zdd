@@ -1,7 +1,7 @@
 ---
 title: C Primer Plus(六)
 featured_image: https://cdn.zhangdd.tech/blogImg/Blog154.jpg
-date: 2020/07/12
+date: 2020-07-12
 ---
 
 上一篇，我们介绍了指针以及指针和数组的关系的基本知识，本篇我们继续讲讲有关指针的其他知识。

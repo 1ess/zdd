@@ -17,5 +17,13 @@ hexo.extend.filter.register('after_post_render', function (data) {
     return tag.replace(/^<img\b/i, '<img class="progressive-image" loading="lazy" decoding="async"');
   });
 
+  // Keep video sources untouched. A lightweight local poster prevents the
+  // blank frame shown while a remote video establishes its first frame.
+  const fallbackPoster = hexo.config.root.replace(/\/?$/, '/') + 'images/video-poster.svg';
+  data.content = data.content.replace(/<video\b[^>]*>/gi, function (tag) {
+    if (/\bposter\s*=/i.test(tag) || !/\bsrc\s*=\s*(["'])https?:\/\//i.test(tag)) return tag;
+    return tag.replace(/^<video\b/i, '<video poster="' + fallbackPoster + '"');
+  });
+
   return data;
 });

@@ -1,7 +1,7 @@
 ---
 title: 重学 SQL(十)
 featured_image: https://cdn.zhangdd.tech/blogImg/Blog165.jpg
-date: 2020/08/27
+date: 2020-08-27
 ---
 
 上一篇，我们介绍了一部分索引的知识，本篇，我们开始介绍有关索引的其余概念。

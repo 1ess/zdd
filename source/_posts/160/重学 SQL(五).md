@@ -1,7 +1,7 @@
 ---
 title: 重学 SQL(五)
 featured_image: https://cdn.zhangdd.tech/blogImg/Blog160.jpg
-date: 2020/08/16
+date: 2020-08-16
 ---
 
 前几篇，我们介绍了 SQL 的基本操作，这一篇，我们来介绍 SQL 中的如何进行复杂查询，帮助提升编写复杂查询的能力。

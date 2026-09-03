@@ -1,7 +1,7 @@
 ---
 title: RabbitMQ
 featured_image: https://cdn.zhangdd.tech/blogImg/Blog145.jpg
-date: 2020/05/14
+date: 2020-05-14
 ---
 
 本篇，我们介绍一下消息队列(MessageQueue)以及生产中比较常使用的框架 RabbitMQ。

@@ -1,7 +1,7 @@
 ---
 title: 重学 SQL(十一)
 featured_image: https://cdn.zhangdd.tech/blogImg/Blog166.jpg
-date: 2020/08/30
+date: 2020-08-30
 ---
 
 本篇是我们 SQL 教程的最后一篇，这一篇，我们来详细说一说 MySQL 账户与权限相关的问题。

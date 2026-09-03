@@ -1,7 +1,7 @@
 ---
 title: Linux(三)
 featured_image: https://cdn.zhangdd.tech/blogImg/Blog119.jpg
-date: 2019/06/09
+date: 2019-06-09
 ---
 
 > 旧游无处不堪寻，无寻处，唯有少年心。
