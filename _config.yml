@@ -103,7 +103,6 @@ plugin:
   - hexo-generator-category-enhance
   - hexo-generator-feed
   - hexo-asset-image
-  - hexo-toc
 
 feed:
   type: atom

@@ -1,3 +1,5 @@
+@use "sass:color";
+
 $color-accent: #01506f;
 $back-container-background: #fcfcfc;
 $front-container-background: #ffffff;
@@ -25,11 +27,11 @@ $post-meta-size: 16px;
 $tag-category-title-size: 22px;
 $toc-size: 16px;
 
-$dark-accent: darken($color-accent, 10%);
-$deep-dark-accent: darken($color-accent, 50%);
+$dark-accent: color.adjust($color-accent, $lightness: -10%);
+$deep-dark-accent: color.adjust($color-accent, $lightness: -50%);
 $color-text: $deep-dark-accent;
 
-@if lightness($color-accent) <10% {
+@if color.channel($color-accent, "lightness", $space: hsl) <10% {
   $dark-accent: $color-accent;
   $deep-dark-accent: $color-accent;
   $color-text: $deep-dark-accent;
@@ -396,7 +398,7 @@ blockquote {
 a {
   color: $color-accent;
   &:hover {
-    color: darken($color-accent, 10%);
+    color: color.adjust($color-accent, $lightness: -10%);
     text-underline-position: under;
   }
   @media screen and (max-width: $single-column-max-width) {
@@ -583,7 +585,7 @@ a {
               $color-accent,
               $drawer-menu-item-active-background-alpha
             );
-            color: darken($color-accent, $drawer-menu-item-active-color-darken);
+            color: color.adjust($color-accent, $lightness: -$drawer-menu-item-active-color-darken);
           }
         }
       }
@@ -650,12 +652,12 @@ a {
       border-right: 2px solid
         rgba($color-accent, $nav-item-hover-indicator-alpha);
       background: rgba($color-accent, $nav-item-hover-background-alpha);
-      color: darken($color-accent, $nav-item-hover-color-darken);
+      color: color.adjust($color-accent, $lightness: -$nav-item-hover-color-darken);
     }
     &.active {
       border-right: 2px solid $color-accent;
       background: rgba($color-accent, $nav-item-active-background-alpha);
-      color: darken($color-accent, $nav-item-active-color-darken);
+      color: color.adjust($color-accent, $lightness: -$nav-item-active-color-darken);
     }
   }
   .nav-link-list {
@@ -673,12 +675,12 @@ a {
         border-right: 2px solid
           rgba($color-accent, $nav-item-hover-indicator-alpha);
         background: rgba($color-accent, $nav-item-hover-background-alpha);
-        color: darken($color-accent, $nav-item-hover-color-darken);
+        color: color.adjust($color-accent, $lightness: -$nav-item-hover-color-darken);
       }
       &.active {
         border-right: 2px solid $color-accent;
         background: rgba($color-accent, $nav-item-active-background-alpha);
-        color: darken($color-accent, $nav-item-active-color-darken);
+        color: color.adjust($color-accent, $lightness: -$nav-item-active-color-darken);
       }
     }
   }

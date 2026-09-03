@@ -1,12 +1,12 @@
-<% include _include/variables.ejs %>
+<%- include('_include/variables.ejs') %>
 <%
 config.__isIndex = true
 %>
-<% include _include/head.ejs %>
-<% include _include/container_head.ejs %>
-<% include _include/single_column_head.ejs %>
-<% include _include/side_nav.ejs %>
-<% include _include/extra_nav.ejs %>
+<%- include('_include/head.ejs') %>
+<%- include('_include/container_head.ejs') %>
+<%- include('_include/single_column_head.ejs') %>
+<%- include('_include/side_nav.ejs') %>
+<%- include('_include/extra_nav.ejs') %>
 
 <%
 function getFeaturedImage(item) {
@@ -48,10 +48,10 @@ function getFeaturedImage(item) {
         </a>
         <% }) %>
     
-        <% include _include/pagination.ejs %>
+        <%- include('_include/pagination.ejs') %>
     </div>
-    <% include _include/single_column_footer.ejs %>
+    <%- include('_include/single_column_footer.ejs') %>
 </div>
 
-<% include _include/container_tail.ejs %>
-<% include _include/tail.ejs %>
+<%- include('_include/container_tail.ejs') %>
+<%- include('_include/tail.ejs') %>

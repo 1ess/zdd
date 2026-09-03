@@ -1,4 +1,4 @@
-<% include _include/variables.ejs %>
+<%- include('_include/variables.ejs') %>
 <%
 config.__title = page.title + " - " + config.title
 config.__desc = page.intro || page.desc || truncate(strip_html(page.content), {
@@ -7,11 +7,11 @@ config.__desc = page.intro || page.desc || truncate(strip_html(page.content), {
 })
 config.__noPager = true
 %>
-<% include _include/head.ejs %>
-<% include _include/container_head.ejs %>
-<% include _include/single_column_head.ejs %>
-<% include _include/side_nav.ejs %>
-<% include _include/extra_nav.ejs %>
+<%- include('_include/head.ejs') %>
+<%- include('_include/container_head.ejs') %>
+<%- include('_include/single_column_head.ejs') %>
+<%- include('_include/side_nav.ejs') %>
+<%- include('_include/extra_nav.ejs') %>
 
 <%
 function getFeaturedImage() {
@@ -57,16 +57,16 @@ function getFeaturedImage() {
                 </div>
             </div>
     
-            <% include _include/post_pagination.ejs %>
+            <%- include('_include/post_pagination.ejs') %>
     
-            <% include _include/comment_templates.ejs %>
+            <%- include('_include/comment_templates.ejs') %>
         </div>
     </div>
-    <% include _include/single_column_footer.ejs %>
+    <%- include('_include/single_column_footer.ejs') %>
 </div>
 
-<% include _include/container_tail.ejs %>
+<%- include('_include/container_tail.ejs') %>
 <% if(!page.no_comments) { %>
-<% include _include/comment_includes.ejs %>
+<%- include('_include/comment_includes.ejs') %>
 <% } %>
-<% include _include/tail.ejs %>
+<%- include('_include/tail.ejs') %>
