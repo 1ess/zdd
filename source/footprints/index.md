@@ -7,11 +7,14 @@ footprints: true
 
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
 
-<div id="footprints-map" aria-label="足迹地图"></div>
+<div id="footprints-map" aria-label="足迹地图" role="application"></div>
+<p id="footprints-status" class="footprints-status" role="status" aria-live="polite">正在加载足迹数据…</p>
 
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 <script>
 window.addEventListener('load', function () {
+  var status = document.getElementById('footprints-status');
+  function setStatus(message) { status.textContent = message; }
   document.documentElement.classList.add('footprints-document');
   ['.single-column-header-container', '.post-head-wrapper-text-only', '.single-column-footer'].forEach(function (selector) {
     var element = document.querySelector(selector);
@@ -50,8 +53,11 @@ window.addEventListener('load', function () {
       }).addTo(map);
       map.fitBounds(layer.getBounds(), { padding: [36, 36], maxZoom: 5 });
       window.setTimeout(function () { map.invalidateSize(); }, 100);
+      setStatus('已显示 ' + data.features.length + ' 个地点，共 ' + totalVisits + ' 次足迹。可滚动缩放地图，点击标注查看游记。');
     })
-    .catch(function () {});
+    .catch(function () {
+      setStatus('足迹数据加载失败，请刷新页面后重试。');
+    });
   function escapeHtml(value) {
     return String(value).replace(/[&<>"']/g, function (character) {
       return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[character];

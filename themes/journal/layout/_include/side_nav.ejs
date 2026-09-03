@@ -18,9 +18,11 @@
 
         <% if(site.pages){ %>
         <% site.pages.each(function (page){ %>
+        <% if (page.path !== 'about/index.html') { %>
         <a class="a-block nav-link-item <%= is_current(page.path) && 'active' %>" href="<%= config.root + page.path %>">
             <%= page.title %>
         </a>
+        <% } %>
         <% });} %>
 
         <% if (theme.about) { %>

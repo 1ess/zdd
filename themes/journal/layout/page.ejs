@@ -25,8 +25,8 @@ function getFeaturedImage() {
 <div ref="streamContainer" class="stream-container">
     <div class="post-list-container post-list-container-shadow">
         <div class="post">
-            <div class="<%= page.featured_image ? 'post-head-wrapper' : 'post-head-wrapper-text-only' %>"
-                 style="background-image: url('<%= getFeaturedImage() %>')">
+            <div class="<%= page.featured_image ? 'post-head-wrapper progressive-cover' : 'post-head-wrapper-text-only' %>"
+                 <% if (page.featured_image) { %>data-image-src="<%= getFeaturedImage() %>"<% } %>>
                 <div class="post-title">
                     <%= page.title %>
                     <% if(page.date && page.date.length > 0) { %>

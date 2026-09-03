@@ -4,6 +4,14 @@
 <meta name="author" content="<%= config.author %>">
 <meta name="description" content="<%= config.__desc %>">
 <meta name="keywords" content="<%= page.keywords ? page.keywords : config.keywords ? config.keywords : "" %>">
+<meta property="og:type" content="<%= page.layout === 'post' ? 'article' : 'website' %>">
+<meta property="og:title" content="<%= config.__title %>">
+<meta property="og:description" content="<%= config.__desc %>">
+<meta property="og:url" content="<%= config.url + url_for(page.path) %>">
+<% if (page.featured_image) { %>
+<meta property="og:image" content="<%= /^https?:\/\//.test(page.featured_image) ? page.featured_image : config.url + url_for(page.path + page.featured_image) %>">
+<% } %>
+<meta name="twitter:card" content="summary_large_image">
 <% if(theme.rss){ %>
 <link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="<%= config.root + theme.rss %>">
 <% } %>

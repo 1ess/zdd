@@ -47,4 +47,4 @@
 }
 ```
 
-修改完成后运行 `hexo generate` 或本地预览服务，地图会自动读取更新后的数据。
+修改完成后运行 `npm run validate:footprints` 可先检查 GeoJSON 格式；发布时运行 `npm run build`，会在生成前校验足迹数据并在生成后做关键页面冒烟检查。

@@ -1,0 +1,25 @@
+name: Site checks
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - name: Install site dependencies
+        run: npm ci
+      - name: Install theme build dependencies
+        run: npm install --prefix themes/journal
+      - name: Compile theme styles
+        run: npm run build:theme
+      - name: Generate and validate site
+        run: npm run build
+      - name: Report media quality
+        run: npm run report:media

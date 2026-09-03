@@ -3,10 +3,15 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "build": "hexo generate",
+    "build": "npm run validate:footprints && hexo clean && hexo generate && npm run check:site && npm run check:links",
+    "build:theme": "npm --prefix themes/journal run build",
     "clean": "hexo clean",
     "deploy": "hexo deploy",
-    "server": "hexo server"
+    "server": "hexo server",
+    "validate:footprints": "node tools/validate-footprints.js",
+    "check:site": "node tools/check-site.js",
+    "check:links": "node tools/check-links.js",
+    "report:media": "node tools/media-report.js"
   },
   "hexo": {
     "version": "5.4.2"

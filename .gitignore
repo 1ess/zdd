@@ -6,4 +6,5 @@ tmp
 db.json
 /public/*
 !/public/CNAME
+/public/media-report.json
 .obsidian
