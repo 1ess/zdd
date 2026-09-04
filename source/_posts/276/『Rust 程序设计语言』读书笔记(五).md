@@ -1,6 +1,6 @@
 ---
 title: 『Rust 程序设计语言』读书笔记(五)
-featured_image: https://cdn.zhangdd.tech/blogImg/Blog276.jpg
+featured_image: https://cdn.zhangdd.tech/blogImg/Blog276.webp
 date: 2024-10-23
 ---
 本篇我们介绍结构体(struct)，它是由其它数据类型组合而来。 其它语言也有类似的数据结构。

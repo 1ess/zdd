@@ -1,6 +1,6 @@
 ---
 title: Dot Net 常见问题解析
-featured_image: https://cdn.zhangdd.tech/blogImg/Blog46.jpg
+featured_image: https://cdn.zhangdd.tech/blogImg/Blog46.webp
 date: 2018-09-01
 ---
 

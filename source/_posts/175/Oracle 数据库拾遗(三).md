@@ -1,6 +1,6 @@
 ---
 title: Oracle 数据库拾遗(三)
-featured_image: https://cdn.zhangdd.tech/blogImg/Blog175.jpg
+featured_image: https://cdn.zhangdd.tech/blogImg/Blog175.webp
 date: 2021-01-17
 ---
 

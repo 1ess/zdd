@@ -1,6 +1,6 @@
 ---
 title: Git(二)
-featured_image: https://cdn.zhangdd.tech/blogImg/Blog178.jpg
+featured_image: https://cdn.zhangdd.tech/blogImg/Blog178.webp
 date: 2021-01-29
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: MySQL(五)
-featured_image: https://cdn.zhangdd.tech/blogImg/Blog96.jpg
+featured_image: https://cdn.zhangdd.tech/blogImg/Blog96.webp
 date: 2019-01-17
 ---
 

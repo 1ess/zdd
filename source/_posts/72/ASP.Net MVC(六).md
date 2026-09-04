@@ -1,6 +1,6 @@
 ---
 title: ASP.Net MVC(六)
-featured_image: https://cdn.zhangdd.tech/blogImg/Blog72.jpg
+featured_image: https://cdn.zhangdd.tech/blogImg/Blog72.webp
 date: 2018-10-29
 ---
 

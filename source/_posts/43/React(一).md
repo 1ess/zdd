@@ -1,6 +1,6 @@
 ---
 title: React(一)
-featured_image: https://cdn.zhangdd.tech/blogImg/Blog43.jpg
+featured_image: https://cdn.zhangdd.tech/blogImg/Blog43.webp
 date: 2018-08-25
 ---
 

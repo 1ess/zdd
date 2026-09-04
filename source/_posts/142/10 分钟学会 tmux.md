@@ -1,6 +1,6 @@
 ---
 title: 10 分钟学会 tmux
-featured_image: https://cdn.zhangdd.tech/blogImg/Blog142.jpg
+featured_image: https://cdn.zhangdd.tech/blogImg/Blog142.webp
 date: 2020-02-22
 ---
 

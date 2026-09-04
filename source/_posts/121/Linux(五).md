@@ -1,6 +1,6 @@
 ---
 title: Linux(五)
-featured_image: https://cdn.zhangdd.tech/blogImg/Blog121.jpg
+featured_image: https://cdn.zhangdd.tech/blogImg/Blog121.webp
 date: 2019-06-22
 ---
 

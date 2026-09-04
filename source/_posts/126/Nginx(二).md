@@ -1,6 +1,6 @@
 ---
 title: Nginx(二)
-featured_image: https://cdn.zhangdd.tech/blogImg/Blog126.jpg
+featured_image: https://cdn.zhangdd.tech/blogImg/Blog126.webp
 date: 2019-09-17
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: Synchronous and Asynchronous Blocking and Non-Blocking
-featured_image: https://cdn.zhangdd.tech/blogImg/Blog205.jpg
+featured_image: https://cdn.zhangdd.tech/blogImg/Blog205.webp
 date: 2022-02-12
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: 『Rust 程序设计语言』读书笔记(四)
-featured_image: https://cdn.zhangdd.tech/blogImg/Blog275.jpg
+featured_image: https://cdn.zhangdd.tech/blogImg/Blog275.webp
 date: 2024-10-18
 ---
 Slice 类型通常翻译为切片，它表示从某个包含多个元素的容器中取得局部数据，这个过程称为**切片操作**。不同语言对切片的支持有所不同，比如有些语言只允许取得连续的局部元素，而有些语言可以取得离散元素。

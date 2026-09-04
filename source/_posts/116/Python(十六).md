@@ -1,11 +1,11 @@
 ---
 title: Python(十六)
-featured_image: https://cdn.zhangdd.tech/blogImg/Blog116.jpg
+featured_image: https://cdn.zhangdd.tech/blogImg/Blog116.webp
 date: 2019-05-17
 ---
 
 接下来的几篇，我们将介绍一下最流行的爬虫框架 Scrapy。本篇，我们会介绍一下 Scrapy 的基本使用。
-![](https://cdn.zhangdd.tech/contentImg/scrapy/scrapy_architecture_02.png)
+![](https://cdn.zhangdd.tech/contentImg/scrapy/scrapy_architecture_02.webp)
 
 ## 基本命令
 ***  
@@ -36,7 +36,7 @@ xpath() 和 css() 的返回结果也是 Selector 对象列表，列表元素可�
 我个人更习惯 css() 方法: 
 ``` python
 response.css('#images img::attr(src)').getall()
-# ['image1_thumb.jpg', 'image2_thumb.jpg', 'image3_thumb.jpg', 'image4_thumb.jpg', 'image5_thumb.jpg']
+# ['image1_thumb.webp', 'image2_thumb.webp', 'image3_thumb.webp', 'image4_thumb.webp', 'image5_thumb.webp']
 
 response.css('a[href*=image]::attr(href)').getall()
 # ['image1.html', 'image2.html', 'image3.html', 'image4.html', 'image5.html']

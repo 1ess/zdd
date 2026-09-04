@@ -168,15 +168,75 @@ body {
   }
 }
 
+.stream-container .post .post-body-wrapper .post-body img.progressive-image,
+.stream-container .post .post-body-wrapper .post-body video {
+  display: block;
+  width: auto;
+  max-width: min(960px, calc(100% - 2rem));
+  height: auto;
+  aspect-ratio: attr(width) / attr(height);
+  object-fit: contain;
+  margin: 1.5rem auto;
+  border-radius: 5px;
+  overflow-anchor: none;
+}
+
+.stream-container .post .post-body-wrapper .post-body video {
+  width: min(960px, calc(100% - 2rem));
+  max-height: none;
+  aspect-ratio: 16 / 9;
+  background: #000;
+}
+
 .stream-container .post .post-body-wrapper .post-body img.progressive-image {
   background: linear-gradient(135deg, #edf3f5, #dbe7eb);
-  min-height: 120px;
-  filter: blur(8px);
-  transition: filter .35s ease;
+}
 
-  &.is-loaded,
-  &.is-error {
-    filter: none;
+.stream-container .post .post-body-wrapper .post-body > img.progressive-image,
+.stream-container .post .post-body-wrapper .post-body > p > img.progressive-image {
+  width: min(960px, calc(100% - 2rem));
+  height: 520px;
+  object-fit: cover;
+}
+
+.stream-container .post .post-body-wrapper .post-body p:has(> img.progressive-image),
+.stream-container .post .post-body-wrapper .post-body p:has(> video) {
+  overflow-anchor: none;
+}
+
+.stream-container .post .post-body-wrapper .post-body .post-image-gallery {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: .75rem;
+  width: min(960px, calc(100% - 2rem));
+  margin: 1rem auto 1.5rem;
+  overflow-anchor: none;
+
+  img.progressive-image {
+    width: 100%;
+    max-width: none;
+    height: 100%;
+    aspect-ratio: 4 / 3;
+    margin: 0;
+    object-fit: cover;
+  }
+
+  &.post-image-gallery-odd img.progressive-image:first-child {
+    grid-column: 1 / -1;
+    aspect-ratio: 16 / 9;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .stream-container .post .post-body-wrapper .post-body .post-image-gallery {
+    width: 100%;
+    gap: .5rem;
+  }
+
+  .stream-container .post .post-body-wrapper .post-body > img.progressive-image,
+  .stream-container .post .post-body-wrapper .post-body > p > img.progressive-image {
+    width: 100%;
+    height: 320px;
   }
 }
 
@@ -1317,17 +1377,18 @@ a {
 }
 
 .article-toc {
-  position: sticky;
-  top: 84px;
-  float: right;
-  width: min(280px, 42%);
-  max-height: calc(100vh - 120px);
-  margin: 0 0 24px 28px;
+  z-index: 10;
+  position: static;
+  float: none;
+  width: 100%;
+  max-height: 300px;
+  margin: 0 0 22px;
   padding: 18px 20px;
   overflow: auto;
   border-left: 3px solid rgba($color-accent, .28);
   border-radius: 5px;
-  background: rgba($color-accent, .05);
+  background: $front-container-background;
+  box-shadow: 0 6px 22px rgba(0, 0, 0, .08);
 
   strong {
     display: block;
@@ -1358,12 +1419,38 @@ a {
     &:hover { color: $color-accent; }
   }
 
-  @media screen and (max-width: $single-column-max-width) {
-    position: static;
-    float: none;
-    width: 100%;
-    max-height: 300px;
-    margin: 0 0 22px;
+}
+
+// The site remains a two-column layout. On roomy screens the TOC gets a
+// local column inside the article card, so it can stay visible without
+// participating in text/image flow. Narrow desktops keep the full-width TOC.
+@media screen and (min-width: 1280px) {
+  .post-body-wrapper.has-visible-toc {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 240px;
+    column-gap: 28px;
+    align-items: start;
+
+    > .post-body {
+      grid-row: 1;
+      grid-column: 1;
+      min-width: 0;
+      padding-right: 0;
+    }
+
+    > .article-toc {
+      position: sticky;
+      top: 84px;
+      grid-row: 1;
+      grid-column: 2;
+      width: 100%;
+      max-height: calc(100vh - 120px);
+      margin: 0;
+    }
+
+    > .post-discovery {
+      grid-column: 1 / -1;
+    }
   }
 }
 
@@ -1481,6 +1568,28 @@ a {
   .theme-toggle-mobile { display: none; }
 }
 
+@media screen and (max-width: 600px) {
+  .stream-container .post .post-body-wrapper .post-body img.progressive-image,
+  .stream-container .post .post-body-wrapper .post-body video {
+    max-width: 100%;
+  }
+}
+
+html.theme-transition,
+html.theme-transition body,
+html.theme-transition body *:not(img):not(video):not(iframe):not(canvas) {
+  transition-property: background-color, color, border-color, fill, stroke !important;
+  transition-duration: .28s !important;
+  transition-timing-function: ease !important;
+}
+
+html.theme-transition .post-list-container,
+html.theme-transition .post-list-container-shadow,
+html.theme-transition .post-item,
+html.theme-transition .post {
+  transition: none !important;
+}
+
 html.dark-theme {
   color-scheme: dark;
   background: #15171a;
@@ -1506,7 +1615,7 @@ html.dark-theme {
 
   // Semantic text hierarchy. These explicit selectors also neutralize the
   // legacy card rule that recolors every descendant on hover.
-  .post-body, .post-body p, .post-body li, .post-body span, .post-body strong,
+  .post-body, .post-body p, .post-body li, .post-body strong,
   .post-body del, .post-body s,
   .footprints-popup, .footprints-popup p, .footprints-popup li { color: #e3e7ec !important; }
   .post-body del, .post-body s { text-decoration-color: #7f8995 !important; }
@@ -1646,6 +1755,108 @@ html.dark-theme {
 html.dark-theme {
   .not-found-code { color: #77746e; }
   .not-found > p { color: #b8c0ca !important; }
+}
+
+// Nord code palette for the light theme. Keep it isolated so the original
+// light site palette remains unchanged outside code blocks.
+html:not(.dark-theme) {
+  .highlight, .highlight table, .highlight td, .highlight pre,
+  .highlight code, .hljs {
+    background: #eceff4 !important;
+    color: #2e3440 !important;
+  }
+  .hljs-comment, .hljs-quote { color: #6b7485 !important; font-style: italic; }
+  .hljs-keyword, .hljs-selector-tag, .hljs-literal, .hljs-type { color: #5e81ac !important; }
+  .hljs-string, .hljs-regexp, .hljs-addition, .hljs-attribute { color: #4f7554 !important; }
+  .hljs-number, .hljs-symbol, .hljs-bullet, .hljs-meta { color: #8f5e8f !important; }
+  .hljs-title, .hljs-section, .hljs-name, .hljs-selector-id,
+  .hljs-selector-class { color: #087e8b !important; }
+  .hljs-variable, .hljs-template-variable, .hljs-attr, .hljs-built_in { color: #9b5b43 !important; }
+}
+
+// Restore the original warm-gold character of the dark theme. This block is
+// intentionally last: legacy selectors in the theme are unusually specific.
+html.dark-theme {
+  body, .container-fluid, .stream-container,
+  .post-list-container, .post { color: #e7e3da !important; }
+  .post-body, .post-body p, .post-body li, .post-body strong,
+  .post-body del, .post-body s { color: #e7e3da !important; }
+  .post-item-title, .post-item-title a, .post-title,
+  .post-head-wrapper-text-only .post-title,
+  h1, h2, h3, h4, h5, h6 { color: #e4be70 !important; }
+  .post-item-summary, .site-search-results p, figcaption,
+  .nav-subtitle, .single-column-header-subtitle { color: #c9c5bc !important; }
+  .post-item-meta, .post-item-meta *, .post-meta, .post-meta *, time,
+  .reading-time, .site-search-status, .site-search-meta,
+  .post-list-footer, .footprints-status { color: #b8b5ae !important; }
+
+  a, .post-body a, .post-body a * { color: #d6b36a !important; }
+  a:hover, a:hover *, a:focus-visible, a:focus-visible * { color: #f0c979 !important; }
+  .post-item-wrapper:not(.post-item-wrapper-no-hover):hover {
+    background: #24262a !important;
+    .post-item,
+    .post-item.post-item-no-gaps,
+    .post-item.post-item-no-divider { background: #24262a !important; }
+    .post-item-title, .post-item-title a { color: #f0c979 !important; }
+    .post-item-summary { color: #ddd8ce !important; }
+    .post-item-meta, .post-item-meta * { color: #c8c4bc !important; }
+  }
+  .post-head-wrapper .post-title,
+  .post-head-wrapper .post-title * { color: #fff !important; }
+
+  .side-container .nav-title, .single-column-header-title { color: #e4be70 !important; }
+  .side-container .nav-link-item, .drawer-menu-item, .navbar-brand { color: #c9c5bc !important; }
+  .side-container .nav-link-item.active, .drawer-menu-item.active { color: #d6b36a !important; }
+  .side-container .nav-link-item:hover, .drawer-menu-item:hover,
+  .side-container .nav-link-item:focus-visible, .drawer-menu-item:focus-visible { color: #f0c979 !important; }
+
+  .nav-footer, .nav-footer span, .nav-footer a,
+  .single-column-footer, .single-column-footer span,
+  .single-column-footer a { color: #e7e3da !important; }
+  .theme-toggle, .theme-toggle .material-icons { color: #b8b5ae !important; }
+
+  .extra-container,
+  .extra-container .pagination,
+  .extra-container .pagination-indicator,
+  .extra-container .pagination-indicator span,
+  .extra-container .pagination-indicator div {
+    color: #b8b5ae !important;
+  }
+  .extra-container .pagination-action,
+  .extra-container .pagination-action .pagination-action-icon {
+    color: #d6b36a !important;
+  }
+  .extra-container .pagination-action:hover,
+  .extra-container .pagination-action:focus-visible,
+  .extra-container .pagination-action:hover .pagination-action-icon,
+  .extra-container .pagination-action:focus-visible .pagination-action-icon {
+    color: #f0c979 !important;
+  }
+
+  .article-toc { background: #26292e !important; border-color: #575044; box-shadow: 0 8px 28px rgba(0, 0, 0, .42); }
+  .article-toc > strong { color: #e4be70 !important; }
+  .article-toc a { color: #bcb8af !important; }
+  .article-toc a.active, .article-toc a:hover,
+  .article-toc a:focus-visible { color: #f0c979 !important; }
+
+  .highlight, .highlight table, .highlight td, .highlight pre,
+  .highlight code, .hljs { background: #2e3440 !important; color: #d8dee9 !important; }
+  .hljs-comment, .hljs-quote { color: #616e88 !important; }
+  .hljs-keyword, .hljs-selector-tag, .hljs-literal, .hljs-type { color: #81a1c1 !important; }
+  .hljs-string, .hljs-regexp, .hljs-addition, .hljs-attribute { color: #a3be8c !important; }
+  .hljs-number, .hljs-symbol, .hljs-bullet, .hljs-meta { color: #b48ead !important; }
+  .hljs-title, .hljs-section, .hljs-name, .hljs-selector-id,
+  .hljs-selector-class { color: #88c0d0 !important; }
+  .hljs-variable, .hljs-template-variable, .hljs-attr, .hljs-built_in { color: #d08770 !important; }
+
+  .stream-container .post-list-container .post-item-wrapper .post-item .post-item-title,
+  .stream-container .post-list-container .post-item-wrapper .post-item .post-item-title a {
+    color: #e4be70 !important;
+  }
+  .post-item-summary strong { color: inherit !important; }
+  .post-body strong { color: inherit !important; }
+  .post-body a strong { color: #d6b36a !important; }
+  .post-body a:hover strong, .post-body a:focus-visible strong { color: #f0c979 !important; }
 }
 
 @media (prefers-reduced-motion: reduce) {

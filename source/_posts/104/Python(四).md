@@ -1,6 +1,6 @@
 ---
 title: Python(四)
-featured_image: https://cdn.zhangdd.tech/blogImg/Blog104.jpg
+featured_image: https://cdn.zhangdd.tech/blogImg/Blog104.webp
 date: 2019-02-17
 ---
 

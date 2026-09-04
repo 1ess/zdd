@@ -1,6 +1,6 @@
 ---
 title: JavaScript(六)
-featured_image: https://cdn.zhangdd.tech/blogImg/Blog33.jpg
+featured_image: https://cdn.zhangdd.tech/blogImg/Blog33.webp
 date: 2018-07-26
 ---
 

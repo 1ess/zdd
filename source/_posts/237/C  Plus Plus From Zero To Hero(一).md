@@ -1,6 +1,6 @@
 ---
 title: C Plus Plus From Zero To Hero(一)
-featured_image: https://cdn.zhangdd.tech/blogImg/Blog237.jpg
+featured_image: https://cdn.zhangdd.tech/blogImg/Blog237.webp
 date: 2022-05-21
 ---
 

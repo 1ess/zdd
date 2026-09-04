@@ -1,6 +1,6 @@
 ---
 title: LeetCode-Longest Palindromic Substring
-featured_image: https://cdn.zhangdd.tech/blogImg/Blog233.png
+featured_image: https://cdn.zhangdd.tech/blogImg/Blog233.webp
 date: 2022-03-13
 ---
 

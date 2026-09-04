@@ -1,6 +1,6 @@
 ---
 title: MySQL(一)
-featured_image: https://cdn.zhangdd.tech/blogImg/Blog92.jpg
+featured_image: https://cdn.zhangdd.tech/blogImg/Blog92.webp
 date: 2019-01-04
 ---
 

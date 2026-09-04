@@ -1,6 +1,6 @@
 ---
 title: HTML(四)
-featured_image: https://cdn.zhangdd.tech/blogImg/Blog16.jpg
+featured_image: https://cdn.zhangdd.tech/blogImg/Blog16.webp
 date: 2018-07-09
 ---
 
@@ -12,7 +12,7 @@ figure 标记用来表示图片，图表，插图等内容。
 
 ``` HTML
 <figure>
-  <img src="a.jpg" alt="a">
+  <img src="a.webp" alt="a">
 </figure>
 ```
 
@@ -21,7 +21,7 @@ figure 标记用来表示图片，图表，插图等内容。
 figcaption 标记是为图片增加标题或者说明，是 figure 标记的子标记。
 ``` HTML
 <figure>
-  <img src="a.jpg" alt="a">
+  <img src="a.webp" alt="a">
   <figcaption>a</figcaption>
 </figure>
 ```
@@ -38,7 +38,7 @@ address 标记一般用于联系方式的描述，如住址，邮件信息等。
 ## time 元素(Time)
 ***  
 time 标记用于定义时间。
-![](https://cdn.zhangdd.tech/contentImg/html4/datetime-format-d0c825.png)
+![](https://cdn.zhangdd.tech/contentImg/html4/datetime-format-d0c825.webp)
 ``` HTML
 The game starts at <time datetime="2018-07-12T10:00">10:00</time>.
 ```
@@ -78,7 +78,7 @@ video 标记允许在网页内嵌入视频。
  3. "metadata": 仅仅缓冲文件的元数据
 
 ``` HTML
-<video src="foo.mp3" controls loop autoplay preload="auto" poster="foo.jpg"></video>
+<video src="foo.mp3" controls loop autoplay preload="auto" poster="foo.webp"></video>
 ```
 
 ## picture 元素(Picture)
@@ -87,8 +87,8 @@ picture 标记为网页嵌入图片资源，内部有0到多个 source 子元素
 浏览器选择 source 元素中最佳匹配来展示，如果都无法展示，则最终显示 img 元素。
 ``` HTML
 <picture>
-  <source srcset="foo.png" media="(min-width: 1000px)">
-  <img src="bar.png">
+  <source srcset="foo.webp" media="(min-width: 1000px)">
+  <img src="bar.webp">
 </picture>
 ```
 
@@ -191,7 +191,7 @@ input 元素的 list 属性要与 datalist 的 id 属性相同。
 重要属性: 
 - for: 要与关联的表单子控件的 id 属性值相同，点击 label，则关联控件获取焦点
 
-![](https://cdn.zhangdd.tech/contentImg/html4/label-element-for-attribute-313489.png)
+![](https://cdn.zhangdd.tech/contentImg/html4/label-element-for-attribute-313489.webp)
 ``` HTML
 <label for="first_name">First name</label>
 <br>
@@ -201,7 +201,7 @@ input 元素的 list 属性要与 datalist 的 id 属性相同。
 ## input 元素(Input)
 ***  
 定义一组与表单可交互的控件。
-![](https://cdn.zhangdd.tech/contentImg/html4/html-form-elements-939709.png)
+![](https://cdn.zhangdd.tech/contentImg/html4/html-form-elements-939709.webp)
 重要属性: 
 - required: 布尔属性，是否必须填写
 - name: 定义input唯一标识符
@@ -222,7 +222,7 @@ input 元素的 list 属性要与 datalist 的 id 属性相同。
 ``` HTML
 <input type="text" name="first_name" placeholder="e.g. Alex">
 ```
-![](https://cdn.zhangdd.tech/contentImg/html4/sending-input-variable-to-server-653369.png)  
+![](https://cdn.zhangdd.tech/contentImg/html4/sending-input-variable-to-server-653369.webp)
 
 ## option 元素(Option)
 ***  
@@ -231,7 +231,7 @@ option 标记定义下拉框的一个选项。
 - value: 提交到服务器的值
 - selected: 默认选中的选项
 
-![](https://cdn.zhangdd.tech/contentImg/html4/select-dropdown-in-iphone-a9968d.png)
+![](https://cdn.zhangdd.tech/contentImg/html4/select-dropdown-in-iphone-a9968d.webp)
 ``` HTML
 <select name="country">
   <option value="Argentina">Argentina</option>
@@ -274,4 +274,4 @@ optgroup 标记定义选项分组。
 
 ## 所有 HTML 元素集合
 ***  
-![](https://cdn.zhangdd.tech/contentImg/html4/HTML-CHEAT-SHEET-768x8555.png)
+![](https://cdn.zhangdd.tech/contentImg/html4/HTML-CHEAT-SHEET-768x8555.webp)

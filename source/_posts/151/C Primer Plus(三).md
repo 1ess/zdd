@@ -1,6 +1,6 @@
 ---
 title: C Primer Plus(三)
-featured_image: https://cdn.zhangdd.tech/blogImg/Blog151.jpg
+featured_image: https://cdn.zhangdd.tech/blogImg/Blog151.webp
 date: 2020-06-13
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: ASP.Net API(三)
-featured_image: https://cdn.zhangdd.tech/blogImg/Blog79.jpg
+featured_image: https://cdn.zhangdd.tech/blogImg/Blog79.webp
 date: 2018-11-24
 ---
 

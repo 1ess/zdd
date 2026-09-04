@@ -1,6 +1,6 @@
 ---
 title: Python(九)
-featured_image: https://cdn.zhangdd.tech/blogImg/Blog109.jpg
+featured_image: https://cdn.zhangdd.tech/blogImg/Blog109.webp
 date: 2019-03-08
 ---
 
@@ -65,7 +65,7 @@ StringIO 就是在内存中创建的 file-like Object，常用作临时缓冲。
 ### 二进制文件
 前面讲的默认都是读取文本文件，并且是 UTF-8 编码的文本文件。要读取二进制文件，比如图片、视频等等，用 'rb' 模式打开文件即可: 
 ``` python
-f = open('/Users/michael/test.jpg', 'rb')
+f = open('/Users/michael/test.webp', 'rb')
 f.read()
 # b'\xff\xd8\xff\xe1\x00\x18Exif\x00\x00...' # 十六进制表示的字节
 ```

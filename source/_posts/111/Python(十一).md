@@ -1,6 +1,6 @@
 ---
 title: Python(十一)
-featured_image: https://cdn.zhangdd.tech/blogImg/Blog111.jpg
+featured_image: https://cdn.zhangdd.tech/blogImg/Blog111.webp
 date: 2019-03-21
 ---
 

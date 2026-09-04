@@ -2,46 +2,61 @@
 
 const fs = require('fs');
 const path = require('path');
+const frontMatter = require('hexo-front-matter');
 
-const source = path.join(__dirname, '..', 'source', 'footprints', 'data.geojson');
-const data = JSON.parse(fs.readFileSync(source, 'utf8'));
+const postsRoot = path.join(__dirname, '..', 'source', '_posts');
 const errors = [];
+const places = new Map();
+let visitCount = 0;
 const datePattern = /^\d{4}-\d{2}(?:-\d{2})?$/;
 
-if (data.type !== 'FeatureCollection' || !Array.isArray(data.features)) {
-  errors.push('根对象必须是包含 features 数组的 FeatureCollection。');
+function markdownFiles(directory) {
+  return fs.readdirSync(directory, { withFileTypes: true }).flatMap((entry) => {
+    const target = path.join(directory, entry.name);
+    return entry.isDirectory() ? markdownFiles(target) : entry.name.endsWith('.md') ? [target] : [];
+  });
 }
 
-(data.features || []).forEach((feature, index) => {
-  const label = `features[${index}]`;
-  const properties = feature.properties || {};
-  const coordinates = feature.geometry && feature.geometry.coordinates;
+function entries(value) {
+  if (!value) return [];
+  return Array.isArray(value) ? value : [value];
+}
 
-  if (feature.type !== 'Feature') errors.push(`${label}.type 必须为 Feature。`);
-  if (!properties.name || typeof properties.name !== 'string') errors.push(`${label}.properties.name 必须为非空字符串。`);
-  if (!feature.geometry || feature.geometry.type !== 'Point' || !Array.isArray(coordinates) || coordinates.length !== 2) {
-    errors.push(`${label}.geometry 必须是含 [经度, 纬度] 的 Point。`);
-  } else {
-    const [longitude, latitude] = coordinates;
-    if (!Number.isFinite(longitude) || longitude < -180 || longitude > 180 || !Number.isFinite(latitude) || latitude < -90 || latitude > 90) {
-      errors.push(`${label}.geometry.coordinates 不在有效经纬度范围内。`);
+markdownFiles(postsRoot).forEach((file) => {
+  const relative = path.relative(postsRoot, file);
+  const post = frontMatter.parse(fs.readFileSync(file, 'utf8'));
+  entries(post.travel).forEach((travel, index) => {
+    const label = `${relative}: travel[${index}]`;
+    if (!travel || typeof travel.place !== 'string' || !travel.place.trim()) {
+      errors.push(`${label}.place 必须为非空字符串。`);
+      return;
     }
-  }
-  if (!Array.isArray(properties.visits) || properties.visits.length === 0) {
-    errors.push(`${label}.properties.visits 必须包含至少一次访问。`);
-    return;
-  }
-  properties.visits.forEach((visit, visitIndex) => {
-    const visitLabel = `${label}.properties.visits[${visitIndex}]`;
-    if (!visit || !datePattern.test(visit.date || '')) errors.push(`${visitLabel}.date 必须为 YYYY-MM 或 YYYY-MM-DD。`);
-    if (!visit || (!visit.post && !visit.url)) errors.push(`${visitLabel} 至少需要 post 或 url。`);
-    if (visit && visit.url && !/^(?:https?:\/\/|\/|\.\.\/)/.test(visit.url)) errors.push(`${visitLabel}.url 必须是绝对 URL、站内根路径或相对路径。`);
+    const coordinates = travel.coordinates;
+    if (!Array.isArray(coordinates) || coordinates.length !== 2) {
+      errors.push(`${label}.coordinates 必须是 [经度, 纬度]。`);
+      return;
+    }
+    const [longitude, latitude] = coordinates;
+    if (!Number.isFinite(longitude) || longitude < -180 || longitude > 180 ||
+        !Number.isFinite(latitude) || latitude < -90 || latitude > 90) {
+      errors.push(`${label}.coordinates 不在有效经纬度范围内。`);
+    }
+    if (travel.date && !datePattern.test(String(travel.date))) {
+      errors.push(`${label}.date 必须为 YYYY-MM 或 YYYY-MM-DD。`);
+    }
+    const known = places.get(travel.place);
+    if (known && (known[0] !== longitude || known[1] !== latitude)) {
+      errors.push(`${label} 与其他文章中的「${travel.place}」坐标不一致。`);
+    } else {
+      places.set(travel.place, coordinates);
+    }
+    visitCount += 1;
   });
 });
 
 if (errors.length) {
-  console.error('足迹数据校验失败：\n- ' + errors.join('\n- '));
+  console.error('足迹配置校验失败：\n- ' + errors.join('\n- '));
   process.exit(1);
 }
 
-console.log(`足迹数据校验通过：${data.features.length} 个地点。`);
+console.log(`足迹配置校验通过：${places.size} 个地点，${visitCount} 次足迹。`);

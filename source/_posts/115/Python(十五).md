@@ -1,6 +1,6 @@
 ---
 title: Python(十五)
-featured_image: https://cdn.zhangdd.tech/blogImg/Blog115.jpg
+featured_image: https://cdn.zhangdd.tech/blogImg/Blog115.webp
 date: 2019-05-12
 ---
 

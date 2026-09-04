@@ -1,6 +1,6 @@
 ---
 title: CSS(四)
-featured_image: https://cdn.zhangdd.tech/blogImg/Blog20.jpg
+featured_image: https://cdn.zhangdd.tech/blogImg/Blog20.webp
 date: 2018-07-13
 ---
 
@@ -58,7 +58,7 @@ background-image: none;
 - url()
 
 ``` CSS
-background-image: url(/images/demo-.png);
+background-image: url(/images/demo-.webp);
 ```
 - linear-gradient
 
@@ -212,5 +212,5 @@ background-clip: content-box;
 属性的书写顺序: 
 background: [background-color] [background-image] [background-repeat] [background-attachment] [background-position] / [ background-size] [background-origin] [background-clip];
 ``` CSS
-background: red url(img.png) no-repeat scroll center center / 50% content-box content-box;
+background: red url(img.webp) no-repeat scroll center center / 50% content-box content-box;
 ```

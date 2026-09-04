@@ -1,6 +1,6 @@
 ---
 title: Nginx(六)
-featured_image: https://cdn.zhangdd.tech/blogImg/Blog130.jpg
+featured_image: https://cdn.zhangdd.tech/blogImg/Blog130.webp
 date: 2019-10-09
 ---
 
@@ -138,7 +138,7 @@ server {
         #...
         valid_referers server_names *.0xfee1dead.cn;
         if ($invalid_referer) {
-            rewrite ^/ http://$server_name/forbidden.png;
+            rewrite ^/ http://$server_name/forbidden.webp;
         }
     }
 }

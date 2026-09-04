@@ -1,6 +1,6 @@
 ---
 title: CSS(七)
-featured_image: https://cdn.zhangdd.tech/blogImg/Blog23.jpg
+featured_image: https://cdn.zhangdd.tech/blogImg/Blog23.webp
 date: 2018-07-16
 ---
 
@@ -10,7 +10,7 @@ Grid 布局是一个二维布局系统，意味着它可以处理列和行，不
 上一篇我们就说过，基于传统的 float，position 的方式，在设计布局时会极其复杂，Flexbox 会有所帮助，但它适用于更简单的一维布局，而不是复杂的二维布局(Flexbox 和 Grid 实际上可以很好地协同工作)，Grid 是第一个专门用于解决布局问题的 CSS 模块，学会了 Grid 布局，对于我们的开发工作的帮助是巨大的。
 
 ## 基本概念
-***  
+***
 在深入研究 Grid 的概念之前，理解术语非常重要。由于这里涉及的术语在概念上是相似的，如果你不首先记住网格规范定义的含义，很容易将它们彼此混淆。
 
 ### Grid Container
@@ -21,22 +21,22 @@ grid container 的**直接**子元素。
 
 ### Grid Line
 构成网格结构的分界线。
-![](https://cdn.zhangdd.tech/contentImg/grid/grid-line.png)
+![](https://cdn.zhangdd.tech/contentImg/grid/grid-line.webp)
 
 ### Grid Track
 两个相邻网格线之间的空间。可以将它们视为网格的列或行。
-![](https://cdn.zhangdd.tech/contentImg/grid/grid-track.png)
+![](https://cdn.zhangdd.tech/contentImg/grid/grid-track.webp)
 
 ### Grid Cell
 两个相邻行和两个相邻列网格线之间的空间。它是网格的单个"单元"。
-![](https://cdn.zhangdd.tech/contentImg/grid/grid-cell.png)
+![](https://cdn.zhangdd.tech/contentImg/grid/grid-cell.webp)
 
 ### Grid Area
 四个网格线包围的总空间。网格区域可以包括任意数量的网格单元。
-![](https://cdn.zhangdd.tech/contentImg/grid/grid-area.png)
+![](https://cdn.zhangdd.tech/contentImg/grid/grid-area.webp)
 
 ## Grid container 上的属性
-***  
+***
 有 18 个属性定义在 grid container 上
 - display: grid
 - grid-template-columns
@@ -49,9 +49,9 @@ grid container 的**直接**子元素。
 - justify-items
 - align-items
 - place-items
-- justify-content
-- align-content
-- place-content
+- justify-conten
+- align-conten
+- place-conten
 - grid-auto-columns
 - grid-auto-rows
 - grid-auto-flow
@@ -76,7 +76,7 @@ display: grid; 定义了一个 grid 容器，为直接子元素提供一个网�
 }
 ```
 
-![](https://cdn.zhangdd.tech/contentImg/grid/grid-numbers.png)
+![](https://cdn.zhangdd.tech/contentImg/grid/grid-numbers.webp)
 
 - 我们也可以明确命名行列名称
 
@@ -87,7 +87,7 @@ display: grid; 定义了一个 grid 容器，为直接子元素提供一个网�
 }
 ```
 
-![](https://cdn.zhangdd.tech/contentImg/grid/grid-names.png)
+![](https://cdn.zhangdd.tech/contentImg/grid/grid-names.webp)
 
 - 一行也可以有多个名称
 
@@ -136,7 +136,7 @@ display: grid; 定义了一个 grid 容器，为直接子元素提供一个网�
 ```
 
 ### grid-template-areas
-通过使用 grid-area 属性指定的网格区域的名称来定义网格模板。重复网格区域的名称会导致内容跨越这些单元格。. 表示空单元格。 
+通过使用 grid-area 属性指定的网格区域的名称来定义网格模板。重复网格区域的名称会导致内容跨越这些单元格。. 表示空单元格。
 
 ``` CSS
 .item-a {
@@ -155,7 +155,7 @@ display: grid; 定义了一个 grid 容器，为直接子元素提供一个网�
 .container {
   grid-template-columns: 50px 50px 50px 50px;
   grid-template-rows: auto;
-  grid-template-areas: 
+  grid-template-areas:
     "header header header header"
     "main main . sidebar"
     "footer footer footer footer";
@@ -164,7 +164,7 @@ display: grid; 定义了一个 grid 容器，为直接子元素提供一个网�
 
 注意: 当我们通过这种方式给我们网格区域时，会自动给相应的网格线命名，比如下图中 main 区域，其行线及列线的起始线就会被自动设置为 main-start，行线及列线的结束线就命为 main-end。
 
-![](https://cdn.zhangdd.tech/contentImg/grid/grid-template-areas.png)
+![](https://cdn.zhangdd.tech/contentImg/grid/grid-template-areas.webp)
 
 ### grid-template
 grid-template 属性是 grid-template-rows，grid-template-columns 和 grid-template-areas 的简写形式。
@@ -184,8 +184,8 @@ grid-template 属性是 grid-template-rows，grid-template-columns 和 grid-temp
 .container {
   grid-template-rows: [row1-start] 25px [row1-end row2-start] 25px [row2-end];
   grid-template-columns: auto 50px auto;
-  grid-template-areas: 
-    "header header header" 
+  grid-template-areas:
+    "header header header"
     "footer footer footer";
 }
 ```
@@ -196,13 +196,13 @@ grid-template 属性是 grid-template-rows，grid-template-columns 和 grid-temp
 ``` CSS
 .container {
   grid-template-columns: 100px 50px 100px;
-  grid-template-rows: 80px auto 80px; 
+  grid-template-rows: 80px auto 80px;
   grid-column-gap: 10px;
   grid-row-gap: 15px;
 }
 ```
 
-![](https://cdn.zhangdd.tech/contentImg/grid/grid-column-row-gap.png)
+![](https://cdn.zhangdd.tech/contentImg/grid/grid-column-row-gap.webp)
 
 注意: 仅表示在行与行或者列和列之间的宽度，而不是行或列与边界的宽度。
 注意: Chrome 68+，Safari 11.2 Release 50+ 和 Opera 54+ 已经不使用 grid 前缀了。
@@ -220,8 +220,8 @@ grid-gap 属性是 grid-row-gap 和 grid-column-gap 的简写。
 
 ### justify-items
 在 row 轴对齐 grid items。
-四种取值: 
-- start
+四种取值:
+- star
 - end
 - center
 - stretch
@@ -231,30 +231,30 @@ grid-gap 属性是 grid-row-gap 和 grid-column-gap 的简写。
   justify-items: start;
 }
 ```
-![](https://cdn.zhangdd.tech/contentImg/grid/grid-justify-items-start.png)
+![](https://cdn.zhangdd.tech/contentImg/grid/grid-justify-items-start.webp)
 ``` CSS
 .container {
   justify-items: end;
 }
 ```
-![](https://cdn.zhangdd.tech/contentImg/grid/grid-justify-items-end.png)
+![](https://cdn.zhangdd.tech/contentImg/grid/grid-justify-items-end.webp)
 ``` CSS
 .container {
   justify-items: center;
 }
 ```
-![](https://cdn.zhangdd.tech/contentImg/grid/grid-justify-items-center.png)
+![](https://cdn.zhangdd.tech/contentImg/grid/grid-justify-items-center.webp)
 ``` CSS
 .container {
   justify-items: stretch;
 }
 ```
-![](https://cdn.zhangdd.tech/contentImg/grid/grid-justify-items-stretch.png)
+![](https://cdn.zhangdd.tech/contentImg/grid/grid-justify-items-stretch.webp)
 
 ### align-items
 在 column 轴对齐 grid items。
-四种取值: 
-- start
+四种取值:
+- star
 - end
 - center
 - stretch
@@ -264,25 +264,25 @@ grid-gap 属性是 grid-row-gap 和 grid-column-gap 的简写。
  align-items: start;
 }
 ```
-![](https://cdn.zhangdd.tech/contentImg/grid/grid-align-items-start.png)
+![](https://cdn.zhangdd.tech/contentImg/grid/grid-align-items-start.webp)
 ``` CSS
 .container {
  align-items: end;
 }
 ```
-![](https://cdn.zhangdd.tech/contentImg/grid/grid-align-items-end.png)
+![](https://cdn.zhangdd.tech/contentImg/grid/grid-align-items-end.webp)
 ``` CSS
 .container {
  align-items: center;
 }
 ```
-![](https://cdn.zhangdd.tech/contentImg/grid/grid-align-items-center.png)
+![](https://cdn.zhangdd.tech/contentImg/grid/grid-align-items-center.webp)
 ``` CSS
 .container {
  align-items: stretch;
 }
 ```
-![](https://cdn.zhangdd.tech/contentImg/grid/grid-align-items-stretch.png)
+![](https://cdn.zhangdd.tech/contentImg/grid/grid-align-items-stretch.webp)
 
 ### place-items
 place-items 是 align-items 和 justify-items 的简写。
@@ -293,10 +293,10 @@ place-items 是 align-items 和 justify-items 的简写。
 }
 ```
 
-### justify-content
+### justify-conten
 在 row 轴对齐 grid。
-七种取值: 
-- start
+七种取值:
+- star
 - end
 - center
 - stretch
@@ -309,48 +309,48 @@ place-items 是 align-items 和 justify-items 的简写。
   justify-content: start;	
 }
 ```
-![](https://cdn.zhangdd.tech/contentImg/grid/grid-justify-content-start.png)
+![](https://cdn.zhangdd.tech/contentImg/grid/grid-justify-content-start.webp)
 ``` CSS
 .container {
   justify-content: end;	
 }
 ```
-![](https://cdn.zhangdd.tech/contentImg/grid/grid-justify-content-end.png)
+![](https://cdn.zhangdd.tech/contentImg/grid/grid-justify-content-end.webp)
 ``` CSS
 .container {
   justify-content: center;	
 }
 ```
-![](https://cdn.zhangdd.tech/contentImg/grid/grid-justify-content-center.png)
+![](https://cdn.zhangdd.tech/contentImg/grid/grid-justify-content-center.webp)
 ``` CSS
 .container {
   justify-content: stretch;	
 }
 ```
-![](https://cdn.zhangdd.tech/contentImg/grid/grid-justify-content-stretch.png)
+![](https://cdn.zhangdd.tech/contentImg/grid/grid-justify-content-stretch.webp)
 ``` CSS
 .container {
   justify-content: space-around;	
 }
 ```
-![](https://cdn.zhangdd.tech/contentImg/grid/grid-justify-content-space-around.png)
+![](https://cdn.zhangdd.tech/contentImg/grid/grid-justify-content-space-around.webp)
 ``` CSS
 .container {
   justify-content: space-between;	
 }
 ```
-![](https://cdn.zhangdd.tech/contentImg/grid/grid-justify-content-space-between.png)
+![](https://cdn.zhangdd.tech/contentImg/grid/grid-justify-content-space-between.webp)
 ``` CSS
 .container {
   justify-content: space-evenly;	
 }
 ```
-![](https://cdn.zhangdd.tech/contentImg/grid/grid-justify-content-space-evenly.png)
+![](https://cdn.zhangdd.tech/contentImg/grid/grid-justify-content-space-evenly.webp)
 
-### align-content
+### align-conten
 在 column 轴对齐 grid。
-七种取值: 
-- start
+七种取值:
+- star
 - end
 - center
 - stretch
@@ -363,45 +363,45 @@ place-items 是 align-items 和 justify-items 的简写。
   align-content: start;	
 }
 ```
-![](https://cdn.zhangdd.tech/contentImg/grid/grid-align-content-start.png)
+![](https://cdn.zhangdd.tech/contentImg/grid/grid-align-content-start.webp)
 ``` CSS
 .container {
   align-content: end;	
 }
 ```
-![](https://cdn.zhangdd.tech/contentImg/grid/grid-align-content-end.png)
+![](https://cdn.zhangdd.tech/contentImg/grid/grid-align-content-end.webp)
 ``` CSS
 .container {
   align-content: center;	
 }
 ```
-![](https://cdn.zhangdd.tech/contentImg/grid/grid-align-content-center.png)
+![](https://cdn.zhangdd.tech/contentImg/grid/grid-align-content-center.webp)
 ``` CSS
 .container {
   align-content: stretch;	
 }
 ```
-![](https://cdn.zhangdd.tech/contentImg/grid/grid-align-content-stretch.png)
+![](https://cdn.zhangdd.tech/contentImg/grid/grid-align-content-stretch.webp)
 ``` CSS
 .container {
   align-content: space-around;	
 }
 ```
-![](https://cdn.zhangdd.tech/contentImg/grid/grid-align-content-space-around.png)
+![](https://cdn.zhangdd.tech/contentImg/grid/grid-align-content-space-around.webp)
 ``` CSS
 .container {
   align-content: space-between;	
 }
 ```
-![](https://cdn.zhangdd.tech/contentImg/grid/grid-align-content-space-between.png)
+![](https://cdn.zhangdd.tech/contentImg/grid/grid-align-content-space-between.webp)
 ``` CSS
 .container {
   align-content: space-evenly;	
 }
 ```
-![](https://cdn.zhangdd.tech/contentImg/grid/grid-align-content-space-evenly.png)
+![](https://cdn.zhangdd.tech/contentImg/grid/grid-align-content-space-evenly.webp)
 
-### place-content
+### place-conten
 place-content 属性是 align-content 和 justify-content 的简写。
 
 ``` CSS
@@ -428,11 +428,11 @@ place-content 属性是 align-content 和 justify-content 的简写。
   grid-auto-columns: 60px;
 }
 ```
-![](https://cdn.zhangdd.tech/contentImg/grid/implicit-tracks-with-widths.png)
+![](https://cdn.zhangdd.tech/contentImg/grid/implicit-tracks-with-widths.webp)
 
 ### grid-auto-flow
 grid-auto-flow 属性用于控制自动布局算法的工作方式。
-三个取值: 
+三个取值:
 - row: 告诉自动布局算法依次填充每行，根据需要添加新行(默认)
 - column: 告诉自动布局算法依次填充每列，根据需要添加新列
 - dense: 告诉自动布局算法，如果后面出现较小的 grid item，则尝试在网格中填充空洞
@@ -459,7 +459,7 @@ grid-auto-flow 属性用于控制自动布局算法的工作方式。
   grid-auto-flow: column;
 }
 ```
-![](https://cdn.zhangdd.tech/contentImg/grid/grid-auto-flow-row.png)
+![](https://cdn.zhangdd.tech/contentImg/grid/grid-auto-flow-row.webp)
 ``` CSS
 .item-a {
   grid-column: 1;
@@ -476,7 +476,7 @@ grid-auto-flow 属性用于控制自动布局算法的工作方式。
   grid-auto-flow: column;
 }
 ```
-![](https://cdn.zhangdd.tech/contentImg/grid/grid-auto-flow-column.png)
+![](https://cdn.zhangdd.tech/contentImg/grid/grid-auto-flow-column.webp)
 
 ### grid
 grid 属性是 grid-template-rows，grid-template-columns，grid-template-areas，grid-auto-rows，grid-auto-columns 和 grid-auto-flow 的简写。
@@ -490,9 +490,9 @@ grid 属性是 grid-template-rows，grid-template-columns，grid-template-areas�
 Grid items上的属性
 
 有10个属性定义在 grid items上
-- grid-column-start
+- grid-column-star
 - grid-column-end
-- grid-row-start
+- grid-row-star
 - grid-row-end
 - grid-column
 - grid-row
@@ -509,12 +509,12 @@ Grid items上的属性
 .item-a {
   grid-column-start: 2;
   grid-column-end: five;
-  grid-row-start: row1-start
+  grid-row-start: row1-star
   grid-row-end: 3
 }
 ```
 
-![](https://cdn.zhangdd.tech/contentImg/grid/grid-start-end-a.png)
+![](https://cdn.zhangdd.tech/contentImg/grid/grid-start-end-a.webp)
 注意: 如果没有声明 grid-column-end / grid-row-end，默认情况下，该网格项将跨越 1 个轨道。
 
 ### grid-column 和 grid-row
@@ -527,7 +527,7 @@ grid-column-start + grid-column-end 以及 and grid-row-start + grid-row-end 的
 }
 ```
 
-![](https://cdn.zhangdd.tech/contentImg/grid/grid-start-end-c.png)
+![](https://cdn.zhangdd.tech/contentImg/grid/grid-start-end-c.webp)
 
 ### grid-area
 给 grid item 进行命名以便于使用 grid-template-areas 属性创建模板时来进行引用。另外也可以做为 grid-row-start + grid-column-start + grid-row-end + grid-column-end 的简写形式。
@@ -543,7 +543,7 @@ grid-column-start + grid-column-end 以及 and grid-row-start + grid-row-end 的
   grid-area: 1 / col4-start / last-line / 6
 }
 ```
-![](https://cdn.zhangdd.tech/contentImg/grid/grid-start-end-d.png)
+![](https://cdn.zhangdd.tech/contentImg/grid/grid-start-end-d.webp)
 
 ### justify-self
 沿着行轴对齐 grid item 里的内容。
@@ -558,25 +558,25 @@ grid-column-start + grid-column-end 以及 and grid-row-start + grid-row-end 的
   justify-self: start;
 }
 ```
-![](https://cdn.zhangdd.tech/contentImg/grid/grid-justify-self-start.png)
+![](https://cdn.zhangdd.tech/contentImg/grid/grid-justify-self-start.webp)
 ``` CSS
 .item-a {
   justify-self: end;
 }
 ```
-![](https://cdn.zhangdd.tech/contentImg/grid/grid-justify-self-end.png)
+![](https://cdn.zhangdd.tech/contentImg/grid/grid-justify-self-end.webp)
 ``` CSS
 .item-a {
   justify-self: center;
 }
 ```
-![](https://cdn.zhangdd.tech/contentImg/grid/grid-justify-self-center.png)
+![](https://cdn.zhangdd.tech/contentImg/grid/grid-justify-self-center.webp)
 ``` CSS
 .item-a {
   justify-self: stretch;
 }
 ```
-![](https://cdn.zhangdd.tech/contentImg/grid/grid-justify-self-stretch.png)
+![](https://cdn.zhangdd.tech/contentImg/grid/grid-justify-self-stretch.webp)
 
 ### align-self
 沿着列轴对齐 grid item 里的内容。
@@ -590,28 +590,28 @@ grid-column-start + grid-column-end 以及 and grid-row-start + grid-row-end 的
   align-self: start;
 }
 ```
-![](https://cdn.zhangdd.tech/contentImg/grid/grid-align-self-start.png)
+![](https://cdn.zhangdd.tech/contentImg/grid/grid-align-self-start.webp)
 
 ``` CSS
 .item-a {
   align-self: end;
 }
 ```
-![](https://cdn.zhangdd.tech/contentImg/grid/grid-align-self-end.png)
+![](https://cdn.zhangdd.tech/contentImg/grid/grid-align-self-end.webp)
 
 ``` CSS
 .item-a {
   align-self: center;
 }
 ```
-![](https://cdn.zhangdd.tech/contentImg/grid/grid-align-self-center.png)
+![](https://cdn.zhangdd.tech/contentImg/grid/grid-align-self-center.webp)
 
 ``` CSS
 .item-a {
   align-self: stretch;
 }
 ```
-![](https://cdn.zhangdd.tech/contentImg/grid/grid-align-self-stretch.png)
+![](https://cdn.zhangdd.tech/contentImg/grid/grid-align-self-stretch.webp)
 
 ### place-self
 place-self 是 align-self 和 justify-self 的简写。
@@ -620,11 +620,11 @@ place-self 是 align-self 和 justify-self 的简写。
 .item-a {
   place-self: center stretch;
 }
-``` 
+```
 
-![](https://cdn.zhangdd.tech/contentImg/grid/grid-align-self-center.png) 
+![](https://cdn.zhangdd.tech/contentImg/grid/grid-align-self-center.webp)
 
 ## 参考
-***  
+***
 [A Complete Guide to Grid](https://css-tricks.com/snippets/css/complete-guide-grid/)
 [MDN grid](https://developer.mozilla.org/en-US/docs/Web/CSS/grid)

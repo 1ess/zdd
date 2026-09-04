@@ -1,6 +1,6 @@
 ---
 title: C Sharp(十八)
-featured_image: https://cdn.zhangdd.tech/blogImg/Blog64.jpg
+featured_image: https://cdn.zhangdd.tech/blogImg/Blog64.webp
 date: 2018-10-10
 ---
 

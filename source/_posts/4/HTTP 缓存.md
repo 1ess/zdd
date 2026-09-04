@@ -1,6 +1,6 @@
 ---
 title: HTTP 缓存
-featured_image: https://cdn.zhangdd.tech/blogImg/Blog4.jpg
+featured_image: https://cdn.zhangdd.tech/blogImg/Blog4.webp
 date: 2018-06-20
 ---
 
@@ -52,7 +52,7 @@ Last-modified: 服务器端资源的最后修改时间，响应头部会带上�
 ### Etag/If-None-Match
 由服务器端上生成的一段 hash 字符串，第一次请求时响应头带上 ETag:abcd，之后的请求中带上 If-None-Match:abcd，服务器检查 ETag，返回 304 或 200。  
 流程可以参考 Google 网站上的下图:   
-![](https://cdn.zhangdd.tech/contentImg/http-cache/http-cache-control.png)
+![](https://cdn.zhangdd.tech/contentImg/http-cache/http-cache-control.webp)
 
 ### Last-Modified 和 ETag 作为标识的不同
 1. 一些资源的最后修改时间改变了，但是内容没改变，使用 Last-modified 看不出内容没有改变

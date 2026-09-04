@@ -1,6 +1,6 @@
 ---
 title: CSS(六)
-featured_image: https://cdn.zhangdd.tech/blogImg/Blog22.jpg
+featured_image: https://cdn.zhangdd.tech/blogImg/Blog22.webp
 date: 2018-07-15
 ---
 
@@ -17,7 +17,7 @@ Flexbox 是一个完整的模块而不是单个属性，其中一些是在容器
 
 ## 基本概念
 ***  
-![](https://cdn.zhangdd.tech/contentImg/flexbox/flexbox.jpg)
+![](https://cdn.zhangdd.tech/contentImg/flexbox/flexbox.webp)
 在 flex 容器中默认存在两条轴，水平主轴(main axis)和垂直的交叉轴(cross axis)，这是默认的设置，当然你可以通过修改使垂直方向变为主轴，水平方向变为交叉轴，这个我们后面再说。
 
 在容器中的每个单元块被称之为 flex item，每个项目占据的主轴空间为(main size)，占据的交叉轴的空间为(cross size)。

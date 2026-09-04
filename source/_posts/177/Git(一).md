@@ -1,6 +1,6 @@
 ---
 title: Git(一)
-featured_image: https://cdn.zhangdd.tech/blogImg/Blog177.jpg
+featured_image: https://cdn.zhangdd.tech/blogImg/Blog177.webp
 date: 2021-01-25
 ---
 

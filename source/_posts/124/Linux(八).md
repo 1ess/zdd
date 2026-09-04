@@ -1,6 +1,6 @@
 ---
 title: Linux(八)
-featured_image: https://cdn.zhangdd.tech/blogImg/Blog124.jpg
+featured_image: https://cdn.zhangdd.tech/blogImg/Blog124.webp
 date: 2019-08-14
 ---
 
