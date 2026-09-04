@@ -630,10 +630,14 @@ a {
       color: $deep-dark-accent;
     }
     .single-column-header-title {
-      font-size: $single-column-nav-title-size;
+      font-size: clamp(20px, 7vw, $single-column-nav-title-size);
+      letter-spacing: -.02em;
+      white-space: nowrap;
     }
     .single-column-header-subtitle {
-      font-size: $single-column-nav-subtitle-size;
+      font-size: clamp(13px, 4vw, $single-column-nav-subtitle-size);
+      letter-spacing: -.02em;
+      white-space: nowrap;
     }
   }
 }
@@ -732,14 +736,20 @@ a {
     transition: all 0.2s linear;
     color: $deep-dark-accent;
     .nav-title {
-      font-size: $nav-title-size;
-      line-height: $nav-title-size * 1.4;
+      font-size: clamp(15px, 1.45vw, $nav-title-size);
+      line-height: 1.4;
+      letter-spacing: -.02em;
+      white-space: nowrap;
       font-family: "Montserrat", "Roboto", "Source Sans Pro", "Helvetica", "Arial", "Lora", "source-han-serif-tc", serif;
     }
     border-right: 2px solid transparent;
     .nav-subtitle {
       margin-top: 8px;
-      font-size: $nav-subtitle-size;
+      // Keep the long subtitle on one line without clipping it on narrower
+      // desktop sidebars. It reaches the original 18px size on wide screens.
+      font-size: clamp(10px, 1.05vw, $nav-subtitle-size);
+      letter-spacing: -.03em;
+      white-space: nowrap;
     }
     &:hover {
       border-right: 2px solid
