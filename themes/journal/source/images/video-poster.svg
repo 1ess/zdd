@@ -1,20 +1,13 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-labelledby="title description">
-  <title id="title">视频加载中</title>
-  <desc id="description">深蓝色渐变的视频封面</desc>
+  <title id="title">视频</title>
+  <desc id="description">简洁的视频播放占位图</desc>
   <defs>
-    <linearGradient id="background" x1="0" y1="0" x2="1" y2="1">
-      <stop stop-color="#0a3042"/>
-      <stop offset=".55" stop-color="#176b88"/>
-      <stop offset="1" stop-color="#d4a45f"/>
+    <linearGradient id="background" x1="0" y1="0" x2="0" y2="1">
+      <stop stop-color="#25282d"/>
+      <stop offset="1" stop-color="#191b1f"/>
     </linearGradient>
-    <radialGradient id="glow" cx="50%" cy="50%" r="50%">
-      <stop stop-color="#ffffff" stop-opacity=".32"/>
-      <stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
-    </radialGradient>
   </defs>
   <rect width="1600" height="900" fill="url(#background)"/>
-  <rect width="1600" height="900" fill="url(#glow)"/>
-  <circle cx="800" cy="450" r="72" fill="#ffffff" fill-opacity=".9"/>
-  <path d="M775 405v90l76-45z" fill="#176b88"/>
-  <text x="800" y="590" text-anchor="middle" fill="#fff" fill-opacity=".9" font-family="sans-serif" font-size="30" letter-spacing="8">VIDEO</text>
+  <circle cx="800" cy="450" r="66" fill="#fff" fill-opacity=".08" stroke="#fff" stroke-opacity=".58" stroke-width="3"/>
+  <path d="M784 414v72l58-36z" fill="#fff" fill-opacity=".86"/>
 </svg>
