@@ -64,6 +64,9 @@ var discoveryPosts = valuesOf(site.posts).filter(function (post) { return post.p
 });
 var seriesPosts = discoveryPosts.filter(function (item) { return item.sameSeries; }).slice(0, 8);
 var relatedPosts = discoveryPosts.filter(function (item) { return !item.sameSeries; }).slice(0, 4);
+// Decide the article layout before the browser's first paint. Waiting for the
+// client-side TOC script to add this class causes the body to visibly reflow.
+var hasArticleToc = ((page.content || '').match(/<h[2-4]\b/gi) || []).length >= 2;
 %>
 
 <div class="reading-progress" aria-hidden="true"><span id="reading-progress-bar"></span></div>
@@ -98,8 +101,8 @@ var relatedPosts = discoveryPosts.filter(function (item) { return !item.sameSeri
                 </div>
             </div>
     
-            <div class="post-body-wrapper">
-                <nav id="article-toc" class="article-toc" aria-label="文章目录" hidden>
+            <div class="post-body-wrapper<%= hasArticleToc ? ' has-visible-toc' : '' %>">
+                <nav id="article-toc" class="article-toc" aria-label="文章目录"<%- hasArticleToc ? '' : ' hidden' %>>
                     <strong>目录</strong>
                     <ol></ol>
                 </nav>

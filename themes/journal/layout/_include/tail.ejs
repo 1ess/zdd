@@ -95,7 +95,6 @@
           list.appendChild(item);
         });
         toc.hidden = false;
-        if (toc.parentElement) toc.parentElement.classList.add('has-visible-toc');
         var tocLinks = Array.prototype.slice.call(list.querySelectorAll('a'));
         function setActiveToc(id) {
           tocLinks.forEach(function (link) { link.classList.toggle('active', decodeURIComponent(link.hash.slice(1)) === id); });
