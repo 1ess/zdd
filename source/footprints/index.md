@@ -5,7 +5,7 @@ comments: false
 footprints: true
 ---
 
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+<link rel="stylesheet" href="/vendor/leaflet/leaflet.css">
 
 <div class="footprints-toolbar" aria-label="足迹筛选">
   <input id="footprints-place" type="search" placeholder="搜索地点" aria-label="搜索地点" autocomplete="off">
@@ -13,7 +13,7 @@ footprints: true
 <div id="footprints-map" aria-label="足迹地图" role="application"></div>
 <p id="footprints-status" class="footprints-status" role="status" aria-live="polite">正在加载足迹数据…</p>
 
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+<script src="/vendor/leaflet/leaflet.js"></script>
 <script>
 window.addEventListener('load', function () {
   var status = document.getElementById('footprints-status');
