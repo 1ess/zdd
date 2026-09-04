@@ -20,7 +20,53 @@ function getFeaturedImage() {
     if (featuredImage.startsWith("http://") || featuredImage.startsWith("https://")) return featuredImage;
     return config.root + page.path + featuredImage;
 }
+function getReadingMinutes() {
+    var text = strip_html(page.content || '').replace(/\s+/g, ' ').trim();
+    var chinese = (text.match(/[\u3400-\u9fff]/g) || []).length;
+    var words = text.replace(/[\u3400-\u9fff]/g, ' ').trim().split(/\s+/).filter(Boolean).length;
+    return Math.max(1, Math.ceil(chinese / 400 + words / 220));
+}
+function valuesOf(collection) {
+    if (!collection) return [];
+    if (typeof collection.toArray === 'function') return collection.toArray();
+    return Array.isArray(collection) ? collection : [];
+}
+function namesOf(collection) {
+    return valuesOf(collection).map(function (item) { return String(item.name || item); });
+}
+function normalizedSeriesTitle(title) {
+    return String(title || '')
+        .replace(/[（(](?:[一二三四五六七八九十百零〇\d]+|上|中|下|续)[）)]\s*$/u, '')
+        .replace(/[：:—–-]\s*(?:第?[一二三四五六七八九十百零〇\d]+(?:篇|章|回|集)?|上|中|下|续)\s*$/u, '')
+        .trim();
+}
+function sharedPrefixLength(left, right) {
+    var length = 0;
+    while (length < left.length && length < right.length && left[length] === right[length]) length += 1;
+    return length;
+}
+var currentTags = namesOf(page.tags);
+var currentCategories = namesOf(page.categories);
+var explicitSeries = page.series ? String(page.series) : '';
+var inferredSeries = normalizedSeriesTitle(page.title);
+var discoveryPosts = valuesOf(site.posts).filter(function (post) { return post.path !== page.path; }).map(function (post) {
+    var score = 0;
+    var candidateSeries = post.series ? String(post.series) : normalizedSeriesTitle(post.title);
+    if (explicitSeries && candidateSeries === explicitSeries) score += 100;
+    else if (!explicitSeries && inferredSeries.length >= 2 && candidateSeries === inferredSeries && post.title !== candidateSeries) score += 80;
+    namesOf(post.tags).forEach(function (name) { if (currentTags.indexOf(name) !== -1) score += 20; });
+    namesOf(post.categories).forEach(function (name) { if (currentCategories.indexOf(name) !== -1) score += 12; });
+    var prefix = sharedPrefixLength(String(page.title || ''), String(post.title || ''));
+    if (prefix >= 3) score += Math.min(prefix, 10);
+    return { post: post, score: score, sameSeries: candidateSeries && candidateSeries === (explicitSeries || inferredSeries) };
+}).filter(function (item) { return item.score > 0; }).sort(function (left, right) {
+    return right.score - left.score || right.post.date - left.post.date;
+});
+var seriesPosts = discoveryPosts.filter(function (item) { return item.sameSeries; }).slice(0, 8);
+var relatedPosts = discoveryPosts.filter(function (item) { return !item.sameSeries; }).slice(0, 4);
 %>
+
+<div class="reading-progress" aria-hidden="true"><span id="reading-progress-bar"></span></div>
 
 <div ref="streamContainer" class="stream-container">
     <div class="post-list-container post-list-container-shadow">
@@ -32,6 +78,7 @@ function getFeaturedImage() {
                         <time datetime="<%= date_xml(page.date) %>" itemprop="datePublished">
                             <%= date(page.date, "YYYY-MM-DD") %>
                         </time>&nbsp;
+                        <span class="reading-time">· <%= getReadingMinutes() %> 分钟阅读</span>&nbsp;
                         <% if (page.categories && page.categories.length){ %>
                         <% count = page.categories.length %>
                         <i class="material-icons" >folder</i>
@@ -52,9 +99,37 @@ function getFeaturedImage() {
             </div>
     
             <div class="post-body-wrapper">
+                <nav id="article-toc" class="article-toc" aria-label="文章目录" hidden>
+                    <strong>目录</strong>
+                    <ol></ol>
+                </nav>
                 <div class="post-body">
                     <%- page.content %>
                 </div>
+                <% if (seriesPosts.length || relatedPosts.length) { %>
+                <aside class="post-discovery" aria-label="延伸阅读">
+                    <% if (seriesPosts.length) { %>
+                    <section class="post-series">
+                        <h2>同系列文章</h2>
+                        <ol>
+                            <% seriesPosts.forEach(function (item) { %>
+                            <li><a href="<%= config.root + item.post.path %>"><%= item.post.title %></a></li>
+                            <% }); %>
+                        </ol>
+                    </section>
+                    <% } %>
+                    <% if (relatedPosts.length) { %>
+                    <section class="related-posts">
+                        <h2>相关文章</h2>
+                        <ul>
+                            <% relatedPosts.forEach(function (item) { %>
+                            <li><a href="<%= config.root + item.post.path %>"><%= item.post.title %></a><time><%= date(item.post.date, 'YYYY-MM-DD') %></time></li>
+                            <% }); %>
+                        </ul>
+                    </section>
+                    <% } %>
+                </aside>
+                <% } %>
             </div>
     
             <%- include('_include/post_pagination.ejs') %>

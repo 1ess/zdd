@@ -22,6 +22,7 @@ app = new Vue({
             this.navOpacity = this.sgn(.0, Math.min(1, Math.max(0, window.scrollY / (this.pageHeadHeight() - this.navBarHeight() * 0.8))));
             const {navBar, navBackground, navTitle, extraContainer, streamContainer} = this.$refs;
 
+            if (!navBackground || !navTitle) return;
             if (this.navOpacity >= 1) {
                 navBackground.style.opacity = 1;
                 navTitle.style.opacity = 1;
@@ -32,13 +33,15 @@ app = new Vue({
         },
         handleResize() {
             const {navBar, navBackground, navTitle, extraContainer, streamContainer} = this.$refs;
-            extraContainer.style.left = (streamContainer.offsetWidth - extraContainer.offsetWidth) + 'px';
+            if (extraContainer && streamContainer) {
+                extraContainer.style.left = (streamContainer.offsetWidth - extraContainer.offsetWidth) + 'px';
+            }
         },
         navBarHeight() {
-            return this.$refs.navBar.offsetHeight;
+            return this.$refs.navBar ? this.$refs.navBar.offsetHeight : 0;
         },
         pageHeadHeight() {
-            return this.$refs.pageHead.offsetHeight;
+            return this.$refs.pageHead ? this.$refs.pageHead.offsetHeight : Math.max(this.navBarHeight(), 1);
         },
         toggleDrawer() {
             this.isDrawerOpen = !this.isDrawerOpen;
@@ -67,4 +70,6 @@ app = new Vue({
     }
 });
 
-new SmoothScroll('a#globalBackToTop');
+if (document.querySelector('a#globalBackToTop')) {
+    new SmoothScroll('a#globalBackToTop');
+}

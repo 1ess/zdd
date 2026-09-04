@@ -18,7 +18,7 @@
 
         <% if(site.pages){ %>
         <% site.pages.each(function (page){ %>
-        <% if (page.path !== 'about/index.html') { %>
+        <% if (page.title && page.path !== 'about/index.html' && page.path !== '404.html') { %>
         <a class="a-block nav-link-item <%= is_current(page.path) && 'active' %>" href="<%= config.root + page.path %>">
             <%= page.title %>
         </a>
@@ -41,6 +41,7 @@
 
     <% // Please keep the section below and do not make modifications. //  %>
     <div class="nav-footer">
-        &copy; <%= new Date().getFullYear() %> <a href="<%= config.url %>"><%= config.title %></a>
+        <span>&copy; <%= new Date().getFullYear() %> <a href="<%= config.url %>"><%= config.title %></a></span>
+        <button class="theme-toggle theme-toggle-corner" type="button" aria-label="切换深色模式" title="切换深色模式"><i class="material-icons" aria-hidden="true">dark_mode</i></button>
     </div>
 </div>

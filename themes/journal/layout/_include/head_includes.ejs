@@ -1,12 +1,17 @@
 <link rel="stylesheet" href="https://s4.zstatic.net/ajax/libs/bootstrap/4.5.3/css/bootstrap.min.css" integrity="sha512-oc9+XSs1H243/FRN9Rw62Fn8EtxjEYWHXRvjS43YtueEewbS6ObfXcJNyohjHqVKFPoXXUxwc+q1K7Dee6vv9g==" crossorigin="anonymous">
 <link href="https://unpkg.com/nord-highlightjs@0.1.0/dist/nord.css" rel="stylesheet" type="text/css" />
 <link rel="stylesheet" href="<%- url_for('css/journal.css') %>">
+<link rel="manifest" href="<%- url_for('manifest.webmanifest') %>">
+<meta name="theme-color" content="#f5f3ee">
 <% if (theme.favicon || config.favicon){ %>
 <link rel="icon" href="<%- config.favicon ? config.favicon : theme.favicon %>">
 <% } %>
 <script src="<%- url_for('js/loadCSS.js') %>"></script>
-<script defer src="https://umami.zhangdd.tech/script.js" data-website-id="98b412b6-4cac-4b18-89d7-0559c5828831"></script>
 <script>
+    try {
+        var savedTheme = localStorage.getItem('color-theme');
+        if (savedTheme === 'dark' || (!savedTheme && matchMedia('(prefers-color-scheme: dark)').matches)) document.documentElement.classList.add('dark-theme');
+    } catch (error) {}
     loadCSS("https://fonts.googleapis.com/css?family=Lora|Montserrat|Fira+Mono|Material+Icons");
     (function (d) {
     })(document);

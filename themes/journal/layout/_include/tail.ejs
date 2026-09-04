@@ -40,6 +40,138 @@
       covers.forEach(loadCover);
     }
 
+    var article = document.querySelector('.post-body');
+    var toc = document.getElementById('article-toc');
+    var progress = document.getElementById('reading-progress-bar');
+    if (article && toc) {
+      var headings = Array.prototype.slice.call(article.querySelectorAll('h2, h3, h4'));
+      if (headings.length >= 2) {
+        var usedIds = {};
+        var list = toc.querySelector('ol');
+        headings.forEach(function (heading, index) {
+          var base = heading.id || heading.textContent.trim().replace(/\s+/g, '-').replace(/[^\w\u3400-\u9fff-]/g, '') || 'section-' + (index + 1);
+          var id = base;
+          var suffix = 2;
+          while (usedIds[id] || (document.getElementById(id) && document.getElementById(id) !== heading)) id = base + '-' + suffix++;
+          usedIds[id] = true;
+          heading.id = id;
+          var item = document.createElement('li');
+          item.className = 'toc-level-' + heading.tagName.slice(1);
+          var link = document.createElement('a');
+          link.href = '#' + encodeURIComponent(id);
+          link.textContent = heading.textContent;
+          item.appendChild(link);
+          list.appendChild(item);
+        });
+        toc.hidden = false;
+        var tocLinks = Array.prototype.slice.call(list.querySelectorAll('a'));
+        function setActiveToc(id) {
+          tocLinks.forEach(function (link) { link.classList.toggle('active', decodeURIComponent(link.hash.slice(1)) === id); });
+        }
+        tocLinks.forEach(function (link) {
+          link.addEventListener('click', function () { setActiveToc(decodeURIComponent(link.hash.slice(1))); });
+        });
+        var tocTicking = false;
+        function updateActiveToc() {
+          var current = headings[0];
+          headings.forEach(function (heading) { if (heading.getBoundingClientRect().top <= 150) current = heading; });
+          if (current) setActiveToc(current.id);
+          tocTicking = false;
+        }
+        window.addEventListener('scroll', function () {
+          if (!tocTicking) { tocTicking = true; window.requestAnimationFrame(updateActiveToc); }
+        }, { passive: true });
+        updateActiveToc();
+      }
+    }
+
+    if (article && progress) {
+      var updateProgress = function () {
+        var start = article.getBoundingClientRect().top + window.pageYOffset;
+        var distance = Math.max(1, article.offsetHeight - window.innerHeight);
+        var percentage = Math.max(0, Math.min(100, (window.pageYOffset - start) / distance * 100));
+        progress.style.width = percentage + '%';
+      };
+      updateProgress();
+      window.addEventListener('scroll', updateProgress, { passive: true });
+      window.addEventListener('resize', updateProgress);
+    }
+
+    if (article) {
+      var galleryImages = Array.prototype.slice.call(article.querySelectorAll('img:not(.no-lightbox)'));
+      if (galleryImages.length && 'HTMLDialogElement' in window) {
+        var lightbox = document.createElement('dialog');
+        lightbox.className = 'image-lightbox';
+        lightbox.innerHTML = '<button class="image-lightbox-close" type="button" aria-label="关闭图片">×</button>' +
+          '<button class="image-lightbox-prev" type="button" aria-label="上一张图片">‹</button>' +
+          '<figure><img alt=""><figcaption></figcaption></figure>' +
+          '<button class="image-lightbox-next" type="button" aria-label="下一张图片">›</button>';
+        document.body.appendChild(lightbox);
+        var lightboxImage = lightbox.querySelector('img');
+        var lightboxCaption = lightbox.querySelector('figcaption');
+        var lightboxIndex = 0;
+
+        function showGalleryImage(index) {
+          lightboxIndex = (index + galleryImages.length) % galleryImages.length;
+          var selected = galleryImages[lightboxIndex];
+          lightboxImage.src = selected.currentSrc || selected.src;
+          lightboxImage.alt = selected.alt || '';
+          lightboxCaption.textContent = selected.alt || (lightboxIndex + 1) + ' / ' + galleryImages.length;
+          lightbox.querySelector('.image-lightbox-prev').hidden = galleryImages.length < 2;
+          lightbox.querySelector('.image-lightbox-next').hidden = galleryImages.length < 2;
+        }
+
+        galleryImages.forEach(function (image, index) {
+          image.classList.add('lightbox-enabled');
+          image.tabIndex = 0;
+          image.setAttribute('role', 'button');
+          image.setAttribute('aria-label', (image.alt || '查看图片') + '，点击全屏查看');
+          function openLightbox() {
+            showGalleryImage(index);
+            lightbox.showModal();
+          }
+          image.addEventListener('click', openLightbox);
+          image.addEventListener('keydown', function (event) {
+            if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); openLightbox(); }
+          });
+        });
+
+        lightbox.querySelector('.image-lightbox-close').addEventListener('click', function () { lightbox.close(); });
+        lightbox.querySelector('.image-lightbox-prev').addEventListener('click', function () { showGalleryImage(lightboxIndex - 1); });
+        lightbox.querySelector('.image-lightbox-next').addEventListener('click', function () { showGalleryImage(lightboxIndex + 1); });
+        lightbox.addEventListener('click', function (event) { if (event.target === lightbox) lightbox.close(); });
+        lightbox.addEventListener('keydown', function (event) {
+          if (event.key === 'ArrowLeft') showGalleryImage(lightboxIndex - 1);
+          if (event.key === 'ArrowRight') showGalleryImage(lightboxIndex + 1);
+        });
+      }
+    }
+
+    var themeToggles = Array.prototype.slice.call(document.querySelectorAll('.theme-toggle'));
+    function updateThemeButtons() {
+      var dark = document.documentElement.classList.contains('dark-theme');
+      themeToggles.forEach(function (button) {
+        button.innerHTML = '<i class="material-icons" aria-hidden="true">' + (dark ? 'light_mode' : 'dark_mode') + '</i>';
+        button.setAttribute('aria-label', dark ? '切换浅色模式' : '切换深色模式');
+        button.title = dark ? '切换浅色模式' : '切换深色模式';
+        button.setAttribute('aria-pressed', dark ? 'true' : 'false');
+      });
+      var themeMeta = document.querySelector('meta[name="theme-color"]');
+      if (themeMeta) themeMeta.content = dark ? '#17211b' : '#f5f3ee';
+    }
+    themeToggles.forEach(function (button) {
+      button.addEventListener('click', function () {
+        document.documentElement.classList.toggle('dark-theme');
+        try { localStorage.setItem('color-theme', document.documentElement.classList.contains('dark-theme') ? 'dark' : 'light'); } catch (error) {}
+        updateThemeButtons();
+      });
+    });
+    updateThemeButtons();
+
+    if ('serviceWorker' in navigator && location.protocol !== 'file:') {
+      window.addEventListener('load', function () { navigator.serviceWorker.register('<%- url_for('service-worker.js') %>'); });
+    }
+
   }());
 </script>
 </body>

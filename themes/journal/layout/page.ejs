@@ -26,6 +26,7 @@ function getFeaturedImage() {
     <div class="post-list-container post-list-container-shadow">
         <div class="post">
             <div class="<%= page.featured_image ? 'post-head-wrapper progressive-cover' : 'post-head-wrapper-text-only' %>"
+                 <% if (page.hide_page_title) { %>hidden<% } %>
                  <% if (page.featured_image) { %>data-image-src="<%= getFeaturedImage() %>"<% } %>>
                 <div class="post-title">
                     <%= page.title %>

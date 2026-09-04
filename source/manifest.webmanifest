@@ -1,0 +1,14 @@
+{
+  "name": "当时明月在 曾照彩云归",
+  "short_name": "明月博客",
+  "description": "Stephen Chang 的个人博客与旅行足迹",
+  "lang": "zh-CN",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#f5f3ee",
+  "theme_color": "#31572c",
+  "icons": [
+    { "src": "/images/favicon.ico", "sizes": "any", "type": "image/x-icon", "purpose": "any" }
+  ]
+}

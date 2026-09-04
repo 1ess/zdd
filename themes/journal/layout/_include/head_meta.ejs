@@ -7,7 +7,9 @@
 <meta property="og:type" content="<%= page.layout === 'post' ? 'article' : 'website' %>">
 <meta property="og:title" content="<%= config.__title %>">
 <meta property="og:description" content="<%= config.__desc %>">
-<meta property="og:url" content="<%= config.url + url_for(page.path) %>">
+<% var canonicalUrl = (config.url + url_for(page.path || '')).replace(/index\.html$/, ''); %>
+<meta property="og:url" content="<%= canonicalUrl %>">
+<link rel="canonical" href="<%= canonicalUrl %>">
 <% if (page.featured_image) { %>
 <meta property="og:image" content="<%= /^https?:\/\//.test(page.featured_image) ? page.featured_image : config.url + url_for(page.path + page.featured_image) %>">
 <% } %>
@@ -15,3 +17,25 @@
 <% if(theme.rss){ %>
 <link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="<%= config.root + theme.rss %>">
 <% } %>
+<%
+var structuredData = page.layout === 'post' ? {
+  '@context': 'https://schema.org',
+  '@type': 'BlogPosting',
+  headline: page.title,
+  description: config.__desc,
+  url: canonicalUrl,
+  datePublished: page.date && page.date.toISOString ? page.date.toISOString() : page.date,
+  dateModified: page.updated && page.updated.toISOString ? page.updated.toISOString() : page.updated,
+  author: { '@type': 'Person', name: config.author },
+  publisher: { '@type': 'Person', name: config.author }
+} : {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: config.title,
+  description: config.description,
+  url: config.url + config.root,
+  potentialAction: { '@type': 'SearchAction', target: config.url + url_for('search/') + '?q={search_term_string}', 'query-input': 'required name=search_term_string' }
+};
+if (page.featured_image) structuredData.image = /^https?:\/\//.test(page.featured_image) ? page.featured_image : config.url + url_for(page.path + page.featured_image);
+%>
+<script type="application/ld+json"><%- JSON.stringify(structuredData).replace(/</g, '\\u003c') %></script>
