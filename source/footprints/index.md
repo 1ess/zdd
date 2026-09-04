@@ -1,5 +1,5 @@
 ---
-title: 足迹
+title: 遊蹤
 layout: page
 comments: false
 footprints: true

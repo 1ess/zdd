@@ -1,5 +1,5 @@
 ---
-title: 搜索
+title: 尋文
 layout: page
 comments: false
 description: 搜索博客文章、标签和分类。
