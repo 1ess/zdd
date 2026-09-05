@@ -19,19 +19,19 @@ hexo.extend.generator.register('search-index', function (locals) {
 
   const posts = locals.posts.sort('-date').toArray();
   const items = posts.map(function (post) {
-    return {
-      title: post.title,
-      url: hexo.config.root + post.path,
-      date: post.date ? post.date.format('YYYY-MM-DD') : '',
-      tags: names(post.tags),
-      categories: names(post.categories),
-      content: plainText(post.content).slice(0, 1600)
-    };
+    const labels = names(post.tags).concat(names(post.categories));
+    const content = plainText(post.content);
+    // Compact tuple: title, URL, date, display/search labels, searchable text.
+    // Result excerpts are derived in the browser, avoiding duplicated text.
+    return [
+      post.title,
+      hexo.config.root + post.path,
+      post.date ? post.date.format('YYYY-MM-DD') : '',
+      labels.slice(0, 5).join(' · '),
+      content.slice(0, 500)
+    ];
   });
 
   const json = JSON.stringify(items);
-  return [
-    { path: 'search-index.json', data: json },
-    { path: 'search-index.js', data: 'window.__BLOG_SEARCH_INDEX__=' + json.replace(/[\u2028\u2029]/g, '') + ';\n' }
-  ];
+  return { path: 'search-index.json', data: json };
 });

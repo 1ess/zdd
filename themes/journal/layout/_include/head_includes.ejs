@@ -1,4 +1,3 @@
-<link rel="stylesheet" href="<%- url_for('vendor/bootstrap.min.css') %>">
 <link rel="stylesheet" href="<%- url_for('vendor/nord.css') %>">
 <link rel="stylesheet" href="<%- url_for('vendor/fonts.css') %>">
 <link rel="stylesheet" href="<%- url_for('css/journal.css') %>">
@@ -11,7 +10,9 @@
 <script>
     try {
         var savedTheme = localStorage.getItem('color-theme');
-        if (savedTheme === 'dark' || (!savedTheme && matchMedia('(prefers-color-scheme: dark)').matches)) document.documentElement.classList.add('dark-theme');
+        var requestedTheme = new URLSearchParams(location.search).get('theme');
+        var useDarkTheme = requestedTheme === 'dark' || (requestedTheme !== 'light' && (savedTheme === 'dark' || (!savedTheme && matchMedia('(prefers-color-scheme: dark)').matches)));
+        if (useDarkTheme) document.documentElement.classList.add('dark-theme');
     } catch (error) {}
     (function (d) {
     })(document);

@@ -53,6 +53,11 @@ $single-column-toc-size: 14px;
 $h1: 30px;
 $h-diff: 3px;
 
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+img, svg { vertical-align: middle; }
+button, input, textarea, select { font: inherit; }
+
 ::-webkit-scrollbar {
   display: none;
 }
@@ -447,6 +452,14 @@ button {
   cursor: pointer;
 }
 
+.ui-icon {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  flex: 0 0 auto;
+  color: inherit;
+}
+
 code {
   color: $dark-accent;
   background: rgba($color-accent, 0.07) !important;
@@ -456,6 +469,11 @@ code {
 }
 
 pre {
+  display: block;
+  max-width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
   background: rgba($color-accent, 0.07) !important;
   color: $dark-accent;
   padding: 12px 15px;
@@ -467,6 +485,43 @@ pre {
   }
   code {
     padding: 0;
+    white-space: pre;
+    overflow-wrap: normal;
+    word-break: normal;
+  }
+}
+
+// Hexo wraps highlighted code in a table. Without explicit min-width rules,
+// a single long line becomes the table's minimum width and expands the page.
+.post-body figure.highlight {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  margin-right: 0;
+  margin-left: 0;
+  overflow: hidden;
+}
+
+.post-body .highlight table,
+.post-body .highlight tbody,
+.post-body .highlight tr,
+.post-body .highlight td.code {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+}
+
+.post-body .highlight pre {
+  width: 100%;
+  margin: 0;
+}
+
+@media screen and (max-width: 600px) {
+  .post-body pre,
+  .post-body .highlight pre {
+    padding: 10px 12px;
+    font-size: 13px;
   }
 }
 
@@ -550,6 +605,9 @@ a {
   display: none !important;
   @media screen and (max-width: $single-column-max-width) {
     display: block !important;
+    position: sticky;
+    top: 0;
+    z-index: 1020;
     padding: 0;
     * {
       font-family: $sans-preferred-font-list;
@@ -559,6 +617,9 @@ a {
       padding: 0;
     }
     .nav-content {
+      display: flex;
+      align-items: center;
+      width: 100%;
       padding: 12px 20px;
       justify-content: flex-start;
       max-width: unset !important;
@@ -688,7 +749,6 @@ a {
 .single-column-drawer-mask {
   display: none !important;
   @media screen and (max-width: $single-column-max-width) {
-    display: block !important;
     position: fixed;
     top: 0;
     bottom: 0;
@@ -1101,7 +1161,7 @@ a {
           * {
             font-size: 16px;
           }
-          .material-icons {
+          .ui-icon {
             vertical-align: middle;
             margin-bottom: 3px;
           }
@@ -1133,7 +1193,7 @@ a {
           * {
             font-size: 16px;
           }
-          .material-icons {
+          .ui-icon {
             vertical-align: middle;
             margin-bottom: 3px;
           }
@@ -1159,6 +1219,9 @@ a {
         padding: 20px 20px 35px 20px;
       }
       .post-body {
+        width: 100%;
+        min-width: 0;
+        max-width: 100%;
         font-size: $post-body-size;
         line-height: 1.5em;
         * {
@@ -1426,6 +1489,12 @@ a {
 
 }
 
+.single-column-drawer-mask-active {
+  @media screen and (max-width: $single-column-max-width) {
+    display: block !important;
+  }
+}
+
 // The site remains a two-column layout. On roomy screens the TOC gets a
 // local column inside the article card, so it can stay visible without
 // participating in text/image flow. Narrow desktops keep the full-width TOC.
@@ -1552,7 +1621,7 @@ a {
   line-height: 1;
   padding: 4px;
 
-  .material-icons { font-size: 16px; }
+  .ui-icon { width: 20px; height: 20px; }
 }
 
 .nav-footer {
@@ -1671,12 +1740,12 @@ html.dark-theme {
   .article-toc a.active { color: #8fc1ee !important; font-weight: 700; }
   hr { border-color: #414751; }
   table th, table td { border-color: #454b55; color: #e3e7ec; }
-  .theme-toggle, .theme-toggle .material-icons {
+  .theme-toggle, .theme-toggle .ui-icon {
     background: transparent !important;
     color: #929ba7 !important;
   }
   .theme-toggle:hover, .theme-toggle:focus-visible,
-  .theme-toggle:hover .material-icons, .theme-toggle:focus-visible .material-icons { color: #beddf8 !important; }
+  .theme-toggle:hover .ui-icon, .theme-toggle:focus-visible .ui-icon { color: #beddf8 !important; }
   .pagination-action:hover *, .pagination-action:focus-visible * { color: #beddf8 !important; }
   .post-series li::marker, .related-posts li::marker { color: #929ba7; }
   &.footprints-document .post-body,
@@ -1818,7 +1887,7 @@ html.dark-theme {
   .nav-footer, .nav-footer span, .nav-footer a,
   .single-column-footer, .single-column-footer span,
   .single-column-footer a { color: #e7e3da !important; }
-  .theme-toggle, .theme-toggle .material-icons { color: #b8b5ae !important; }
+  .theme-toggle, .theme-toggle .ui-icon { color: #b8b5ae !important; }
 
   .extra-container,
   .extra-container .pagination,
@@ -1866,4 +1935,18 @@ html.dark-theme {
 
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; }
+}
+
+// The icon previews the target theme: a dark moon in light mode and a warm,
+// near-white sun in dark mode. Keep these rules last to avoid inherited nav colors.
+html:not(.dark-theme) .theme-toggle[aria-label="切换深色模式"],
+html:not(.dark-theme) .theme-toggle[aria-label="切换深色模式"] .ui-icon {
+  color: #17262d !important;
+  opacity: 1;
+}
+
+html.dark-theme .theme-toggle[aria-label="切换浅色模式"],
+html.dark-theme .theme-toggle[aria-label="切换浅色模式"] .ui-icon {
+  color: #f5f1e9 !important;
+  opacity: 1;
 }

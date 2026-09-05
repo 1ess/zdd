@@ -27,7 +27,7 @@ htmlFiles.forEach((file) => {
   imageCount += (html.match(/<img\b/gi) || []).length;
 });
 
-['index.html', '404.html', path.join('footprints', 'index.html'), path.join('about', 'index.html'), path.join('search', 'index.html'), 'search-index.json', 'search-index.js', 'sitemap.xml', 'robots.txt', 'manifest.webmanifest', 'service-worker.js'].forEach((page) => {
+['index.html', '404.html', path.join('footprints', 'index.html'), path.join('about', 'index.html'), path.join('search', 'index.html'), 'search-index.json', 'sitemap.xml', 'robots.txt', 'manifest.webmanifest', 'service-worker.js'].forEach((page) => {
   if (!fs.existsSync(path.join(publicDir, page))) errors.push(`缺少关键页面：/${page.replace(/\\/g, '/')}`);
 });
 
@@ -57,7 +57,9 @@ if (fs.existsSync(searchIndexPath)) {
       if (searchIndex.length !== sourcePostCount) {
         errors.push(`搜索索引包含 ${searchIndex.length} 篇，但 source/_posts 中有 ${sourcePostCount} 篇。`);
       }
-      const urls = searchIndex.map((item) => item && item.url).filter(Boolean);
+      const malformed = searchIndex.some((item) => !Array.isArray(item) || item.length !== 5 || !item[0] || !item[1]);
+      if (malformed) errors.push('搜索索引条目格式错误。');
+      const urls = searchIndex.map((item) => item && item[1]).filter(Boolean);
       if (new Set(urls).size !== urls.length) errors.push('搜索索引中存在重复 URL。');
     }
   } catch (error) {

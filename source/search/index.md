@@ -12,13 +12,12 @@ description: 搜索博客文章、标签和分类。
   <ol id="site-search-results" class="site-search-results"></ol>
 </div>
 
-<script src="/search-index.js"></script>
 <script>
 window.addEventListener('load', function () {
   var input = document.getElementById('site-search-input');
   var status = document.getElementById('site-search-status');
   var results = document.getElementById('site-search-results');
-  var index = Array.isArray(window.__BLOG_SEARCH_INDEX__) ? window.__BLOG_SEARCH_INDEX__ : [];
+  var index = [];
 
   function escapeHtml(value) {
     return String(value).replace(/[&<>"']/g, function (character) {
@@ -42,28 +41,27 @@ window.addEventListener('load', function () {
     var query = normalize(input.value);
     results.innerHTML = '';
     var matches = index.map(function (item) {
-      var title = normalize(item.title);
-      var tags = Array.isArray(item.tags) ? item.tags : [];
-      var categories = Array.isArray(item.categories) ? item.categories : [];
-      var metadata = normalize(tags.concat(categories).join(' '));
-      var content = normalize(item.content);
+      var title = normalize(item[0]);
+      var labels = item[3] || '';
+      var metadata = normalize(labels);
+      var content = normalize(item[4]);
       var score = !query ? 1 : (title.indexOf(query) >= 0 ? 100 : 0) + (metadata.indexOf(query) >= 0 ? 40 : 0) + (content.indexOf(query) >= 0 ? 10 : 0);
       return { item: item, score: score };
     }).filter(function (entry) { return entry.score > 0; })
-      .sort(function (a, b) { return b.score - a.score || b.item.date.localeCompare(a.item.date); })
+      .sort(function (a, b) { return b.score - a.score || b.item[2].localeCompare(a.item[2]); })
       .slice(0, query ? 40 : 12);
 
     status.textContent = query ? (matches.length ? '找到 ' + matches.length + ' 条结果。' : '没有找到相关文章。') : '最近更新的 12 篇文章。';
     results.innerHTML = matches.map(function (entry) {
       var item = entry.item;
-      var labels = (item.tags || []).concat(item.categories || []).slice(0, 5).map(escapeHtml).join(' · ');
-      return '<li><a href="' + escapeHtml(item.url) + '"><strong>' + escapeHtml(item.title) + '</strong></a>' +
-        '<div class="site-search-meta">' + escapeHtml(item.date) + (labels ? ' · ' + labels : '') + '</div>' +
-        '<p>' + escapeHtml(snippet(item.content, query)) + '</p></li>';
+      var labels = escapeHtml(item[3] || '');
+      return '<li><a href="' + escapeHtml(item[1]) + '"><strong>' + escapeHtml(item[0]) + '</strong></a>' +
+        '<div class="site-search-meta">' + escapeHtml(item[2]) + (labels ? ' · ' + labels : '') + '</div>' +
+        '<p>' + escapeHtml(snippet(item[4], query)) + '</p></li>';
     }).join('');
   }
 
-  if (index.length) {
+  function initializeSearch() {
     input.disabled = false;
     status.textContent = '索引已就绪，共 ' + index.length + ' 篇文章。';
     document.querySelector('.site-search label').textContent = '搜索 ' + index.length + ' 篇文章';
@@ -72,9 +70,22 @@ window.addEventListener('load', function () {
     var initial = new URLSearchParams(location.search).get('q');
     if (initial) input.value = initial;
     search();
-  } else {
+  }
+
+  input.disabled = true;
+  fetch('/search-index.json', { credentials: 'same-origin' })
+    .then(function (response) {
+      if (!response.ok) throw new Error('search index request failed');
+      return response.json();
+    })
+    .then(function (data) {
+      if (!Array.isArray(data)) throw new Error('invalid search index');
+      index = data;
+      initializeSearch();
+    })
+    .catch(function () {
     input.disabled = true;
     status.textContent = '搜索索引加载失败，请刷新后重试。';
-  }
+    });
 });
 </script>
