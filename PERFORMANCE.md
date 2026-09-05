@@ -2,8 +2,10 @@
 
 ## 日常构建
 
-首次安装依赖：`npm ci`，然后 `npm install --prefix themes/journal`。
+首次安装依赖：`npm ci`，然后 `npm ci --prefix themes/journal`。
 新增、修改文章或主题后统一执行 `npm run build`。此命令会编译主题、校验足迹与搜索协议、清理旧产物、生成页面并检查站点和链接；GitHub Actions 使用相同入口。
+
+Vercel 部署配置保存在根目录 `vercel.json`：安装命令同时执行根目录及主题目录的 `npm ci`，构建命令为 `npm run build`，输出目录为 `public`。项目 Root Directory 应指向仓库根目录。只安装根目录依赖会导致主题编译报 `Cannot find module 'sass'`；`npm --prefix themes/journal run build` 本身不会自动安装主题依赖。显式指定 npm 可避免根据遗留 `yarn.lock` 自动选择 Yarn。
 
 ## CSS 按页面加载（优化项 3）
 

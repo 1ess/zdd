@@ -16,7 +16,7 @@ jobs:
       - name: Install site dependencies
         run: npm ci
       - name: Install theme build dependencies
-        run: npm install --prefix themes/journal
+        run: npm ci --prefix themes/journal
       - name: Generate and validate site
         run: npm run build
       - name: Report media quality
