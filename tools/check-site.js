@@ -27,7 +27,7 @@ htmlFiles.forEach((file) => {
   imageCount += (html.match(/<img\b/gi) || []).length;
 });
 
-['index.html', '404.html', path.join('footprints', 'index.html'), path.join('about', 'index.html'), path.join('search', 'index.html'), 'search-index.json', 'sitemap.xml', 'robots.txt', 'manifest.webmanifest', 'service-worker.js'].forEach((page) => {
+['index.html', '404.html', path.join('footprints', 'index.html'), path.join('about', 'index.html'), path.join('search', 'index.html'), 'search-index.json', 'search-content.json', 'sitemap.xml', 'robots.txt', 'manifest.webmanifest', 'service-worker.js'].forEach((page) => {
   if (!fs.existsSync(path.join(publicDir, page))) errors.push(`缺少关键页面：/${page.replace(/\\/g, '/')}`);
 });
 
@@ -37,6 +37,7 @@ if (!/<script type="application\/ld\+json">/i.test(homeHtml)) errors.push('首�
 if (!/<link rel="canonical"/i.test(homeHtml)) errors.push('首页缺少 canonical URL。');
 
 const searchIndexPath = path.join(publicDir, 'search-index.json');
+const searchContentPath = path.join(publicDir, 'search-content.json');
 if (fs.existsSync(searchIndexPath)) {
   try {
     const searchIndex = JSON.parse(fs.readFileSync(searchIndexPath, 'utf8'));
@@ -61,6 +62,12 @@ if (fs.existsSync(searchIndexPath)) {
       if (malformed) errors.push('搜索索引条目格式错误。');
       const urls = searchIndex.map((item) => item && item[1]).filter(Boolean);
       if (new Set(urls).size !== urls.length) errors.push('搜索索引中存在重复 URL。');
+      if (fs.existsSync(searchContentPath)) {
+        const searchContent = JSON.parse(fs.readFileSync(searchContentPath, 'utf8'));
+        if (!Array.isArray(searchContent) || searchContent.length !== searchIndex.length) {
+          errors.push('搜索正文索引与元数据索引数量不一致。');
+        }
+      }
     }
   } catch (error) {
     errors.push(`搜索索引无法解析：${error.message}`);

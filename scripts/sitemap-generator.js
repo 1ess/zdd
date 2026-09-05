@@ -8,7 +8,7 @@ hexo.extend.generator.register('native-sitemap', function (locals) {
   const base = this.config.url.replace(/\/$/, '') + (this.config.root || '/');
   const records = [];
   const add = (item, priority) => {
-    if (!item.path || item.path === '404.html' || item.path === 'search-index.json') return;
+    if (!item.path || item.path === '404.html' || item.path === 'search-index.json' || item.path === 'search-content.json') return;
     records.push({
       location: new URL(item.path.replace(/index\.html$/, ''), base).toString(),
       modified: (item.updated || item.date) && new Date(item.updated || item.date).toISOString().slice(0, 10),

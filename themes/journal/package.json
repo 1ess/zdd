@@ -5,8 +5,8 @@
     "main": "index.js",
     "scripts": {
         "test": "npm run build",
-        "build": "sass source/scss/journal.scss source/css/journal.css --style=compressed --no-source-map && postcss source/css/journal.css --use autoprefixer --replace",
-        "watch": "sass --watch source/scss:source/css --no-source-map"
+        "build": "sass scss/journal.scss source/css/journal.css --style=compressed --no-source-map && postcss source/css/journal.css --use autoprefixer --replace",
+        "watch": "sass --watch scss:source/css --no-source-map"
     },
     "repository": {
         "type": "git",

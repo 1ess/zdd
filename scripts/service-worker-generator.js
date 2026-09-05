@@ -9,7 +9,9 @@ hexo.extend.generator.register('versioned-service-worker', function () {
   const versionInputs = [
     'themes/journal/source/css/journal.css',
     'themes/journal/source/js/journal.js',
+    'themes/journal/source/js/site-runtime.js',
     'themes/journal/source/vendor/fonts.css',
+    'themes/journal/source/vendor/code-font.css',
     'themes/journal/source/vendor/nord.css',
     'scripts/search-index.js',
     'source/offline.html'
@@ -21,11 +23,7 @@ hexo.extend.generator.register('versioned-service-worker', function () {
   });
 
   const version = hash.digest('hex').slice(0, 12);
-  const shell = [
-    '/', '/offline.html', '/css/journal.css', '/js/journal.js',
-    '/manifest.webmanifest', '/vendor/fonts.css', '/vendor/nord.css',
-    '/vendor/fonts/font-1.ttf', '/vendor/fonts/font-2.ttf', '/vendor/fonts/font-4.ttf'
-  ];
+  const shell = ['/offline.html', '/manifest.webmanifest'];
 
   const worker = `'use strict';
 const VERSION = '${version}';
@@ -46,6 +44,8 @@ self.addEventListener('activate', (event) => {
     caches.keys()
       .then((keys) => Promise.all(keys.filter((key) => key.startsWith('zdd-') && !current.has(key)).map((key) => caches.delete(key))))
       .then(() => self.clients.claim())
+      .then(() => self.clients.matchAll({ type: 'window' }))
+      .then((clients) => clients.forEach((client) => client.postMessage({ type: 'SW_UPDATED', version: VERSION })))
   );
 });
 
@@ -65,14 +65,25 @@ async function trim(cacheName, maximum) {
 
 async function networkFirst(request, cacheName, fallback) {
   try {
-    return await save(cacheName, request, await fetch(request));
+    const response = await save(cacheName, request, await fetch(request));
+    if (cacheName === PAGES) await trim(PAGES, 30);
+    if (cacheName === DATA) await trim(DATA, 8);
+    return response;
   } catch (_) {
-    return (await caches.match(request)) || (fallback ? await caches.match(fallback) : null) || Response.error();
+    const cache = await caches.open(cacheName);
+    const cached = await cache.match(request);
+    if (cached) return cached;
+    if (fallback) {
+      const precache = await caches.open(PRECACHE);
+      return (await precache.match(fallback)) || Response.error();
+    }
+    return Response.error();
   }
 }
 
 async function cacheFirst(request, cacheName, maximum) {
-  const cached = await caches.match(request);
+  const cache = await caches.open(cacheName);
+  const cached = await cache.match(request);
   if (cached) return cached;
   const response = await save(cacheName, request, await fetch(request));
   if (maximum) await trim(cacheName, maximum);
@@ -87,12 +98,14 @@ self.addEventListener('fetch', (event) => {
 
   if (request.mode === 'navigate') {
     event.respondWith(networkFirst(request, PAGES, '/offline.html'));
-  } else if (url.pathname === '/search-index.json' || url.pathname.endsWith('/footprints.geojson')) {
+  } else if (url.pathname === '/search-index.json' || url.pathname === '/search-content.json' || url.pathname.endsWith('/footprints.geojson')) {
     event.respondWith(networkFirst(request, DATA));
   } else if (request.destination === 'image') {
     event.respondWith(cacheFirst(request, IMAGES, 80));
-  } else if (request.destination === 'style' || request.destination === 'script' || request.destination === 'font') {
-    event.respondWith(cacheFirst(request, STATIC));
+  } else if (request.destination === 'font' || ((request.destination === 'style' || request.destination === 'script') && url.searchParams.has('v'))) {
+    event.respondWith(cacheFirst(request, STATIC, 24));
+  } else if (request.destination === 'style' || request.destination === 'script') {
+    event.respondWith(networkFirst(request, STATIC));
   }
 });
 `;

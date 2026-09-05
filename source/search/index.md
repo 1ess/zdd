@@ -18,6 +18,8 @@ window.addEventListener('load', function () {
   var status = document.getElementById('site-search-status');
   var results = document.getElementById('site-search-results');
   var index = [];
+  var contentIndex = null;
+  var contentRequest = null;
 
   function escapeHtml(value) {
     return String(value).replace(/[&<>"']/g, function (character) {
@@ -40,13 +42,13 @@ window.addEventListener('load', function () {
   function search() {
     var query = normalize(input.value);
     results.innerHTML = '';
-    var matches = index.map(function (item) {
+    var matches = index.map(function (item, itemIndex) {
       var title = normalize(item[0]);
       var labels = item[3] || '';
       var metadata = normalize(labels);
-      var content = normalize(item[4]);
+      var content = normalize(item[4] + (contentIndex ? ' ' + contentIndex[itemIndex] : ''));
       var score = !query ? 1 : (title.indexOf(query) >= 0 ? 100 : 0) + (metadata.indexOf(query) >= 0 ? 40 : 0) + (content.indexOf(query) >= 0 ? 10 : 0);
-      return { item: item, score: score };
+      return { item: item, itemIndex: itemIndex, score: score };
     }).filter(function (entry) { return entry.score > 0; })
       .sort(function (a, b) { return b.score - a.score || b.item[2].localeCompare(a.item[2]); })
       .slice(0, query ? 40 : 12);
@@ -54,11 +56,34 @@ window.addEventListener('load', function () {
     status.textContent = query ? (matches.length ? '找到 ' + matches.length + ' 条结果。' : '没有找到相关文章。') : '最近更新的 12 篇文章。';
     results.innerHTML = matches.map(function (entry) {
       var item = entry.item;
+      var fullContent = item[4] + (contentIndex ? ' ' + contentIndex[entry.itemIndex] : '');
       var labels = escapeHtml(item[3] || '');
       return '<li><a href="' + escapeHtml(item[1]) + '"><strong>' + escapeHtml(item[0]) + '</strong></a>' +
         '<div class="site-search-meta">' + escapeHtml(item[2]) + (labels ? ' · ' + labels : '') + '</div>' +
-        '<p>' + escapeHtml(snippet(item[4], query)) + '</p></li>';
+        '<p>' + escapeHtml(snippet(fullContent || '', query)) + '</p></li>';
     }).join('');
+  }
+
+  function loadSearchContent() {
+    if (contentIndex) return Promise.resolve(contentIndex);
+    if (contentRequest) return contentRequest;
+    contentRequest = fetch('/search-content.json', { credentials: 'same-origin' })
+      .then(function (response) {
+        if (!response.ok) throw new Error('search content request failed');
+        return response.json();
+      })
+      .then(function (data) {
+        if (!Array.isArray(data) || data.length !== index.length) throw new Error('invalid search content');
+        contentIndex = data;
+        return data;
+      })
+      .catch(function () { return null; });
+    return contentRequest;
+  }
+
+  function handleInput() {
+    search();
+    if (normalize(input.value) && !contentIndex) loadSearchContent().then(search);
   }
 
   function initializeSearch() {
@@ -66,9 +91,10 @@ window.addEventListener('load', function () {
     status.textContent = '索引已就绪，共 ' + index.length + ' 篇文章。';
     document.querySelector('.site-search label').textContent = '搜索 ' + index.length + ' 篇文章';
     input.focus();
-    input.addEventListener('input', search);
+    input.addEventListener('input', handleInput);
     var initial = new URLSearchParams(location.search).get('q');
     if (initial) input.value = initial;
+    if (initial) loadSearchContent().then(search);
     search();
   }
 

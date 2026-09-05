@@ -1,12 +1,12 @@
-<link rel="stylesheet" href="<%- url_for('vendor/nord.css') %>">
-<link rel="stylesheet" href="<%- url_for('vendor/fonts.css') %>">
-<link rel="stylesheet" href="<%- url_for('css/journal.css') %>">
+<link rel="stylesheet" href="<%- versioned_asset('vendor/nord.css') %>">
+<link rel="stylesheet" href="<%- versioned_asset('vendor/fonts.css') %>">
+<% if (is_post()) { %><link rel="stylesheet" href="<%- versioned_asset('vendor/code-font.css') %>"><% } %>
+<link rel="stylesheet" href="<%- versioned_asset('css/journal.css') %>">
 <link rel="manifest" href="<%- url_for('manifest.webmanifest') %>">
 <meta name="theme-color" content="#f5f3ee">
 <% if (theme.favicon || config.favicon){ %>
 <link rel="icon" href="<%- config.favicon ? config.favicon : theme.favicon %>">
 <% } %>
-<script src="<%- url_for('js/loadCSS.js') %>"></script>
 <script>
     try {
         var savedTheme = localStorage.getItem('color-theme');
