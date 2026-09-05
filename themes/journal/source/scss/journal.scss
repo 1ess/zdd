@@ -246,6 +246,30 @@ body {
   background-color: #edf3f5;
 }
 
+.stream-container .post-list-container .post-item-image.home-depth-cover {
+  overflow: hidden;
+  background-image: none;
+
+  &::before {
+    content: '';
+    position: absolute;
+    z-index: 0;
+    inset: -24px 0;
+    background: var(--home-depth-image) no-repeat center;
+    background-size: cover;
+    transform: translate3d(0, var(--home-depth-y, 0), 0);
+    will-change: transform;
+  }
+
+  &::after { z-index: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .stream-container .post-list-container .post-item-image.home-depth-cover::before {
+    will-change: auto;
+  }
+}
+
 .stream-container .post-list-container .post-item-image.progressive-cover::after,
 .stream-container .post .post-head-wrapper.progressive-cover::after {
   content: '';

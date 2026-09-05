@@ -50,7 +50,9 @@
       var source = cover.dataset.imageSrc;
       var image = new Image();
       image.onload = function () {
-        cover.style.backgroundImage = 'url("' + source.replace(/"/g, '%22') + '")';
+        var imageValue = 'url("' + source.replace(/"/g, '%22') + '")';
+        if (cover.classList.contains('home-depth-cover')) cover.style.setProperty('--home-depth-image', imageValue);
+        else cover.style.backgroundImage = imageValue;
         window.requestAnimationFrame(function () { cover.classList.add('is-loaded'); });
       };
       image.onerror = function () { cover.classList.add('is-error'); };
@@ -69,6 +71,47 @@
       covers.forEach(function (cover) { observer.observe(cover); });
     } else {
       covers.forEach(loadCover);
+    }
+
+    var depthCovers = Array.prototype.slice.call(document.querySelectorAll('.home-depth-cover'));
+    if (depthCovers.length && document.documentElement.scrollHeight > window.innerHeight) {
+      var activeDepthCovers = new Set();
+      var depthFramePending = false;
+
+      function updateHomeDepth() {
+        var viewportCenter = window.innerHeight / 2;
+        var amplitude = window.innerWidth <= 1020 ? 12 : 18;
+        activeDepthCovers.forEach(function (cover) {
+          var rect = cover.getBoundingClientRect();
+          var normalized = (viewportCenter - (rect.top + rect.height / 2)) / Math.max(1, viewportCenter + rect.height / 2);
+          var offset = Math.max(-1, Math.min(1, normalized)) * amplitude;
+          cover.style.setProperty('--home-depth-y', offset.toFixed(2) + 'px');
+        });
+        depthFramePending = false;
+      }
+
+      function requestHomeDepth() {
+        if (depthFramePending) return;
+        depthFramePending = true;
+        window.requestAnimationFrame(updateHomeDepth);
+      }
+
+      if ('IntersectionObserver' in window) {
+        var depthObserver = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) activeDepthCovers.add(entry.target);
+            else activeDepthCovers.delete(entry.target);
+          });
+          requestHomeDepth();
+        }, { rootMargin: '120px 0px' });
+        depthCovers.forEach(function (cover) { depthObserver.observe(cover); });
+      } else {
+        depthCovers.forEach(function (cover) { activeDepthCovers.add(cover); });
+      }
+
+      window.addEventListener('scroll', requestHomeDepth, { passive: true });
+      window.addEventListener('resize', requestHomeDepth, { passive: true });
+      requestHomeDepth();
     }
 
     var article = document.querySelector('.post-body');
