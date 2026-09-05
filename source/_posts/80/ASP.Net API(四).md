@@ -9,7 +9,6 @@ date: 2018-11-27
 Web API 包括对 JSON，XML，BSON 和 form-urlencoded 数据的内置支持，这意味着它会自动将请求/响应数据转换为这些格式(开箱即用)。
 
 ## Media-Type Formatters
-***  
 Web API 包括以下内置媒体类型格式化程序。
 
 | JsonMediaTypeFormatter           | MIME Type                         | 描述                                        |
@@ -47,7 +46,6 @@ public class FormattersController : ApiController
 ```
 
 ## 配置 JSON 序列化
-***  
 在内部，JsonMediaTypeFormatter 使用名为 Json.NET 的第三方开源库来执行序列化。
 
 可以在 WebApiConfig 类中配置 JSON 格式化程序。JsonMediaTypeFormatter 类包括各种属性和方法，您可以使用它们自定义 JSON 序列化。例如，Web API 默认使用 PascalCase 写入 JSON 属性名称。要使用 camelCase 编写 JSON 属性名称，请在序列化程序设置上设置 CamelCasePropertyNamesContractResolver。
@@ -93,7 +91,6 @@ public class MyStrategy: NamingStrategy
 ```
 
 ## Web API Filters
-***  
 Filters 可用于提供例如日志记录、异常处理、性能测量、身份验证和授权等功能。
 Web API 使用 Filters 在执行 Action 方法前后来添加一些额外的逻辑。
 Filters 实际上是可以应用于 Web API Controller 或 Action 方法的 Attribute。

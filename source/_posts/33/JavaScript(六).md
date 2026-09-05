@@ -7,7 +7,6 @@ date: 2018-07-26
 本篇，我们讲一讲 JavaScript 中的重要对象以及常用方法。
 
 ## Function 类型概述
-***  
 ECMAScript 中的函数实际上是对象，每个函数都是 Function 类型的实例，而且都与其他引用类型一样具有属性和方法。函数通常是使用函数声明语法定义的，如下: 
 ``` javascript
 function sum (num1, num2) {
@@ -46,7 +45,6 @@ alert(anotherSum(10, 10)); //20
 ```
 
 ## 没有重载
-***  
 之前我们说过 ECMAScript 没有重载，因为函数也是对象。
 ``` javascript
 function addSomeNumber(num) {
@@ -74,7 +72,6 @@ var result = addSomeNumber(100); //300
 ```
 
 ## 函数声明与函数表达式
-***  
 实际上，解析器在向执行环境中加载数据时，对函数声明和函数表达式是区别对待的。解析器会率先读取函数声明，并使其在执行任何代码之前可用(可以访问); 至于函数表达式，则必须等到解析器执行到它所在的代码行，才会真正被解释执行。
 ``` javascript
 alert(sum(10, 10));
@@ -95,7 +92,6 @@ var sum = function (num1, num2) {
 原因在于函数位于一个初始化语句中，而不是一个函数声明。换句话说，在执行到函数所在的语句之前，变量 sum 中不会保存有对函数的引用。
 
 ## 作为值的函数
-***  
 因为 ECMAScript 中的函数名本身就是变量，所以函数也可以作为值来使用。也就是说，不仅可以像传递参数一样把一个函数传递给另一个函数，而且可以将一个函数作为另一个函数的结果返回。
 ``` javascript
 function callSomeFunction(someFunction, someArgument) {
@@ -110,7 +106,6 @@ alert(result1);   //20
 ```
 
 ## 函数内部属性
-***  
 在函数内部，有两个特殊的对象: arguments 和 this。其中，arguments 之前说过，它是一个类数组对象，包含着传入函数中的所有参数。这个对象还有一个名叫 callee 的属性，该属性是一个指针，指向拥有这个 arguments 对象的函数。
 ``` javascript
 function factorial(num) {
@@ -180,7 +175,6 @@ outer();
 当函数在严格模式下运行时，访问 arguments.callee 会导致错误。ECMAScript 5 还定义了 arguments.caller 属性，但在严格模式下访问它也会导致错误，而在非严格模式下这个属性始终是 undefined。定义这个属性是为了分清 arguments.caller 和函数的 caller 属性。
 
 ## 函数属性和方法
-***  
 ECMAScript 中的函数是对象，因此函数也有属性和方法。每个函数都包含两个属性: length 和 prototype。其中，length 属性表示函数希望接收的命名参数的个数: 
 ``` javascript
 function sayName(name) {
@@ -268,7 +262,6 @@ objectSayColor();    //blue
 每个函数继承的 toLocaleString()、toString() 和 valueOf() 方法始终都返回函数的代码，返回代码的格式则因浏览器而异。
 
 ## 基本包装类型概述
-***  
 为了便于操作基本类型值，ECMAScript 还提供了3个特殊的引用类型: Boolean、Number 和 String。
 实际上，每当读取一个基本类型值的时候，后台就会创建一个对应的基本包装类型的对象，从而让我们能够调用一些方法来操作这些数据。如: 
 ``` javascript
@@ -380,7 +373,6 @@ alert(num.toPrecision(3));     //"99.0"
 以上代码首先完成的任务是以一位数来表示 99，结果是 "1e+2"，即 100。因为一位数无法准确地表示 99，因此 toPrecision() 就将它向上舍入为 100，这样就可以使用一位数来表示它了。而接下来的用两位数表示 99，当然还是 "99"。最后，在想以三位数表示 99 时，toPrecision() 方法返回了 "99.0"。实际上，toPrecision() 会根据要处理的数值决定到底是调用 toFixed() 还是调用 toExponential()。
 
 ## String 类型
-***  
 String 类型是字符串的对象包装类型，可以像下面这样使用 String 构造函数来创建: 
 ``` javascript
 var stringObject = new String("hello world");
@@ -501,14 +493,12 @@ alert(stringValue.localeCompare("zoo"));           //-1
 ```
 
 ## 单体内置对象
-***  
 单体内置对象是由 ECMAScript 实现提供的、不依赖于宿主环境的对象，这些对象在 ECMAScript 程序执行之前就已经存在了。
 意思就是说，开发人员不必显式地实例化内置对象，因为它们已经实例化了。
 前面我们说的 Object、Array 和 String 都是内置对象。
 ECMA-262 还定义了两个单体内置对象: Global 和 Math。
 
 ## Global 对象
-***  
 Global(全局)对象可以说是 ECMAScript 中最特别的一个对象了。不属于任何其他对象的属性和方法，最终都是它的属性和方法。事实上，没有全局变量或全局函数，所有在全局作用域中定义的属性和函数，都是 Global 对象的属性。本书前面介绍过的那些函数，诸如 isNaN()、isFinite()、parseInt() 以及 parseFloat()，实际上全都是 Global 对象的方法。
 
 ### URI 编码方法
@@ -559,7 +549,6 @@ Global 对象还包含一些属性，例如，特殊的值 undefined、NaN 以�
 ECMAScript 5 明确禁止给 undefined、NaN 和 Infinity 赋值，这样做即使在非严格模式下也会导致错误。
 
 ## window 对象
-***  
 ECMAScript 虽然没有指出如何直接访问 Global 对象，但 Web 浏览器都是将这个全局对象作为 window 对象的一部分加以实现的。因此，在全局作用域中声明的所有变量和函数，就都成为了 window 对象的属性: 
 ``` javascript
 var color = "red";
@@ -581,7 +570,6 @@ var global = function(){
 在没有给函数明确指定 this 值的情况下(无论是通过将函数添加为对象的方法，还是通过调用 call() 或 apply())，this 值等于 Global 对象。
 
 ## Math 对象
-***  
 ECMAScript 还为保存数学公式和信息提供了一个公共位置，即 Math 对象。
 
 ### min() 和 max() 方法

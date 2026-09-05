@@ -7,7 +7,6 @@ date: 2018-11-01
 这一篇，我们讲讲数据验证、布局试图以及 Controller 向 View 传递少量数据的方式。
 
 ## 数据注释(DataAnnotations)
-***  
 ASP.Net MVC 使用 DataAnnotations attribute 实现数据验证。
 DataAnnotations 为不同的验证规则内建了许多验证特性，可以应用于模型类的属性。ASP.NET MVC 将自动强制执行这些验证规则并在视图中显示验证消息。
 
@@ -33,7 +32,6 @@ DataAnnotations attribute 位于 System.ComponentModel.DataAnnotations 命名空
 ValidationMessageFor 负责显示指定字段的错误消息。ValidationSummary 一次显示所有错误消息的列表。
 
 ## Layout View
-***  
 一个应用程序可能会有一些公共 UI 部分，如 logo、导航部分、footer 部分等。ASP.NET MVC 引入了一个 Layout 视图，使得我们不必在每个页面中编写相同的代码。
 
 Razor 的布局视图和普通视图一样，以 .cshtml 作为后缀，存储在 View/Shared 文件夹中。脚手架会自动创建一个 _Layout.cshtml 文件。
@@ -52,7 +50,6 @@ RenderSection 方法指定一个部分的名称，在子视图中使用 @section
 索引视图的其余部分(不在任何已命名的部分中)将呈现调用 RenderBody 方法的位置。
 
 ## 数据传输
-***  
 模型对象用于在 Razor 视图中发送数据。但是，在某些情况下，您可能希望向视图发送少量临时数据。有三种方法: 
 - ViewBag
 - ViewData

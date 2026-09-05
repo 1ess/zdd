@@ -5,13 +5,11 @@ date: 2022-02-12
 ---
 
 ## 概念解释
-***  
 在软件开发中，这两对概念是非常容易搞混的。我们再此给其做一个明确的解释，用以区分: 
 1. Synchronous and Asynchronous: **同步和异步是指请求方是主动地发起消息获取结果还是被动地等待通知**
 2. Blocking and Non-Blocking: **阻塞和非阻塞是指系统调用之后是立即返回，还是处于等待状态**
 
 ## IO 模型
-***  
 下面是五种 Linux 中 Socket IO 模型:
 ![](https://cdn.zhangdd.tech/contentImg/io/fig1-1.gif)
 

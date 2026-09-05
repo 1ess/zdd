@@ -7,7 +7,6 @@ date: 2018-11-24
 了解了 Web API 如何将 HTTP 请求路由到 Controller 和 Action 方法。我们将再看看 Web API 如何将 HTTP 请求数据绑定到操作方法的参数。
 
 ## Model Binding
-***  
 Web API 将操作方法​​参数与 URL 的 Query String 或 Request Body 绑定，具体取决于参数类型。
 默认情况下，如果参数类型是 .NET 基本类型，则它从 Query String 设置参数的值，如果参数类型是复杂类型，则 Web API 会尝试默认从 Request Body 中获取值。
 
@@ -31,7 +30,6 @@ Web API 中，默认情况，简单类型从 Query String 中获取值，复杂�
 我们可以使用 [FromUri] 和 [FromBody] 特性强制 Post 请求中简单类型可以从 Request Body 获取，复杂类型可以从 Query String 获取。
 
 ## Action 方法返回类型
-***  
 Web API Action 方法可以具有以下返回类型: 
 - void
 - 原始类型或复杂类型

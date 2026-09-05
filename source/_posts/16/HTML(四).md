@@ -7,7 +7,6 @@ date: 2018-07-09
 前三篇已经讲解完大部分常用的标记，这一篇准备讲解其余的标记。
 
 ## figure 元素(Figure)
-***  
 figure 标记用来表示图片，图表，插图等内容。
 
 ``` HTML
@@ -17,7 +16,6 @@ figure 标记用来表示图片，图表，插图等内容。
 ```
 
 ## figcaption 元素(Figure caption)
-***  
 figcaption 标记是为图片增加标题或者说明，是 figure 标记的子标记。
 ``` HTML
 <figure>
@@ -27,7 +25,6 @@ figcaption 标记是为图片增加标题或者说明，是 figure 标记的子�
 ```
 
 ## address 元素(Address)
-***  
 address 标记一般用于联系方式的描述，如住址，邮件信息等。
 ``` HTML
 <address>
@@ -36,7 +33,6 @@ address 标记一般用于联系方式的描述，如住址，邮件信息等。
 ```
 
 ## time 元素(Time)
-***  
 time 标记用于定义时间。
 ![](https://cdn.zhangdd.tech/contentImg/html4/datetime-format-d0c825.webp)
 ``` HTML
@@ -44,7 +40,6 @@ The game starts at <time datetime="2018-07-12T10:00">10:00</time>.
 ```
 
 ## audio 元素(Audio)
-***  
 audio 标记允许在网页内嵌入音频。
 重要的属性: 
 - src: 定义资源文件的位置
@@ -63,7 +58,6 @@ audio 标记允许在网页内嵌入音频。
 ```
 
 ## video 元素(Audio)
-***  
 video 标记允许在网页内嵌入视频。
 重要的属性: 
 - src: 定义资源文件的位置
@@ -82,7 +76,6 @@ video 标记允许在网页内嵌入视频。
 ```
 
 ## picture 元素(Picture)
-***  
 picture 标记为网页嵌入图片资源，内部有0到多个 source 子元素以及一个 img 元素。
 浏览器选择 source 元素中最佳匹配来展示，如果都无法展示，则最终显示 img 元素。
 ``` HTML
@@ -93,7 +86,6 @@ picture 标记为网页嵌入图片资源，内部有0到多个 source 子元素
 ```
 
 ## source 元素(Source)
-***  
 为 audio 元素，video 元素，picture 元素定义资源。
 重要的属性: 
 - src: 定义资源位置
@@ -111,7 +103,6 @@ picture 标记为网页嵌入图片资源，内部有0到多个 source 子元素
 ```
 
 ## details 元素(Detail)
-***  
 使用下摘要和详情定义一个下拉块。与 summary 元素配合使用。
 重要属性: 
 - open: 布尔属性，确定初始状态
@@ -124,27 +115,23 @@ picture 标记为网页嵌入图片资源，内部有0到多个 source 子元素
 ```
 
 ## sub 元素(Subscripted text)
-***  
 sub 标记定义下标。
 ``` HTML
 The formula of carbon dioxide is CO<sub>2</sub>.
 ```
 ## sup 元素(Superscripted text)
-***  
 sup 标记定义上标。
 ``` HTML
 The "power of two" is 2<sup>n</sup> where n is an integer.
 ```
 
 ## var 元素(Variable)
-***  
 var 标记定义数学或程序中的变量。
 ``` HTML
 The value of <var>x</var> is 12.
 ```
 
 ## button 元素(Button)
-***  
 定义可点击的按钮。
 重要属性: 
 - name: 定义表单内唯一标识符
@@ -161,7 +148,6 @@ The value of <var>x</var> is 12.
 ``` 
 
 ## datalist 元素(Data list)
-***  
 当时有 input 元素时，定义了一组可自动补全的可选项。与 option 元素配合使用。
 input 元素的 list 属性要与 datalist 的 id 属性相同。
 
@@ -186,7 +172,6 @@ input 元素的 list 属性要与 datalist 的 id 属性相同。
 ```
 
 ## label 元素(Label)
-***  
 定义表单控件的标签。
 重要属性: 
 - for: 要与关联的表单子控件的 id 属性值相同，点击 label，则关联控件获取焦点
@@ -199,7 +184,6 @@ input 元素的 list 属性要与 datalist 的 id 属性相同。
 ```
 
 ## input 元素(Input)
-***  
 定义一组与表单可交互的控件。
 ![](https://cdn.zhangdd.tech/contentImg/html4/html-form-elements-939709.webp)
 重要属性: 
@@ -225,7 +209,6 @@ input 元素的 list 属性要与 datalist 的 id 属性相同。
 ![](https://cdn.zhangdd.tech/contentImg/html4/sending-input-variable-to-server-653369.webp)
 
 ## option 元素(Option)
-***  
 option 标记定义下拉框的一个选项。
 重要属性: 
 - value: 提交到服务器的值
@@ -250,7 +233,6 @@ option 标记定义下拉框的一个选项。
 ```
 
 ## optgroup 元素(Option group)
-***  
 optgroup 标记定义选项分组。
 重要属性: 
 - label: 定义选项所在分组名
@@ -273,5 +255,4 @@ optgroup 标记定义选项分组。
 ```
 
 ## 所有 HTML 元素集合
-***  
 ![](https://cdn.zhangdd.tech/contentImg/html4/HTML-CHEAT-SHEET-768x8555.webp)

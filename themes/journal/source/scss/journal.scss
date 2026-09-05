@@ -1561,6 +1561,8 @@ a {
 
   figure {
     display: flex;
+    grid-column: 2;
+    grid-row: 1;
     min-width: 0;
     height: 100%;
     margin: 0;
@@ -1571,11 +1573,16 @@ a {
   }
 
   img {
+    width: 100%;
+    height: calc(100vh - 92px);
     max-width: 100%;
     max-height: calc(100vh - 92px);
     object-fit: contain;
     background: transparent;
   }
+
+  .image-lightbox-prev { grid-column: 1; grid-row: 1; }
+  .image-lightbox-next { grid-column: 3; grid-row: 1; }
 
   figcaption {
     min-height: 24px;

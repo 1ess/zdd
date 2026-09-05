@@ -7,7 +7,6 @@ date: 2018-07-20
 这一篇，由于在自己项目中采用的前端存储 —— IndexedDB，所以这一篇就介绍一些关于 IndexedDB 的知识。
 
 ## 概述
-***  
 在前端开发当中，有时会因为某些需求，要将一些数据存储在前端本地。我们回顾一下有几种手段可依然我们在前端存储数据。
 
 ### Cookies
@@ -37,7 +36,6 @@ date: 2018-07-20
 其中 Web SQL Database 在目前来说基本已经被放弃。所以目前主流的浏览器数据库的实现就是 IndexedDB(索引数据库)。
 
 ## 基本概念
-***  
 > 使用 IndexedDB，你可以存储或者获取数据，使用一个 key 索引。 你可以在事务(transaction)中完成对数据的修改。和大多数 web 存储解决方案相同，IndexedDB 也遵从同源协议(same-origin policy)， 所以你只能访问同域中存储的数据，而不能访问其他域的。
 
 API 包含异步(asynchronous) API 和同步(synchronous)API 两种。  异步 API 适合大多数情况，同步 API 必须同 WebWorkers 一同使用。目前，没有主流浏览器支持同步 API。 即使同步 API 被支持了，我们通常也会在大多数的情况使用异步 API。
@@ -72,7 +70,6 @@ IndexedDB 是一个比较复杂的 API，涉及不少概念。它把不同的实
 数据记录的读写和删改，都要通过事务完成。事务对象提供 error、abort 和 complete 三个事件，用来监听操作结果。
 
 ## 基本模式
-***  
 IndexedDB 鼓励使用的基本模式如下所示: 
 1. 打开数据库并且开始一个事务
 2. 创建一个 object store
@@ -81,7 +78,6 @@ IndexedDB 鼓励使用的基本模式如下所示:
 5. 在操作结果上进行一些操作(可以在 request 对象中找到)
 
 ## IndexedDB 的使用
-***  
 ### 创建一个 IndexedDB 数据库
 使用 IndexedDB 的第一步是打开数据库，使用 indexedDB.open() 方法。
 ``` javascript

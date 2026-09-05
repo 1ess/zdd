@@ -7,7 +7,6 @@ date: 2019-06-02
 从本篇开始，我们分几篇来专门说一下有关 Linux 的那些事儿。
 
 ## Unix
-***  
 如果我们要介绍 Linux，我们就不得不首先说一下 Unix。
 Unix: 一种多用户、多进程的计算机操作系统，开发于 1970 年在美国 AT&T 公司的贝尔实验室的 AT＆T Unix。
 此后的 10 年，Unix 在学术机构和大型企业中得到了广泛的应用，当时的 Unix 拥有者 AT&T 公司以低廉甚至免费的许可将 Unix 源码授权给学术机构做研究或教学之用，许多机构在此源码基础上加以扩充和改进，形成了所谓的 "Unix 变种"。
@@ -20,13 +19,11 @@ Unix: 一种多用户、多进程的计算机操作系统，开发于 1970 年�
 注意: 我们现在使用的 macOS 和 iOS 也都是由 FreeBSD 衍生而来。
 
 ## Linux
-***  
 1983 年，Richard Stallman 创立 GNU 计划。这个计划有一个目标，是为了发展一个完全自由的类 Unix 操作系统。自 1984 年发起这个计划以来，在 1985 年，Richard Stallman 还发起了 FSF(Free Software Foundation)并在 1989 年撰写了 GPL，1990 年代早期，GNU 开始大量地生产系统必备的元件如: GCC、GDB、Emacs 等等。
 Linux 就是之前说的类 Unix 系统。该操作系统的内核由 Linus 在 1991 年 10 月 5 日首次发布，Linux 严格来说只指操作系统的内核，因操作系统中包含了其他实用工具。如今 Linux 常用来指基于 Linux 的完整操作系统，内核则改以 "Linux 内核"称之。由于这些支持用户空间的系统工具和库主要由 Richard Stallman 于 1983 年发起的GNU 计划提供，自由软件基金会提议将其组合系统命名为 GNU/Linux，但 Linux 不属于 GNU 计划，这个名称并没有得到认可。
 通常情况下，Linux 被打包成供个人计算机和服务器使用的 Linux 发行版，一些流行的主流 Linux 发布版，包括Debian(及其衍生版本 Ubuntu)、RDEL(Red Hat Enterprise Linux)(及其衍生版本 CentOS)等，Linux 发行版包含 Linux 内核和支撑内核的实用程序和库，通常还带有大量可以满足各类需求的应用程序。个人计算机使用的 Linux 发行版通常包含 X Window 和一个相应的桌面环境，如 GNOME 或 KDE。
 
 ## Linux 目录结构
-***  
 从 Unit 系统沿袭下来的: Linux 系统中同样地存在"一些皆文件"的概念。
 一个典型的Linux系统具有以下几个目录:
 - / : 根目录，是所有目录树开始的地方
@@ -45,7 +42,6 @@ Linux 就是之前说的类 Unix 系统。该操作系统的内核由 Linus 在 
 - /usr/local/bin : 在此地放置本地执行程序的二进制文件
 
 ## 基本指令
-***  
 ### 关机
 ``` sh
 # 立即关机
@@ -255,7 +251,6 @@ netstat -tulpn
 - n: 使用数字代替了名称
 
 ## shell
-***  
 ### 查看支持的 shell
 ``` sh
 cat /etc/shells

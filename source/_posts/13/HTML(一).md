@@ -7,11 +7,9 @@ date: 2018-07-05
 从这篇开始，通过几篇的介绍，了解常用的 HTML 标记，熟悉每个标签在浏览器中的默认样式。
 
 ## HTML 基本结构
-***  
 ![](https://cdn.zhangdd.tech/contentImg/html1/basic-web-pages-f786d5.webp)
 
 ## HTML 元素
-***  
 普通元素
 ![](https://cdn.zhangdd.tech/contentImg/html1/Basic-Anatomy-of-HTML-Elements1.webp)
 
@@ -21,7 +19,6 @@ date: 2018-07-05
 **注意: 在 HTML5 中，自闭合元素 opening tag 末尾的 '/' 可以省略。**
 
 ## HTML 属性
-***  
 HTML 文档中包含了各种各样的元素，同时元素还可以用属性(attribute)进行配置，一个元素可以配置一个或者多个属性，如上图。
 
 ### 布尔属性
@@ -98,7 +95,6 @@ title 属性提供了元素的额外信息，浏览器通常用它显示工具�
 用于直接在元素身上定义 CSS 样式。
 
 ## HTML 文档类型、文档模式、注释
-***  
 ### 文档类型
 !doctype 声明必须是 HTML 文档的**第一行**，位于 &lt;html&gt; 标记之前。在所有 HTML 文档中规定 DOCTYPE 是非常重要的，这样浏览器就能了解预期的文档类型，告诉浏览器要通过哪一种规范解析文档。  
 **注意: !doctype 声明不属于 HTML 标签，它是一条指令，告诉浏览器编写页面所用的标记的版本。**  
@@ -119,7 +115,6 @@ HTML 的注释:
 ```
 
 ## HTML head 相关 tag
-***  
 head 内部元素通常包括指定页面标题，为搜索引擎提供关于页面本身的信息，加载样式表，以及加载 JavaScript 文件(出于性能考虑，多数时候放在页面底部 body 标签结束前加载 JavaScript 或使用 async)。除了 title，head 里的内容对页面访问者来说都是不可见的。
 
 ### title 元素
@@ -253,7 +248,6 @@ noscript 元素用来向禁用了 JavaScript 或浏览器不支持 JavaScript �
 ```
 
 ## 符合规范
-***  
 注意: 许多人通过查看源代码，然后复制粘贴来学习 HTML、CSS 及 JavaScript。然而他们并没有考虑到原本的网站，是否符合规范。如: 
 ``` HTML
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">

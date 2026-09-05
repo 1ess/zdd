@@ -21,7 +21,6 @@ HtmlHelper 类生成 html 元素。如:
 ```
 
 ## HtmlHelper 扩展方法
-***  
 调用 HtmlHelper 扩展方法和使用 html 标记之间的区别在于: HtmlHelper 扩展方法可以使绑定模型数据变得容易。
 
 ### TextBox

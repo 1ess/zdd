@@ -6,7 +6,6 @@ date: 2024-10-12
 本章介绍一些几乎所有编程语言都有的通用概念，以及它们在 Rust 中是如何工作的。主要包括变量、基本类型、函数、注释和控制流。
 
 ## 关键字
-***  
 关键字不能被用作标识符，包括函数、变量、参数、结构体字段、模块、crate、常量、宏、静态值、属性、类型、trait 或生命周期。
 ### 关键字列表
 as、async、await、break、const、continue、crate、dyn、else、enum、extern、false、fn、for、if、impl、in、let、loop、match、mod、move、mut、pub、ref、return、Self、self、static、struct、super、trait、true、type、union、unsafe、use、where、while
@@ -15,7 +14,6 @@ as、async、await、break、const、continue、crate、dyn、else、enum、exte
 abstract、become、box、do、final、macro、override、priv、try、typeof、unsized、virtual、yield
 
 ## 变量和可变性
-***  
 与大多数流行的编程语言不同，在 Rust 中，变量默认是不可改变的(immutable)，当变量不可变时，一旦值被绑定一个名称上，你就不能改变这个值。
 ``` rust
 fn main() {
@@ -38,7 +36,6 @@ fn main() {
 ```
 
 ## 常量
-***  
 类似于不可变变量，**常量** (constants)是绑定到一个标识符上的不允许改变的值。
 常量与变量区别如下: 
 1. 不允许对常量使用 mut
@@ -53,7 +50,6 @@ const THREE_HOURS_IN_SECONDS: u32 = 60 * 60 * 3;
 Rust 对常量的命名约定是在单词之间使用全大写加下划线。在声明它的作用域之中，常量在整个程序生命周期中都有效，此属性使得常量可以作为多处代码使用的全局范围的值。
 
 ## Shadowing
-***  
 我们可以定义一个与之前变量同名的新变量，称之为第一个变量被第二个 Shadowing 了。此时任何使用该变量名的行为中都会视为是在使用第二个变量，直到第二个变量自己也被隐藏或第二个变量的作用域结束。
 
 重复使用 let 关键字进行 Shadowing: 
@@ -91,7 +87,6 @@ mut 与 Shadowing 的一个区别是，当再次使用 let 时，实际上创建
 ```
 
 ## 数据类型
-***  
 类似 Java、C#，Rust 是**静态类型**语言，在编译时就必须知道变量的类型。编译器通常可以推断出想要用的类型。但是当多种类型均有可能时，必须增加类型注解: 
 ``` rust 
 let guess: u32 = "42".parse().expect("Not a number!");
@@ -211,7 +206,6 @@ let a: [i32; 5] = [1, 2, 3, 4, 5];
 ```
 
 ## 序列(Range)
-***  
 Rust 提供了一个非常简洁的方式，用来生成连续的数值: 
 ``` rust
 for i in 1..=5 {
@@ -238,7 +232,6 @@ for i in 1..5 {
 ```
 
 ## 函数
-***  
 ### 函数定义
 在 Rust 中通过输入 fn 后面跟着函数名和一对圆括号来定义函数，后跟大括号定义函数体的开始和结尾。Rust 代码中的函数和变量名使用 **snake case** 规范风格。使用函数名后跟圆括号来调用我们定义过的任意函数。
 ``` rust
@@ -317,12 +310,10 @@ fn main() {
 ```
 
 ## 注释
-***  
 与大多数语言类似，在 Rust 中，惯用的注释样式是以两个斜杠开始注释，并持续到本行的结尾。
 与某些语言类似，Rust 还有另一种注释，称为文档注释，我们将在之后介绍。
 
 ## 控制流
-***  
 ### if 表达式
 if 表达式允许根据条件执行不同的代码分支。所有的 if 表达式都以 if 关键字开头，其后跟一个条件，与 Python 类似，条件也不需要括号包裹。也可以包含一个可选的 else 表达式来提供一个在条件为 false 时应当执行的代码块。同时也支持 else if 表达式实现多重条件。
 ``` rust

@@ -7,7 +7,6 @@ date: 2019-04-03
 上篇，我们介绍了 Python 基础 HTTP 库 urllib 的基本使用，在使用上还是比较麻烦的，本篇，我们来看一下第三方 HTTP 库 Requests 是如何简化我们的操作的。
 
 ## Requests
-***  
 Requests 是基于 urllib，采用 Apache2 Licensed 开源协议的 HTTP 库，他比 urllib 更加方便，节约我们大量的工作。
 
 ### 安装
@@ -381,7 +380,6 @@ except RequestException:
 ```
 
 ## Robots 协议
-***  
 Robots 协议告知所有爬虫网站的爬取策略，要求爬虫遵守。
 Robots 协议放置在网站根目录下的 robots.txt 中，如: www.zhihu.com/robots.txt，告知网站的爬取规则。
 

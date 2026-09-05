@@ -6,7 +6,6 @@ date: 2018-06-16
 
 对于应用开发工程师，我们无时无刻不在接触 HTTP 协议。为了更好的完成我们的应用开发任务，对于 HTTP 的透彻理解就显得必不可少了。
 这一篇就对 HTTP 协议做一个完整而透彻的讲解。  
-***
 HTTP 的发展是由提姆·柏内兹·李于 1989 年在欧洲核子研究组织(CERN)所发起。  
 设计 HTTP 最初的目的是为了提供一种发布和接收 HTML 页面的方法。而后发展成为接受各种资源的方法。  
 通过 HTTP 或者 HTTPS 协议请求的资源由统一资源标识符(Uniform Resource Identifiers，URI)来标识。  
@@ -17,14 +16,12 @@ HTTP 协议用于客户端和服务器之间的通讯。
 并且我们要深刻理解 HTTP 协议的无状态(stateless)特性，HTTP 协议自身不对请求和响应之间的通信状态进行保存。也就是说在 HTTP 这个级别，协议对于发送过的请求或响应都不做持久化处理。但我们可以使用 Cookies 和 Session 的方式识别特定用户。
 
 ## HTTP 的版本
-***  
 1. HTTP/0.9: HTTP 于 1990 年问世，那时的 HTTP 并没有作为正式的标准被建立，因此被称为 HTTP/0.9
 2. HTTP/1.0: HTTP 正式作为标准被公布是在 1996 年 5 月，被命名为 HTTP/1.0，记载于 RFC1945
 3. HTTP/1.1: 1997 年 1 月公布的 HTTP/1.1 是目前主流的 HTTP 版本，初版为 RFC2068，修订版 RFC2616
 4. HTTP/2.0: 2015 年 5 月以 RFC7540 正式发布
 
 ## URL 和 URI
-***  
 与 URI(统一资源标识符)相比，我们更熟悉 URL(统一资源定位符)。URL 正是访问 web 时在浏览器输入的网址。  
 URI 是 Uniform Resource Identifier 的缩写，RFC2396 分别对三个单词做了定义。  
 - Uniform 规定: 统一的格式可以方便处理不同类型的资源
@@ -34,7 +31,6 @@ URI 是 Uniform Resource Identifier 的缩写，RFC2396 分别对三个单词做
 综上，URI 就是**由某个协议方案表示的资源的定位标识符**。
 
 ## 绝对 URI 的格式
-***  
 eg: http://user:password@www.example.com:80/dir/index.html?uid=1#id
 其中: 
 - http: 代表协议方案
@@ -46,7 +42,6 @@ eg: http://user:password@www.example.com:80/dir/index.html?uid=1#id
 - #id: 表示片段标识符(文档内的位置)
 
 ## 请求方法
-***  
 HTTP/1.1 中共定义 8 种 method 来操作指定的资源: 
 1. GET: 向指定的资源发出"显示"请求。使用 GET 方法应该只用在读取资料，而不应当被用于产生"副作用"的操作中
 2. POST: 向指定资源提交数据，请求服务器进行处理(例如提交表单或者上传文件)。数据被包含在请求实体中。这个请求可能会建立新的资源或修改现有资源，或二者皆有
@@ -61,7 +56,6 @@ HTTP/1.1 中共定义 8 种 method 来操作指定的资源:
 当某个请求所针对的资源不支持对应的请求方法的时候，服务器应当返回状态码 405(Method Not Allowed)，当服务器不认识或者不支持对应的请求方法的时候，应当返回状态码 501(Not Implemented)。
 
 ## HTTP报文详解  
-***  
 ### 报文结构
 报文的结构大致分为首部字段(header field)、空行(CR+LF)、实体主体(entity body)三个部分。
 请求报文首部字段可分为: 
@@ -120,7 +114,6 @@ eg: HTTP/1.1  200  OK
 非 HTTP 首部字段如 Cookies、Set-Cookies 等也很常用。
 
 ## GET 请求和 POST 请求的区别
-***  
 ### 对于 GET 请求
 1. 参数直接放到请求 URL 中，以 key=value 的形式以 & 符号连接(即 URL 中的 query 部分)
 2. 对于空格，中文等问题会被 URL 编码(如空格会被编码成 %20)  
@@ -134,7 +127,6 @@ eg: HTTP/1.1  200  OK
  - 如果 content-type 为 multipart/form-data，entity body 分为多个部分，每个部分以 --boundary 开始，紧接着是内容描述信息，然后是回车，最后是字段具体内容(文本或二进制)。如果传输的是文件，还要包含文件名和文件类型信息。消息主体最后以 --boundary-- 标示结束
 
 ## 具有代表性的 HTTP 状态码
-***  
 ### 2XX(Success 成功状态码)
 2XX 响应的结果标明请求被正常处理了。  
 - 200 OK: 表示从客户端发来的请求在服务器端被正常处理了
@@ -169,7 +161,6 @@ eg: HTTP/1.1  200  OK
 - 504 Gateway Timeout: 作为网关或者代理工作的服务器尝试执行请求时，未能及时从上游服务器(URI 标识出的服务器，例如 HTTP、FTP、LDAP)或者辅助服务器(例如 DNS)收到响应
 
 ## [CORS](http://www.ruanyifeng.com/blog/2016/04/cors.html)(Cross-Origin Resource Sharing)
-***  
 CORS 全称是"跨域资源共享"(Cross-origin resource sharing)。它允许浏览器向跨源服务器，发出 XMLHttpRequest 请求，从而克服了 AJAX 只能同源使用的限制。实现 CORS 通信的关键是服务器。只要服务器实现了 CORS 接口，就可以跨源通信。
 **注意: 同源必须是协议，域名以及端口同时相同。**
 
@@ -222,7 +213,6 @@ CORS 全称是"跨域资源共享"(Cross-origin resource sharing)。它允许浏
 一旦服务器通过了"预检"请求，以后每次浏览器正常的 CORS 请求，就都跟简单请求一样，会有一个 Origin 头信息字段。服务器的回应，也都会有一个 Access-Control-Allow-Origin 头信息字段。
 
 ## JSONP
-***  
 JSONP 是另一种解决跨域问题的方式。
 我们知道页面上的 script 标记是不受跨域问题限制的。(不仅如此，我们还发现凡是拥有 src 这个属性的标签都拥有跨域的能力，比如 script、img、iframe)
 使用 JSONP 的要点就是允许用户传递一个 callback 参数给服务端，然后服务端返回数据时会将这个 callback 参数作为函数名来包裹住 JSON 数据，这样客户端就可以随意定制自己的函数来自动处理返回数据了。

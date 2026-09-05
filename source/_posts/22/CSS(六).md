@@ -11,12 +11,10 @@ Flexbox 布局旨在提供一种更有效简便的布局解决方案，可以很
 注意: Flexbox 布局最适合应用程序的组件和小规模布局，而 Grid 布局则适用于更大规模的布局。(Flexbox 是一种一维布局方案，而 Grid 是一种二维布局方案)
 
 ## 概述
-***  
 Flexbox 是一个完整的模块而不是单个属性，其中一些是在容器上设置的(父元素，称为 "Flex 容器")，而其他的则设置在子元素上(称为 "Flex items")。
 <img src="https://cdn.zhangdd.tech/contentImg/flexbox/flex-container.svg" width="300px" alt="flex-container"><img src="https://cdn.zhangdd.tech/contentImg/flexbox/flex-items.svg" width="300px" alt="flex-items">
 
 ## 基本概念
-***  
 ![](https://cdn.zhangdd.tech/contentImg/flexbox/flexbox.webp)
 在 flex 容器中默认存在两条轴，水平主轴(main axis)和垂直的交叉轴(cross axis)，这是默认的设置，当然你可以通过修改使垂直方向变为主轴，水平方向变为交叉轴，这个我们后面再说。
 
@@ -25,7 +23,6 @@ Flexbox 是一个完整的模块而不是单个属性，其中一些是在容器
 这里需要强调，不能先入为主认为宽度就是 main size，高度就是 cross size，这个还要取决于你主轴的方向，如果你垂直方向是主轴，那么项目的高度就是 main size。
 
 ## Flex container 上的属性
-***  
 有7个属性定义在 flex container 上
 - display: flex
 - flex-direction
@@ -141,7 +138,6 @@ align-content 属性定义了多根主轴线的对齐方式。
 ```
 
 ## Flex items 上的属性
-***  
 有6个属性定义在 flex items 上: 
 - order
 - flex-grow
@@ -219,7 +215,6 @@ align-self 属性允许单个 item 有与其他 item 不一样的对齐方式，
 ```
 
 ## flex-wrap 与 flex-grow 和 flex-shrink 的关系
-***  
 - 当 flex-wrap 为 wrap | wrap-reverse，且 items 的宽度之和**小于**父容器宽度时，flex-grow 会起作用，item 会根据 flex-grow 设定的值放大(为 0 的项不放大)
 - 当 flex-wrap 为 wrap | wrap-reverse，且 items 的宽度之和**超过**父容器宽度时，首先一定会换行，换行后，每一行的右端都可能会有剩余空间(最后一行包含的子项可能比前几行少，所以剩余空间可能会更大)，这时 flex-grow 会起作用，若当前行所有子项的 flex-grow 都为 0，则剩余空间保留，若当前行存在一个子项的 flex-grow 不为 0，则剩余空间会被 flex-grow 不为 0 的 item 占据
 - 当 flex-wrap 为 nowrap，且 items 的宽度之和**小于**父容器宽度时，flex-grow 会起作用，item 会根据 flex-grow 设定的值放大(为 0 的项不放大)
@@ -228,6 +223,5 @@ align-self 属性允许单个 item 有与其他 item 不一样的对齐方式，
 总结上面四点，可以看出不管在什么情况下，在同一时间，flex-shrink 和 flex-grow 只有一个能起作用，这其中的道理细想起来也很浅显: 空间足够时，flex-grow 就有发挥的余地，而空间不足时，flex-shrink 就能起作用。当然，flex-wrap 的值为 wrap | wrap-reverse 时，表明可以换行，既然可以换行，一般情况下空间就总是足够的，flex-shrink 当然就不会起作用。
 
 ## 参考
-***  
 [Flex 布局教程: 语法篇 - 阮一峰的网络日志](http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html)
 [A Complete Guide to Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)

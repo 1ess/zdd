@@ -7,7 +7,6 @@ date: 2019-01-11
 本篇，我们说说 MySQL 对于数据的增删改查操作以及运算符。
 
 ## 新增数据
-***  
 ### 多数据插入
 基本语法: insert into {表名}({字段列表}) values({值列表1}), ({值列表2}), ...
 ``` sql
@@ -61,7 +60,6 @@ insert into my_stud2 select * from my_stud;
 2. 注意主键冲突
 
 ## 更新数据
-***  
 在更新数据时，要特别注意，通常一定要跟随条件进行更新。而且还可以使用 limit 来限制更新数量。
 基本语法: update {表名} set {字段名}={字段值} [where 条件] [limit {数量}];
 ``` sql
@@ -69,7 +67,6 @@ update my_stud set name='x' where name='c' limit 4;
 ```
 
 ## 删除数据
-***  
 删除数据时，也要特别注意，通常一定要跟随条件进行删除。而且也可以使用 limit 来限制删除数量。
 基本语法: delete from {表名} [where 条件] [limit {数量}];
 ``` sql
@@ -82,7 +79,6 @@ truncate my_stud; -- 相当于先 drop，再 create
 ```
 
 ## 查询数据
-***  
 完整的查询指令: select [select 选项] {字段列表/*} from {数据源} [where 条件] [group by 分组] [having 条件] [order by 排序] [limit 数量];
 
 ### Select 选项
@@ -212,7 +208,6 @@ select * from my_stud order by height desc limit 0, 2;
 注意: limit 表示最多获取数量，如果不够，就只显示真实数量。
 
 ## 运算符
-***  
 ### 算术运算符
 算数运算符包括: +, -, *, /, %
 算数运算符通常用于运算结果(select 字段中)。

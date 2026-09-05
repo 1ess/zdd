@@ -7,7 +7,6 @@ date: 2018-07-22
 这一篇，我们来学习一下 JavaScript 基本概念中的基本语法以及数据类型。
 
 ## 语法
-***  
 ### 区分大小写
 ECMAScript 中的一切(标识符，操作符)都是区分大小写的，即大小写敏感的语言。
 如: 变量 test 和变量 Test 分别表示两个变量。
@@ -47,7 +46,6 @@ ECMAScript 中的语句以分号结尾，如果省略分号，则由解析器决
 在条件控制语句中，只有在执行多条语句才要求使用代码块，但最佳实践是任何时候都是用代码块，即使只执行一条语句。
 
 ## 关键字和保留字
-***  
 ECMAScript 有一组特定用途的关键字，不可以用作标识符。
 下面时 ECMAScript 全部关键字: 
 > break    do    instanceof    typeof    case    else    new    var    catch    finally    return    void    continue    for    switch    while    debugger    function    this    with    default    if    throw    delete    in    try
@@ -60,7 +58,6 @@ ES5 严格模式还对以下保留字做了限制:
 > implements package public interface private static let protected yield eval arguments
 
 ## 变量
-***  
 ECMAScript 的变量是松散的，即可以用来保存任何类型的数据。定义变量要用 var 操作符，后跟变量名(标识符)，如下: 
 ``` javascript
 var message;
@@ -85,7 +82,6 @@ var message = 'hi', found = false, age = 20;
 有一点要注意，即用 var 操作符定义的变量将成为定义该变量的作用域的局部变量，如果省略 var 操作符，则定义了一个全局变量。给未经声明的变量赋值在严格模式会导致抛出 ReferenceError。
 
 ## 数据类型
-***  
 ES5 有 5 种简单类型(基本类型): 
 - Undefined
 - Null

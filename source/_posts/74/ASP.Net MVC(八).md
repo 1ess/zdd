@@ -32,7 +32,6 @@ MVC 提供不同类型的过滤器:
 注意，未处理的异常是指 try-catch 块未处理的异常。
 
 ## 注册 Filters
-***  
 Filters 可以被应用于三个等级: 
 - Global 等级
 - Controller 等级
@@ -79,7 +78,6 @@ public class HomeController : Controller
 ```
 
 ## Filter 顺序
-***  
 如上所述，MVC 包括不同类型的过滤器，并且多个过滤器可以应用于单个控制器类或动作方法。因此，过滤器按以下顺序运行: 
 - Authorization filters
 - Action filters
@@ -87,7 +85,6 @@ public class HomeController : Controller
 - Exception filters
 
 ## Action Filters
-***  
 ### OutputCache attribute
 OutputCache 是​​一个内置的动作过滤器 attribute，可以应用于我们想要缓存输出的 Action 方法。
 ``` csharp

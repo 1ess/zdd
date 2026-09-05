@@ -7,7 +7,6 @@ date: 2019-02-25
 本篇，我们说说 Python 中的错误处理机制(Error Handler)。
 
 ## 错误处理
-***  
 与其他语言一样，Python 也提供了 try...except...finally... 的错误处理机制。
 
 ### try

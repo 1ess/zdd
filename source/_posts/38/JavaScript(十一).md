@@ -8,7 +8,6 @@ date: 2018-08-15
 对 DOM 的两个主要的扩展是 Selectors API(选择符 API)和 HTML5。此外，还有一个不那么引人瞩目的 Element Traversal(元素遍历)规范，为 DOM 添加了一些属性。
 
 ## 选择符 API
-***  
 Selectors API 是由 W3C 发起制定的一个标准，致力于让浏览器原生支持 CSS 查询。
 Selectors API Level 1 的核心是两个方法: querySelector() 和 querySelectorAll()。在兼容的浏览器中，可以通过 Document 及 Element 类型的实例调用它们。
 
@@ -54,7 +53,6 @@ if (document.body.matchesSelector("body.page1")) {
 ```
 
 ## 元素遍历
-***  
 Element Traversal API 为 DOM 元素添加了以下 5 个属性: 
 - childElementCount: 返回子元素(不包括文本节点和注释)的个数
 - firstElementChild: 指向第一个子元素，firstChild 的元素版
@@ -71,7 +69,6 @@ while(child != element.lastElementChild) {
 ```
 
 ## 与 class 相关的扩充
-***  
 为了让开发人员适应并增加对 class 属性的新认识，HTML5 新增了很多 API，致力于简化 CSS 类的用法。
 
 ### getElementsByClassName() 方法

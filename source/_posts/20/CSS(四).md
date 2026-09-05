@@ -7,7 +7,6 @@ date: 2018-07-13
 上一篇我们介绍了，使用 display: block; 和 display: inline; 来改变默认的盒模型。这一篇，我们详细介绍 4 种常用的 display 属性值，以及与背景相关的属性。
 
 ## Block，Inline，Inline-block，None
-***  
 ### Block
 之前说过，块级元素的特点: 
 - 独占一行
@@ -32,7 +31,6 @@ date: 2018-07-13
 注意通过 display: none; 隐藏的元素不占空间。
 
 ## 与 background 有关的属性
-***  
 - background-color
 - background-image
 - background-repeat

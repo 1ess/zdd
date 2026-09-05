@@ -9,7 +9,6 @@ date: 2018-07-12
 本章介绍了 CSS 框模型的核心组件: 填充，边框，边距，Block boxes 和 Inline boxes。可以将此视为 CSS 布局的"微观"视图，因为它定义了框的个别行为。在以后的章节中，我们将更多地了解 HTML 结构和 CSS 框模型如何组合以形成各种复杂的页面布局。
 
 ## Block 元素和 Inline 元素
-***  
 ![](https://cdn.zhangdd.tech/contentImg/box-model/inline-vs-block-boxes-f3e662.webp)
 屏幕上呈现的每个 HTML 元素都是一个框，它们有两种形式: Block boxes 和 Inline boxes。
  
@@ -30,7 +29,6 @@ em, strong {
 这时，em 和 strong 元素的行为就跟 Block 元素一样了。
 
 ## Content、Padding、Border and Margin
-***  
 ![](https://cdn.zhangdd.tech/contentImg/box-model/css-box-model-73a525.webp)
 盒模型是一组规则，用于确定网页中每个元素的尺寸。它为每个 Box 提供了四个属性: 
 - Content: 一个元素的文本，图片或其他媒体内容
@@ -90,7 +88,6 @@ strong {
 ![](https://cdn.zhangdd.tech/contentImg/box-model/paddings-on-inline-elements-fb52d0.webp)
 
 ## 垂直边距折叠
-***  
 盒子模型的另一个怪癖是"垂直边距折叠"。当你有两个垂直边距彼此相邻的盒子时，它们会折叠。不是将边距加到一起，而是仅显示最大的边距。
 ![](https://cdn.zhangdd.tech/contentImg/box-model/vertical-margin-collapse-bba78e.webp)
 垂直外边距折叠最可能发生的两种简单情况: 
@@ -105,7 +102,6 @@ strong {
 一定要记住，填充不会折叠。
 
 ## Content Boxes and Border Boxes
-***  
 ### Content Boxes
 我们定义的 width 属性仅表示内容的宽度。
 ![](https://cdn.zhangdd.tech/contentImg/box-model/box-sizing-content-box-09f48a.webp)

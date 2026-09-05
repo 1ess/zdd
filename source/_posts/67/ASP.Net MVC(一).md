@@ -7,7 +7,6 @@ date: 2018-10-23
 从这篇开始，我们来谈谈 ASP.Net MVC，我们将会介绍 ASP.Net MVC 的方方面面(包括基础以及高级特性)。
 
 ## MVC 架构
-***  
 MVC 架构以及在软件工程出现很长时间了，几乎所有语言都有 MVC 以及变种形式。
 
 ### iOS 中的 MVC
@@ -34,7 +33,6 @@ MVC 中:
 在 .Net 中的 MVC，Model 会从 Controller 传递给 View。
 
 ## ASP.Net MVC 历史版本
-***  
 ### MVC 1.0 特性
 - 使用 WebForm 引擎
 - 路由
@@ -67,7 +65,6 @@ MVC 中:
 注意: MVC 5 项目 默认包含 bootstrap 3.0 的 css 和 js 文件. 
 
 ## ASP.Net MVC 项目文件夹结构
-***  
 ![](https://cdn.zhangdd.tech/contentImg/MVC/1/FolderStructure.webp)
 
 ### App_Data

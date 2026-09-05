@@ -7,7 +7,6 @@ date: 2018-10-25
 这一篇，我们具体说说 Controller、Model 和 View。
 
 ## Controller
-***  
 在 MVC 中，Controller 是用来处理用户请求的。Controller 是一个类，继承自 System.Web.Mvc.Controller。
 控制器类中访问修饰符为 public 的方法称为 Action 方法。
 Controller 和 Action 方法一起，用来处理来自客户端的请求，检索必要的模型数据并返回适当的响应。
@@ -94,12 +93,10 @@ public ActionResult GetAndPostMethod()
 ```
 
 ## Model
-***  
 Model 表示 MVC 架构中的域特定数据和业务逻辑。
 模型类在公共属性中保存数据。所有 Model 类都保存在 Models 文件夹中。
 
 ## View
-***  
 View 是一个用户界面。 View 将模型中的数据显示给用户，并使他们能够修改数据。
 视图存储在 Views文件夹中。
 

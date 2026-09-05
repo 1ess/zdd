@@ -7,11 +7,9 @@ date: 2018-11-05
 这一篇，我们详细讲讲 .Net MVC 中的 Bundling 和 Minification。
 
 ## Bundling
-***  
 在 MVC 4 中引入了 Bundling 和 Minification 技术以改善请求加载时间。Bundling 允许我们将来自服务器的一堆静态文件加载到一个 http 请求中。会通过最小化文件大小和请求数量来加快页面加载速度。
 
 ## Minification
-***  
 Minification 技术通过删除不必要的空格和注释以及将变量名缩短为一个字符来优化脚本或 css 文件大小。如: 
 源文件如下: 
 ``` javascript
@@ -28,7 +26,6 @@ sayHello=function(n){var t="Hello"+n;alert(t)}
 ```
 
 ## Bundle Types
-***  
 MVC 5 在 System.web.Optimization 命名空间中包含以下 bundle 类: 
 - ScriptBundle: ScriptBundle 负责单个或多个脚本文件的 JavaScript 缩小
 - StyleBundle: StyleBundle 负责单个或多个样式表文件的 CSS 缩小。
@@ -37,7 +34,6 @@ MVC 5 在 System.web.Optimization 命名空间中包含以下 bundle 类:
 所有上述 bundle 类都包含在 System.Web.Optimization.Bundle 命名空间中，并从 Bundle 类派生。
 
 ## ScriptBundle in ASP.NET MVC
-***  
 我们将学习如何在一个 http 请求中创建多个 JavaScript 文件的包。
 
 在 MVC 文件夹中打开 App_Start/BundleConfig.cs 文件。BundleConfig.cs 文件默认由 MVC 框架创建。应该在 BundleConfig.RegisterBundles 方法中编写所有 Bundle 代码。
@@ -102,9 +98,7 @@ public class BundleConfig
 ```
 
 ## 在 Razor View 中包含 ScriptBundle
-***  
 使用 @Scripts.Render() 方法在运行时包含指定的脚本包。
 
 ## StyleBundle
-***  
 与 ScriptBundle 使用基本类似，只是创建的是 StyleBundle 实例，并且在 Razor 中使用 @Styles.Render() 方法在运行时包含该 CSS bundle。

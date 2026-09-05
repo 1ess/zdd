@@ -13,7 +13,6 @@ Web API 支持两种方式的路由:
 - 特性路由(Attribute Routing)
 
 ## 基于约定的路由
-***  
 在基于约定的路由中，Web API 使用路由模板来确定要执行的 Controller 和 Action 方法。必须至少将一个路由模板添加到路由表中才能处理各种 HTTP 请求。
 ``` csharp
 public static class WebApiConfig

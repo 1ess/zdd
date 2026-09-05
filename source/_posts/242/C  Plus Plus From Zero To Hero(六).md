@@ -5,7 +5,6 @@ date: 2022-06-04
 ---
 
 ## 异常处理
-***  
 C++ 通过关键字 throw、try 和 catch 进行异常处理，通常还要使用头文件 exception 和 stdexcept 中。
 
 ### Throw、Try、Catch
@@ -79,7 +78,6 @@ int main() {
 ![](https://cdn.zhangdd.tech/contentImg/cpp/ExceptionClasses.webp)
 
 ## 类型转换运算符
-***  
 C++ 支持 C 风格的显式类型转换操作 (new-type)value，但是 C 风格的转换过于宽松，往往会产生非预期的结果。
 因此 C++ 引入了 4 个新的类型转换运算符: 
 - const_cast&lt;new-type&gt;(value)
@@ -102,7 +100,6 @@ static_cast 用于强制隐式转换。如果转换失败，它会引发类型�
 该运算符对该对象从位模式上进行重新解释。
 
 ## const 指针
-***  
 ### Non-constant pointer to constant data
 ``` cpp
 int i1 = 8, i2 = 9;

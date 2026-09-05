@@ -7,7 +7,6 @@ date: 2020-05-23
 公司内部准备搭建缓存系统，经过调研，决定使用 Redis 来构建这一系统，本篇，我们就说说 Redis 的那些事。
 
 ## Redis 是什么
-***  
 > Redis is an open source (BSD licensed), in-memory data structure store, used as a database, cache and message broker. It supports data structures such as strings, hashes, lists, sets, sorted sets with range queries, bitmaps, hyperloglogs, geospatial indexes with radius queries and streams. Redis has built-in replication, Lua scripting, LRU eviction, transactions and different levels of on-disk persistence, and provides high availability via Redis Sentinel and automatic partitioning with Redis Cluster.
 
 即使从未接触过 Redis，我们通过 Redis 官网上的描述也能比较清晰的得知它能为我们做什么？简单来说，Redis 是一个开源的、基于内存的数据结构存储器，可以用作数据库、缓存和消息中间件。
@@ -30,7 +29,6 @@ Redis Cluster 是 Redis 的分布式解决方案，在 3.0 版本正式推出，
 根据 Redis 群集文档，按预期工作的**最小群集**要求至少包含 3 个主节点。但是，最适合高可用性的设置应该至少有 6 个节点，其中包括三个主节点和三个从节点，每个主节点都有一个从节点。
 
 ## Docker 构建 Redis-Cluster
-***  
 
 ### 网络规划
 使用 3 台虚拟机，假定 ip 分别为 192.168.221.131、192.168.221.132 和 192.168.221.133。
@@ -144,7 +142,6 @@ docker exec -it redis7001 redis-cli -p 7001 --cluster create \
 进行 redis 集群配置。
 
 ## 名词解释
-***  
 ### 缓存雪崩
 缓存在同一时间大面积失效，例如定时刷新缓存导致的同时失效，大量请求直接打到数据库，导致数据库宕机。这一现象称为缓存雪崩。
 处理缓存雪崩简单，在 Redis 批量存数据的时候，把每个 Key 的失效时间都加个随机值，来保证数据不会再同一时间大面积失效。

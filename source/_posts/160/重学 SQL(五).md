@@ -7,7 +7,6 @@ date: 2020-08-16
 前几篇，我们介绍了 SQL 的基本操作，这一篇，我们来介绍 SQL 中的如何进行复杂查询，帮助提升编写复杂查询的能力。
 
 ## Subqueries
-***  
 ### WHERE 子句中的子查询
 子查询最常见的情况是位于 WHERE 子句中，可以位于关系运算符之后，也可以位于 IN/NOT IN/EXISTS 运算符之后。
 ``` sql
@@ -119,7 +118,6 @@ WHERE EXISTS (
 ```
 
 ## SELECT 子句中的子查询
-*** 
 ``` sql
 SELECT 
 	invoice_id,
@@ -141,7 +139,6 @@ FROM clients c
 ```
 
 ## FROM 子句中的子查询
-***  
 我们也可以把查询出来的表当作真是存在的表一样来处理: 
 ``` sql
 SELECT * 

@@ -15,7 +15,6 @@ date: 2022-05-26
 ```
 
 ## static
-***  
 ### 类外的 static
 在类外的数据或方法上使用 static 关键字表示，该数据或函数只在该编译单元中可以访问，编译单元外部无法访问，例如:
 ``` cpp
@@ -98,7 +97,6 @@ void B::func()
 ```
 
 ## 指针和引用
-***  
 ### 指针 Pointer
 ![](https://cdn.zhangdd.tech/contentImg/cpp/MemoryAddressContent.webp)
 

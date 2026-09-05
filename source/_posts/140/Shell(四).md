@@ -7,7 +7,6 @@ date: 2020-02-09
 本篇，我们来讲讲 Shell 中的几个比较重要的流程控制语句 —— if 语句、for 语句、while 语句和 case 语句。
 
 ## if 语句
-***  
 ### 单 if 语句
 if 语句格式: 
 ``` sh
@@ -47,7 +46,6 @@ fi
 ```
 
 ## for 循环语句
-***  
 Shell 中希望执行循环语句有两种方式: 
 - for
 - while
@@ -80,7 +78,6 @@ sleep N # 休眠 N 秒
 continue 和 break 的用法与在其他编程语言类似。
 
 ## while 循环语句
-***  
 while 循环的基本语法为: 
 ``` sh
 while [ condition ]
@@ -90,7 +87,6 @@ done
 ```
 
 ## case 语句
-***  
 与 if 语句类似，case 语句根据不同条件执行不同语句，基本语法为: 
 ``` sh
 case i in

@@ -23,7 +23,6 @@ docker network ls
 运行一个容器时，可以使用 –network(可简写为 --net) 参数指定在哪种网络模式下运行该容器。默认如果不加选项使用的是 bridge。
 
 ## bridge 网络
-***  
 ### 默认 bridge
 宿主机 IP 假设为 10.168.0.2，我们使用命令启动两个容器: 
 ``` sh
@@ -124,13 +123,10 @@ PING box3 (172.21.0.2): 56 data bytes
 综上，使用 bridge 网络驱动模式时，最好添加使用 —network 来指定自定义的网络。
 
 ## host 网络
-***  
 host 模式使用是在容器启动时候指明 --network host，此时容器共享宿主机的 Network Namespace，容器内启动的端口直接是宿主机的端口，并且容器不会创建网卡和 IP，直接使用宿主机的网卡和 IP，但是容器内的其他资源是隔离的，如文件系统、用户和用户组。这种模式的好处就是效率高，因为不需要额外的网络开销，直接使用宿主机网络。
 
 ## container 网络
-***  
 host 模式是容器共享宿主机的 Network Namespace，而 container 模式即共享已存在的容器的 Network Namespace，此时这两容器共同使用同一网卡、主机名、IP地址，容器间通讯可直接通过 lo 回环接口通讯，但是其他名称空间是隔离的。
 
 ## none 网络
-***  
 使用 --network none 选项指定其网络模式，在该模式下虽然容器有着自己的 Network Namespace，但是容器内没有网卡、IP、路由信息，只有一个 lo 回环接口。

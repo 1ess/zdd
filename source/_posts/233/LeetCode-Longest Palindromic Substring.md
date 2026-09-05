@@ -5,7 +5,6 @@ date: 2022-03-13
 ---
 
 ## 题目
-***  
 Given a string s, return the longest palindromic substring in s.
 
 Example: 
@@ -29,7 +28,6 @@ Constraints:
 - s consist of only digits and English letters (lower-case and/or upper-case)
 
 ## 代码
-***  
 ``` csharp
 // solution 1
 public class Solution {

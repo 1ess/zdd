@@ -8,7 +8,6 @@ date: 2018-08-19
 JavaScript 最初的一个应用，就是分担服务器处理表单的责任。
 
 ## 表单的基础知识
-***  
 在 HTML 中，表单是由 form 元素来表示的，而在 JavaScript 中，表单对应的则是 HTMLFormElement 类型。
 独有的属性和方法包括: 
 - acceptCharset: 服务器能够处理的字符集，等价于 HTML 中的 accept-charset 特性
@@ -74,7 +73,6 @@ HTML5 为表单字段新增了一个 autofocus 属性。在支持这个属性的
 - change: 对于 input 和 textarea 元素，在它们失去焦点且 value 值改变时触发，对于 select 元素，在其选项改变时触发
 
 ## 文本框脚本
-***  
 在 HTML中，有两种方式来表现文本框: 
 - 使用 input 元素的单行文本框
 - 使用 textarea 元素的多行文本框
@@ -100,7 +98,6 @@ textbox.value = "Some new value";
 ```
 
 ## HTML5 约束验证 API
-***  
 为了在将表单提交到服务器之前验证数据，HTML5 新增了一些功能。浏览器自己会根据标记中的规则执行验证，然后自己显示适当的错误消息(完全不用 JavaScript 插手)。
 只有在某些情况下表单字段才能进行自动验证。具体来说，就是要在 HTML 标记中为特定的字段指定一些约束，然后浏览器才会自动执行表单验证。
 
@@ -172,7 +169,6 @@ if(document.forms[0].checkValidity()) {
 ```
 
 ## 选择框脚本
-***  
 选择框是通过 select 元素和 option 元素创建的。
 HTMLSelectElement 类型提供了下列属性和方法: 
 - add(newOption, relOption): 向控件中插入新 option 元素，其位置在相关项(relOption)之前

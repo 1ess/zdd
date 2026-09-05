@@ -15,7 +15,6 @@ Dockerfile 相当于构建 Docker 镜像的配置文件，说明了镜像如何�
 
 我们分别来解释一下每个参数如何工作的。
 ## 参数
-***  
 ### FROM
 FROM 用于指定我们想要创建镜像的基础镜像。
 ``` dockerfile
@@ -56,7 +55,6 @@ CMD [command]
 ```
 
 ## 构建
-***  
 当我们完成 Dockerfile 的编写后，我们可以使用: 
 ``` sh
 docker build -t [docker image name] [dockerfile path]
@@ -65,7 +63,6 @@ docker build -t [docker image name] [dockerfile path]
 来构建镜像。
 
 ## 不常见参数
-***  
 ### LABEL
 LABEL 用于指定镜像的元数据，如维护者等信息: 
 ``` dockerfile

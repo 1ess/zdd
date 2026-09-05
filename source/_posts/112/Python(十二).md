@@ -9,7 +9,6 @@ date: 2019-03-23
 在学习 Python 爬虫之前，我们首先需要下载安装 MongoDB，Redis 以及 MySQL。在学习爬虫的过程中都会使用到，之后的学习中默认已经完成相关软件的安装。
 
 ## MongoDB Redis MySQL 相关问题
-***  
 本人使用 Mac 开发，所以说一下 Mac 下相关软件的注意事项。
 
 ### MongoDB
@@ -74,15 +73,12 @@ mysql -uroot
 ```
 
 ## Python 多版本共存问题
-***  
 如果都配置到环境变量中，可以将其可执行文件取不同名来区别不同的 Python 和 pip。
 
 ## 爬虫
-***  
 爬虫就是**请求**网站并**提取**数据的**自动化**程序。
 
 ## urllib
-***  
 urllib 是 Python 内置的 HTTP 请求库: 
 - urllib.request    请求模块
 - urllib.error      异常处理模块

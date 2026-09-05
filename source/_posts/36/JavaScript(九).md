@@ -8,7 +8,6 @@ date: 2018-08-07
 BOM 提供了很多对象，用于访问浏览器的功能，这些功能与任何网页内容无关。
 
 ## window 对象
-***  
 BOM 的核心对象是 window，它表示浏览器的一个实例。在浏览器中，window 对象有双重角色: 
 - 既是通过 JavaScript 访问浏览器窗口的一个接口
 - 又是 ECMAScript 规定的 Global 对象

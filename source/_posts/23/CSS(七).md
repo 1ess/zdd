@@ -10,7 +10,6 @@ Grid 布局是一个二维布局系统，意味着它可以处理列和行，不
 上一篇我们就说过，基于传统的 float，position 的方式，在设计布局时会极其复杂，Flexbox 会有所帮助，但它适用于更简单的一维布局，而不是复杂的二维布局(Flexbox 和 Grid 实际上可以很好地协同工作)，Grid 是第一个专门用于解决布局问题的 CSS 模块，学会了 Grid 布局，对于我们的开发工作的帮助是巨大的。
 
 ## 基本概念
-***
 在深入研究 Grid 的概念之前，理解术语非常重要。由于这里涉及的术语在概念上是相似的，如果你不首先记住网格规范定义的含义，很容易将它们彼此混淆。
 
 ### Grid Container
@@ -36,7 +35,6 @@ grid container 的**直接**子元素。
 ![](https://cdn.zhangdd.tech/contentImg/grid/grid-area.webp)
 
 ## Grid container 上的属性
-***
 有 18 个属性定义在 grid container 上
 - display: grid
 - grid-template-columns
@@ -625,6 +623,5 @@ place-self 是 align-self 和 justify-self 的简写。
 ![](https://cdn.zhangdd.tech/contentImg/grid/grid-align-self-center.webp)
 
 ## 参考
-***
 [A Complete Guide to Grid](https://css-tricks.com/snippets/css/complete-guide-grid/)
 [MDN grid](https://developer.mozilla.org/en-US/docs/Web/CSS/grid)

@@ -20,7 +20,6 @@ date: 2018-07-19
 ![](https://cdn.zhangdd.tech/contentImg/docker/docker.webp)
 
 ## Docker 概述
-***  
 Docker 就是 Linux 容器的一种封装，提供简易的使用接口。最初是 dotCloud 公司创始人 Solomon Hykes 在法国期间发起的一个公司内部项目，于 2013 年 3 月以 Apache2.0 授权协议开源，主要项目代码在 GitHub 上进行维护。在 2013 年底，dotCloud 公司决定改名为 Docker。Docker 最初是在 Ubuntu 12.04 上开发实现的，Red Hat 则从 RHEL 6.5 开始对 Docker 进行支持，Google 也在其 PaaS 产品中广泛应用 Docker。Docker 现已成为目前最流行的 Linux 容器解决方案。
 
 ### Docker 架构
@@ -79,7 +78,6 @@ Docker 镜像是一个特殊的文件系统，除了提供容器运行时所需�
 除了使用公开服务外，用户还可以在本地搭建私有 Docker Registry。
 
 ## Docker 基本操作
-***  
 ### 镜像
 #### 搜索镜像
 ``` sh
@@ -194,7 +192,6 @@ docker logs [name] 或者 [id] -f
 -f 选型用来跟踪日志输出。
 
 ## 通过 Volumn 共享文件
-***  
 Volumn 是独立于容器之外的持久化存储。
 之前我们启动的一个容器，使用的是容器内默认的文件系统。那么，我们该如何让这个容器使用 Host 上我们指定目录中的内容呢？
 具体怎么做呢？比如容器中的 Nginx 默认的 web 根目录是 /var/www/html，最简单的，我们把这个目录映射出来就好了。
@@ -223,7 +220,6 @@ $ docker run -p 3306:3306 --mount source=mysql,destination=/root/mysql --restart
 -d 参数表示后台运行容器，-e 参数表示传递环境变量。
 
 ## 构建你自己的 Docker 镜像
-***  
 按照之前的做法，如果想使用一个 Nginx 容器，每次我们都是启动一个 bash 容器，然后再手工安装 Nginx。现在，是时候做些改变了。这一节我们来看如何基于修改过的容器，定制新的 Docker 镜像。
 
 我们首先执行 docker diff 命令: 
@@ -264,7 +260,6 @@ $ echo "daemon off;" >> /etc/nginx/nginx.conf
 再次提交 docker 差异，生成新镜像。
 
 ## 使用 Dockerfile 自动化镜像构建
-***  
 除了像之前一样手工打造一个新镜像，Docker 还提供了脚本的功能，允许我们把打造镜像的过程"记录"在一个脚本里，并且自动"回放"出来。这样，无论是我们要部署一个新的环境，还是把自己的镜像分享给其他开发者，都很方便。
 创建一个叫做 Dockerfile 的文件，这里要注意文件的名称和大小写。Dockerfile 是 docker 默认会使用的文件名。
 在 Dockerfile 中，添加下面内容: 
@@ -310,6 +305,5 @@ docker push [username]/[repository]:[tag]
 ```
 
 ## 参考
-***  
 [Docker 动手实战](https://www.zybuluo.com/Yano/note/761438#docker-%E5%8A%A8%E6%89%8B%E5%AE%9E%E6%88%98)
 [Docker 入门教程](http://www.ruanyifeng.com/blog/2018/02/docker-tutorial.html)

@@ -8,7 +8,6 @@ date: 2019-05-17
 ![](https://cdn.zhangdd.tech/contentImg/scrapy/scrapy_architecture_02.webp)
 
 ## 基本命令
-***  
 ``` bash
 # scrapy startproject [文件夹名]
 scrapy startproject quotetutorial
@@ -27,7 +26,6 @@ scrapy crawl quotes -o quotes.json
 ```
 
 ## Scrapy 中的 Selector
-***  
 scrapy 的 Selector 支持两种方式提取内容: 
 1. xpath()
 2. css()
@@ -58,7 +56,6 @@ response.css('a[href*=image]::text').re('Name\:(.*)')
 - 我们可能还见过 extract() 和 extract_first()，这两个方法虽然没有被废弃，但是还是不建议使用，因为 get()和 getall()方法的输出更具可预测性
 
 ## Scrapy 中的 Spider
-***  
 Spider 主要用来完成爬取逻辑和网页数据的解析: 
 ``` python
 import scrapy
@@ -115,7 +112,6 @@ class QuotesSpider(scrapy.Spider):
 ```
 
 ## Scrapy 中的 Item
-***  
 为了定义通用输出数据格式，Scrapy 提供了 Item 类。它们提供类似字典的 API，并具有用于声明其可用字段的方便语法: 
 ``` python
 import scrapy
@@ -128,7 +124,6 @@ class QuoteItem(scrapy.Item):
 ```
 
 ## Scrapy 中的 Pipelinie
-***  
 Pipeline 可以对抓取下来的 Item 进行进一步处理: 
 ``` python
 import pymongo
@@ -176,7 +171,6 @@ class MongoPipeline(object):
 ```
 
 ## Scrapy 中的 Settings
-***  
 settings.py 为 Scrapy 中的配置文件，进行项目的配置工作: 
 ``` python
 # Obey robots.txt rules
@@ -212,7 +206,6 @@ DOWNLOADER_MIDDLEWARES = {
 ```
 
 ## Scrapy 中的 Downloader Middleware
-***  
 ``` python
 class ProxyMiddleware(object):
 

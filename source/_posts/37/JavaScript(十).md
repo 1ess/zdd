@@ -10,7 +10,6 @@ DOM(文档对象模型)是针对 HTML 和 XML 文档的一个 API。DOM 描绘�
 本篇将讨论 DOM1 的特性和应用，以及 JavaScript 对 DOM1 级的实现。
 
 ## 节点层次
-***  
 DOM 可以将任何 HTML 或 XML 文档描绘成一个由多层节点构成的结构。
 节点分为几种不同的类型，每种类型分别表示文档中不同的信息及(或)标记。
 文档节点是每个文档的根节点。文档节点只有一个子节点，即 html 元素，我们称之为文档元素。文档元素是文档的最外层元素，文档中的其他所有元素都包含在文档元素中。每个文档只能有一个文档元素。在 HTML 页面中，文档元素始终都是 html 元素。
@@ -114,7 +113,6 @@ var formerLastChild = someNode.removeChild(someNode.lastChild);
 最后一个方法是 normalize()，这个方法唯一的作用就是处理文档树中的文本节点。如果找到了空文本节点，则删除它，如果找到相邻的文本节点，则将它们合并为一个文本节点。
 
 ## Document 类型
-***  
 JavaScript 通过 Document 类型表示文档。
 Document 节点具有下列特征: 
 - nodeType 的值为 9
@@ -167,7 +165,6 @@ getElementsByName() 方法会返回带有给定 name 特性的所有元素。最
 write() 和 writeln() 方法都接受一个字符串参数，即要写入到输出流中的文本。write() 会原样写入，而 writeln() 则会在字符串的末尾添加一个换行符(\n)。open() 和 close() 分别用于打开和关闭网页的输出流。
 
 ## Element 类型
-***  
 Element 类型用于表现 XML 或 HTML 元素，提供了对元素标签名、子节点及特性的访问。Element 节点具有以下特征: 
 - nodeType 的值为 1
 - nodeName 的值为元素的标签名
@@ -221,7 +218,6 @@ removeAttribute() 方法用于彻底删除元素的特性。调用这个方法�
 使用 document.createElement() 方法可以创建新元素。这个方法只接受一个参数，即要创建元素的标签名。
 
 ## Text 类型
-***  
 文本节点由 Text 类型表示，包含的是可以照字面解释的纯文本内容。Text 节点具有以下特征: 
 - nodeType 的值为 3
 - nodeName 的值为 "#text"

@@ -8,7 +8,6 @@ Shell 通常指的是命令行界面的解析器，一般来说，这个词是�
 与之相对的是内核(Kernel)，内核不提供和用户的交互功能。
 
 ## CLI Shell
-***  
 常见的 Unix Shell 有: 
 - sh: Bourne shell
 - dash: Debian Almquist shell
@@ -19,7 +18,6 @@ Shell 通常指的是命令行界面的解析器，一般来说，这个词是�
 - fish: Friendly interactive shell
 
 ## Shell 语法
-***  
 ### 首行语法
 shell 文件一般以 sh 作为文件后缀，在文件首行，以 #! 开头，后跟所使用的 shell: 
 ``` sh

@@ -7,7 +7,6 @@ date: 2020-05-27
 之前几篇，我们讲过关于 Docker 的一些基础知识，包括如何运行一个容器、如何使用 Dockerfile 构建容器以及 Docker 网络相关内容。但是之前的内容都是如何操作一个容器，本篇要讲的 Docker Compose 则是如何管理一组容器使之配合使用。
 
 ## 介绍
-***  
 <img src="https://cdn.zhangdd.tech/contentImg/docker/compose.webp" width="300px" alt="">
 
 之前，我们必须使用大量 docker cli 命令才能在本地运行我们的应用程序。如果要运行一个包含十几个服务的微服务应用程序工作量已经是不可想象。为了使我们对本地容器基础结构的管理更轻松、可靠，我们需要一个可以让我们描述所需的环境，然后根据我们的描述进行创建容器的工具。
@@ -15,7 +14,6 @@ date: 2020-05-27
 Docker Compose 正是我们需要的工具，下面我们详细介绍一下如何使用他来管理我们的容器。
 
 ## 安装 Docker Compose
-***  
 我们按照[官方文档](https://docs.docker.com/compose/install/)进行安装。确认我们安装的 Docker Compose 的版本 => 1.18.0: 
 ``` sh
 docker-compose -v
@@ -24,7 +22,6 @@ docker-compose -v
 目前 Compose 文件格式有 3 个版本，分别为 1、2.x 和 3.x。目前官方推荐版本为 3.x，其支持 docker 1.13.0 及其以上的版本。
 
 ## 描述文件内容
-***  
 docker compose 描述文件为 yml 文件，通常命名为 docker-compose.yml，文件包含以下内容: 
 ``` yaml
 version: '3.3'
@@ -70,7 +67,6 @@ docker compose 文件最重要的是 service 部分，在这一部分我们定�
 该文件中的其他两个顶级部分是 volumes 和 networks。它们用于定义应创建的卷和网络，他与我们直接使用 docker cli 来创建 volume 和 network 相对应。
 
 ## 运行
-***  
 我们使用命令: 
 ``` sh
 docker-compose up -d

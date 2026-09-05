@@ -9,7 +9,6 @@ date: 2019-09-25
 在 Nginx 配置文件中可以配置 gzip 的使用，相关指令可以在配置文件的 http 块、server 块或者 location 块中设置。
 
 ## gzip 基本指令
-***  
 ### gzip
 该指令用于开启或关闭 gzip 功能，语法为: 
 ``` nginx

@@ -7,7 +7,6 @@ date: 2018-09-01
 这一篇，记录关于 .Net 和 .Net Core 的一些零碎的知识点，随时更新。
 
 ## ASP.Net WebAPI 和 WebMVC 问题
-***  
 ### 跨域
 - 针对 .NET Framework MVC 跨域，只需要在 web.config 中添加如下的内容即可: 
 
@@ -250,7 +249,6 @@ services.Configure<CustomSetting>(Configuration.GetSection(nameof(CustomSetting)
 ```
 
 ## 数据库
-***  
 ### SQLServer 连接字符串写法
 ``` json
 "ConnectionStrings": {
@@ -266,7 +264,6 @@ services.Configure<CustomSetting>(Configuration.GetSection(nameof(CustomSetting)
 5. Server 表示数据库所在服务器，可以使用 IP 或域名
 
 ## Visual Studio 技巧
-***  
 ### 注释
 ``` csharp
 //TODO: (未实现)……

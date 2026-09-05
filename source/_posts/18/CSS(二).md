@@ -7,7 +7,6 @@ date: 2018-07-11
 这一篇讲解在 CSS 中与字体和文本相关的属性。
 
 ## font 和 text 相关属性
-***  
 1. font
 - font-family
 - font-size
@@ -28,7 +27,6 @@ date: 2018-07-11
 
 ![](https://cdn.zhangdd.tech/contentImg/other-font-image/web-typography-terminology-e06b82.webp)
 ## font-family
-***  
 font-family 定义了页面所使用的字体。
 ``` CSS
 font-family: "Source Sans Pro", "Arial", sans-serif;
@@ -72,7 +70,6 @@ font-family: fantasy;
 ![](https://cdn.zhangdd.tech/contentImg/font-family/fantasy-font.webp)
 
 ## font-size
-***  
 font-size 定义了页面字体尺寸，浏览器默认使用字体尺寸为 medium 关键字。
 
 ### 6 种 font-size 可用取值
@@ -128,7 +125,6 @@ font-size: x-large;
 ![](https://cdn.zhangdd.tech/contentImg/font-size/abs-keywords-value.webp)
 
 ## font-style
-***  
 font-style 定义字体样式。
 ``` CSS
 font-style: normal;
@@ -141,7 +137,6 @@ font-style: normal;
 均为斜体。
 
 ## font-weight
-***  
 font-weight 定义字重。
 
 ### 3 种 font-weight 可用取值
@@ -185,7 +180,6 @@ font-weight: bolder;
 ```
 
 ## font-variant
-***  
 font-variant 定义了所使用的字形，normal 为浏览器默认取值。
 ``` CSS
 font-variant: normal;
@@ -194,7 +188,6 @@ font-variant: normal;
 - small-caps
 
 ## font 简写
-***  
 注意 font 所有属性都是可继承的属性。
 ``` CSS
 font: bold italic 18px Simsun,sans-serif;
@@ -204,7 +197,6 @@ font简写属性要求:
 - 如果有其他 font 相关属性，必须放在 font-size 之前。
 
 ## color
-***  
 color 属性定义元素**前景色**。(边框，文本等)
 ### 7 种可选取值
 - transparent
@@ -250,7 +242,6 @@ color: hsla(14, 100%, 53%, 0.6);
 ```
 
 ## text-indent
-***  
 text-indent 属性定义文本缩进。
 可以使用 pixel，em，rem，percentage 等。
 可以使用负值。
@@ -259,7 +250,6 @@ text-indent: 2em;
 ```
 
 ## letter-spacing
-***  
 letter-spacing 属性定义字符间距，normal 为浏览器默认取值。
 
 ### 3 种可选取值
@@ -283,7 +273,6 @@ letter-spacing: 0.1em;
 ![](https://cdn.zhangdd.tech/contentImg/letter-spacing/em-spacing.webp)
 
 ## word-spacing
-***  
 word-spacing 属性定义单词间距，0px 为浏览器默认取值。
 
 ### 3 种可选取值
@@ -307,7 +296,6 @@ word-spacing: 2em;
 ![](https://cdn.zhangdd.tech/contentImg/word-spacing/em-spacing.webp)
 
 ## line-height
-***  
 line-height 属性定义单行文本高度。
 
 ### 4 种可选取值
@@ -341,7 +329,6 @@ font: bold italic 18px/1.5 Simsun,sans-serif;
 ```
 
 ## text-decoration
-***  
 text-decoration 属性定义文本装饰线样式。
 
 ### 4 种可选取值
@@ -370,7 +357,6 @@ text-decoration: overline;
 ```
 
 ## text-overflow
-***  
 text-overflow 属性定义文本溢出时的行为。
 
 ### 2 种可选取值
@@ -386,7 +372,6 @@ text-overflow: ellipsis;
 ```
 
 ## text-transform
-***  
 text-transform 属性定义文本内容变换。
 
 ### 4 种可选取值
@@ -412,7 +397,6 @@ text-transform: lowercase;
 ```
 
 ## text-align
-***  
 text-align 属性作用于块级元素，控制其内部行内内容(如文本或行内元素等)对齐方式。是可继承属性。
 
 ### 4 种可选取值
@@ -442,7 +426,6 @@ text-align: justify;
 **justify 只对多行文本有效，且多行文本的最后一行无效。要想对最后一行有效需要使用 text-align-last: justify; 或使用伪元素::after 把最后一行变为非最后一行**
 
 ## vertical-align
-***  
 vertical-align 属性定义了一个行内元素如何垂直对齐。
 
 ### 8 种可选取值

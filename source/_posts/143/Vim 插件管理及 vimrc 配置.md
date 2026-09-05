@@ -9,7 +9,6 @@ date: 2020-03-04
 本篇，我介绍一个自己正在使用的 Vim 插件管理器 —— Vim-Plug。
 
 ## Vim-Plug
-***  
 ### 安装
 ``` sh
 $ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \ 

@@ -7,7 +7,6 @@ date: 2019-06-22
 本篇，我们在来说一下在 Linux 下，有关网络、服务的相关知识。
 
 ## 网络设置
-***  
 ### 网络状态查看工具
 #### net-tools
 在 CentOS 7 之前，我们通过 net-tools 来查看网络状态。
@@ -90,7 +89,6 @@ chmod 600 ~/.ssh/authorized_keys
 - ss
 
 ## 内置服务
-***  
 ### 服务管理
 要理解服务管理，我们先看一下 Linux 的启动流程: 
 1. 首先启动 BIOS，进行 POST(Power on Self Test)

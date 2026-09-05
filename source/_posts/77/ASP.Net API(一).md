@@ -7,12 +7,10 @@ date: 2018-11-15
 ASP.Net Web MVC 的知识我们也复习了大概，基础内容已经覆盖了大部分，从本篇开始，我们来认识一下 ASP.Net Web API。
 
 ## Web API 是什么
-***  
 简单来说，API 是某种接口，它具有一组允许程序员访问应用程序，操作系统或其他服务的特定功能或数据的功能。
 Web API 顾名思义，是一个可以使用 HTTP 协议访问的 Web 上的 API。这是一个概念，而不是一种技术。我们可以使用不同的技术(如 Java，.NET 等)构建 Web API。
 
 ## ASP.NET Web API
-***  
 ASP.NET Web API 是一个可扩展的框架，用于构建基于 HTTP 的服务。它的工作方式与 ASP.NET MVC Web 应用程序的工作方式大致相同，只是它将数据作为响应而不是 HTML 视图。
 
 ### 创建 Web API 项目
@@ -28,7 +26,6 @@ ASP.NET Web API 是一个可扩展的框架，用于构建基于 HTTP 的服务�
 WebApiConfig.cs 是 Web API 的配置文件。您可以为 Web API 配置路由和其他内容，类似于 RouteConfig.cs 用于配置 MVC 路由。它还默认创建 Web API 控制器 ValuesController.cs。
 
 ## Web API Controller
-***  
 Web API Controller 类似于 ASP.NET MVC Controller。它处理传入的 HTTP 请求并将响应发送回调用者。
 
 Web API Controller 是一个类，可以在 Controllers 文件夹下或项目根文件夹下的任何其他文件夹下创建。控制器类的名称必须以 Controller 结尾，并且必须继承自 System.Web.Http.ApiController。同 MVC 一样，控制器的所有 public 方法都称为 Action 方法。
@@ -41,7 +38,6 @@ Web API Controller 是一个类，可以在 Controllers 文件夹下或项目根
 Action 方法名称可以与 HTTP 动词相同，如 Get、Post、Put、Patch 或 Delete。也可以使用 HTTP 谓词附加任何后缀以提高可读性，如 GetFoos()、PostBar() 等。
 
 ## 配置 Web API
-***  
 Web API 只支持基于代码的配置，它无法在 Web.config 文件中配置。
 我们可以配置 Web API 来自定义 Web API 托管和组件的行为，例如 Route、Formatter、Filters、DependencyResolver、MessageHandler、ParamterBindingRules 等。
 ``` csharp

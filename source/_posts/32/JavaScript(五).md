@@ -22,7 +22,6 @@ ECMAScript 提供了很多原生引用类型，如:
 等等。
 
 ## Object 类型
-***  
 创建 Object 实例的方式有两种: 
 - 使用 new 操作符后跟 Object 构造函数
 
@@ -76,7 +75,6 @@ alert(person[propertyName]);    //"Nicholas"
 **通常，除非必须使用变量来访问属性，否则我们建议使用点表示法。**
 
 ## Array
-***  
 ECMAScript 中的数组与其他多数语言中的数组有着相当大的区别: 
 - ECMAScript 数组的每一项可以保存任何类型的数据。也就是说，可以用数组的第一个位置来保存字符串，用第二位置来保存数值，用第三个位置来保存对象，以此类推
 - ECMAScript 数组的大小是可以动态调整的，即可以随着数据的添加自动增长以容纳新增数据
@@ -342,7 +340,6 @@ alert(sum); //15
 使用 reduce() 还是 reduceRight()，主要取决于要从哪头开始遍历数组。除此之外，它们完全相同。
 
 ## Date 类型
-***  
 ECMAScript 中的 Date 类型是在早期 Java 中的 java.util.Date 类基础上构建的。为此，Date 类型使用自 UTC(Coordinated Universal Time，国际协调时间)1970 年 1 月 1 日零时开始经过的毫秒数来保存日期。
 要创建一个日期对象，使用 new 操作符和 Date 构造函数即可: 
 ``` javascript

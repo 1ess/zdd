@@ -13,7 +13,6 @@ date: 2018-07-14
 - Grid 布局
 
 ## 浮动
-***  
 我们已经学会了如何操纵盒子的大小及其周围的空间，在默认情况下，页面元素的流方式:  
 - 块级元素从上流到下
 - 行内元素从左上流到右下
@@ -33,7 +32,6 @@ date: 2018-07-14
 ![](https://cdn.zhangdd.tech/contentImg/float/float-layout-combinations-e52716.webp)
 
 ## 清除浮动
-***  
 我们使用 clear 属性来清除浮动，有3个可选值: 
 - left: 在左侧不能出现浮动元素，处于左侧所有浮动元素的最下方
 - right: 在右侧不能出现浮动元素，处于右侧所有浮动元素的最下方
@@ -43,7 +41,6 @@ date: 2018-07-14
 ![](https://cdn.zhangdd.tech/contentImg/float/methods-for-clearing-floats-1.webp)
 
 ## 容纳浮动元素
-***  
 我们知道，浮动元素已经从正常文档流中移除，父容器已经不包含浮动元素了，可能会造成一些布局问题，这时可能需要父容器仍然容纳浮动元素，我们就需要一些技巧。
 
 1. 设置父容器的 overflow: hidden 属性，可以使父容器仍然容纳浮动元素，如下图所示。
@@ -62,7 +59,6 @@ date: 2018-07-14
 实际使用过程中，使父容器仍然容纳浮动元素最常用第三种方式，前两种方式的原理是触发 BFC(Block Formatting Context)布局规则。
 
 ## BFC
-***  
 ### Block level
 让我们看看有哪些盒子: 
 - block-level box:
@@ -89,14 +85,12 @@ BFC(Block formatting context) 直译为"块级格式化上下文"。它是一个
 - overflow 不为 visible
 
 ## overflow: hidden
-***  
 overflow: hidden 最常使用的地方有三处: 
 - 溢出隐藏: 如父容器设置了 height 属性，而子元素超出父容器高度，使用 overflow: hidden 可以隐藏溢出部分
 - 清除浮动: 使用 overflow: hidden 使得父容器仍然包含浮动子元素
 - 解除坍塌: 可以使用 overflow:hidden 解除 margin 坍塌。(坍塌只针对于父容器的第一个子元素)
 
 ## 定位
-***  
 虽然之后我们会谈论 Flexbox 和 Grid，但我们仍需要讨论下 position 属性。他是古老布局的基础。
 ![](https://cdn.zhangdd.tech/contentImg/position/css-positioning-schemes-790d5b.webp)
 position 属性有四个可用值: 

@@ -7,7 +7,6 @@ date: 2018-07-18
 这一篇，我们主要讲解变换(transform)和过渡(transition)的使用。
 
 ## transform
-***  
 2D transform 相关的属性有两个: 
 - transform
 - transform-origin
@@ -90,7 +89,6 @@ transform-origin: 20px 20px;
 ```
 
 ## transition
-***  
 我们可以使用 transition 属性，为一些属性变化添加过渡效果。
 
 ### transition-property
