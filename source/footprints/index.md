@@ -24,6 +24,10 @@ window.addEventListener('load', function () {
     if (element) element.hidden = true;
   });
 
+  var worldBounds = L.latLngBounds(
+    L.latLng(-85.05112878, -180),
+    L.latLng(85.05112878, 180)
+  );
   var map = L.map('footprints-map', {
     scrollWheelZoom: true,
     wheelDebounceTime: 80,
@@ -31,15 +35,30 @@ window.addEventListener('load', function () {
     fadeAnimation: false,
     zoomAnimation: false,
     markerZoomAnimation: false,
-    zoomControl: false
+    zoomControl: false,
+    worldCopyJump: false,
+    maxBounds: worldBounds,
+    maxBoundsViscosity: 1
   }).setView([35.5, 109], 4);
   L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     maxZoom: 18,
+    noWrap: true,
+    bounds: worldBounds,
     updateWhenZooming: true,
     updateWhenIdle: true,
     keepBuffer: 4,
     attribution: '&copy; OpenStreetMap contributors'
   }).addTo(map);
+
+  function updateMinimumZoom() {
+    var size = map.getSize();
+    var minimum = Math.max(2, Math.ceil(Math.log(Math.max(size.x, size.y) / 256) / Math.LN2));
+    map.setMinZoom(minimum);
+    if (map.getZoom() < minimum) map.setZoom(minimum);
+    map.panInsideBounds(worldBounds, { animate: false });
+  }
+  updateMinimumZoom();
+  map.on('resize', updateMinimumZoom);
 
   var allData;
   var footprintsLayer = L.layerGroup().addTo(map);
