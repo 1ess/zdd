@@ -458,6 +458,15 @@ button {
   height: 24px;
   flex: 0 0 auto;
   color: inherit;
+
+  // SVG shapes using currentColor must not be recolored by the legacy global
+  // typography selector.
+  * { color: inherit !important; }
+}
+
+.pagination-action-icon {
+  width: 15px;
+  height: 15px;
 }
 
 code {
@@ -1622,6 +1631,7 @@ a {
   padding: 4px;
 
   .ui-icon { width: 20px; height: 20px; }
+  .ui-icon * { color: inherit !important; }
 }
 
 .nav-footer {
