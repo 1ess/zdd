@@ -1,5 +1,10 @@
 'use strict';
 
+const crypto = require('crypto');
+function digest(value) {
+  return crypto.createHash('sha256').update(value).digest('hex').slice(0, 16);
+}
+
 function plainText(value) {
   return String(value || '')
     .replace(/<style\b[^>]*>[\s\S]*?<\/style>/gi, ' ')
@@ -18,24 +23,24 @@ hexo.extend.generator.register('search-index', function (locals) {
   }
 
   const posts = locals.posts.sort('-date').toArray();
-  const contents = [];
-  const items = posts.map(function (post) {
-    const labels = names(post.tags).concat(names(post.categories));
-    const content = plainText(post.content);
-    // The initial 180 characters already live in metadata; keep only the tail here.
-    contents.push(content.slice(180, 500));
-    // Compact tuple: title, URL, date, labels and a lightweight initial excerpt.
-    return [
-      post.title,
-      hexo.config.root + post.path,
-      post.date ? post.date.format('YYYY-MM-DD') : '',
-      labels.slice(0, 5).join(' · '),
-      content.slice(0, 180)
-    ];
+  const contents = Object.create(null);
+  const recent = Object.create(null);
+  const items = posts.map(function (post, position) {
+    const url = hexo.config.root + post.path;
+    const id = digest(url);
+    if (Object.prototype.hasOwnProperty.call(contents, id)) throw new Error('Duplicate search article ID: ' + url);
+    const labels = Array.from(new Set(names(post.tags).concat(names(post.categories))));
+    // Preserve the existing 500-character coverage; fetch body text only on search.
+    contents[id] = plainText(post.content).slice(0, 500);
+    if (position < 12) recent[id] = contents[id].slice(0, 180);
+    // Stable IDs associate bodies with metadata even when publication order changes.
+    return [post.title, url, post.date ? post.date.format('YYYY-MM-DD') : '', labels.join(' · '), id];
   });
 
+  const version = digest(JSON.stringify(contents));
+  const contentPath = 'search/content.' + version + '.json';
   return [
-    { path: 'search-index.json', data: JSON.stringify(items) },
-    { path: 'search-content.json', data: JSON.stringify(contents) }
+    { path: 'search-index.json', data: JSON.stringify({ schema: 2, version, contentUrl: hexo.config.root + contentPath, items, recent }) },
+    { path: contentPath, data: JSON.stringify({ schema: 2, version, contents }) }
   ];
 });

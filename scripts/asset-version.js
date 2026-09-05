@@ -5,6 +5,8 @@ const fs = require('fs');
 const path = require('path');
 
 const versions = new Map();
+// Long-running hexo server/watch must compute fresh fingerprints after a rebuild.
+hexo.extend.filter.register('before_generate', function () { versions.clear(); });
 
 hexo.extend.helper.register('versioned_asset', function (assetPath) {
   const normalized = String(assetPath || '').replace(/^\/+/, '');

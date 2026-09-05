@@ -1,3 +1,4 @@
+<% if (page.search) { %><script src="<%- versioned_asset('js/search.js') %>" data-index-url="<%- url_for('search-index.json') %>" defer></script><% } %>
 <script src="<%- versioned_asset('js/site-runtime.js') %>" data-service-worker-url="<%- url_for('service-worker.js') %>"></script>
 </body>
 </html>

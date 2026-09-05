@@ -20,6 +20,12 @@ function walk(directory) {
 walk(publicDir);
 
 const errors = [];
+const cssDir = path.join(publicDir, 'css');
+if (fs.existsSync(cssDir)) {
+  fs.readdirSync(cssDir).filter((name) => name.endsWith('.css')).forEach((name) => {
+    if (/sourceMappingURL/.test(fs.readFileSync(path.join(cssDir, name), 'utf8'))) errors.push(`${name} 意外包含 source map，请通过 npm run build 编译。`);
+  });
+}
 let imageCount = 0;
 htmlFiles.forEach((file) => {
   const html = fs.readFileSync(file, 'utf8');
@@ -27,7 +33,7 @@ htmlFiles.forEach((file) => {
   imageCount += (html.match(/<img\b/gi) || []).length;
 });
 
-['index.html', '404.html', path.join('footprints', 'index.html'), path.join('about', 'index.html'), path.join('search', 'index.html'), 'search-index.json', 'search-content.json', 'sitemap.xml', 'robots.txt', 'manifest.webmanifest', 'service-worker.js'].forEach((page) => {
+['index.html', '404.html', path.join('footprints', 'index.html'), path.join('about', 'index.html'), path.join('search', 'index.html'), 'search-index.json', 'sitemap.xml', 'robots.txt', 'manifest.webmanifest', 'service-worker.js'].forEach((page) => {
   if (!fs.existsSync(path.join(publicDir, page))) errors.push(`缺少关键页面：/${page.replace(/\\/g, '/')}`);
 });
 
@@ -37,10 +43,10 @@ if (!/<script type="application\/ld\+json">/i.test(homeHtml)) errors.push('首�
 if (!/<link rel="canonical"/i.test(homeHtml)) errors.push('首页缺少 canonical URL。');
 
 const searchIndexPath = path.join(publicDir, 'search-index.json');
-const searchContentPath = path.join(publicDir, 'search-content.json');
 if (fs.existsSync(searchIndexPath)) {
   try {
-    const searchIndex = JSON.parse(fs.readFileSync(searchIndexPath, 'utf8'));
+    const searchManifest = JSON.parse(fs.readFileSync(searchIndexPath, 'utf8'));
+    const searchIndex = searchManifest.items;
     const postsDir = path.join(__dirname, '..', 'source', '_posts');
     let sourcePostCount = 0;
     function countPosts(directory) {
@@ -52,8 +58,8 @@ if (fs.existsSync(searchIndexPath)) {
     }
     countPosts(postsDir);
 
-    if (!Array.isArray(searchIndex)) {
-      errors.push('搜索索引格式错误：根节点必须是数组。');
+    if (searchManifest.schema !== 2 || !Array.isArray(searchIndex)) {
+      errors.push('搜索索引格式错误：需要 schema 2 及 items 数组。');
     } else {
       if (searchIndex.length !== sourcePostCount) {
         errors.push(`搜索索引包含 ${searchIndex.length} 篇，但 source/_posts 中有 ${sourcePostCount} 篇。`);
@@ -62,12 +68,16 @@ if (fs.existsSync(searchIndexPath)) {
       if (malformed) errors.push('搜索索引条目格式错误。');
       const urls = searchIndex.map((item) => item && item[1]).filter(Boolean);
       if (new Set(urls).size !== urls.length) errors.push('搜索索引中存在重复 URL。');
-      if (fs.existsSync(searchContentPath)) {
-        const searchContent = JSON.parse(fs.readFileSync(searchContentPath, 'utf8'));
-        if (!Array.isArray(searchContent) || searchContent.length !== searchIndex.length) {
-          errors.push('搜索正文索引与元数据索引数量不一致。');
-        }
-      }
+      const contentMatch = String(searchManifest.contentUrl).match(/\/search\/(content\.[a-f0-9]{16}\.json)$/);
+      if (!contentMatch) throw new Error('搜索正文文件路径格式错误。');
+      const searchContent = JSON.parse(fs.readFileSync(path.join(publicDir, 'search', contentMatch[1]), 'utf8'));
+      if (searchContent.schema !== 2 || searchContent.version !== searchManifest.version) errors.push('搜索正文与元数据版本不一致。');
+      const ids = searchIndex.map((item) => item[4]);
+      if (new Set(ids).size !== ids.length) errors.push('搜索索引存在重复文章 ID。');
+      if (!searchContent.contents || Object.keys(searchContent.contents).length !== ids.length ||
+          ids.some((id) => typeof searchContent.contents[id] !== 'string')) errors.push('搜索正文存在缺失或多余的文章 ID。');
+      if (!searchManifest.recent || Object.keys(searchManifest.recent).length > 12 ||
+          Object.keys(searchManifest.recent).some((id) => !ids.includes(id))) errors.push('最近文章摘要索引无效。');
     }
   } catch (error) {
     errors.push(`搜索索引无法解析：${error.message}`);

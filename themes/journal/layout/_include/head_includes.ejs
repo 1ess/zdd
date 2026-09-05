@@ -1,7 +1,18 @@
-<link rel="stylesheet" href="<%- versioned_asset('vendor/nord.css') %>">
+<%
+// Page layouts render Markdown too (for example About). Keep the complete
+// content bundle available there, including future code blocks and galleries.
+var hasContentStyles = is_post() || is_page();
+var isFootprintsPage = page.footprints === true;
+var isSearchPage = page.search === true;
+%>
+<% if (hasContentStyles) { %><link rel="stylesheet" href="<%- versioned_asset('vendor/nord.css') %>"><% } %>
 <link rel="stylesheet" href="<%- versioned_asset('vendor/fonts.css') %>">
 <% if (is_post()) { %><link rel="stylesheet" href="<%- versioned_asset('vendor/code-font.css') %>"><% } %>
+<% /* Footprints layout precedes the shared responsive shell in the SCSS. */ %>
+<% if (isFootprintsPage) { %><link rel="stylesheet" href="<%- versioned_asset('css/footprints.css') %>"><% } %>
 <link rel="stylesheet" href="<%- versioned_asset('css/journal.css') %>">
+<% if (hasContentStyles) { %><link rel="stylesheet" href="<%- versioned_asset('css/content.css') %>"><% } %>
+<% if (isSearchPage) { %><link rel="stylesheet" href="<%- versioned_asset('css/search.css') %>"><% } %>
 <link rel="manifest" href="<%- url_for('manifest.webmanifest') %>">
 <meta name="theme-color" content="#f5f3ee">
 <% if (theme.favicon || config.favicon){ %>

@@ -7,13 +7,15 @@ const path = require('path');
 hexo.extend.generator.register('versioned-service-worker', function () {
   const root = hexo.base_dir;
   const versionInputs = [
-    'themes/journal/source/css/journal.css',
+    ...fs.readdirSync(path.join(root, 'themes/journal/source/css')).filter((name) => name.endsWith('.css')).sort().map((name) => 'themes/journal/source/css/' + name),
     'themes/journal/source/js/journal.js',
     'themes/journal/source/js/site-runtime.js',
+    'themes/journal/source/js/search.js',
     'themes/journal/source/vendor/fonts.css',
     'themes/journal/source/vendor/code-font.css',
     'themes/journal/source/vendor/nord.css',
     'scripts/search-index.js',
+    'scripts/service-worker-generator.js',
     'source/offline.html'
   ];
   const hash = crypto.createHash('sha256');
@@ -98,7 +100,9 @@ self.addEventListener('fetch', (event) => {
 
   if (request.mode === 'navigate') {
     event.respondWith(networkFirst(request, PAGES, '/offline.html'));
-  } else if (url.pathname === '/search-index.json' || url.pathname === '/search-content.json' || url.pathname.endsWith('/footprints.geojson')) {
+  } else if (/\\/search\\/content\\.[a-f0-9]{16}\\.json$/.test(url.pathname)) {
+    event.respondWith(cacheFirst(request, DATA, 8));
+  } else if (url.pathname.endsWith('/search-index.json') || url.pathname.endsWith('/footprints.geojson')) {
     event.respondWith(networkFirst(request, DATA));
   } else if (request.destination === 'image') {
     event.respondWith(cacheFirst(request, IMAGES, 80));
