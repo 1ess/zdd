@@ -1654,14 +1654,20 @@ a {
 }
 
 .theme-toggle {
+  display: inline-grid;
+  place-items: center;
+  box-sizing: border-box;
+  flex: 0 0 20px;
+  width: 20px;
+  height: 20px;
   background: transparent;
   border: 0;
   color: inherit;
   cursor: pointer;
   line-height: 1;
-  padding: 4px;
+  padding: 1px;
 
-  .ui-icon { width: 20px; height: 20px; }
+  .ui-icon { display: block; width: 18px; height: 18px; }
   .ui-icon * { color: inherit !important; }
 }
 
@@ -2043,10 +2049,6 @@ html:not(.dark-theme) .theme-toggle[aria-label="切换深色模式"],
 html:not(.dark-theme) .theme-toggle[aria-label="切换深色模式"] .ui-icon {
   color: #17262d !important;
   opacity: 1;
-}
-html:not(.dark-theme) .theme-toggle[aria-label="切换深色模式"] .ui-icon {
-  width: 22px;
-  height: 22px;
 }
 
 html.dark-theme .theme-toggle[aria-label="切换浅色模式"],
