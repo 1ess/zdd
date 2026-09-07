@@ -1835,6 +1835,65 @@ html.dark-theme {
 
 #footprints-map .leaflet-tile-pane {
   will-change: transform;
+  transition: filter 220ms ease;
+}
+
+// Footprints map themes: "Clear Pastel" for light mode and "Paper Atlas"
+// for dark mode. The same local Leaflet assets and OSM tiles remain in use;
+// only presentation changes, so map interaction and loading behaviour stay stable.
+html:not(.dark-theme) {
+  #footprints-map {
+    background: #e7f0f4;
+    border-color: rgba(54, 122, 163, .2);
+    box-shadow: 0 8px 28px rgba(54, 122, 163, .12);
+  }
+  #footprints-map .leaflet-tile-pane {
+    filter: saturate(.7) brightness(1.07) contrast(.88);
+  }
+  .footprints-marker {
+    background: #367aa3;
+    border-color: #f5fbff;
+    box-shadow: 0 4px 14px rgba(42, 103, 140, .3);
+  }
+  .leaflet-popup-content-wrapper, .leaflet-popup-tip {
+    background: rgba(248, 252, 255, .97);
+    color: #294252;
+  }
+  .footprints-popup h3, .footprints-popup a { color: #276f99; }
+  .footprints-popup li { color: #526c7b; }
+}
+
+html.dark-theme.footprints-document {
+  #footprints-map {
+    background: #eee8dc;
+    border-color: rgba(184, 111, 71, .28);
+    box-shadow: 0 10px 32px rgba(0, 0, 0, .34);
+  }
+  #footprints-map .leaflet-tile-pane {
+    filter: sepia(.2) saturate(.72) brightness(1.05) contrast(.9);
+  }
+  .footprints-marker {
+    background: #b86f47;
+    border-color: #fffaf0;
+    color: #fff;
+    box-shadow: 0 5px 15px rgba(99, 62, 40, .32);
+  }
+  .leaflet-popup-content-wrapper, .leaflet-popup-tip {
+    background: rgba(255, 250, 240, .98);
+    color: #313a39;
+  }
+  .leaflet-popup-content, .leaflet-popup-content p,
+  .leaflet-popup-content li { color: #59635f !important; }
+  .footprints-popup h3, .footprints-popup a { color: #a75f3c !important; }
+  .leaflet-control-attribution {
+    background: rgba(255, 250, 240, .9) !important;
+    color: #68716d !important;
+  }
+  .leaflet-control-attribution a { color: #a75f3c !important; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #footprints-map .leaflet-tile-pane { transition: none; }
 }
 
 .not-found {
@@ -1984,6 +2043,10 @@ html:not(.dark-theme) .theme-toggle[aria-label="切换深色模式"],
 html:not(.dark-theme) .theme-toggle[aria-label="切换深色模式"] .ui-icon {
   color: #17262d !important;
   opacity: 1;
+}
+html:not(.dark-theme) .theme-toggle[aria-label="切换深色模式"] .ui-icon {
+  width: 22px;
+  height: 22px;
 }
 
 html.dark-theme .theme-toggle[aria-label="切换浅色模式"],

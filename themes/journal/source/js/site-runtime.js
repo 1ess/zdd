@@ -231,7 +231,7 @@
       themeToggles.forEach(function (button) {
         button.innerHTML = dark
           ? '<svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M4.9 4.9l1.4 1.4m11.4 11.4 1.4 1.4M19.1 4.9l-1.4 1.4M6.3 17.7l-1.4 1.4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>'
-          : '<svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.2 15.4A8 8 0 0 1 8.6 3.8 8.5 8.5 0 1 0 20.2 15.4Z" fill="currentColor"/></svg>';
+          : '<svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 15.2A9 9 0 0 1 8.8 3 9.5 9.5 0 1 0 21 15.2Z" fill="currentColor"/></svg>';
         button.setAttribute('aria-label', dark ? '切换浅色模式' : '切换深色模式');
         button.title = dark ? '切换浅色模式' : '切换深色模式';
         button.setAttribute('aria-pressed', dark ? 'true' : 'false');
