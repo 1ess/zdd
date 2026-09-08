@@ -1851,8 +1851,9 @@ html.dark-theme {
 }
 
 // Footprints map themes: "Clear Pastel" for light mode and "Paper Atlas"
-// for dark mode. The same local Leaflet assets and OSM tiles remain in use;
-// only presentation changes, so map interaction and loading behaviour stay stable.
+// for dark mode. The base layer is the AMap (高德) Chinese-labelled road
+// map; filters only mute/warm the already pastel tiles to match the blog
+// palette, so map interaction and loading behaviour stay stable.
 html:not(.dark-theme) {
   #footprints-map {
     background: #e7f0f4;
@@ -1860,7 +1861,7 @@ html:not(.dark-theme) {
     box-shadow: 0 8px 28px rgba(54, 122, 163, .12);
   }
   #footprints-map .leaflet-tile-pane {
-    filter: saturate(.7) brightness(1.07) contrast(.88);
+    filter: saturate(.85) brightness(1.03) contrast(.95);
   }
   .footprints-marker {
     background: #367aa3;
@@ -1882,7 +1883,7 @@ html.dark-theme.footprints-document {
     box-shadow: 0 10px 32px rgba(0, 0, 0, .34);
   }
   #footprints-map .leaflet-tile-pane {
-    filter: sepia(.2) saturate(.72) brightness(1.05) contrast(.9);
+    filter: sepia(.3) saturate(.72) brightness(1.02) contrast(.92);
   }
   .footprints-marker {
     background: #b86f47;

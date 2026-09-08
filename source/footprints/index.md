@@ -26,13 +26,13 @@ window.addEventListener('load', function () {
 
   // 缩放配置。核心场景：城市级足迹查看——进入页面自动框住全部标记，
   // 滚轮/捏合缩放用于局部观察，不提供街道级放大。
-  // 边界条件：
-  //   floor        最小缩放硬下限，实际下限会随视口在 clampZoom 中动态抬高；
-  //   ceiling      最大缩放到城市轮廓级别（10 级），高于足迹数据粒度即无意义；
+  // 边界条件（与高德中文底图的瓦片覆盖范围对齐）：
+  //   floor        最小缩放硬下限（z=2 无世界瓦片，故从 3 起），实际下限会随视口在 clampZoom 中动态抬高；
+  //   ceiling      最大缩放 8 级：国内为城市轮廓细节，海外仍有完整中文注记，更高缩放海外为空白瓦片；
   //   fitPadding   初次框选时标记距视口边缘的留白（px）；
   //   fitCeiling   多点框选的缩放上限，防止邻近标记（如上海/苏州）把视图拉得过近；
   //   singleZoom   筛选后仅剩一个标记时的固定缩放。
-  var ZOOM = { floor: 2, ceiling: 10, fitPadding: 48, fitCeiling: 7, singleZoom: 7 };
+  var ZOOM = { floor: 3, ceiling: 8, fitPadding: 48, fitCeiling: 7, singleZoom: 7 };
   var worldBounds = L.latLngBounds(
     L.latLng(-85.05112878, -180),
     L.latLng(85.05112878, 180)
@@ -45,20 +45,24 @@ window.addEventListener('load', function () {
     zoomAnimation: false,
     markerZoomAnimation: false,
     zoomControl: false,
+    attributionControl: false,
     worldCopyJump: false,
     minZoom: ZOOM.floor,
     maxZoom: ZOOM.ceiling,
     maxBounds: worldBounds,
     maxBoundsViscosity: 1
   }).setView([35.5, 109], 4);
-  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+  // 高德中文底图：全球城市与地理要素均以中文注记（lang=zh_cn），
+  // 无需 API key；国内坐标为 GCJ-02，城市级标记在 z≤8 下偏差小于 3px，可忽略。
+  L.tileLayer('https://webrd0{s}.is.autonavi.com/appmaptile?lang=zh_cn&size=1&scale=1&style=8&x={x}&y={y}&z={z}', {
+    subdomains: ['1', '2', '3', '4'],
     maxZoom: ZOOM.ceiling,
     noWrap: true,
     bounds: worldBounds,
     updateWhenZooming: true,
     updateWhenIdle: true,
     keepBuffer: 4,
-    attribution: '&copy; OpenStreetMap contributors'
+    attribution: '&copy; <a href="https://ditu.amap.com/">高德地图</a>'
   }).addTo(map);
 
   // 动态抬高最小缩放：保证世界底图（256×2^z px）始终铺满视口较长边，
