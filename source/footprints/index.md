@@ -24,6 +24,15 @@ window.addEventListener('load', function () {
     if (element) element.hidden = true;
   });
 
+  // 缩放配置。核心场景：城市级足迹查看——进入页面自动框住全部标记，
+  // 滚轮/捏合缩放用于局部观察，不提供街道级放大。
+  // 边界条件：
+  //   floor        最小缩放硬下限，实际下限会随视口在 clampZoom 中动态抬高；
+  //   ceiling      最大缩放到城市轮廓级别（10 级），高于足迹数据粒度即无意义；
+  //   fitPadding   初次框选时标记距视口边缘的留白（px）；
+  //   fitCeiling   多点框选的缩放上限，防止邻近标记（如上海/苏州）把视图拉得过近；
+  //   singleZoom   筛选后仅剩一个标记时的固定缩放。
+  var ZOOM = { floor: 2, ceiling: 10, fitPadding: 48, fitCeiling: 7, singleZoom: 7 };
   var worldBounds = L.latLngBounds(
     L.latLng(-85.05112878, -180),
     L.latLng(85.05112878, 180)
@@ -37,11 +46,13 @@ window.addEventListener('load', function () {
     markerZoomAnimation: false,
     zoomControl: false,
     worldCopyJump: false,
+    minZoom: ZOOM.floor,
+    maxZoom: ZOOM.ceiling,
     maxBounds: worldBounds,
     maxBoundsViscosity: 1
   }).setView([35.5, 109], 4);
   L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    maxZoom: 18,
+    maxZoom: ZOOM.ceiling,
     noWrap: true,
     bounds: worldBounds,
     updateWhenZooming: true,
@@ -50,15 +61,17 @@ window.addEventListener('load', function () {
     attribution: '&copy; OpenStreetMap contributors'
   }).addTo(map);
 
-  function updateMinimumZoom() {
+  // 动态抬高最小缩放：保证世界底图（256×2^z px）始终铺满视口较长边，
+  // 避免缩得太小时露出底图外的灰色空白；视口尺寸变化后重新夹取视图。
+  function clampZoom() {
     var size = map.getSize();
-    var minimum = Math.max(2, Math.ceil(Math.log(Math.max(size.x, size.y) / 256) / Math.LN2));
-    map.setMinZoom(minimum);
-    if (map.getZoom() < minimum) map.setZoom(minimum);
+    var floor = Math.max(ZOOM.floor, Math.ceil(Math.log2(Math.max(size.x, size.y) / 256)));
+    map.setMinZoom(floor);
+    if (map.getZoom() < floor) map.setZoom(floor);
     map.panInsideBounds(worldBounds, { animate: false });
   }
-  updateMinimumZoom();
-  map.on('resize', updateMinimumZoom);
+  clampZoom();
+  map.on('resize', clampZoom);
 
   var allData;
   var footprintsLayer = L.layerGroup().addTo(map);
@@ -120,17 +133,15 @@ window.addEventListener('load', function () {
         if (!visibleNames[name] && footprintsLayer.hasLayer(markerCache[name])) footprintsLayer.removeLayer(markerCache[name]);
       });
       if (fitMap && bounds.length) {
-        // Leaflet must know the final container size before calculating the
-        // smallest viewport that contains every returned marker.
+        // 框选前同步一次容器尺寸，确保按最终视口计算最小包围盒。
         map.invalidateSize({ animate: false });
         if (bounds.length === 1) {
-          map.setView(bounds[0], 7, { animate: false });
+          map.setView(bounds[0], ZOOM.singleZoom, { animate: false });
         } else {
-          var markerBounds = L.latLngBounds(bounds).pad(0.08);
-          map.fitBounds(markerBounds, {
-            paddingTopLeft: [42, 42],
-            paddingBottomRight: [42, 42],
-            maxZoom: 7,
+          // 仅用视口留白一种机制，fitBounds 自会选取能容纳全部标记的最高缩放。
+          map.fitBounds(L.latLngBounds(bounds), {
+            padding: [ZOOM.fitPadding, ZOOM.fitPadding],
+            maxZoom: ZOOM.fitCeiling,
             animate: false
           });
         }
