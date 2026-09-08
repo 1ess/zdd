@@ -1891,6 +1891,13 @@ html.dark-theme.footprints-document {
   .leaflet-popup-content, .leaflet-popup-content p,
   .leaflet-popup-content li { color: #59635f !important; }
   .footprints-popup h3, .footprints-popup a { color: #a75f3c !important; }
+  .footprints-popup a:hover,
+  .footprints-popup a:focus-visible {
+    color: #743b27 !important;
+    text-decoration: underline;
+    text-decoration-color: rgba(116, 59, 39, .55);
+    text-underline-offset: 2px;
+  }
   .leaflet-control-attribution {
     background: rgba(255, 250, 240, .9) !important;
     color: #68716d !important;
