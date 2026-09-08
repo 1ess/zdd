@@ -1087,26 +1087,32 @@ a {
           }
         }
 
-        transition: all 0.2s linear;
-        * {
-          transition: all 0.2s linear;
+        box-shadow: inset 3px 0 transparent;
+        transition: background-color 220ms ease, box-shadow 220ms ease;
+
+        .post-item-title,
+        .post-item-title a {
+          transition: color 180ms ease;
         }
-        &:not(.post-item-wrapper-no-hover):hover {
+
+        .post-item-image::before {
+          transition: filter 260ms ease;
+        }
+
+        &:not(.post-item-wrapper-no-hover):hover,
+        &:not(.post-item-wrapper-no-hover):focus-within {
           text-decoration: none;
-          background: rgba(0, 0, 0, 0.03);
-          .post-item-title {
-            text-decoration: underline;
-            text-decoration-style: 2px solid $color-accent;
-            text-underline-position: under;
-          }
-          * {
-            color: $dark-accent;
-          }
+          background: rgba($color-accent, .035);
+          box-shadow: inset 3px 0 rgba($color-accent, .42);
+
+          .post-item-title,
+          .post-item-title a { color: $dark-accent; }
+
+          .post-item-image::before { filter: brightness(1.035) saturate(1.025); }
 
           @media screen and (max-width: $single-column-max-width) {
-            .post-item-title {
-              text-decoration: none !important;
-            }
+            background: transparent;
+            box-shadow: none;
           }
         }
       }
@@ -1897,6 +1903,18 @@ html.dark-theme.footprints-document {
     text-decoration: underline;
     text-decoration-color: rgba(116, 59, 39, .55);
     text-underline-offset: 2px;
+  }
+  .leaflet-container a.leaflet-popup-close-button,
+  .leaflet-container a.leaflet-popup-close-button * {
+    color: #766d62 !important;
+  }
+  .leaflet-container a.leaflet-popup-close-button:hover,
+  .leaflet-container a.leaflet-popup-close-button:hover *,
+  .leaflet-container a.leaflet-popup-close-button:focus-visible,
+  .leaflet-container a.leaflet-popup-close-button:focus-visible * {
+    color: #743b27 !important;
+    background: transparent !important;
+    text-decoration: none !important;
   }
   .leaflet-control-attribution {
     background: rgba(255, 250, 240, .9) !important;

@@ -119,8 +119,26 @@ window.addEventListener('load', function () {
       Object.keys(markerCache).forEach(function (name) {
         if (!visibleNames[name] && footprintsLayer.hasLayer(markerCache[name])) footprintsLayer.removeLayer(markerCache[name]);
       });
-      if (fitMap && bounds.length) map.fitBounds(L.latLngBounds(bounds), { padding: [36, 36], maxZoom: 5 });
-      if (fitMap) window.setTimeout(function () { map.invalidateSize(); }, 100);
+      if (fitMap && bounds.length) {
+        // Leaflet must know the final container size before calculating the
+        // smallest viewport that contains every returned marker.
+        map.invalidateSize({ animate: false });
+        if (bounds.length === 1) {
+          map.setView(bounds[0], 7, { animate: false });
+        } else {
+          var markerBounds = L.latLngBounds(bounds).pad(0.08);
+          map.fitBounds(markerBounds, {
+            paddingTopLeft: [42, 42],
+            paddingBottomRight: [42, 42],
+            maxZoom: 7,
+            animate: false
+          });
+        }
+        window.setTimeout(function () {
+          map.invalidateSize({ animate: false });
+          map.panInsideBounds(worldBounds, { animate: false });
+        }, 100);
+      }
       setStatus(filtered.features.length ? '已显示 ' + filtered.features.length + ' 个地点，共 ' + totalVisits + ' 次足迹。' : '没有符合筛选条件的足迹。');
   }
   function escapeHtml(value) {
