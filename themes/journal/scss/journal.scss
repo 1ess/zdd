@@ -1844,7 +1844,7 @@ html.dark-theme {
   .side-container .nav-link-item:focus-visible, .drawer-menu-item:focus-visible { color: #beddf8 !important; }
   .side-container .nav-link-item.active, .drawer-menu-item.active { color: #8fc1ee !important; }
   #footprints-map { background: #202328; }
-  .leaflet-popup-content-wrapper, .leaflet-popup-tip { background: #252930; color: #e3e7ec; }
+  #footprints-map .maplibregl-popup-content { background: #252930; color: #e3e7ec; }
   input::placeholder { color: #89929e; opacity: 1; }
   button, select, input { color: #e3e7ec; }
   .article-toc > strong { color: #eef2f6 !important; }
@@ -1863,9 +1863,9 @@ html.dark-theme {
   .post-series li::marker, .related-posts li::marker { color: #929ba7; }
   &.footprints-document .post-body,
   &.footprints-document .footprints-status,
-  &.footprints-document .leaflet-popup-content,
-  &.footprints-document .leaflet-popup-content p,
-  &.footprints-document .leaflet-popup-content li {
+  &.footprints-document #footprints-map .maplibregl-popup-content,
+  &.footprints-document #footprints-map .maplibregl-popup-content p,
+  &.footprints-document #footprints-map .maplibregl-popup-content li {
     color: #e3e7ec !important;
   }
   .footprints-toolbar input {
@@ -1899,28 +1899,16 @@ html.dark-theme {
   &.footprints-document .post-body .footprints-status { color: #929ba7 !important; }
 }
 
-#footprints-map .leaflet-tile-container,
-#footprints-map .leaflet-tile {
-  backface-visibility: hidden;
-  transform: translateZ(0);
-}
-
-#footprints-map .leaflet-tile-pane {
-  will-change: transform;
-  transition: filter 220ms ease;
-}
-
 // Footprints map themes: "Clear Pastel" for light mode and "Paper Atlas"
-// for dark mode. The base layer is the AMap (高德) Chinese-labelled road
-// map; filters only mute/warm the already pastel tiles to match the blog
-// palette, so map interaction and loading behaviour stay stable.
+// for dark mode. 底图为 MapTiler 矢量瓦片（中文标注）；滤镜只对 canvas 底图
+// 做柔化/暖化调色以匹配博客配色，不影响地图交互与加载稳定性。
 html:not(.dark-theme) {
   #footprints-map {
     background: #e7f0f4;
     border-color: rgba(54, 122, 163, .2);
     box-shadow: 0 8px 28px rgba(54, 122, 163, .12);
   }
-  #footprints-map .leaflet-tile-pane {
+  #footprints-map .maplibregl-canvas {
     filter: saturate(.85) brightness(1.03) contrast(.95);
   }
   .footprints-marker {
@@ -1928,12 +1916,6 @@ html:not(.dark-theme) {
     border-color: #f5fbff;
     box-shadow: 0 4px 14px rgba(42, 103, 140, .3);
   }
-  .leaflet-popup-content-wrapper, .leaflet-popup-tip {
-    background: rgba(248, 252, 255, .97);
-    color: #294252;
-  }
-  .footprints-popup h3, .footprints-popup a { color: #276f99; }
-  .footprints-popup li { color: #526c7b; }
 }
 
 html.dark-theme.footprints-document {
@@ -1942,7 +1924,7 @@ html.dark-theme.footprints-document {
     border-color: rgba(184, 111, 71, .28);
     box-shadow: 0 10px 32px rgba(0, 0, 0, .34);
   }
-  #footprints-map .leaflet-tile-pane {
+  #footprints-map .maplibregl-canvas {
     filter: sepia(.3) saturate(.72) brightness(1.02) contrast(.92);
   }
   .footprints-marker {
@@ -1951,41 +1933,35 @@ html.dark-theme.footprints-document {
     color: #fff;
     box-shadow: 0 5px 15px rgba(99, 62, 40, .32);
   }
-  .leaflet-popup-content-wrapper, .leaflet-popup-tip {
+  #footprints-map .maplibregl-popup-content {
     background: rgba(255, 250, 240, .98);
     color: #313a39;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, .4);
   }
-  .leaflet-popup-content, .leaflet-popup-content p,
-  .leaflet-popup-content li { color: #59635f !important; }
-  .footprints-popup h3, .footprints-popup a { color: #a75f3c !important; }
-  .footprints-popup a:hover,
-  .footprints-popup a:focus-visible {
+  #footprints-map .maplibregl-popup-anchor-bottom .maplibregl-popup-tip { border-top-color: rgba(255, 250, 240, .98); }
+  #footprints-map .maplibregl-popup-anchor-top .maplibregl-popup-tip { border-bottom-color: rgba(255, 250, 240, .98); }
+  #footprints-map .maplibregl-popup-content,
+  #footprints-map .maplibregl-popup-content p,
+  #footprints-map .maplibregl-popup-content li { color: #59635f !important; }
+  #footprints-map .footprints-popup h3,
+  #footprints-map .footprints-popup a { color: #a75f3c !important; }
+  #footprints-map .footprints-popup a:hover,
+  #footprints-map .footprints-popup a:focus-visible {
     color: #743b27 !important;
     text-decoration: underline;
     text-decoration-color: rgba(116, 59, 39, .55);
     text-underline-offset: 2px;
   }
-  .leaflet-container a.leaflet-popup-close-button,
-  .leaflet-container a.leaflet-popup-close-button * {
-    color: #766d62 !important;
-  }
-  .leaflet-container a.leaflet-popup-close-button:hover,
-  .leaflet-container a.leaflet-popup-close-button:hover *,
-  .leaflet-container a.leaflet-popup-close-button:focus-visible,
-  .leaflet-container a.leaflet-popup-close-button:focus-visible * {
+  #footprints-map .maplibregl-popup-close-button { color: #766d62 !important; }
+  #footprints-map .maplibregl-popup-close-button:hover,
+  #footprints-map .maplibregl-popup-close-button:focus-visible {
     color: #743b27 !important;
     background: transparent !important;
-    text-decoration: none !important;
   }
-  .leaflet-control-attribution {
-    background: rgba(255, 250, 240, .9) !important;
-    color: #68716d !important;
-  }
-  .leaflet-control-attribution a { color: #a75f3c !important; }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  #footprints-map .leaflet-tile-pane { transition: none; }
+  #footprints-map .maplibregl-canvas { transition: none; }
 }
 
 .not-found {
