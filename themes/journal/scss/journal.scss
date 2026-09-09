@@ -1706,15 +1706,22 @@ html.theme-transition,
 html.theme-transition body,
 html.theme-transition body *:not(img):not(video):not(iframe):not(canvas) {
   transition-property: background-color, color, border-color, fill, stroke !important;
-  transition-duration: .28s !important;
+  transition-duration: .24s !important;
   transition-timing-function: ease !important;
 }
 
+// Keep the large content surfaces and the fixed right rail on the exact same
+// theme-transition clock. These used to switch instantly while surrounding
+// colors were still interpolating, which looked like a delayed extra rail.
 html.theme-transition .post-list-container,
 html.theme-transition .post-list-container-shadow,
 html.theme-transition .post-item,
-html.theme-transition .post {
-  transition: none !important;
+html.theme-transition .post,
+html.theme-transition .extra-container,
+html.theme-transition .extra-container * {
+  transition-property: background-color, color, border-color, fill, stroke !important;
+  transition-duration: .24s !important;
+  transition-timing-function: ease !important;
 }
 
 html.dark-theme {
@@ -2067,6 +2074,22 @@ html.dark-theme {
 
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; }
+  html.theme-transition,
+  html.theme-transition body,
+  html.theme-transition .container-fluid,
+  html.theme-transition .stream-container,
+  html.theme-transition .post-list-container,
+  html.theme-transition .post-list-container-shadow,
+  html.theme-transition .post-item,
+  html.theme-transition .post,
+  html.theme-transition .extra-container,
+  html.theme-transition .extra-container .pagination,
+  html.theme-transition .extra-container .pagination-indicator,
+  html.theme-transition .extra-container .pagination-indicator *,
+  html.theme-transition .extra-container .pagination-action,
+  html.theme-transition .extra-container .pagination-action * {
+    transition-duration: .01ms !important;
+  }
 }
 
 // The icon previews the target theme: a dark moon in light mode and a warm,

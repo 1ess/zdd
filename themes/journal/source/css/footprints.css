@@ -1,1 +1,190 @@
-﻿.footprints-toolbar{display:block;gap:12px;align-items:end;margin:0 0 12px;font-family:"Montserrat","Roboto","Source Sans Pro","Helvetica","Arial","Lora","source-han-serif-tc",serif}.footprints-toolbar label{display:grid;gap:4px;color:#49616b;font-size:12px}.footprints-toolbar select,.footprints-toolbar input,.footprints-toolbar button{min-height:36px;border:1px solid rgba(1,80,111,.25);border-radius:6px;padding:7px 10px;background:#fff;font-size:14px}.footprints-toolbar input{width:min(100%,360px)}.footprints-toolbar button{align-self:end;color:#01506f;cursor:pointer;white-space:nowrap}@media screen and (max-width: 600px){.footprints-toolbar input{width:100%}}html.footprints-document,body.footprints-page{overflow:hidden}.footprints-page .single-column-header-container,.footprints-page .post-head-wrapper-text-only,.footprints-page .single-column-footer{display:none !important}.footprints-page .stream-container,.footprints-page .stream-container .post-list-container,.footprints-page .stream-container .post .post-body-wrapper{height:100vh;min-height:0}.footprints-page .stream-container .post-list-container{padding:0}.footprints-page .stream-container .post .post-body-wrapper{padding:20px}.footprints-page #footprints-map{height:calc(100vh - 116px);min-height:0;max-height:none}@media screen and (max-width: 1020px){.footprints-page .single-column-nav-container{position:fixed;width:100%;z-index:1000}.footprints-page .stream-container .post .post-body-wrapper{padding:72px 16px 16px}.footprints-page #footprints-map{height:calc(100vh - 164px)}}.footprints-intro{padding:12px 4px 22px}.footprints-intro h2{margin:2px 0 8px;font-size:30px}.footprints-intro p{margin:0;color:#4d6570}.footprints-kicker{color:#0180a9 !important;font:600 12px/1.2 sans-serif;letter-spacing:.16em}.footprints-stats{display:flex;gap:26px;margin-top:18px;font-family:sans-serif;color:#49616b}.footprints-stats strong{margin-right:4px;color:#01506f;font-size:22px}#footprints-map{width:100%;height:62vh;min-height:390px;max-height:620px;border:1px solid #dce5e8;border-radius:12px;overflow:hidden;box-shadow:0 8px 28px rgba(1,80,111,.1)}.footprints-marker{background:#017ca6;border:3px solid #fff;border-radius:50%;box-shadow:0 2px 8px rgba(1,80,111,.36);color:#fff;font:700 11px/24px sans-serif;text-align:center}.footprints-popup h3{margin:0 0 7px;color:#01506f;font-size:18px}.footprints-popup ul{margin:0;padding-left:18px}.footprints-popup li{margin:3px 0;color:#40565f}.footprints-status{margin:12px 2px 0;color:#78909a;font-size:14px}@media(max-width: 600px){#footprints-map{height:55vh;min-height:350px}}html.dark-theme .footprints-toolbar input,html.dark-theme .footprints-toolbar select,html.dark-theme .footprints-toolbar button{background-color:#252930 !important;border-color:#414751 !important;color:#e3e7ec !important}html.dark-theme .footprints-popup,html.dark-theme .footprints-popup p,html.dark-theme .footprints-popup li{color:#e3e7ec !important}html.dark-theme .footprints-status{color:#b8c0ca !important}html.dark-theme #footprints-map{background:#202328}html.dark-theme .leaflet-popup-content-wrapper,html.dark-theme .leaflet-popup-tip{background:#252930;color:#e3e7ec}html.dark-theme.footprints-document .post-body,html.dark-theme.footprints-document .footprints-status,html.dark-theme.footprints-document .leaflet-popup-content,html.dark-theme.footprints-document .leaflet-popup-content p,html.dark-theme.footprints-document .leaflet-popup-content li{color:#e3e7ec !important}html.dark-theme .footprints-toolbar input{background:#252930 !important;border:1px solid #454b55 !important;color:#e3e7ec !important}html.dark-theme.footprints-document .post-body .footprints-status{color:#929ba7 !important}#footprints-map .leaflet-tile-container,#footprints-map .leaflet-tile{backface-visibility:hidden;transform:translateZ(0)}#footprints-map .leaflet-tile-pane{will-change:transform;transition:filter 220ms ease}html:not(.dark-theme) #footprints-map{background:#e7f0f4;border-color:rgba(54,122,163,.2);box-shadow:0 8px 28px rgba(54,122,163,.12)}html:not(.dark-theme) #footprints-map .leaflet-tile-pane{filter:saturate(0.85) brightness(1.03) contrast(0.95)}html:not(.dark-theme) .footprints-marker{background:#367aa3;border-color:#f5fbff;box-shadow:0 4px 14px rgba(42,103,140,.3)}html:not(.dark-theme) .leaflet-popup-content-wrapper,html:not(.dark-theme) .leaflet-popup-tip{background:rgba(248,252,255,.97);color:#294252}html:not(.dark-theme) .footprints-popup h3,html:not(.dark-theme) .footprints-popup a{color:#276f99}html:not(.dark-theme) .footprints-popup li{color:#526c7b}html.dark-theme.footprints-document #footprints-map{background:#eee8dc;border-color:rgba(184,111,71,.28);box-shadow:0 10px 32px rgba(0,0,0,.34)}html.dark-theme.footprints-document #footprints-map .leaflet-tile-pane{filter:sepia(0.3) saturate(0.72) brightness(1.02) contrast(0.92)}html.dark-theme.footprints-document .footprints-marker{background:#b86f47;border-color:#fffaf0;color:#fff;box-shadow:0 5px 15px rgba(99,62,40,.32)}html.dark-theme.footprints-document .leaflet-popup-content-wrapper,html.dark-theme.footprints-document .leaflet-popup-tip{background:rgba(255,250,240,.98);color:#313a39}html.dark-theme.footprints-document .leaflet-popup-content,html.dark-theme.footprints-document .leaflet-popup-content p,html.dark-theme.footprints-document .leaflet-popup-content li{color:#59635f !important}html.dark-theme.footprints-document .footprints-popup h3,html.dark-theme.footprints-document .footprints-popup a{color:#a75f3c !important}html.dark-theme.footprints-document .footprints-popup a:hover,html.dark-theme.footprints-document .footprints-popup a:focus-visible{color:#743b27 !important;text-decoration:underline;text-decoration-color:rgba(116,59,39,.55);text-underline-offset:2px}html.dark-theme.footprints-document .leaflet-container a.leaflet-popup-close-button,html.dark-theme.footprints-document .leaflet-container a.leaflet-popup-close-button *{color:#766d62 !important}html.dark-theme.footprints-document .leaflet-container a.leaflet-popup-close-button:hover,html.dark-theme.footprints-document .leaflet-container a.leaflet-popup-close-button:hover *,html.dark-theme.footprints-document .leaflet-container a.leaflet-popup-close-button:focus-visible,html.dark-theme.footprints-document .leaflet-container a.leaflet-popup-close-button:focus-visible *{color:#743b27 !important;background:rgba(0,0,0,0) !important;text-decoration:none !important}html.dark-theme.footprints-document .leaflet-control-attribution{background:rgba(255,250,240,.9) !important;color:#68716d !important}html.dark-theme.footprints-document .leaflet-control-attribution a{color:#a75f3c !important}@media(prefers-reduced-motion: reduce){#footprints-map .leaflet-tile-pane{transition:none}}html.dark-theme .footprints-status{color:#b8b5ae !important}
+/* ===== 足迹页：工具栏与布局 ===== */
+.footprints-toolbar {
+  display: block;
+  gap: 12px;
+  align-items: end;
+  margin: 0 0 12px;
+  font-family: "Montserrat", "Roboto", "Source Sans Pro", "Helvetica", "Arial", "Lora", "source-han-serif-tc", serif;
+}
+.footprints-toolbar label { display: grid; gap: 4px; color: #49616b; font-size: 12px; }
+.footprints-toolbar select,
+.footprints-toolbar input,
+.footprints-toolbar button {
+  min-height: 36px;
+  border: 1px solid rgba(1, 80, 111, .25);
+  border-radius: 6px;
+  padding: 7px 10px;
+  background: #fff;
+  font-size: 14px;
+}
+.footprints-toolbar input { width: min(100%, 360px); }
+.footprints-toolbar button { align-self: end; color: #01506f; cursor: pointer; white-space: nowrap; }
+@media screen and (max-width: 600px) {
+  .footprints-toolbar input { width: 100%; }
+}
+
+/* 全屏足迹页布局 */
+html.footprints-document, body.footprints-page { overflow: hidden; }
+.footprints-page .single-column-header-container,
+.footprints-page .post-head-wrapper-text-only,
+.footprints-page .single-column-footer { display: none !important; }
+.footprints-page .stream-container,
+.footprints-page .stream-container .post-list-container,
+.footprints-page .stream-container .post .post-body-wrapper { height: 100vh; min-height: 0; }
+.footprints-page .stream-container .post-list-container { padding: 0; }
+.footprints-page .stream-container .post .post-body-wrapper { padding: 20px; }
+.footprints-page #footprints-map { height: calc(100vh - 116px); min-height: 0; max-height: none; }
+@media screen and (max-width: 1020px) {
+  .footprints-page .single-column-nav-container { position: fixed; width: 100%; z-index: 1000; }
+  .footprints-page .stream-container .post .post-body-wrapper { padding: 72px 16px 16px; }
+  .footprints-page #footprints-map { height: calc(100vh - 164px); }
+}
+
+/* ===== 引言与统计 ===== */
+.footprints-intro { padding: 12px 4px 22px; }
+.footprints-intro h2 { margin: 2px 0 8px; font-size: 30px; }
+.footprints-intro p { margin: 0; color: #4d6570; }
+.footprints-kicker { color: #0180a9 !important; font: 600 12px/1.2 sans-serif; letter-spacing: .16em; }
+.footprints-stats { display: flex; gap: 26px; margin-top: 18px; font-family: sans-serif; color: #49616b; }
+.footprints-stats strong { margin-right: 4px; color: #01506f; font-size: 22px; }
+
+/* ===== 地图容器 ===== */
+#footprints-map {
+  width: 100%;
+  height: 62vh;
+  min-height: 390px;
+  max-height: 620px;
+  border: 1px solid #dce5e8;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 28px rgba(1, 80, 111, .10);
+}
+#footprints-map .maplibregl-canvas {
+  transition: filter 220ms ease;
+  will-change: filter;
+}
+@media screen and (max-width: 600px) {
+  #footprints-map { height: 55vh; min-height: 350px; }
+}
+
+/* ===== 圆形数字标记（HTML Marker，锚点居中） ===== */
+.footprints-marker {
+  box-sizing: border-box;
+  width: 30px;
+  height: 30px;
+  background: #017ca6;
+  border: 3px solid #fff;
+  border-radius: 50%;
+  box-shadow: 0 2px 8px rgba(1, 80, 111, .36);
+  color: #fff;
+  font: 700 11px/24px sans-serif;
+  text-align: center;
+  cursor: pointer;
+}
+
+/* ===== 弹窗内容 ===== */
+.footprints-popup h3 { margin: 0 0 7px; color: #01506f; font-size: 18px; }
+.footprints-popup ul { margin: 0; padding-left: 18px; }
+.footprints-popup li { margin: 3px 0; color: #40565f; }
+
+.footprints-status { margin: 12px 2px 0; color: #78909a; font-size: 14px; }
+
+/* ===== MapLibre 弹窗主题（浅色） ===== */
+#footprints-map .maplibregl-popup-content {
+  background: rgba(248, 252, 255, .97);
+  color: #294252;
+  border-radius: 10px;
+  box-shadow: 0 8px 28px rgba(42, 103, 140, .28);
+  padding: 12px 14px;
+}
+#footprints-map .maplibregl-popup-anchor-bottom .maplibregl-popup-tip { border-top-color: rgba(248, 252, 255, .97); }
+#footprints-map .maplibregl-popup-anchor-top .maplibregl-popup-tip { border-bottom-color: rgba(248, 252, 255, .97); }
+#footprints-map .maplibregl-popup-close-button {
+  color: #526c7b;
+  font-size: 16px;
+  width: 22px;
+  height: 22px;
+}
+#footprints-map .maplibregl-popup-close-button:hover,
+#footprints-map .maplibregl-popup-close-button:focus-visible {
+  background: transparent;
+  color: #276f99;
+}
+#footprints-map .footprints-popup h3,
+#footprints-map .footprints-popup a { color: #276f99; }
+#footprints-map .footprints-popup li { color: #526c7b; }
+
+/* ===== 深色模式（通用） ===== */
+html.dark-theme .footprints-toolbar input,
+html.dark-theme .footprints-toolbar select,
+html.dark-theme .footprints-toolbar button {
+  background-color: #252930 !important;
+  border-color: #414751 !important;
+  color: #e3e7ec !important;
+}
+html.dark-theme .footprints-popup,
+html.dark-theme .footprints-popup p,
+html.dark-theme .footprints-popup li { color: #e3e7ec !important; }
+html.dark-theme .footprints-status { color: #b8b5ae !important; }
+html.dark-theme #footprints-map { background: #202328; }
+
+/* ===== 浅色主题：底图与标记调色 ===== */
+html:not(.dark-theme) #footprints-map {
+  background: #e7f0f4;
+  border-color: rgba(54, 122, 163, .2);
+  box-shadow: 0 8px 28px rgba(54, 122, 163, .12);
+}
+html:not(.dark-theme) #footprints-map .maplibregl-canvas {
+  filter: saturate(.85) brightness(1.03) contrast(.95);
+}
+html:not(.dark-theme) .footprints-marker {
+  background: #367aa3;
+  border-color: #f5fbff;
+  box-shadow: 0 4px 14px rgba(42, 103, 140, .3);
+}
+
+/* ===== 足迹页深色模式：暖色纸质底图 + 橙色标记（与站点暖金主题呼应） ===== */
+html.dark-theme.footprints-document #footprints-map {
+  background: #eee8dc;
+  border-color: rgba(184, 111, 71, .28);
+  box-shadow: 0 10px 32px rgba(0, 0, 0, .34);
+}
+html.dark-theme.footprints-document #footprints-map .maplibregl-canvas {
+  filter: sepia(.3) saturate(.72) brightness(1.02) contrast(.92);
+}
+html.dark-theme.footprints-document .footprints-marker {
+  background: #b86f47;
+  border-color: #fffaf0;
+  color: #fff;
+  box-shadow: 0 5px 15px rgba(99, 62, 40, .32);
+}
+html.dark-theme.footprints-document #footprints-map .maplibregl-popup-content {
+  background: rgba(255, 250, 240, .98);
+  color: #313a39;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, .4);
+}
+html.dark-theme.footprints-document #footprints-map .maplibregl-popup-anchor-bottom .maplibregl-popup-tip { border-top-color: rgba(255, 250, 240, .98); }
+html.dark-theme.footprints-document #footprints-map .maplibregl-popup-anchor-top .maplibregl-popup-tip { border-bottom-color: rgba(255, 250, 240, .98); }
+html.dark-theme.footprints-document #footprints-map .maplibregl-popup-content,
+html.dark-theme.footprints-document #footprints-map .maplibregl-popup-content p,
+html.dark-theme.footprints-document #footprints-map .maplibregl-popup-content li { color: #59635f !important; }
+html.dark-theme.footprints-document #footprints-map .footprints-popup h3,
+html.dark-theme.footprints-document #footprints-map .footprints-popup a { color: #a75f3c !important; }
+html.dark-theme.footprints-document #footprints-map .footprints-popup a:hover,
+html.dark-theme.footprints-document #footprints-map .footprints-popup a:focus-visible {
+  color: #743b27 !important;
+  text-decoration: underline;
+  text-decoration-color: rgba(116, 59, 39, .55);
+  text-underline-offset: 2px;
+}
+html.dark-theme.footprints-document #footprints-map .maplibregl-popup-close-button { color: #766d62 !important; }
+html.dark-theme.footprints-document #footprints-map .maplibregl-popup-close-button:hover,
+html.dark-theme.footprints-document #footprints-map .maplibregl-popup-close-button:focus-visible {
+  color: #743b27 !important;
+  background: transparent !important;
+}
+html.dark-theme.footprints-document .post-body .footprints-status { color: #929ba7 !important; }
+
+@media (prefers-reduced-motion: reduce) {
+  #footprints-map .maplibregl-canvas { transition: none; }
+}
