@@ -48,15 +48,72 @@ footprints: true
   // ±180/±85.05 全世界范围时，约束计算会触发空矩阵崩溃，故各向内收 0.1°。
   var worldBounds = [[-179.9, -84.99], [179.9, 84.99]];
 
-  // 中文标注字段：优先 name:zh，缺失时回退简体/拉丁/英文/本地名，保证外国城市也显示中文。
+  // 低缩放层级（国家/省州，瓦片数据源为 Natural Earth）只提供 name:zh 字段，且其内容
+  // 常为繁体（蒙古國、泰國、山東省…）；高缩放层级的城市/POI 另有 name:zh-Hans 简体字段。
+  // GL 样式表达式不支持逐字繁简转换，故对默认视野（中国及周边、缩到最小时全球国家名）
+  // 可见的繁体地名做一张精确的繁→简对照表（key 取自实际瓦片文本）；未命中的原样透传。
+  var LABEL_T2S = {
+    // —— 国家 / 地区 ——
+    '阿爾巴尼亞': '阿尔巴尼亚', '阿爾及利亞': '阿尔及利亚', '南極洲': '南极洲',
+    '亞美尼亞': '亚美尼亚', '阿魯巴': '阿鲁巴', '奧地利': '奥地利',
+    '孟加拉國': '孟加拉国', '白俄羅斯': '白俄罗斯', '比利時': '比利时',
+    '貝南': '贝宁', '玻利維亞': '玻利维亚', '布吉納法索': '布基纳法索',
+    '開曼群島': '开曼群岛', '中非共和國': '中非共和国', '克羅地亞': '克罗地亚',
+    '丹麥': '丹麦', '薩爾瓦多': '萨尔瓦多', '厄立特里亞': '厄立特里亚',
+    '愛沙尼亞': '爱沙尼亚', '福克蘭群島': '福克兰群岛', '斐濟': '斐济',
+    '芬蘭': '芬兰', '法國': '法国', '法屬玻里尼西亞': '法属波利尼西亚',
+    '德國': '德国', '迦納': '加纳', '直布羅陀': '直布罗陀',
+    '畿內亞比紹': '几内亚比绍', '冰島': '冰岛', '愛爾蘭共和國': '爱尔兰共和国',
+    '牙買加': '牙买加', '約旦': '约旦', '老撾': '老挝',
+    '拉脫維亞': '拉脱维亚', '利比里亞': '利比里亚', '利比亞': '利比亚',
+    '澳門': '澳门', '馬達加斯加': '马达加斯加', '馬拉威': '马拉维',
+    '馬來西亞': '马来西亚', '毛里塔尼亞': '毛里塔尼亚', '摩爾多瓦': '摩尔多瓦',
+    '摩納哥': '摩纳哥', '蒙古國': '蒙古国', '蒙特內哥羅': '黑山',
+    '緬甸': '缅甸', '尼泊爾': '尼泊尔', '荷蘭': '荷兰',
+    '新喀里多尼亞': '新喀里多尼亚', '奈及利亞': '尼日利亚',
+    '朝鮮民主主義人民共和國': '朝鲜民主主义人民共和国', '巴拿馬': '巴拿马',
+    '菲律賓': '菲律宾', '波蘭': '波兰', '剛果共和國': '刚果共和国',
+    '羅馬尼亞': '罗马尼亚', '塞爾維亞': '塞尔维亚', '斯洛文尼亞': '斯洛文尼亚',
+    '索馬里': '索马里', '南蘇丹': '南苏丹', '斯里蘭卡': '斯里兰卡',
+    '蘇利南': '苏里南', '敘利亞': '叙利亚', '中華民國': '中国台湾',
+    '坦桑尼亞': '坦桑尼亚', '泰國': '泰国', '巴哈馬': '巴哈马',
+    '岡比亞': '冈比亚', '東帝汶': '东帝汶', '千里達及托巴哥': '特立尼达和多巴哥',
+    '突尼西亞': '突尼斯', '土庫曼': '土库曼斯坦', '烏干達': '乌干达',
+    '烏克蘭': '乌克兰', '美國': '美国', '烏拉圭': '乌拉圭',
+    '萬那杜': '瓦努阿图', '梵蒂岡城國': '梵蒂冈城国', '委內瑞拉': '委内瑞拉',
+    '約旦河西岸地區': '约旦河西岸地区', '贊比亞': '赞比亚',
+    // —— 中国省级（数据多已简体，此处兜底少数仍为繁体的写法）——
+    '山東省': '山东省', '廣東省': '广东省', '遼寧省': '辽宁省',
+    '陝西省': '陕西省', '甘肅省': '甘肃省', '雲南省': '云南省',
+    '貴州省': '贵州省', '江蘇省': '江苏省', '黑龍江省': '黑龙江省',
+    '台灣省': '台湾省', '重慶市': '重庆市', '內蒙古自治區': '内蒙古自治区',
+    '廣西壯族自治區': '广西壮族自治区', '西藏自治區': '西藏自治区',
+    '寧夏回族自治區': '宁夏回族自治区', '新疆維吾爾自治區': '新疆维吾尔自治区'
+  };
+
+  // 简体中文标注：name:zh-Hans（简体）最优先；其次把 name:zh 中已知繁体地名
+  // 映射为简体；再回退拉丁/英文/本地名，保证外国地名也尽量显示中文。
   function chineseLabelField() {
+    var zhMatch = ['match', ['get', 'name:zh']];
+    Object.keys(LABEL_T2S).forEach(function (k) { zhMatch.push(k, LABEL_T2S[k]); });
+    zhMatch.push(['get', 'name:zh']); // 未命中对照表：原样透传
     return ['coalesce',
-      ['get', 'name:zh'],
       ['get', 'name:zh-Hans'],
+      zhMatch,
       ['get', 'name:latin'],
       ['get', 'name:en'],
       ['get', 'name']
     ];
+  }
+
+  // 判断 text-field 是否为“地名/道路名”类标注。路牌号（ref）、门牌号、
+  // 机场 IATA/ICAO 代码等属于语言无关的数字/编码，不应被中文字段覆盖。
+  function isPlaceLabel(textField) {
+    var flat = JSON.stringify(textField);
+    if (!/name/i.test(flat)) return false;
+    if (/housenumber|\biata\b|\bicao\b/.test(flat)) return false;
+    if (/(^|[^a-z])ref([^a-z]|$)/.test(flat)) return false;  // 高速/国道路牌数字
+    return true;
   }
 
   // 关键：样式 JSON 在交给地图构造函数“之前”就把所有文字图层的 text-field
@@ -65,7 +122,7 @@ footprints: true
   function localizeStyle(style) {
     if (style && Array.isArray(style.layers)) {
       style.layers.forEach(function (layer) {
-        if (layer.layout && layer.layout['text-field'] !== undefined) {
+        if (layer.layout && layer.layout['text-field'] !== undefined && isPlaceLabel(layer.layout['text-field'])) {
           layer.layout['text-field'] = chineseLabelField();
         }
       });
@@ -253,7 +310,7 @@ footprints: true
             .addTo(map);
           cache = markerCache[name] = { marker: marker, el: el, on: true };
         }
-        cache.el.textContent = String(count);
+        cache.el.innerHTML = escapeHtml(name) + '<span class="footprints-marker-count">' + count + '</span>';
         cache.marker.setPopup(buildPopup(name, visits));
         if (!cache.on) { cache.marker.addTo(map); cache.on = true; }
       });
