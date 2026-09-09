@@ -15,14 +15,20 @@ footprints: true
 
 <script src="/vendor/maplibre-gl/maplibre-gl.js?v=5.24.0"></script>
 <script>
-window.addEventListener('load', function () {
+// 立即初始化：本脚本位于 maplibre-gl.js 与地图 DOM 之后，无需等待 window.load。
+// 否则要等整页图片等资源全部加载完才开始请求底图样式，弱网下白屏时间被无谓拉长。
+(function () {
   var status = document.getElementById('footprints-status');
+  var mapEl = document.getElementById('footprints-map');
   function setStatus(message) { status.textContent = message; }
   document.documentElement.classList.add('footprints-document');
   ['.single-column-header-container', '.post-head-wrapper-text-only', '.single-column-footer'].forEach(function (selector) {
     var element = document.querySelector(selector);
     if (element) element.hidden = true;
   });
+  // 底图就绪前容器保持加载态（CSS 脉冲提示），首个 idle 或致命错误后移除。
+  mapEl.classList.add('is-loading');
+  function stopLoading() { mapEl.classList.remove('is-loading'); }
 
   // MapTiler 前端 key（公开可见，已在 MapTiler 后台配置域名白名单：localhost + 正式域名）。
   // 底图为矢量瓦片，通过 name:zh 字段显示中文标注，覆盖全球城市。
@@ -74,7 +80,28 @@ window.addEventListener('load', function () {
   function reportFatal(message) {
     if (fatalReported) return;
     fatalReported = true;
+    stopLoading();
     setStatus(message);
+  }
+
+  // 带重试的 JSON 请求：网络抖动 / 5xx / 429 自动重试一次；
+  // 401/403 等鉴权错误重试无意义，直接抛出由调用方提示。
+  function fetchJson(url, remainingRetries) {
+    return fetch(url).then(function (response) {
+      if (!response.ok) {
+        var err = new Error('HTTP ' + response.status);
+        err.status = response.status;
+        throw err;
+      }
+      return response.json();
+    }).catch(function (error) {
+      var retriable = !error.status || error.status === 429 || error.status >= 500;
+      if (remainingRetries > 0 && retriable) {
+        return new Promise(function (resolve) { window.setTimeout(resolve, 900); })
+          .then(function () { return fetchJson(url, remainingRetries - 1); });
+      }
+      throw error;
+    });
   }
 
   // 动态抬高最小缩放：保证世界瓦片始终铺满视口较长边，
@@ -88,7 +115,8 @@ window.addEventListener('load', function () {
   }
 
   var allData;
-  var boundsReady = false;
+  var mapReady = false;      // map 'load' 已触发：样式就绪，可以放置 HTML 标记
+  var boundsReady = false;   // 首个 idle 已过：变换矩阵稳定，可以 setMaxBounds / fitBounds
   var markerCache = {};
   var placeInput = document.getElementById('footprints-place');
 
@@ -98,95 +126,91 @@ window.addEventListener('load', function () {
   function initialFitIfReady() {
     if (boundsReady && allData) renderFootprints(true);
   }
+  // 标记放置只需样式就绪；数据与地图任一先到都等另一方就绪后再渲染。
+  function renderMarkersIfReady() {
+    if (mapReady && allData) renderFootprints(false);
+  }
 
-  // 先拉取样式 JSON 并本地化为中文标注，再构造地图——首帧即为中文底图，不会闪英文。
+  // 底图样式与足迹数据并行拉取，互不等待——弱网下两者耗时由“相加”变为“取最大值”。
+  // 样式 JSON 在构造地图前完成中文本地化，首帧即为中文底图，不会闪英文。
   setStatus('正在加载地图底图…');
-  fetch(STYLE_URL)
-    .then(function (response) {
-      if (!response.ok) {
-        var styleError = new Error('底图样式请求失败：HTTP ' + response.status);
-        styleError.status = response.status;
-        throw styleError;
-      }
-      return response.json();
-    })
-    .then(function (style) {
-      map = new maplibregl.Map({
-        container: 'footprints-map',
-        style: localizeStyle(style),
-        center: [109, 35.5],
-        zoom: 4,
-        minZoom: ZOOM.floor,
-        maxZoom: ZOOM.ceiling,
-        renderWorldCopies: false,
-        attributionControl: false,
-        refreshExpiredTiles: false,
-        // 关闭自动 ResizeObserver 驱动的 resize：样式加载完成前的早期 resize 会走
-        // transform 约束路径并触发 maplibre v5 空矩阵崩溃。改为布局稳定后手动 resize。
-        trackResize: false,
-        pitch: 0,
-        maxPitch: 0,
-        dragRotate: false,
-        pitchWithRotate: false,
-        touchPitch: false,
-        // 矢量字形若缺少中文，则回退到系统 CJK 字体，保证中文标注完整渲染。
-        localIdeographFontFamily: '"PingFang SC", "Microsoft YaHei", "Noto Sans CJK SC", sans-serif'
-      });
+  var stylePromise = fetchJson(STYLE_URL, 1).then(localizeStyle);
+  var dataPromise = fetchJson('footprints.geojson', 1);
 
-      // 样式已成功拉取后，瓦片/字形/精灵等资源仍可能鉴权失败。
-      map.on('error', function (event) {
-        var err = event && event.error;
-        if (err && (err.status === 401 || err.status === 403)) {
-          reportFatal('地图底图鉴权失败（MapTiler key 无效、域名未加白名单或超出配额），请稍后再试。');
-        }
-      });
+  dataPromise.then(function (data) {
+    allData = data;
+    var searchTimer;
+    placeInput.addEventListener('input', function () {
+      window.clearTimeout(searchTimer);
+      searchTimer = window.setTimeout(function () { renderFootprints(false); }, 120);
+    });
+    renderMarkersIfReady();
+    initialFitIfReady();
+  }).catch(function () {
+    setStatus('足迹数据加载失败，请刷新页面后重试。');
+  });
 
-      map.on('load', function () {
-        // 手动 resize：trackResize 已关闭，需在样式就绪后显式同步一次容器尺寸，
-        // 之后监听 window resize 节流同步，保证全屏布局尺寸变化时地图正确适配。
-        function syncSize() { map.resize(); clampZoom(); }
-        window.addEventListener('resize', function () {
-          window.clearTimeout(syncSize._t);
-          syncSize._t = window.setTimeout(syncSize, 150);
-        });
+  stylePromise.then(function (style) {
+    map = new maplibregl.Map({
+      container: 'footprints-map',
+      style: style,
+      center: [109, 35.5],
+      zoom: 4,
+      minZoom: ZOOM.floor,
+      maxZoom: ZOOM.ceiling,
+      renderWorldCopies: false,
+      attributionControl: false,
+      refreshExpiredTiles: false,
+      // 关闭自动 ResizeObserver 驱动的 resize：样式加载完成前的早期 resize 会走
+      // transform 约束路径并触发 maplibre v5 空矩阵崩溃。改为布局稳定后手动 resize。
+      trackResize: false,
+      pitch: 0,
+      maxPitch: 0,
+      dragRotate: false,
+      pitchWithRotate: false,
+      touchPitch: false,
+      // 矢量字形若缺少中文，则回退到系统 CJK 字体，保证中文标注完整渲染。
+      localIdeographFontFamily: '"PingFang SC", "Microsoft YaHei", "Noto Sans CJK SC", sans-serif'
+    });
 
-        map.once('idle', function () {
-          syncSize();                    // 布局稳定后按最终尺寸 resize
-          map.setMaxBounds(worldBounds);
-          boundsReady = true;
-          // resize 与 maxBounds 同一帧内生效，变换矩阵需一帧才能稳定；
-          // 延后一帧再做首次框选，确保 fitBounds 按最终容器尺寸计算留白（标记不被裁切）。
-          window.requestAnimationFrame(function () { initialFitIfReady(); });
-        });
-
-        fetch('footprints.geojson')
-          .then(function (response) {
-            if (!response.ok) throw new Error('无法读取 GeoJSON 数据');
-            return response.json();
-          })
-          .then(function (data) {
-            allData = data;
-            // 先放置标记（不调视图），首次框选由 idle 后统一触发。
-            renderFootprints(false);
-            var searchTimer;
-            placeInput.addEventListener('input', function () {
-              window.clearTimeout(searchTimer);
-              searchTimer = window.setTimeout(function () { renderFootprints(false); }, 120);
-            });
-            initialFitIfReady();
-          })
-          .catch(function () {
-            setStatus('足迹数据加载失败，请刷新页面后重试。');
-          });
-      });
-    })
-    .catch(function (error) {
-      if (error && (error.status === 401 || error.status === 403)) {
+    // 样式已成功拉取后，瓦片/字形/精灵等资源仍可能鉴权失败。
+    map.on('error', function (event) {
+      var err = event && event.error;
+      if (err && (err.status === 401 || err.status === 403)) {
         reportFatal('地图底图鉴权失败（MapTiler key 无效、域名未加白名单或超出配额），请稍后再试。');
-      } else {
-        setStatus('地图底图加载失败，请检查网络后刷新页面重试。');
       }
     });
+
+    map.on('load', function () {
+      mapReady = true;
+      // 手动 resize：trackResize 已关闭，需在样式就绪后显式同步一次容器尺寸，
+      // 之后监听 window resize 节流同步，保证全屏布局尺寸变化时地图正确适配。
+      function syncSize() { map.resize(); clampZoom(); }
+      window.addEventListener('resize', function () {
+        window.clearTimeout(syncSize._t);
+        syncSize._t = window.setTimeout(syncSize, 150);
+      });
+
+      map.once('idle', function () {
+        syncSize();                    // 布局稳定后按最终尺寸 resize
+        map.setMaxBounds(worldBounds);
+        boundsReady = true;
+        stopLoading();                 // 底图首帧完整呈现，移除加载脉冲
+        // resize 与 maxBounds 同一帧内生效，变换矩阵需一帧才能稳定；
+        // 延后一帧再做首次框选，确保 fitBounds 按最终容器尺寸计算留白（标记不被裁切）。
+        window.requestAnimationFrame(function () { initialFitIfReady(); });
+      });
+
+      renderMarkersIfReady();
+    });
+  }).catch(function (error) {
+    stopLoading();
+    if (error && (error.status === 401 || error.status === 403)) {
+      reportFatal('地图底图鉴权失败（MapTiler key 无效、域名未加白名单或超出配额），请稍后再试。');
+    } else {
+      setStatus('地图底图加载失败，请检查网络后刷新页面重试。');
+    }
+  });
 
   function buildPopup(name, visits) {
     var rows = visits.map(function (visit) {
@@ -260,5 +284,5 @@ window.addEventListener('load', function () {
       return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[character];
     });
   }
-});
+})();
 </script>
