@@ -103,7 +103,24 @@ body {
   box-shadow: 0 8px 28px rgba(1, 80, 111, .10);
 }
 
+// 底图冷启动（弱网下拉取 MapTiler 样式较慢）期间容器脉冲提示，避免白屏看起来像页面卡死。
+#footprints-map.is-loading {
+  animation: footprints-map-loading 1.5s ease-in-out infinite;
+}
+
+@keyframes footprints-map-loading {
+  0%, 100% { opacity: .55; }
+  50% { opacity: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #footprints-map.is-loading { animation: none; }
+}
+
 .footprints-marker {
+  box-sizing: border-box;
+  width: 30px;
+  height: 30px;
   background: #017ca6;
   border: 3px solid #fff;
   border-radius: 50%;
@@ -111,6 +128,7 @@ body {
   color: #fff;
   font: 700 11px/24px sans-serif;
   text-align: center;
+  cursor: pointer;
 }
 
 .footprints-popup h3 {
@@ -401,6 +419,9 @@ body.footprints-page {
 }
 
 .footprints-marker {
+  box-sizing: border-box;
+  width: 30px;
+  height: 30px;
   background: #017ca6;
   border: 3px solid #fff;
   border-radius: 50%;
@@ -408,6 +429,7 @@ body.footprints-page {
   color: #fff;
   font: 700 11px/24px sans-serif;
   text-align: center;
+  cursor: pointer;
 }
 
 .footprints-popup {
