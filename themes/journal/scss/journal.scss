@@ -153,6 +153,37 @@ body {
   font-size: 14px;
 }
 
+// 底图调色滤镜作用于 canvas，主题切换时 220ms 平滑过渡。
+#footprints-map .maplibregl-canvas {
+  transition: filter 220ms ease;
+  will-change: filter;
+}
+
+// MapLibre 弹窗主题（浅色）。
+#footprints-map .maplibregl-popup-content {
+  background: rgba(248, 252, 255, .97);
+  color: #294252;
+  border-radius: 10px;
+  box-shadow: 0 8px 28px rgba(42, 103, 140, .28);
+  padding: 12px 14px;
+}
+#footprints-map .maplibregl-popup-anchor-bottom .maplibregl-popup-tip { border-top-color: rgba(248, 252, 255, .97); }
+#footprints-map .maplibregl-popup-anchor-top .maplibregl-popup-tip { border-bottom-color: rgba(248, 252, 255, .97); }
+#footprints-map .maplibregl-popup-close-button {
+  color: #526c7b;
+  font-size: 16px;
+  width: 22px;
+  height: 22px;
+}
+#footprints-map .maplibregl-popup-close-button:hover,
+#footprints-map .maplibregl-popup-close-button:focus-visible {
+  background: transparent;
+  color: #276f99;
+}
+#footprints-map .footprints-popup h3,
+#footprints-map .footprints-popup a { color: #276f99; }
+#footprints-map .footprints-popup li { color: #526c7b; }
+
 .footprints-toolbar {
   display: block;
   gap: 12px;
