@@ -4,12 +4,21 @@ const assert = require('node:assert/strict');
 const crypto = require('node:crypto');
 const fs = require('node:fs');
 const path = require('node:path');
+const { getPagesConfig } = require('./pages-config');
 
 const root = path.resolve(__dirname, '..');
 const output = path.join(root, 'public-pages');
 const read = (name) => fs.readFileSync(path.join(output, name), 'utf8');
-const site = 'https://blog.zhangdd.tech';
-const cdn = 'https://blogcdn.zhangdd.tech';
+const { site, cdn } = getPagesConfig();
+function assertNoUnexpectedOriginalUrls(text, message) {
+  for (const [url] of text.matchAll(/(?:https?:)?\/\/[^\s"'<>`\\)]+/gi)) {
+    // The configured target may itself be an original origin; third-party query URLs stay untouched.
+    if (/^(?:https?:)?\/\/(?:cdn\.)?zhangdd\.tech(?=[/?#]|$)/i.test(url)) {
+      const origin = new URL(url.startsWith('//') ? `https:${url}` : url).origin;
+      assert(origin === site || origin === cdn, message);
+    }
+  }
+}
 const files = [];
 function walk(directory, relative = '') {
   for (const entry of fs.readdirSync(directory, { withFileTypes: true })) {
@@ -36,7 +45,7 @@ for (const name of htmlFiles) {
     canonicals++;
   }
   // All direct URL references to the original hosts must be migrated.
-  assert(!/(?:["'\s>])(?:https?:)?\/\/(?:cdn\.)?zhangdd\.tech(?:[/?#]|["'\s<])/i.test(html), `Original-domain URL remains: ${name}`);
+  assertNoUnexpectedOriginalUrls(html, `Original-domain URL remains: ${name}`);
 }
 assert(canonicals > 0, 'No canonical URLs found');
 assert(read('index.html').includes(`href="${site}/"`), 'Homepage canonical missing');
@@ -48,7 +57,7 @@ for (const match of read('sitemap.xml').matchAll(/<loc>([^<]+)<\/loc>/g)) {
 }
 assert(read('sitemap.xml').includes(`<loc>${site}/`), 'Sitemap has no Pages URLs');
 assert(read('atom.xml').includes(`<id>${site}/</id>`), 'RSS channel ID uses wrong origin');
-assert(!/https?:\/\/(?:cdn\.)?zhangdd\.tech[\/\s<]/.test(read('atom.xml')), 'RSS still references the original domains');
+assertNoUnexpectedOriginalUrls(read('atom.xml'), 'RSS still references the original domains');
 assert(read('footprints/index.html').includes('https://api.maptiler.com/maps/streets-v2/style.json'), 'MapTiler URL unexpectedly changed');
 const manifest = JSON.parse(read('search-index.json'));
 assert(/^\/search\/content\.[a-f0-9]{16}\.json$/.test(manifest.contentUrl), 'Unexpected search content path');
@@ -61,4 +70,4 @@ assert.equal(manifest.contentUrl, `/search/content.${version}.json`);
 // The original build remains the deployable rollback target.
 assert(fs.readFileSync(path.join(root, 'public/index.html'), 'utf8').includes('href="https://zhangdd.tech/"'), 'Vercel canonical was changed');
 assert(fs.readFileSync(path.join(root, 'source/robots.txt'), 'utf8').includes('https://zhangdd.tech/sitemap.xml'), 'Source robots was changed');
-console.log(`Pages checks passed: ${files.length} files, ${htmlFiles.length} HTML pages, ${canonicals} canonical URLs, both build targets preserved.`);
+console.log(`Pages checks passed: ${files.length} files, ${htmlFiles.length} HTML pages, ${canonicals} canonical URLs, both build targets preserved. Site: ${site}; CDN: ${cdn}.`);

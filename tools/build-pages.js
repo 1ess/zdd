@@ -3,21 +3,19 @@
 const crypto = require('node:crypto');
 const fs = require('node:fs');
 const path = require('node:path');
+const { getPagesConfig } = require('./pages-config');
 
 // Produce a separate deploy directory. Never change Hexo inputs or Vercel's public/.
-const origins = {
-  'zhangdd.tech': 'blog.zhangdd.tech',
-  'cdn.zhangdd.tech': 'blogcdn.zhangdd.tech'
-};
 const textExtensions = new Set(['.html', '.xml', '.txt', '.json', '.geojson', '.webmanifest', '.css', '.js', '.svg']);
 const omittedNames = new Set(['CNAME', 'node_modules', 'package.json', 'package-lock.json', 'yarn.lock',
   'vercel.json', 'media-report.json', 'remote-media-report.json', '_worker.js', '_routes.json']);
 
-function rewriteOrigins(text) {
+function rewriteOrigins(text, config = getPagesConfig()) {
+  const origins = { 'zhangdd.tech': config.site, 'cdn.zhangdd.tech': config.cdn };
   // Match complete URL tokens so an owned URL inside a third-party query is untouched.
   return text.replace(/(?:https?:)?\/\/[^\s"'<>`\\)]+/gi, (url) =>
     url.replace(/^(?:https?:)?\/\/(cdn\.zhangdd\.tech|zhangdd\.tech)(?=[/?#]|$)/i,
-      (_, host) => 'https://' + origins[host.toLowerCase()]));
+      (_, host) => origins[host.toLowerCase()]));
 }
 
 function omitted(name) {
@@ -61,7 +59,8 @@ function refreshSearchFingerprint(directory) {
   if (oldPath !== newPath) fs.unlinkSync(oldPath);
 }
 
-function preparePages(inputDirectory, outputDirectory) {
+function preparePages(inputDirectory, outputDirectory, env = process.env) {
+  const config = getPagesConfig(env); // Fail before replacing any previous output.
   const input = path.resolve(inputDirectory);
   const output = path.resolve(outputDirectory);
   if (input === output || input.startsWith(output + path.sep) || output.startsWith(input + path.sep)) {
@@ -76,7 +75,7 @@ function preparePages(inputDirectory, outputDirectory) {
     const destination = path.join(output, file.name);
     fs.mkdirSync(path.dirname(destination), { recursive: true });
     if (textExtensions.has(path.extname(file.name).toLowerCase())) {
-      fs.writeFileSync(destination, rewriteOrigins(fs.readFileSync(file.source, 'utf8')));
+      fs.writeFileSync(destination, rewriteOrigins(fs.readFileSync(file.source, 'utf8'), config));
     } else {
       fs.copyFileSync(file.source, destination);
     }
