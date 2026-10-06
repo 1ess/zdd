@@ -3,7 +3,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const publicDir = path.join(__dirname, '..', 'public');
+const publicDir = path.resolve(__dirname, '..', process.argv[2] || 'public');
 const htmlFiles = [];
 const errors = [];
 let checked = 0;

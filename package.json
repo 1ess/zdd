@@ -14,7 +14,11 @@
     "check:links": "node tools/check-links.js",
     "report:media": "node tools/media-report.js",
     "check:media:remote": "node tools/check-remote-media.js",
-    "report:content": "node tools/content-report.js"
+    "report:content": "node tools/content-report.js",
+    "test": "npm run test:pages && npm run check:search && npm run validate:footprints",
+    "test:pages": "node --test tests/pages-build.test.js",
+    "build:pages": "npm run build && npm run test:pages && node tools/build-pages.js && npm run check:pages",
+    "check:pages": "node tools/check-site.js public-pages && node tools/check-links.js public-pages && node tools/check-pages.js"
   },
   "hexo": {
     "version": "8.1.2"

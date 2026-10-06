@@ -10,3 +10,5 @@ db.json
 /public/remote-media-report.json
 /reports/content-quality.json
 .obsidian
+
+/public-pages/

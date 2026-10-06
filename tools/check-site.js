@@ -3,7 +3,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const publicDir = path.join(__dirname, '..', 'public');
+const publicDir = path.resolve(__dirname, '..', process.argv[2] || 'public');
 if (!fs.existsSync(publicDir)) {
   console.error('未找到 public 目录，请先生成站点。');
   process.exit(1);
