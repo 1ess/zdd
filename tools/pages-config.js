@@ -17,15 +17,25 @@ function originFromEnv(env, name, fallback) {
   const hostname = url.hostname.replace(/^\[|\]$/g, '').replace(/\.$/, '');
   const dnsHostname = hostname.length <= 253 && hostname.split('.').every((label) =>
     /^[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?$/i.test(label));
-  if (!isIP(hostname) && !dnsHostname) throw new Error(message);
+  if ((!isIP(hostname) && !dnsHostname) || /(?:^|\.)zhangdd\.tech$/i.test(hostname)) throw new Error(message);
   return url.origin;
 }
 
 function getPagesConfig(env = process.env) {
+  return getPublishConfig('pages', env);
+}
+
+function getPublishConfig(target, env = process.env) {
+  const defaults = {
+    pages: ['PAGES', 'https://zdd-blog.pages.dev', 'https://zdd-blogcdn.pages.dev'],
+    vercel: ['VERCEL', 'https://zdd.vercel.app', 'https://cdn-fawn.vercel.app']
+  };
+  if (!Object.hasOwn(defaults, target)) throw new Error('Unknown publish target');
+  const [prefix, site, cdn] = defaults[target];
   return {
-    site: originFromEnv(env, 'PAGES_SITE_URL', 'https://blog.zhangdd.tech'),
-    cdn: originFromEnv(env, 'PAGES_CDN_URL', 'https://blogcdn.zhangdd.tech')
+    site: originFromEnv(env, `${prefix}_SITE_URL`, site),
+    cdn: originFromEnv(env, `${prefix}_CDN_URL`, cdn)
   };
 }
 
-module.exports = { getPagesConfig };
+module.exports = { getPagesConfig, getPublishConfig };

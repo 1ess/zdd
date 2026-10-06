@@ -1,94 +1,69 @@
-# Independent Cloudflare Pages blog
+# Native platform publish targets
 
-This target serves `https://blog.zhangdd.tech` and uses the companion static asset project at `https://blogcdn.zhangdd.tech`.
+Both platforms keep their existing Git integrations. Hexo generates the internal `public/` base with the existing `npm run build`; the shared publication converter creates isolated deploy copies without editing article sources or the base.
 
-The original `_config.yml`, Markdown content, `source/robots.txt`, `vercel.json`, and ordinary `npm run build` behavior are unchanged. Vercel can continue serving `zhangdd.tech` and `cdn.zhangdd.tech` as the rollback path.
+| Platform | Blog | Static assets | Build | Deploy directory |
+| --- | --- | --- | --- | --- |
+| Cloudflare Pages | https://zdd-blog.pages.dev | https://zdd-blogcdn.pages.dev | `npm run build:pages` | `public-pages/` |
+| Vercel | https://zdd.vercel.app | https://cdn-fawn.vercel.app | `npm run build:vercel` | `public-vercel/` |
 
-## Build locally
+Upload only the selected deploy directory, never the repository root or internal `public/` base. Publication copies rewrite owned site/CDN origins in HTML, structured data, CSS, JS, RSS, sitemap, robots, search, article images, video sources and downloads. Paths, queries and fragments remain intact; unrelated third-party links are preserved. Binary files are copied byte-for-byte. Direct URLs targeting `zhangdd.tech` or any subdomain are rejected by publication checks.
+
+## Build and verify locally
 
 ```sh
 npm ci
 npm ci --prefix themes/journal
+npm test
 npm run build:pages
+npm run build:vercel
 ```
 
-Upload only `public-pages/`. Never upload the repository root.
+Each platform command runs the complete Hexo build, publication tests and checks for its deploy copy. Search-body fingerprints are recalculated after rewriting. The generated service worker receives a deterministic cache version based on its contents and both selected origins, so an address change invalidates old caches. The existing GitHub Actions Site checks workflow stays unchanged and continues validating the internal Hexo base.
 
-### Configurable Pages addresses
+## Optional origin overrides
 
-The Pages builder and checker share two optional environment variables:
+Builders and checkers use the same configuration:
 
 | Variable | Default when unset |
 | --- | --- |
-| `PAGES_SITE_URL` | `https://blog.zhangdd.tech` |
-| `PAGES_CDN_URL` | `https://blogcdn.zhangdd.tech` |
+| `PAGES_SITE_URL` | `https://zdd-blog.pages.dev` |
+| `PAGES_CDN_URL` | `https://zdd-blogcdn.pages.dev` |
+| `VERCEL_SITE_URL` | `https://zdd.vercel.app` |
+| `VERCEL_CDN_URL` | `https://cdn-fawn.vercel.app` |
 
-Set absolute HTTPS origins, without credentials, a subpath, query or fragment. An optional trailing root slash is normalized away. An empty value is an error; unset the variable to use its default. Invalid values fail before the builder replaces `public-pages/`. Keep the same values for building and checking the output.
+Use absolute HTTPS origins with valid DNS names or IP addresses, without credentials, subpaths, queries or fragments. A trailing root slash is normalized away. Empty, malformed and legacy `zhangdd.tech` origins fail before existing deploy output is replaced; unset a variable to use its default. Errors identify the variable without echoing its value. Keep identical values for build and check commands. Pages variables do not affect Vercel, and Vercel variables do not affect Pages.
 
-For temporary Pages hostnames (POSIX shell):
+For example, in a POSIX shell:
 
 ```sh
-PAGES_SITE_URL=https://zdd-blog.pages.dev PAGES_CDN_URL=https://zdd-blogcdn.pages.dev npm run build:pages
+PAGES_SITE_URL=https://preview.zdd-blog.pages.dev npm run build:pages
 ```
 
-PowerShell:
+In PowerShell:
 
 ```powershell
-$env:PAGES_SITE_URL = 'https://zdd-blog.pages.dev'
-$env:PAGES_CDN_URL = 'https://zdd-blogcdn.pages.dev'
+$env:PAGES_SITE_URL = 'https://preview.zdd-blog.pages.dev'
 npm run build:pages
 ```
 
-These variables affect only the separate Pages output and its checks. They do not alter Vercel's `public/`, source configuration or article text. All paths, query strings and fragments are retained; third-party URLs are preserved. Search-body fingerprints are recalculated for the selected origins.
+These are code defaults and local examples. This change does not modify live project environment variables, custom-domain bindings or DNS. Any explicit live override using a legacy origin must be reviewed before deployment. The selected CDN must already serve the referenced files at their existing paths.
 
-To use different addresses in Cloudflare, configure these variables for the intended production/preview environment in a separately authorized settings change. Changing build variables does not bind a hostname or modify DNS. The CDN target must already serve the referenced files. This code change does not update any live project variables or domains.
+## Hosting configuration
 
-The command first runs the complete existing Hexo build and site checks. A separate output step copies generated files to `public-pages/`, rewrites the two owned URL origins, leaves third-party links alone, and validates the result. Canonicals, structured data, RSS, sitemap, robots, article images, video sources, and download URLs retain their paths. Search-body fingerprints are recalculated if their text changes. Binary assets are copied byte-for-byte.
+Cloudflare blog project `zdd-blog` uses the repository root, production branch `main`, build command `npm ci && npm ci --prefix themes/journal && npm run build:pages`, output `public-pages`, `SKIP_DEPENDENCY_INSTALL=true` and `NODE_VERSION=24.19.0`. Its companion `zdd-blogcdn` project keeps `node tools/build-pages.mjs` and `pages-dist`.
 
-The Pages output excludes local reports, hidden files, CNAME, source maps, Markdown/YAML inputs, dependency manifests and worker entrypoints. It rejects symbolic links and assets beyond Pages Free limits (20,000 files; 25 MiB per file). It contains no Pages Functions, Workers, paid bindings, or redirects from the original domains.
+The blog's `vercel.json` keeps its existing dependency installation and selects `npm run build:vercel` with output `public-vercel`. The CDN repository's `font/blog.css` uses `./blog.woff2`, which resolves within each platform's CDN. No deployment credentials or workflow changes are introduced.
 
-## Cloudflare Pages project settings
+Publication output excludes reports, hidden files, CNAME, source maps, Markdown/YAML inputs, dependency manifests and worker entrypoints. The converter retains its 20,000-file and 25 MiB asset guards. Pages uses only free static hosting, without Functions, Workers, R2 or paid bindings.
 
-Create a separate **Pages** project from the blog repository. Use these settings only after deployment is authorized:
+## Live verification and rollback
 
-- Production branch: the approved migration branch; switch to `main` only after the changes are merged
-- Root directory: repository root (leave blank)
-- Framework preset: None
-- Build command: `npm ci && npm ci --prefix themes/journal && npm run build:pages`
-- Build output directory: `public-pages`
-- Environment variable: `SKIP_DEPENDENCY_INSTALL=true` (the build command installs both dependency trees explicitly)
-- Environment variable: `NODE_VERSION=24.19.0` (the runtime tested for this preparation; repository minimum remains Node 20.19)
-- Custom domain: `blog.zhangdd.tech` only
-- No Functions, Workers, paid storage, or paid plan changes required by this build
+After an authorized deployment, verify both native blog domains and their corresponding native CDN: home, a post, About, search and body fetches, RSS, sitemap, robots, actual HTTP 404, offline/service-worker behavior, mobile layout, fonts/CORS, video Range and downloads. Inspect browser requests for legacy domains. Existing custom-domain bindings and DNS remain untouched; old deployments remain available for rollback.
 
-Keep the original Vercel project and existing apex/CDN DNS records. Add the new custom domain in Pages before configuring its new DNS record. The companion `blogcdn.zhangdd.tech` project must contain all referenced files at their original paths before the blog is made public.
-
-Unless overridden, every Pages build targets the new custom domain, including preview builds. Canonicals, RSS, sitemap and robots follow `PAGES_SITE_URL`; media and fonts follow `PAGES_CDN_URL`.
-
-## Verification
-
-```sh
-npm test
-npm run build:pages
-npm run report:media
-npm run report:content
-```
-
-The existing GitHub Actions Site checks workflow is preserved byte-for-byte, including its push/pull_request triggers and build job. No Cloudflare steps or deployment credentials are added to that workflow. Pages validation runs inside the separate `npm run build:pages` command, which Cloudflare can execute through its own Git integration. If GitHub Actions deployment to Cloudflare is chosen later, use a new independently authorized workflow and credentials; never replace or modify the existing Vercel integration. `check:site` and `check:links` accept an optional output directory; omitting it preserves their existing `public/` behavior.
-
-After deployment, check home, a post, About, search (including body fetch), RSS, sitemap, robots, a nonexistent route (custom 404), offline/service worker behavior, mobile layout, and media/download requests. Verify the custom domains and HTTPS. Local build success does not establish live DNS, certificates, browser behavior or Cloudflare deployment success.
-
-## MapTiler prerequisite
-
-The Footprints page retains its existing public frontend MapTiler key and API URL. Its existing origin restrictions must authorize the selected `PAGES_SITE_URL` (by default `https://blog.zhangdd.tech`) before the map works on that domain. Add any preview hostname separately only if preview map testing is wanted. Do not rotate the key, remove restrictions, or add a broad wildcard as part of this migration. MapTiler account/security changes require separate authorization.
-
-## Rollback
-
-The original Vercel target remains independently buildable with `npm run build`, output `public/`. Do not replace or remove the existing `zhangdd.tech` or `cdn.zhangdd.tech` records. If the new deployment fails validation, leave the original domains serving as before and pause the new-domain rollout.
+MapTiler's existing frontend key and API URL remain unchanged. Its restrictions may prevent maps on the native platform domains. Do not rotate the key, widen restrictions or add wildcards as part of this change.
 
 ## References
 
 - [Cloudflare Pages build configuration](https://developers.cloudflare.com/pages/configuration/build-configuration/)
-- [Build image and explicit dependency installation](https://developers.cloudflare.com/pages/configuration/build-image/)
 - [Pages limits](https://developers.cloudflare.com/pages/platform/limits/)
-- [Pages custom domains](https://developers.cloudflare.com/pages/configuration/custom-domains/)

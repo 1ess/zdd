@@ -18,7 +18,9 @@
     "test": "npm run test:pages && npm run check:search && npm run validate:footprints",
     "test:pages": "node --test tests/pages-build.test.js",
     "build:pages": "npm run build && npm run test:pages && node tools/build-pages.js && npm run check:pages",
-    "check:pages": "node tools/check-site.js public-pages && node tools/check-links.js public-pages && node tools/check-pages.js"
+    "check:pages": "node tools/check-site.js public-pages && node tools/check-links.js public-pages && node tools/check-pages.js",
+    "build:vercel": "npm run build && npm run test:pages && node tools/build-pages.js vercel && npm run check:vercel",
+    "check:vercel": "node tools/check-site.js public-vercel && node tools/check-links.js public-vercel && node tools/check-pages.js vercel"
   },
   "hexo": {
     "version": "8.1.2"

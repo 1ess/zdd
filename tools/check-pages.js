@@ -4,19 +4,21 @@ const assert = require('node:assert/strict');
 const crypto = require('node:crypto');
 const fs = require('node:fs');
 const path = require('node:path');
-const { getPagesConfig } = require('./pages-config');
+const { getPublishConfig } = require('./pages-config');
+const { rewriteOrigins, publishedWorkerVersion, textExtensions } = require('./build-pages');
 
 const root = path.resolve(__dirname, '..');
-const output = path.join(root, 'public-pages');
+const target = process.argv[2] || 'pages';
+const config = getPublishConfig(target);
+const output = path.join(root, `public-${target}`);
 const read = (name) => fs.readFileSync(path.join(output, name), 'utf8');
-const { site, cdn } = getPagesConfig();
+const { site, cdn } = config;
 function assertNoUnexpectedOriginalUrls(text, message) {
   for (const [url] of text.matchAll(/(?:https?:)?\/\/[^\s"'<>`\\)]+/gi)) {
-    // The configured target may itself be an original origin; third-party query URLs stay untouched.
-    if (/^(?:https?:)?\/\/(?:cdn\.)?zhangdd\.tech(?=[/?#]|$)/i.test(url)) {
-      const origin = new URL(url.startsWith('//') ? `https:${url}` : url).origin;
-      assert(origin === site || origin === cdn, message);
-    }
+    // Match the outer request URL; an unrelated site's query remains untouched.
+    let parsed;
+    try { parsed = new URL(url.startsWith('//') ? `https:${url}` : url); } catch { continue; }
+    assert(!/(?:^|\.)zhangdd\.tech$/i.test(parsed.hostname.replace(/\.$/, '')), message);
   }
 }
 const files = [];
@@ -35,6 +37,9 @@ for (const name of files) {
   assert(fs.statSync(path.join(output, name)).size <= 25 * 1024 * 1024, `Asset exceeds 25 MiB: ${name}`);
   assert(!/(?:^|\/)(?:CNAME|node_modules|media-report.json|remote-media-report.json|package.json|package-lock.json|vercel.json|_worker.js)$/.test(name), `Unexpected build input: ${name}`);
   assert(!/\.(?:md|ya?ml|map)$/.test(name), `Unexpected source file: ${name}`);
+  if (textExtensions.has(path.extname(name).toLowerCase())) {
+    assertNoUnexpectedOriginalUrls(read(name), `Original-domain URL remains: ${name}`);
+  }
 }
 const htmlFiles = files.filter((name) => name.endsWith('.html'));
 let canonicals = 0;
@@ -67,7 +72,10 @@ assert.equal(content.version, version, 'Search body fingerprint mismatch');
 assert.equal(manifest.version, version, 'Search manifest fingerprint mismatch');
 assert.equal(manifest.contentUrl, `/search/content.${version}.json`);
 
-// The original build remains the deployable rollback target.
+const baseWorker = rewriteOrigins(fs.readFileSync(path.join(root, 'public/service-worker.js'), 'utf8'), config);
+assert(read('service-worker.js').includes(`const VERSION = '${publishedWorkerVersion(baseWorker, config)}';`), 'Service worker namespace does not match this publish target');
+
+// Both publication copies preserve the internal Hexo base and article sources.
 assert(fs.readFileSync(path.join(root, 'public/index.html'), 'utf8').includes('href="https://zhangdd.tech/"'), 'Vercel canonical was changed');
 assert(fs.readFileSync(path.join(root, 'source/robots.txt'), 'utf8').includes('https://zhangdd.tech/sitemap.xml'), 'Source robots was changed');
-console.log(`Pages checks passed: ${files.length} files, ${htmlFiles.length} HTML pages, ${canonicals} canonical URLs, both build targets preserved. Site: ${site}; CDN: ${cdn}.`);
+console.log(`${target} checks passed: ${files.length} files, ${htmlFiles.length} HTML pages, ${canonicals} canonical URLs, Hexo base preserved. Site: ${site}; CDN: ${cdn}.`);

@@ -3,9 +3,9 @@
 const crypto = require('node:crypto');
 const fs = require('node:fs');
 const path = require('node:path');
-const { getPagesConfig } = require('./pages-config');
+const { getPagesConfig, getPublishConfig } = require('./pages-config');
 
-// Produce a separate deploy directory. Never change Hexo inputs or Vercel's public/.
+// Produce separate platform deploy directories. Never change Hexo inputs or public/.
 const textExtensions = new Set(['.html', '.xml', '.txt', '.json', '.geojson', '.webmanifest', '.css', '.js', '.svg']);
 const omittedNames = new Set(['CNAME', 'node_modules', 'package.json', 'package-lock.json', 'yarn.lock',
   'vercel.json', 'media-report.json', 'remote-media-report.json', '_worker.js', '_routes.json']);
@@ -59,8 +59,21 @@ function refreshSearchFingerprint(directory) {
   if (oldPath !== newPath) fs.unlinkSync(oldPath);
 }
 
-function preparePages(inputDirectory, outputDirectory, env = process.env) {
-  const config = getPagesConfig(env); // Fail before replacing any previous output.
+function publishedWorkerVersion(worker, config) {
+  return crypto.createHash('sha256').update(worker).update('\0' + config.site + '\0' + config.cdn).digest('hex').slice(0, 12);
+}
+
+function refreshServiceWorker(directory, config) {
+  const file = path.join(directory, 'service-worker.js');
+  if (!fs.existsSync(file)) return;
+  const worker = fs.readFileSync(file, 'utf8');
+  const pattern = /const VERSION = '[a-f0-9]{12}';/;
+  if (!pattern.test(worker)) throw new Error('Unexpected service worker version marker.');
+  fs.writeFileSync(file, worker.replace(pattern, `const VERSION = '${publishedWorkerVersion(worker, config)}';`));
+}
+
+function preparePages(inputDirectory, outputDirectory, env = process.env, target = 'pages') {
+  const config = getPublishConfig(target, env); // Fail before replacing any previous output.
   const input = path.resolve(inputDirectory);
   const output = path.resolve(outputDirectory);
   if (input === output || input.startsWith(output + path.sep) || output.startsWith(input + path.sep)) {
@@ -81,6 +94,7 @@ function preparePages(inputDirectory, outputDirectory, env = process.env) {
     }
   }
   refreshSearchFingerprint(output);
+  refreshServiceWorker(output, config);
   const result = collectFiles(output);
   checkLimits(result); // Rewriting can make a file larger.
   return { files: result.length, bytes: result.reduce((sum, file) => sum + file.size, 0) };
@@ -88,8 +102,11 @@ function preparePages(inputDirectory, outputDirectory, env = process.env) {
 
 if (require.main === module) {
   const root = path.resolve(__dirname, '..');
-  const result = preparePages(path.join(root, 'public'), path.join(root, 'public-pages'));
-  console.log(`Pages output ready: public-pages/ (${result.files} files, ${result.bytes} bytes).`);
+  const target = process.argv[2] || 'pages';
+  getPublishConfig(target); // Validate before choosing an output directory.
+  const directory = `public-${target}`;
+  const result = preparePages(path.join(root, 'public'), path.join(root, directory), process.env, target);
+  console.log(`${target} output ready: ${directory}/ (${result.files} files, ${result.bytes} bytes).`);
 }
 
-module.exports = { rewriteOrigins, preparePages };
+module.exports = { rewriteOrigins, preparePages, publishedWorkerVersion, textExtensions };
