@@ -13,6 +13,7 @@ var isSearchPage = page.search === true;
 <link rel="stylesheet" href="<%- versioned_asset('css/journal.css') %>">
 <% if (hasContentStyles) { %><link rel="stylesheet" href="<%- versioned_asset('css/content.css') %>"><% } %>
 <% if (isSearchPage) { %><link rel="stylesheet" href="<%- versioned_asset('css/search.css') %>"><% } %>
+<% if (page.path === 'about/index.html' && page.about_photo_effect === true) { %><link rel="stylesheet" href="<%- versioned_asset('css/about-photo.css') %>"><% } %>
 <link rel="manifest" href="<%- url_for('manifest.webmanifest') %>">
 <meta name="theme-color" content="#f5f3ee">
 <% if (theme.favicon || config.favicon){ %>

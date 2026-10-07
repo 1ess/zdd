@@ -2,6 +2,7 @@
 title: 關於
 layout: page
 comments: false
+about_photo_effect: true
 description: 关于这个博客。
 ---
 
